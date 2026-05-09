@@ -2,7 +2,7 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 
-// Dynamic fetch from GitHub (simulated with static for now, or actual API call)
+// Fetch GitHub repos
 const response = await fetch('https://api.github.com/users/dphan18/repos?sort=updated&per_page=12');
 const repos = await response.json();
 
@@ -12,9 +12,9 @@ const featuredRepos = Array.isArray(repos) ? repos.filter(repo => !repo.fork) : 
 <MainLayout title="Projects">
 	<div class="max-w-4xl mx-auto px-6 py-12">
 		<header class="mb-16">
-			<h1 class="font-serif text-5xl text-zinc-900 mb-4">Projects</h1>
+			<h1 class="font-serif text-5xl md:text-6xl text-zinc-900 leading-tight mb-4">Projects</h1>
 			<p class="font-sans text-lg text-zinc-500 max-w-xl">
-				A dashboard of my latest technical solutions, experiments, and open-source contributions.
+				A dashboard of technical solutions, architectural experiments, and open-source contributions.
 			</p>
 		</header>
 
