@@ -385,27 +385,220 @@ footer p {
     margin-bottom: 2rem;
 }
 
-/* --- Animations --- */
-.reveal {
+/* --- Global Polish --- */
+::selection {
+    background-color: var(--accent);
+    color: white;
+}
+
+/* --- Contact Page Specifics --- */
+.contact-wrapper {
+    padding: 6rem 0;
+}
+
+.location-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 99px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.location-badge i {
+    color: var(--accent);
+}
+
+.contact-header h1 {
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 1.5rem;
+}
+
+.status-text {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 650px;
+    margin-bottom: 4rem;
+    line-height: 1.5;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 5rem;
+    align-items: start;
+}
+
+/* Form Styling */
+.contact-form {
+    display: grid;
+    gap: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.form-group input,
+.form-group textarea {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 1rem 1.25rem;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px var(--accent-glow);
+}
+
+.response-note {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+/* Sidebar Styling */
+.contact-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.alternative-contact h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.email-link {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 2rem;
+    word-break: break-all;
+}
+
+.email-link:hover {
+    color: var(--text-primary);
+}
+
+.btn-ghost {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.75rem 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-ghost:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--text-secondary);
+}
+
+.social-mini-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-card-lite {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    transition: var(--transition);
+}
+
+.contact-card-lite i {
+    font-size: 2rem;
+    color: #fff; /* Crisp white for high contrast */
+    transition: var(--transition);
+}
+
+.contact-card-lite:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-hover);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.4);
+}
+
+.contact-card-lite:hover i {
+    color: var(--accent);
+}
+
+.contact-card-lite h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.contact-card-lite span {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Staggered Entrance Animations */
+.reveal-1 {
+    animation: fadeSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.reveal-2 {
     opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    animation: fadeSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
 }
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+.reveal-3 {
+    opacity: 0;
+    animation: fadeSlideUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.4s forwards;
 }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
-    .projects-header h1 {
-        font-size: 2.5rem;
+@keyframes fadeSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
-    .navbar .container {
-        padding: 0 1.5rem;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-    .nav-menu {
-        display: none; /* In a real app, implement a hamburger menu */
+}
+
+/* Responsive Overrides */
+@media (max-width: 992px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    .contact-wrapper {
+        padding: 4rem 0;
+    }
+    .contact-header h1 {
+        font-size: 3rem;
     }
 }
