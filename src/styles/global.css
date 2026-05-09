@@ -3,91 +3,16 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --bg-body: #f5f5f7;
-    --bg-surface: #ffffff;
-    --text-primary: #1d1d1f;
-    --text-secondary: #86868b;
-    --accent-blue: #0071e3;
-    --accent-blue-hover: #0077ed;
-    --border-light: #d2d2d7;
-    --radius-card: 18px;
-    --radius-input: 12px;
-    --radius-pill: 980px;
-    --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.04);
-    --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.08);
-    --focus-ring: 0 0 0 4px rgba(0, 113, 227, 0.2);
-    --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    --line-height-body: 1.47059;
-    --letter-spacing-heading: -0.022em;
-  }
-
   html {
+    @apply bg-bg-base text-text-main antialiased scroll-smooth;
     -webkit-font-smoothing: antialiased;
-    @apply bg-bg-body text-text-primary scroll-smooth;
-    font-family: var(--font-family-base);
-    line-height: var(--line-height-body);
   }
-  
-  h1, h2, h3 {
-    @apply font-semibold tracking-heading text-text-primary;
-  }
-
-  p {
-    @apply font-normal text-text-primary;
-  }
-
-  a {
-    @apply text-accent-blue no-underline transition-all duration-300;
-  }
-
-  a:hover {
-    @apply text-accent-blue-hover underline;
-  }
+  h1, h2, h3 { @apply font-semibold tracking-tight; }
+  a { @apply no-underline transition-all duration-300; }
 }
 
 @layer components {
-  .btn-primary {
-    @apply inline-block bg-accent-blue text-white rounded-pill font-semibold border-none transition-all duration-300;
-    padding: 14px 28px;
-    text-decoration: none !important;
-  }
-
-  .btn-primary:hover {
-    @apply bg-accent-blue-hover scale-[1.02] shadow-sm;
-    text-decoration: none !important;
-  }
-
-  .card {
-    @apply bg-bg-surface rounded-card shadow-subtle transition-all duration-300;
-  }
-
-  .card:hover {
-    @apply -translate-y-1 shadow-hover;
-  }
-
-  .section-padding {
-    @apply py-[80px] px-[20px];
-  }
-
-  .input-field {
-    @apply bg-bg-surface border border-border-light rounded-input px-4 py-4 outline-none transition-all duration-300 w-full;
-  }
-
-  .input-field:focus {
-    @apply border-accent-blue;
-    box-shadow: var(--focus-ring);
-  }
-
-  .label-text {
-    @apply text-[12px] font-semibold text-text-secondary mb-2 block;
-  }
-
-  .reveal {
-    @apply opacity-0 translate-y-4 transition-all duration-700 ease-out;
-  }
-  
-  .reveal.active {
-    @apply opacity-100 translate-y-0;
-  }
+  .card { @apply bg-bg-surface rounded-card shadow-subtle border border-zinc-200/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-hover hover:border-zinc-300; }
+  .nav-link { @apply text-sm transition-colors text-text-muted hover:text-text-main; }
+  .nav-link.active { @apply font-medium text-text-main; }
 }

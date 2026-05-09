@@ -10,41 +10,19 @@ export default {
         serif: ['Newsreader', 'Playfair Display', ...defaultTheme.fontFamily.serif],
       },
       colors: {
-        'bg-body': '#f5f5f7',
-        'bg-surface': '#ffffff',
-        'text-primary': '#1d1d1f',
-        'text-secondary': '#86868b',
-        'accent-blue': '#0071e3',
-        'accent-blue-hover': '#0077ed',
-        'border-light': '#d2d2d7',
-        stone: {
-          50: '#fafaf9',
-        },
-        zinc: {
-          900: '#18181b',
-          500: '#71717a',
-          400: '#a1a1aa',
-        },
+        'bg-base': '#fafaf9',      // stone-50
+        'bg-surface': '#ffffff',   // white
+        'text-main': '#18181b',    // zinc-900
+        'text-muted': '#71717a',   // zinc-500
+        'brand-blue': '#0071e3',   // precision blue
       },
-      borderRadius: {
-        'card': '18px',
-        'input': '12px',
-        'pill': '980px',
-      },
+      borderRadius: { 'card': '1.25rem' },
       boxShadow: {
         'subtle': '0 4px 20px rgba(0, 0, 0, 0.04)',
         'hover': '0 12px 32px rgba(0, 0, 0, 0.08)',
       },
-      letterSpacing: {
-        'heading': '-0.022em',
-        tighter: '-0.05em',
-      },
-      lineHeight: {
-        'body': '1.47059',
-      },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-  ],
+  plugins: [require('@tailwindcss/typography')],
+  overrides: { "@astrojs/tailwind": { "astro": "$astro" } }
 };

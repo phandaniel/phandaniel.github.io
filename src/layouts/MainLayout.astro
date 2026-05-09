@@ -1,43 +1,26 @@
 ---
 import Header from '../components/Header.astro';
-import '../styles/global.css'; // Global CSS import for consistent styling across all routes
+import '../styles/global.css';
 
-interface Props {
-	title: string;
-	description?: string;
-}
-
-const { title, description = "Daniel Phan - Digital Craftsman & Full-Stack Developer" } = Astro.props;
+const { title, description = "Daniel Phan - Digital Craftsman" } = Astro.props;
 ---
-
-<!doctype html>
-<html lang="en" class="selection:bg-zinc-200 selection:text-zinc-900">
+<html lang="en" class="selection:bg-zinc-200">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta charset="UTF-8" /><meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content={description} />
-		<title>{title} | Daniel Phan</title>
+		<meta name="description" content={description} /><title>{title} | Daniel Phan</title>
 		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-		<meta http-equiv="Pragma" content="no-cache" />
-		<meta http-equiv="Expires" content="0" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
 	</head>
-	<body class="bg-stone-50 text-zinc-900 antialiased font-sans">
+	<body class="font-sans">
 		<Header />
-		<main>
-			<slot />
-		</main>
-		<footer class="max-w-4xl mx-auto px-6 py-20 border-t border-zinc-200/50 text-sm font-medium text-zinc-500">
-			<div class="flex flex-col md:flex-row justify-between items-center gap-6">
-				<p>&copy; {new Date().getFullYear()} Daniel Phan. Crafted with precision.</p>
-				<div class="flex gap-8">
-					<a href="https://github.com/phandaniel" class="hover:text-zinc-900 transition-colors" target="_blank" rel="noopener noreferrer">GitHub</a>
-					<a href="https://www.linkedin.com/in/daniel-phan-mba-59776413a/" class="hover:text-zinc-900 transition-colors" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-				</div>
+		<main><slot /></main>
+		<footer class="max-w-4xl mx-auto px-6 py-20 border-t border-zinc-200/50 text-sm text-text-muted flex flex-col md:flex-row justify-between items-center gap-6">
+			<p>&copy; {new Date().getFullYear()} Daniel Phan.</p>
+			<div class="flex gap-8">
+				<a href="https://github.com/phandaniel" class="hover:text-text-main" target="_blank" rel="noopener">GitHub</a>
+				<a href="https://www.linkedin.com/in/daniel-phan-mba-59776413a/" class="hover:text-text-main" target="_blank" rel="noopener">LinkedIn</a>
 			</div>
 		</footer>
 	</body>
