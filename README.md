@@ -1,31 +1,31 @@
-# Daniel Phan - Personal Portfolio
+# Daniel Phan - Digital Craftsman Portfolio
 
-A pristine, premium personal portfolio website built with modern minimalist design principles.
+A high-performance, minimalist personal portfolio and tech blog built with **Astro** and **Tailwind CSS**.
 
-## 🚀 Features
-- **Premium Light Theme:** A soft, sophisticated aesthetic inspired by high-end tech interfaces.
-- **Glassmorphic Navigation:** Elegant floating header with advanced backdrop blurring.
-- **Responsive Fluidity:** Precision-engineered grid system for seamless cross-device experiences.
-- **Purposeful Motion:** Staggered, smooth entrance animations using modern CSS easing.
-- **Privacy-Forward:** Functional contact integration via Formspree without exposing personal data.
+## 🚀 Key Features
+- **Astro Core:** Sub-second load times with zero-JS by default architecture.
+- **Markdown Blog:** Built-in tech blog powered by Astro Content Collections.
+- **Dynamic Projects:** Real-time GitHub API integration for an automated projects gallery.
+- **Premium UI:** A "pristine" light theme inspired by top-tier tech design systems.
+- **Mobile-First:** Fully responsive layout with precision-tuned typography.
 
 ## 🛠 Tech Stack
-- **HTML5:** Semantic structure for optimal accessibility and searchability.
-- **CSS3:** Advanced design system featuring CSS Variables, Grid, and Flexbox.
-- **JavaScript:** ES6+ for dynamic interactions and scroll-based logic.
-- **Assets:** High-contrast FontAwesome icons and precision Google Fonts (Inter).
+- **Framework:** Astro 4.x
+- **Styling:** Tailwind CSS
+- **Icons:** Lucide-Astro
+- **Deployment:** Optimized for static hosting (GitHub Pages, Vercel, Netlify).
 
 ## 📂 Project Structure
-- `index.html`: Confident, centered hero entrance.
-- `projects.html`: Precision project gallery with soft-depth card architecture.
-- `topics.html`: Curated expertise and interest showcase.
-- `contact.html`: High-fidelity functional contact portal.
-- `style.css`: Master design system and component definitions.
-- `main.js`: Core interactivity and year-sync logic.
-- `DESIGN.md`: Detailed design specifications and brand guidelines.
+- `src/pages/`: Core routing (Home/Blog and Projects).
+- `src/content/blog/`: Markdown source for tech articles.
+- `src/layouts/`: Global wrappers and SEO logic.
+- `src/components/`: Reusable, atomic UI elements.
+- `DESIGN.md`: Detailed design specifications.
 
-## 🎨 Design Philosophy
-Inspired by the principles of clarity and precision, this portfolio utilizes generous whitespace, soft diffused shadows, and a curated typography system to create an experience that is both beautiful and functional.
+## 🏁 Getting Started
+1. Install dependencies: `npm install`
+2. Start development server: `npm run dev`
+3. Build for production: `npm run build`
 
 ---
 © 2026 Daniel Phan. Built with precision.

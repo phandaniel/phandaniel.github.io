@@ -1,0 +1,59 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const formattedDate = (date: Date) => date.toLocaleDateString('en-us', {
+	year: 'numeric',
+	month: 'short',
+	day: 'numeric',
+});
+---
+
+<MainLayout title="Home">
+	<section class="mb-20 text-center">
+		<span class="inline-block px-3 py-1 rounded-full bg-blue-50 text-apple-blue text-xs font-bold uppercase tracking-widest mb-6">
+			Digital Craftsman
+		</span>
+		<h1 class="text-5xl md:text-6xl font-extrabold mb-8 leading-tight">
+			Precision in every <span class="text-apple-blue">pixel.</span>
+		</h1>
+		<p class="text-xl text-apple-secondary max-w-2xl mx-auto leading-relaxed">
+			I'm Daniel Phan, a full-stack developer dedicated to building minimalist, high-performance web applications that matter.
+		</p>
+	</section>
+
+	<section>
+		<div class="flex items-center justify-between mb-10">
+			<h2 class="text-2xl font-bold">Latest Writing</h2>
+			<div class="h-[1px] flex-grow mx-8 bg-apple-border"></div>
+		</div>
+		
+		<div class="space-y-12">
+			{posts.map((post) => (
+				<article class="group">
+					<a href={`/blog/${post.slug}`} class="block">
+						<div class="flex flex-col md:flex-row md:items-baseline justify-between mb-2">
+							<h3 class="text-xl font-bold group-hover:text-apple-blue transition-colors">
+								{post.data.title}
+							</h3>
+							<time class="text-sm text-apple-secondary font-medium">
+								{formattedDate(post.data.pubDate)}
+							</time>
+						</div>
+						<p class="text-apple-secondary leading-relaxed line-clamp-2">
+							{post.data.description}
+						</p>
+						<div class="mt-4 flex items-center text-sm font-bold text-apple-blue opacity-0 group-hover:opacity-100 transition-opacity">
+							Read Article 
+							<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+						</div>
+					</a>
+				</article>
+			))}
+		</div>
+	</section>
+</MainLayout>

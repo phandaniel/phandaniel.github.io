@@ -1,0 +1,45 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	url: string;
+	language?: string;
+	stars?: number;
+}
+
+const { title, description, url, language, stars } = Astro.props;
+---
+
+<a href={url} target="_blank" rel="noopener noreferrer" class="group block p-8 bg-white border border-apple-border rounded-[24px] shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+	<div class="flex justify-between items-start mb-6">
+		<div class="p-3 bg-blue-50 rounded-xl">
+			<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-apple-blue" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+		</div>
+		<div class="flex items-center gap-4 text-xs font-bold text-apple-secondary">
+			{language && (
+				<span class="flex items-center gap-1">
+					<span class="w-2 h-2 rounded-full bg-apple-blue"></span>
+					{language}
+				</span>
+			)}
+			{stars !== undefined && stars > 0 && (
+				<span class="flex items-center gap-1">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+					{stars}
+				</span>
+			)}
+		</div>
+	</div>
+	
+	<h3 class="text-xl font-bold mb-3 capitalize group-hover:text-apple-blue transition-colors">
+		{title}
+	</h3>
+	<p class="text-apple-secondary text-sm leading-relaxed line-clamp-3 mb-6">
+		{description}
+	</p>
+	
+	<div class="flex items-center text-xs font-extrabold uppercase tracking-wider text-apple-blue">
+		View Repository
+		<svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 ml-2 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+	</div>
+</a>

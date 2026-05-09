@@ -1,38 +1,34 @@
-# Design System
+# Design System: Digital Craftsman
 
 ## Overview
-This portfolio uses a pristine, premium light mode design system inspired by Apple's signature aesthetic (elegant, clear, and precise).
+This portfolio uses a high-performance, minimalist design system built with **Astro** and **Tailwind CSS**. It is inspired by the principles of precision, clarity, and "zero-JS" efficiency.
+
+## Technical Architecture
+- **Framework:** Astro (Static Site Generation)
+- **Styling:** Tailwind CSS (Utility-first)
+- **Content:** Markdown Collections (Local storage)
+- **Data:** GitHub API (Real-time project syncing)
+- **Testing:** Playwright (End-to-End validation)
 
 ## Color Palette
-The theme uses a soft, sophisticated light palette driven by CSS variables in `style.css`.
+The theme uses a soft, sophisticated light palette focused on content readability.
 
-- **Background Body (`--bg-body`):** `#f5f5f7` - The iconic Apple light gray.
-- **Background Card (`--bg-card`):** `#ffffff` - Pure white for content cards to create elevation.
-- **Text Primary (`--text-primary`):** `#1d1d1f` - Deep charcoal for high readability.
-- **Text Secondary (`--text-secondary`):** `#515154` - Muted gray for descriptions.
-- **Accent (`--accent`):** `#0071e3` - Apple Signature Blue for primary actions.
+- **Background Body:** `#f5f5f7` (Soft Off-white)
+- **Cards:** `#ffffff` (Pure White)
+- **Text Primary:** `#1d1d1f` (Deep Charcoal)
+- **Text Secondary:** `#515154` (Muted Gray)
+- **Accent:** `#0071e3` (Precision Blue)
 
-## Typography
-- **Primary Font:** System Font Stack (`-apple-system`, `BlinkMacSystemFont`, etc.)
-- **Header Weights:** 700 (Bold).
-- **Body Weights:** 400 (Regular) to 500 (Medium).
-- **Line Height:** 1.5 for maximum legibility.
-- **Letter Spacing:** Tighter spacing (`-0.03em`) on large headers.
-
-## Component Architecture
+## Component Standards
 
 ### 1. Navigation
-- **Glassmorphism:** Uses `backdrop-filter: blur(20px)` and a semi-transparent white background (`rgba(245, 245, 247, 0.8)`) for an elegant, floating feel.
+- **Glassmorphism:** `backdrop-blur-xl` and `bg-apple-bg/80` for a native, floating feel.
+- **State:** Dynamic active link highlighting based on current URL path.
 
-### 2. Floating Cards (Projects & Topics)
-- **Soft Depth:** Uses low-opacity diffused shadows (`rgba(0,0,0,0.04)`).
-- **Tactile Hover:** Cards lift (`translateY(-4px)`) and shadows expand smoothly.
-- **Rounded Corners:** Consistent `18px` radius.
+### 2. Typography
+- **Font Stack:** System Sans-Serif (`-apple-system`, `BlinkMacSystemFont`, etc.) fallback to `Inter`.
+- **Headings:** Bold tracking-tight (`-0.03em`) for a premium editorial look.
 
-### 3. Contact Form
-- **Soft Inputs:** Light gray borders (`#d2d2d7`) and `12px` rounded corners.
-- **Premium Focus:** Blue border (`#0071e3`) with a soft blue outer glow (`rgba(0, 113, 227, 0.2)`).
-
-### 4. Buttons
-- **Pill Shape:** Modern `980px` border-radius.
-- **Interactive Scale:** Subtle scale-up effect (`scale(1.04)`) on hover.
+### 3. Project Gallery
+- **API Integration:** Projects are fetched dynamically from the GitHub API.
+- **Card Design:** Large padding (`p-8`), `24px` border radius, and smooth scale/translate transitions on hover.
