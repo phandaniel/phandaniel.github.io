@@ -13,26 +13,47 @@
 </head>
 <body>
     <header class="navbar">
-        <a class="logo" href="index.html">DP</a>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="index.html" aria-label="Home">Home</a></li>
-                <li><a href="projects.html" aria-label="Projects">Projects</a></li>
-                <li><a href="topics.html" aria-label="Topics">Topics</a></li>
-                <li><a href="contact.html" class="active" aria-label="Contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <a class="logo" href="index.html">DP</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" aria-label="Home">Home</a></li>
+                    <li><a href="projects.html" aria-label="Projects">Projects</a></li>
+                    <li><a href="topics.html" aria-label="Topics">Topics</a></li>
+                    <li><a href="contact.html" class="active" aria-label="Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main class="content">
-        <h1 class="reveal">Contact</h1>
-        <p class="reveal">I'm always open to new opportunities and collaborations. You can reach out to me through any of my professional social links below.</p>
+    <main class="container content">
+        <header class="projects-header reveal">
+            <h1>Get in Touch</h1>
+            <p>I'm currently available for new opportunities and collaborations. Let's build something remarkable together.</p>
+        </header>
+        
+        <div class="contact-methods reveal">
+            <div class="contact-card">
+                <i class="fab fa-linkedin"></i>
+                <h3>Professional Network</h3>
+                <p>Connect with me on LinkedIn for professional inquiries.</p>
+                <a href="https://www.linkedin.com/in/danielphan" class="btn btn-outline">Visit Profile</a>
+            </div>
+            <div class="contact-card">
+                <i class="fab fa-github"></i>
+                <h3>Open Source</h3>
+                <p>Check out my latest repositories and contributions.</p>
+                <a href="https://github.com/dphan18" class="btn btn-outline">Follow on GitHub</a>
+            </div>
+        </div>
     </main>
     <footer>
-        <p>&copy; <span id="year"></span> Daniel Phan</p>
-        <div class="social-links">
-            <a href="https://github.com/dphan18" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-            <a href="https://www.linkedin.com/in/danielphan" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-            <a href="https://twitter.com/dphan18" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Daniel Phan. Built with precision.</p>
+            <div class="social-links">
+                <a href="https://github.com/dphan18" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/danielphan" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/dphan18" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            </div>
         </div>
     </footer>
     <script src="main.js"></script>

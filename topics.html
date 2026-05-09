@@ -13,32 +13,51 @@
 </head>
 <body>
     <header class="navbar">
-        <a class="logo" href="index.html">DP</a>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="index.html" aria-label="Home">Home</a></li>
-                <li><a href="projects.html" aria-label="Projects">Projects</a></li>
-                <li><a href="topics.html" class="active" aria-label="Topics">Topics</a></li>
-                <li><a href="contact.html" aria-label="Contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <a class="logo" href="index.html">DP</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" aria-label="Home">Home</a></li>
+                    <li><a href="projects.html" aria-label="Projects">Projects</a></li>
+                    <li><a href="topics.html" class="active" aria-label="Topics">Topics</a></li>
+                    <li><a href="contact.html" aria-label="Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main class="content">
-        <h1 class="reveal">Topics I'm Into</h1>
-        <p class="reveal">These are some of the areas I'm currently exploring and writing about:</p>
+    <main class="container content">
+        <header class="projects-header reveal">
+            <h1>Expertise & Interests</h1>
+            <p>A look into the technologies and domains I'm passionate about and currently exploring.</p>
+        </header>
+        
         <ul class="topic-list reveal">
-            <li>Web development trends and tools.</li>
-            <li>Sports analytics and fantasy leagues.</li>
-            <li>Smart home technology.</li>
-            <li>Space exploration news.</li>
+            <li>
+                <i class="fas fa-code"></i>
+                <span>Modern Web Architecture & Performance</span>
+            </li>
+            <li>
+                <i class="fas fa-chart-line"></i>
+                <span>Sports Analytics & Data Visualization</span>
+            </li>
+            <li>
+                <i class="fas fa-home"></i>
+                <span>IoT & Localized Home Automation Systems</span>
+            </li>
+            <li>
+                <i class="fas fa-rocket"></i>
+                <span>Space Exploration & Aerospace Tech</span>
+            </li>
         </ul>
     </main>
     <footer>
-        <p>&copy; <span id="year"></span> Daniel Phan</p>
-        <div class="social-links">
-            <a href="https://github.com/dphan18" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-            <a href="https://www.linkedin.com/in/danielphan" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-            <a href="https://twitter.com/dphan18" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Daniel Phan. Built with precision.</p>
+            <div class="social-links">
+                <a href="https://github.com/dphan18" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/danielphan" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/dphan18" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
         </div>
     </footer>
     <script src="main.js"></script>
