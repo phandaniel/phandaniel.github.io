@@ -4,8 +4,8 @@ test.describe('Portfolio Basic Flow', () => {
   test('home page has correct title and header', async ({ page }) => {
     await page.goto('/');
     await expect(page).toHaveTitle(/Home | Daniel Phan/);
-    // Use the specific badge element to avoid strict mode violations
-    await expect(page.locator('span:has-text("Digital Craftsman")').first()).toBeVisible();
+    // Flexible match for the badge
+    await expect(page.locator('span').filter({ hasText: 'Digital Craftsman' }).first()).toBeVisible();
     await expect(page.getByRole('heading', { name: "Hi, I'm Daniel." })).toBeVisible();
   });
 
@@ -28,8 +28,8 @@ test.describe('Portfolio Basic Flow', () => {
 
   test('projects page loads cards', async ({ page }) => {
     await page.goto('/projects');
-    // Project cards are now links to external GitHub
-    const cards = page.locator('a[target="_blank"]');
+    // Project cards are now links to external GitHub in the main area
+    const cards = page.locator('main').locator('a[target="_blank"]');
     const emptyState = page.getByText('Syncing with the digital forge...');
     
     await expect(cards.first().or(emptyState)).toBeVisible();
