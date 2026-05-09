@@ -1,84 +1,68 @@
-# DESIGN.md - Portfolio Redesign Specification
+# DESIGN.md - The "Digital Craftsman" Portfolio Specification
 
 ## 1. Design Philosophy
-The goal of this redesign is to achieve a premium, minimalist, "Apple-like" light theme aesthetic. The UI should feel airy, precise, and highly responsive. 
+The goal is to create a timeless, editorial-style personal website and tech blog. It should move away from heavy, corporate "tech" aesthetics and instead feel like a minimalist digital journal. It must be brutally fast (leveraging Astro) and highly readable.
 
 **Core Principles:**
-- **Clarity over decoration:** Rely on spacing, typography, and subtle contrast rather than heavy borders or dark backgrounds.
-- **Depth through shadow:** Use pure white elements floating on an off-white background with very soft, diffused drop shadows.
-- **Fluid responsiveness:** All layouts must use Flexbox or CSS Grid to adapt gracefully to any screen size.
-- **IMAGE CONSTRAINT:** Do NOT alter any image source URLs, aspect ratios, or image placeholder logic. Focus entirely on layout, typography, UI elements, and structural CSS.
+- **Editorial Minimalism:** Lots of negative space. Content is the primary design element.
+- **Organic over Synthetic:** Use warm off-whites and soft blacks instead of harsh digital `#000000` or `#FFFFFF`.
+- **Deliberate Typography:** Mix a modern, geometric sans-serif for the UI with a classic, elegant serif for blog article headings.
+- **Frictionless Navigation:** A simple, sticky top navigation bar with three primary routes: Home, Blog, Projects.
 
 ---
 
-## 2. Global Design Tokens (CSS Variables)
+## 2. Global Design Tokens (Tailwind CSS Configuration)
 
-Please implement these as CSS custom properties (`:root`) for consistency:
+Please configure `tailwind.config.mjs` to include these specific utility extensions:
 
 ### Colors
-* `--bg-body`: `#f5f5f7` (Soft light gray for the main page background)
-* `--bg-surface`: `#ffffff` (Pure white for cards, forms, and floating elements)
-* `--text-primary`: `#1d1d1f` (Deep charcoal for headings and high-contrast text)
-* `--text-secondary`: `#86868b` (Muted gray for labels and secondary info)
-* `--accent-blue`: `#0071e3` (Primary interactive color for buttons and links)
-* `--accent-blue-hover`: `#0077ed`
-* `--border-light`: `#d2d2d7` (For subtle borders on inputs and dividers)
+* **Backgrounds:** * `bg-stone-50` (`#fafaf9`) - The main site background. A warm, paper-like off-white.
+  * `bg-white` (`#ffffff`) - For slightly elevated elements (like project cards).
+* **Text:**
+  * `text-zinc-900` (`#18181b`) - Primary text for maximum readability without harshness.
+  * `text-zinc-500` (`#71717a`) - Secondary text (dates, reading times, subtle links).
+* **Accents:**
+  * `text-blue-600` (`#2563eb`) - Used *very* sparingly for active link states or hover interactions. 
 
 ### Typography
-* `--font-family-base`: `-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif`
-* `--line-height-body`: `1.47059`
-* `--letter-spacing-heading`: `-0.022em`
-
-### Shadows & Radii
-* `--radius-card`: `18px`
-* `--radius-input`: `12px`
-* `--radius-pill`: `980px`
-* `--shadow-subtle`: `0 4px 20px rgba(0, 0, 0, 0.04)`
-* `--shadow-hover`: `0 12px 32px rgba(0, 0, 0, 0.08)`
-* `--focus-ring`: `0 0 0 4px rgba(0, 113, 227, 0.2)`
+* **UI & Body Font (Sans-serif):** `Inter`, `Geist Sans`, or system fonts.
+* **Editorial Headings (Serif):** `Newsreader`, `Playfair Display`, or `Merriweather`. Used specifically for Blog post titles and main section headers to give a "timeless" feel.
 
 ---
 
-## 3. Component Specifications
+## 3. Page Architecture & Layout
 
-### A. Typography & Base Elements
-- **Headings (h1, h2, h3):** Font weight 600, `color: var(--text-primary)`, tight letter spacing.
-- **Body Text:** Font weight 400, `color: var(--text-primary)`.
-- **Links (a):** `color: var(--accent-blue)`, `text-decoration: none`. On hover: `color: var(--accent-blue-hover)`, `text-decoration: underline`.
-- **Global Spacing:** Ensure generous padding (`padding: 40px 20px` minimum for main sections).
+### A. Global Navigation (Header)
+- A minimalist, sticky top bar with a slight blur backdrop (`backdrop-blur-md bg-stone-50/80`).
+- **Left:** Your Name or a simple logo mark.
+- **Right:** Links aligned horizontally: `Home`, `Blog`, `Projects`.
+- Active states should simply make the text `text-zinc-900` and `font-medium`, while inactive links remain `text-zinc-500`.
 
-### B. Project & Topic Cards
-- **Container:** `background-color: var(--bg-surface)`
-- **Border Radius:** `var(--radius-card)`
-- **Shadow:** `box-shadow: var(--shadow-subtle)`
-- **Interactions:** On hover, apply `transform: translateY(-4px)` and `box-shadow: var(--shadow-hover)` with a `0.3s ease` transition.
-- **Layout:** Use CSS Grid (`grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))`) to ensure cards stack gracefully on mobile and align perfectly on desktop.
+### B. Home Page (`/`)
+- **Hero Section:** A short, punchy intro (e.g., "Hi, I'm Daniel. A software engineer and digital craftsman.") using the Serif font, sized large (`text-4xl` to `text-6xl`), aligned left.
+- **Selected Writing:** A preview of the 2-3 most recent blog posts. Show the date in muted text, the title, and a 1-sentence excerpt. 
+- **Featured Projects:** A preview of 2 standout projects linking out to GitHub.
 
-### C. Forms & Inputs
-- **Inputs & Textareas:** - `background-color: var(--bg-surface)`
-  - `border: 1px solid var(--border-light)`
-  - `border-radius: var(--radius-input)`
-  - `padding: 16px`
-  - Remove default browser outlines (`outline: none`).
-- **Focus State:** When clicked, change border to `var(--accent-blue)` and apply `box-shadow: var(--focus-ring)`.
-- **Labels:** `font-size: 12px`, `font-weight: 600`, `color: var(--text-secondary)`, positioned cleanly above the input field.
+### C. The Tech Blog (`/blog`)
+- **Layout:** A clean, single-column vertical list constrained to a maximum width (`max-w-2xl` or `prose` plugin size) for optimal reading line length.
+- **List Items:** - Grouped by Year (e.g., "2026").
+  - Each item is a flex row: `[Date (muted)] --- [Title (dark)]`.
+  - On hover, the title gently shifts right (`transform translate-x-1 transition-all`).
+- **Article Pages:** Use the `@tailwindcss/typography` plugin. The prose should be beautifully formatted with clear `h2` / `h3` hierarchy, styled inline code blocks (soft gray background, rounded text), and elegant blockquotes.
 
-### D. Buttons
-- **Primary Button styling:**
-  - `background-color: var(--accent-blue)`
-  - `color: #ffffff`
-  - `border-radius: var(--radius-pill)`
-  - `padding: 14px 28px`
-  - `font-weight: 600`
-  - `border: none`
-- **Interactions:** On hover, scale slightly (`transform: scale(1.02)`) and shift background to `var(--accent-blue-hover)`.
+### D. Projects Page (`/projects`)
+- A grid layout (`grid-cols-1 sm:grid-cols-2`) of project cards.
+- **Card Design:** - Light border (`border border-zinc-200`).
+  - No heavy drop shadows; keep it flat and clean.
+  - **Content:** Project Title, a 2-line description, and tags for the tech stack used (e.g., `Astro`, `TypeScript`).
+  - **Interaction:** The entire card acts as a link to the GitHub repository. Include a small external link icon (`↗` via Lucide-Astro) next to the title to indicate it leaves the site.
 
 ---
 
 ## 4. Execution Instructions for AI Assistant
-1. Review the current HTML structure and CSS.
-2. Refactor the global stylesheet to implement the CSS variables listed above.
-3. Apply these variables to the `body`, headings, and base elements.
-4. Rewrite the structural HTML/CSS for lists (like the Topics section) to use the "Card" specification.
-5. Overhaul the contact form using the exact states and colors provided in Section 3C.
-6. **Remember:** Do not modify any `<img>` tags, image source paths, or specific image-related CSS aspect ratios. Focus purely on layout, UI elements, and the surrounding whitespace.
+1. Ensure the Tailwind configuration is updated with the warm/stone color palette.
+2. Build a standard Layout wrapper containing the minimalist navigation bar.
+3. Build the `/` route with a focus on left-aligned, bold typography.
+4. Set up the Astro Content Collections (`src/content/blog/`) to automatically populate the `/blog` route.
+5. Apply the `@tailwindcss/typography` (`prose` classes) to the blog post rendering layout.
+6. Create the Projects grid focusing on flat, bordered cards that explicitly link out to external GitHub URLs.
