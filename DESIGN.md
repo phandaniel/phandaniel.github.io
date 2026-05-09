@@ -1,68 +1,87 @@
 # DESIGN.md - The "Digital Craftsman" Portfolio Specification
 
 ## 1. Design Philosophy
-The goal is to create a timeless, editorial-style personal website and tech blog. It should move away from heavy, corporate "tech" aesthetics and instead feel like a minimalist digital journal. It must be brutally fast (leveraging Astro) and highly readable.
-
-**Core Principles:**
-- **Editorial Minimalism:** Lots of negative space. Content is the primary design element.
-- **Organic over Synthetic:** Use warm off-whites and soft blacks instead of harsh digital `#000000` or `#FFFFFF`.
-- **Deliberate Typography:** Mix a modern, geometric sans-serif for the UI with a classic, elegant serif for blog article headings.
-- **Frictionless Navigation:** A simple, sticky top navigation bar with three primary routes: Home, Blog, Projects.
+This portfolio is a minimalist digital journal. It discards heavy corporate "tech" aesthetics (no bright purple gradients, no heavy drop shadows) in favor of high-end editorial simplicity. It relies on stark contrast, perfect typography, and brutalist speed.
 
 ---
 
-## 2. Global Design Tokens (Tailwind CSS Configuration)
+## 2. Global Tokens & Tailwind Configuration (`tailwind.config.mjs`)
 
-Please configure `tailwind.config.mjs` to include these specific utility extensions:
+**Colors (Organic & Muted):**
+- **Background:** `bg-stone-50` (`#fafaf9`) - A warm, paper-like off-white. Never use pure white for the main background.
+- **Surface:** `bg-white` (`#ffffff`) - Used only for elevated cards to create subtle depth.
+- **Primary Text:** `text-zinc-900` (`#18181b`) - Soft black for maximum readability without eye strain.
+- **Muted Text:** `text-zinc-500` (`#71717a`) - For dates, tags, and secondary metadata.
+- **Accents:** `text-zinc-400` - For subtle borders or dividers.
 
-### Colors
-* **Backgrounds:** * `bg-stone-50` (`#fafaf9`) - The main site background. A warm, paper-like off-white.
-  * `bg-white` (`#ffffff`) - For slightly elevated elements (like project cards).
-* **Text:**
-  * `text-zinc-900` (`#18181b`) - Primary text for maximum readability without harshness.
-  * `text-zinc-500` (`#71717a`) - Secondary text (dates, reading times, subtle links).
-* **Accents:**
-  * `text-blue-600` (`#2563eb`) - Used *very* sparingly for active link states or hover interactions. 
-
-### Typography
-* **UI & Body Font (Sans-serif):** `Inter`, `Geist Sans`, or system fonts.
-* **Editorial Headings (Serif):** `Newsreader`, `Playfair Display`, or `Merriweather`. Used specifically for Blog post titles and main section headers to give a "timeless" feel.
+**Typography:**
+- **Sans-Serif (UI & Body):** `font-sans` (Inter or Geist). Used for navigation, dates, and small UI text.
+- **Serif (Editorial Headings):** `font-serif` (Newsreader, Playfair Display, or Merriweather). Used strictly for the main Hero intro and Blog post titles to create a timeless, printed-book feel.
 
 ---
 
-## 3. Page Architecture & Layout
+## 3. Global Layout & Navigation (`src/layouts/Layout.astro`)
 
-### A. Global Navigation (Header)
-- A minimalist, sticky top bar with a slight blur backdrop (`backdrop-blur-md bg-stone-50/80`).
-- **Left:** Your Name or a simple logo mark.
-- **Right:** Links aligned horizontally: `Home`, `Blog`, `Projects`.
-- Active states should simply make the text `text-zinc-900` and `font-medium`, while inactive links remain `text-zinc-500`.
+The entire site is contained within a max-width column to keep line lengths readable.
 
-### B. Home Page (`/`)
-- **Hero Section:** A short, punchy intro (e.g., "Hi, I'm Daniel. A software engineer and digital craftsman.") using the Serif font, sized large (`text-4xl` to `text-6xl`), aligned left.
-- **Selected Writing:** A preview of the 2-3 most recent blog posts. Show the date in muted text, the title, and a 1-sentence excerpt. 
-- **Featured Projects:** A preview of 2 standout projects linking out to GitHub.
+**Structure:**
+- `<body>` should have `bg-stone-50 text-zinc-900 antialiased min-h-screen flex flex-col`.
+- **Main Container:** `<main class="max-w-3xl mx-auto px-6 py-12 flex-grow">`
+- **Navigation (Header):**
+  - A `<nav>` element at the very top. Flexbox row, `justify-between`, `items-center`, `mb-16`.
+  - **Left Side:** Your name (`<a href="/" class="font-medium tracking-tight">Daniel Phan</a>`).
+  - **Right Side:** Flex row with a gap of `gap-6`. Links: `Home`, `Blog`, `Projects`.
+  - **Link States:** Inactive is `text-zinc-500 hover:text-zinc-900 transition-colors`. Active page is `text-zinc-900`.
 
-### C. The Tech Blog (`/blog`)
-- **Layout:** A clean, single-column vertical list constrained to a maximum width (`max-w-2xl` or `prose` plugin size) for optimal reading line length.
-- **List Items:** - Grouped by Year (e.g., "2026").
-  - Each item is a flex row: `[Date (muted)] --- [Title (dark)]`.
-  - On hover, the title gently shifts right (`transform translate-x-1 transition-all`).
-- **Article Pages:** Use the `@tailwindcss/typography` plugin. The prose should be beautifully formatted with clear `h2` / `h3` hierarchy, styled inline code blocks (soft gray background, rounded text), and elegant blockquotes.
+---
+
+## 4. Page-Specific Architectures
+
+### A. Home Page (`/`)
+The home page acts as a quick introduction and a table of contents for your best work.
+
+1.  **Hero Section:**
+    - `<h1 class="font-serif text-4xl md:text-5xl leading-tight tracking-tight mb-6">`
+    - Text: "Daniel Phan. Software engineer and digital craftsman."
+    - `<p class="text-zinc-500 max-w-xl text-lg leading-relaxed mb-12">`
+    - Text: A 2-sentence bio about what you build and what you care about (e.g., performance, localized IoT, space tech).
+
+2.  **Selected Writing (Preview):**
+    - `<h2 class="font-medium text-sm text-zinc-400 uppercase tracking-widest mb-6">Selected Writing</h2>`
+    - A simple `<ul>` flex column (`flex flex-col gap-4`).
+    - Each item is a link that mimics the Blog page layout (Date on left, Title on right).
+
+3.  **Selected Projects (Preview):**
+    - `<h2 class="font-medium text-sm text-zinc-400 uppercase tracking-widest mt-12 mb-6">Recent Work</h2>`
+    - A CSS grid (`grid grid-cols-1 sm:grid-cols-2 gap-4`).
+    - Call in 2 of the GitHub project cards (specified below).
+
+### B. The Timeless Tech Blog (`/blog`)
+This page is a masterclass in typography. No thumbnail images, just text.
+
+1.  **Header:**
+    - `<h1 class="font-serif text-4xl mb-8">Writing</h1>`
+2.  **List Layout (Grouped by Year):**
+    - For each year, render a sticky year header: `<h3 class="text-zinc-400 font-medium mb-4 mt-8">2026</h3>`.
+    - Below the year, an unordered list of articles.
+    - **Article Row:** `<a class="group flex flex-col sm:flex-row sm:items-baseline sm:justify-between py-3 border-b border-zinc-200">`
+    - **Article Title:** `<span class="font-serif text-lg group-hover:underline decoration-zinc-300 underline-offset-4">Building Localized Home Automation</span>`
+    - **Article Date:** `<time class="text-zinc-500 text-sm mt-1 sm:mt-0 sm:ml-4 tabular-nums">May 09</time>`
+
+### C. Article Reading Page (`/blog/[slug]`)
+- **Header:** Title (Serif, `text-4xl`), Date (Sans, `text-zinc-500`), and perhaps a reading time indicator.
+- **Content:** Wrap the markdown output in `<article class="prose prose-zinc max-w-none mt-8 prose-headings:font-serif prose-a:underline-offset-4">`. This allows Tailwind's Typography plugin to perfectly style the markdown text, code blocks, and blockquotes automatically.
 
 ### D. Projects Page (`/projects`)
-- A grid layout (`grid-cols-1 sm:grid-cols-2`) of project cards.
-- **Card Design:** - Light border (`border border-zinc-200`).
-  - No heavy drop shadows; keep it flat and clean.
-  - **Content:** Project Title, a 2-line description, and tags for the tech stack used (e.g., `Astro`, `TypeScript`).
-  - **Interaction:** The entire card acts as a link to the GitHub repository. Include a small external link icon (`↗` via Lucide-Astro) next to the title to indicate it leaves the site.
+A clean dashboard of your GitHub repositories.
 
----
-
-## 4. Execution Instructions for AI Assistant
-1. Ensure the Tailwind configuration is updated with the warm/stone color palette.
-2. Build a standard Layout wrapper containing the minimalist navigation bar.
-3. Build the `/` route with a focus on left-aligned, bold typography.
-4. Set up the Astro Content Collections (`src/content/blog/`) to automatically populate the `/blog` route.
-5. Apply the `@tailwindcss/typography` (`prose` classes) to the blog post rendering layout.
-6. Create the Projects grid focusing on flat, bordered cards that explicitly link out to external GitHub URLs.
+1.  **Header:**
+    - `<h1 class="font-serif text-4xl mb-2">Projects</h1>`
+    - `<p class="text-zinc-500 mb-8">Open source tools, experiments, and web architecture.</p>`
+2.  **The Grid:**
+    - `<div class="grid grid-cols-1 md:grid-cols-2 gap-4">`
+3.  **The Project Cards (The "Bento" look):**
+    - Container: `<a href="GITHUB_URL" target="_blank" class="block p-6 bg-white border border-zinc-200 rounded-xl hover:border-zinc-300 hover:shadow-sm transition-all group">`
+    - **Top Row (Title & Icon):** Flexbox row, justify-between. Title is `text-zinc-900 font-medium`. Icon is a small `↗` arrow that translates up and right on hover (`group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform`).
+    - **Description:** `<p class="text-zinc-500 text-sm mt-2 line-clamp-2">`
+    - **Tech Stack Footer:** Flex row of small tags at the bottom. `<span class="text-xs text-zinc-500 bg-stone-100 px-2 py-1 rounded-md">Astro</span>`
