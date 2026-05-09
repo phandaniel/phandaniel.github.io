@@ -1,32 +1,31 @@
 # Daniel Phan - Personal Portfolio
 
-A high-end, minimalist personal portfolio website built with modern web standards.
+A pristine, premium personal portfolio website built with modern minimalist design principles.
 
 ## 🚀 Features
-- **Modern Dark Mode:** A sophisticated design system built for professional impact.
-- **Responsive Layout:** Fluid grid system that adapts seamlessly from mobile to ultrawide displays.
-- **High-Performance UI:** Optimized with CSS Grid, Flexbox, and glassmorphic effects.
-- **Interactive Experience:** Smooth scroll-triggered reveal animations.
-- **Privacy-Focused:** Professional contact methods without exposing personal email.
+- **Premium Light Theme:** A soft, sophisticated aesthetic inspired by high-end tech interfaces.
+- **Glassmorphic Navigation:** Elegant floating header with advanced backdrop blurring.
+- **Responsive Fluidity:** Precision-engineered grid system for seamless cross-device experiences.
+- **Purposeful Motion:** Staggered, smooth entrance animations using modern CSS easing.
+- **Privacy-Forward:** Functional contact integration via Formspree without exposing personal data.
 
 ## 🛠 Tech Stack
-- **HTML5:** Semantic structure for SEO and accessibility.
-- **CSS3:** Custom design system using CSS Variables, Grid, and Flexbox.
-- **JavaScript:** ES6+ utilizing the Intersection Observer API for animations.
-- **Icons:** FontAwesome integration.
-- **Fonts:** Inter via Google Fonts.
+- **HTML5:** Semantic structure for optimal accessibility and searchability.
+- **CSS3:** Advanced design system featuring CSS Variables, Grid, and Flexbox.
+- **JavaScript:** ES6+ for dynamic interactions and scroll-based logic.
+- **Assets:** High-contrast FontAwesome icons and precision Google Fonts (Inter).
 
 ## 📂 Project Structure
-- `index.html`: Homepage with high-impact hero section.
-- `projects.html`: Responsive project gallery with uniform aspect-ratio cards.
-- `topics.html`: Expertise and interests showcase.
-- `contact.html`: Professional connection portal.
-- `style.css`: Centralized design system and component styling.
-- `main.js`: Interactivity and animation logic.
-- `DESIGN.md`: Detailed documentation of the design system.
+- `index.html`: Confident, centered hero entrance.
+- `projects.html`: Precision project gallery with soft-depth card architecture.
+- `topics.html`: Curated expertise and interest showcase.
+- `contact.html`: High-fidelity functional contact portal.
+- `style.css`: Master design system and component definitions.
+- `main.js`: Core interactivity and year-sync logic.
+- `DESIGN.md`: Detailed design specifications and brand guidelines.
 
 ## 🎨 Design Philosophy
-The site follows a "less is more" philosophy. By focusing on typography, whitespace (darkspace), and subtle micro-interactions, the design provides a premium user experience that puts the content first.
+Inspired by the principles of clarity and precision, this portfolio utilizes generous whitespace, soft diffused shadows, and a curated typography system to create an experience that is both beautiful and functional.
 
 ---
 © 2026 Daniel Phan. Built with precision.

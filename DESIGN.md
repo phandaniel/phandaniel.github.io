@@ -1,37 +1,38 @@
 # Design System
 
 ## Overview
-This portfolio uses a modern, high-fidelity dark mode design system focused on minimalism, readability, and professional UI/UX standards.
+This portfolio uses a pristine, premium light mode design system inspired by modern minimalist principles (elegant, clear, and precise).
 
 ## Color Palette
-The theme uses a sophisticated dark palette driven by CSS variables in `style.css`.
+The theme uses a soft, sophisticated light palette driven by CSS variables in `style.css`.
 
-- **Background Base (`--bg-base`):** `#0a0a0c` - A deep, near-black for the main background.
-- **Surface (`--bg-surface`):** `#16161e` - A slightly lighter gray for cards and containers to create depth.
-- **Accent (`--accent`):** `#3b82f6` - A vibrant electric blue used for CTAs, icons, and highlights.
-- **Text Primary (`--text-primary`):** `#f8fafc` - High-contrast off-white for main content.
-- **Text Secondary (`--text-secondary`):** `#94a3b8` - Muted gray for descriptions and secondary info.
+- **Background Body (`--bg-body`):** `#f5f5f7` - A soft, warm off-white for the main body.
+- **Background Card (`--bg-card`):** `#ffffff` - Pure white for content cards to create elevation.
+- **Text Primary (`--text-primary`):** `#1d1d1f` - Deep charcoal for high readability without harshness.
+- **Text Secondary (`--text-secondary`):** `#515154` - Muted slate gray for descriptions.
+- **Accent (`--accent`):** `#0066cc` - A professional, modern blue for primary actions.
 
 ## Typography
-- **Primary Font:** 'Inter', sans-serif.
-- **Header Weights:** 700 (Bold) to 800 (Extra Bold).
+- **Primary Font:** 'Inter', sans-serif (Geometric Sans).
+- **Header Weights:** 700 (Bold).
 - **Body Weights:** 400 (Regular) to 500 (Medium).
-- **Line Height:** 1.6 - 1.7 for optimal readability.
-- **Letter Spacing:** Tighter spacing (`-0.04em`) on large headings for a premium feel.
+- **Line Height:** 1.5 - 1.6 for maximum legibility.
+- **Letter Spacing:** Tighter spacing (`-0.03em`) on hero headers for a premium feel.
 
 ## Component Architecture
 
 ### 1. Navigation
-- **Glassmorphism:** Uses `backdrop-filter: blur(12px)` and a semi-transparent background for a modern layered feel.
-- **Sticky Behavior:** Remains fixed at the top for easy navigation.
+- **Glassmorphism:** Uses `backdrop-filter: blur(20px)` and a semi-transparent white background (`rgba(245, 245, 247, 0.75)`) for an elegant, floating feel.
+- **Precision Border:** A subtle `1px` bottom border defines the navigation area.
 
-### 2. Project Cards
-- **Aspect Ratio:** Images are locked to `16:9` using `object-fit: cover` to ensure grid uniformity.
-- **Interactions:** Subtle lift effect (`translateY(-8px)`) and accent-colored glow on hover.
+### 2. Project & Info Cards
+- **Soft Depth:** Removed harsh borders in favor of very soft, diffused shadows (`rgba(0,0,0,0.06)`).
+- **Tactile Hover:** Cards lift (`translateY(-8px)`) and shadows expand smoothly on interaction.
+- **Rounded Corners:** Consistent `18px` radius for a friendly yet modern look.
 
 ### 3. Grid System
-- Uses **CSS Grid** with `repeat(auto-fill, minmax(320px, 1fr))` to provide a completely responsive layout without complex media queries.
+- Uses **CSS Grid** with `repeat(auto-fill, minmax(340px, 1fr))` for a fluid, responsive gallery.
 
 ### 4. Animations
-- **Intersection Observer:** Triggers `reveal` animations as elements scroll into view.
-- **Transitions:** Global `0.3s cubic-bezier` for all interactive states.
+- **Staggered Reveal:** CSS-driven staggered animations (`reveal-1`, `reveal-2`, `reveal-3`) create a purposeful entrance experience.
+- **Cubic Bezier:** Uses `cubic-bezier(0.2, 0.8, 0.2, 1)` for smooth, natural movement.
