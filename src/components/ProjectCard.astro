@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import { ArrowUpRight } from 'lucide-astro';
 
 interface Props {
@@ -6,46 +7,48 @@ interface Props {
 	description: string;
 	url: string;
 	language?: string;
-	imageUrl?: string;
+	imageUrl?: string | any; // Supports string URL or Astro ImageMetadata
 }
 
 const { title, description, url, language, imageUrl } = Astro.props;
----
 
-<a href={url} target="_blank" rel="noopener noreferrer" class="group card flex flex-col overflow-hidden no-underline">
+// Fallback to GitHub OG if no image is provided, though usually handled by parent
+const finalImageUrl = imageUrl || `https://opengraph.githubassets.com/1/phandaniel/${title.toLowerCase().replace(/\s+/g, '-')}`;
+---
+<a href={url} target="_blank" rel="noopener noreferrer" aria-label={`View project: ${title}`} class="group card flex flex-col overflow-hidden no-underline">
 	{
-		imageUrl && (
-			<div class="h-40 overflow-hidden border-b border-zinc-100">
-				<img 
-					src={imageUrl} 
-					alt={title} 
-					class="w-full h-full object-cover grayscale-[0.5] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" 
-				/>
+		finalImageUrl && (
+			<div class="h-40 overflow-hidden border-b border-zinc-100 bg-zinc-50 relative">
+                {typeof finalImageUrl === 'string' ? (
+                    <img 
+                        src={finalImageUrl} 
+                        alt="" 
+                        loading="lazy"
+                        width="800"
+                        height="400"
+                        class="w-full h-full object-cover grayscale-[0.4] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" 
+                    />
+                ) : (
+                    <Image 
+                        src={finalImageUrl} 
+                        alt=""
+                        width={800}
+                        height={400}
+                        format="webp"
+                        class="w-full h-full object-cover grayscale-[0.4] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" 
+                    />
+                )}
 			</div>
 		)
 	}
 	<div class="p-6 flex flex-col justify-between flex-grow">
 		<div>
 			<div class="flex justify-between items-start mb-4">
-				<h3 class="text-lg group-hover:text-brand-blue transition-colors leading-tight">
-					{title}
-				</h3>
-				<ArrowUpRight 
-					size={18} 
-					strokeWidth={2.5} 
-					class="text-zinc-400 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" 
-				/>
+				<h3 class="text-lg group-hover:text-brand-blue transition-colors leading-tight">{title}</h3>
+				<ArrowUpRight size={18} strokeWidth={2.5} class="text-zinc-400 group-hover:-translate-y-1 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
 			</div>
-			<p class="text-text-muted text-sm line-clamp-3 mb-6">
-				{description}
-			</p>
+			<p class="text-text-muted text-sm line-clamp-3 mb-6">{description}</p>
 		</div>
-		{
-			language && (
-				<span class="px-2 py-1 bg-stone-100 text-text-muted text-[10px] font-bold uppercase rounded self-start">
-					{language}
-				</span>
-			)
-		}
+		{language && <span class="px-2 py-1 bg-stone-100 text-text-muted text-[10px] font-bold uppercase rounded self-start">{language}</span>}
 	</div>
 </a>

@@ -2,61 +2,64 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import { fetchFeaturedRepos } from '../utils/github';
-import { Github } from 'lucide-astro';
+import { getCollection } from 'astro:content';
+import { SITE_METADATA } from '../data/constants';
 
-const featured = await fetchFeaturedRepos();
+const curatedProjects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const githubRepos = await fetchFeaturedRepos();
 
-const customImages = {
-    'chess': 'https://images.unsplash.com/photo-1528819622765-d6bcf132f793?q=80&w=800&auto=format&fit=crop',
-    'phandaniel.github.io': 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop'
-};
+// Filter out GitHub repos that are already in curated projects (by URL or custom field if needed)
+const curatedUrls = new Set(curatedProjects.map(p => p.data.url));
+const filteredGithub = githubRepos.filter(r => !curatedUrls.has(r.url));
 
-const customDescriptions = {
-    'phandaniel.github.io': 'A high-fidelity editorial portfolio and technical journal built with Astro and Tailwind CSS, focusing on performance and minimalist design.',
-    'chess': 'A sophisticated chess engine and UI implementation developed in Python, exploring game logic and move validation algorithms.'
-};
+const allProjects = [
+    ...curatedProjects.map(p => ({
+        title: p.data.title,
+        description: p.data.description,
+        url: p.data.url,
+        language: p.data.language,
+        imageUrl: p.data.image
+    })),
+    ...filteredGithub
+];
 ---
-
-<MainLayout title="Projects">
-	<div class="max-w-4xl mx-auto px-6 py-20">
+<MainLayout 
+    title="Projects" 
+    description="A comprehensive dashboard of technical solutions, architectural experiments, and open-source contributions by Daniel Phan."
+>
+	<div class="max-w-4xl mx-auto px-6 py-12">
 		<header class="mb-16">
-			<h1 class="font-serif text-5xl md:text-6xl mb-4">Projects</h1>
-			<p class="text-text-muted text-lg max-w-xl">
-				A dashboard of technical solutions and architectural experiments.
+			<h1 class="font-serif text-5xl md:text-6xl text-zinc-900 leading-tight mb-4">Projects</h1>
+			<p class="font-sans text-lg text-zinc-500 max-w-xl">
+				A dashboard of technical solutions, architectural experiments, and open-source contributions.
 			</p>
 		</header>
 
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-			{
-				featured.map((repo) => {
-                    const name = repo.url.split('/').pop()?.toLowerCase() || '';
-                    return (
-                        <ProjectCard 
-                            title={repo.title} 
-                            description={customDescriptions[name] || repo.description || 'No description provided.'} 
-                            url={repo.url} 
-                            language={repo.language} 
-                            imageUrl={customImages[name] || `https://opengraph.githubassets.com/1/phandaniel/${name}`} 
-                        />
-                    );
-                })
-			}
+			{allProjects.map((project) => (
+				<ProjectCard 
+					title={project.title} 
+					description={project.description} 
+					url={project.url} 
+					language={project.language} 
+					imageUrl={project.imageUrl} 
+				/>
+			))}
 		</div>
 
-		{
-			featured.length === 0 && (
-				<div class="p-20 text-center bg-white border border-zinc-200 rounded-card">
-					<a 
-						href="https://github.com/phandaniel" 
-						target="_blank" 
-                        rel="noopener noreferrer"
-						class="font-serif text-2xl hover:text-brand-blue flex items-center justify-center gap-2 transition-colors duration-300"
-					>
-						View digital forge on GitHub 
-						<Github size={24} strokeWidth={2} />
-					</a>
-				</div>
-			)
-		}
+		{allProjects.length === 0 && (
+			<div class="p-20 text-center bg-white border border-zinc-200 rounded-3xl">
+				<a 
+                    href={`https://github.com/${SITE_METADATA.author.toLowerCase().replace(/\s+/g, '')}`} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    aria-label="View profile on GitHub"
+                    class="font-serif text-2xl text-zinc-900 hover:text-brand-blue transition-colors inline-flex items-center gap-2 no-underline"
+                >
+					View my digital forge on GitHub 
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="mt-1" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+				</a>
+			</div>
+		)}
 	</div>
 </MainLayout>
