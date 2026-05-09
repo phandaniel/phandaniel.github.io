@@ -2,9 +2,27 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 
-// Fetch GitHub repos
-const response = await fetch('https://api.github.com/users/dphan18/repos?sort=updated&per_page=12');
-const repos = await response.json();
+// 1. Fetch GitHub repos with Error Handling & Authentication
+let repos = [];
+try {
+	const GITHUB_TOKEN = import.meta.env.GITHUB_TOKEN;
+	const response = await fetch('https://api.github.com/users/phandaniel/repos?sort=updated&per_page=12', {
+		headers: GITHUB_TOKEN ? {
+			Authorization: `token ${GITHUB_TOKEN}`,
+			'User-Agent': 'Astro-Portfolio-Fetch'
+		} : {
+			'User-Agent': 'Astro-Portfolio-Fetch'
+		}
+	});
+
+	if (response.ok) {
+		repos = await response.json();
+	} else {
+		console.error(`GitHub API error: ${response.status} ${response.statusText}`);
+	}
+} catch (error) {
+	console.error('Failed to fetch GitHub repositories:', error);
+}
 
 const featuredRepos = Array.isArray(repos) ? repos.filter(repo => !repo.fork) : [];
 ---
