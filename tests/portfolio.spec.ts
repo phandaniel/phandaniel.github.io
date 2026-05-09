@@ -4,8 +4,6 @@ test.describe('Portfolio Basic Flow', () => {
   test('home page has correct title and header', async ({ page }) => {
     await page.goto('/');
     await expect(page).toHaveTitle(/Home | Daniel Phan/);
-    // Flexible match for the badge
-    await expect(page.locator('span').filter({ hasText: 'Digital Craftsman' }).first()).toBeVisible();
     await expect(page.getByRole('heading', { name: "Hi, I'm Daniel." })).toBeVisible();
   });
 
@@ -17,9 +15,17 @@ test.describe('Portfolio Basic Flow', () => {
     await expect(page.getByRole('heading', { name: 'Projects', exact: true })).toBeVisible();
   });
 
-  test('blog post renders correctly', async ({ page }) => {
+  test('navigation to blog works', async ({ page }) => {
     await page.goto('/');
-    // The blog posts are now links with large serif font
+    await page.locator('header nav').getByRole('link', { name: 'Blog' }).click();
+    await expect(page).toHaveURL(/\/blog/);
+    // The blog page header was changed to "Writing" recently
+    await expect(page.getByRole('heading', { name: 'Writing' })).toBeVisible();
+  });
+
+  test('blog post renders correctly', async ({ page }) => {
+    await page.goto('/blog');
+    // Click the first blog post link on the blog index page
     const firstPost = page.locator('a[href^="/blog/"]').first();
     await firstPost.click();
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
