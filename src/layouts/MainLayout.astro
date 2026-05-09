@@ -11,7 +11,7 @@ const { title, description = "Daniel Phan - Digital Craftsman & Full-Stack Devel
 ---
 
 <!doctype html>
-<html lang="en" class="selection:bg-blue-600 selection:text-white">
+<html lang="en" class="selection:bg-accent-blue/20 selection:text-accent-blue">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -21,19 +21,18 @@ const { title, description = "Daniel Phan - Digital Craftsman & Full-Stack Devel
 		<title>{title} | Daniel Phan</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 	</head>
-	<body class="bg-[#fcfcfc] text-[#1a1a1a] antialiased">
+	<body class="antialiased">
 		<Nav />
 		<main>
 			<slot />
 		</main>
-		<footer class="max-w-5xl mx-auto px-8 py-16 border-t border-black/[0.03] text-sm font-medium text-gray-400">
+		<footer class="max-w-5xl mx-auto px-8 py-16 border-t border-border-light text-sm font-medium text-text-secondary">
 			<div class="flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
 				<p>&copy; {new Date().getFullYear()} Daniel Phan. Built with precision.</p>
 				<div class="flex gap-8">
-					<a href="https://github.com/dphan18" class="hover:text-black transition-colors">GitHub</a>
-					<a href="https://linkedin.com/in/danielphan" class="hover:text-black transition-colors">LinkedIn</a>
+					<a href="https://github.com/dphan18" class="hover:text-text-primary transition-colors">GitHub</a>
+					<a href="https://linkedin.com/in/danielphan" class="hover:text-text-primary transition-colors">LinkedIn</a>
 				</div>
 			</div>
 		</footer>

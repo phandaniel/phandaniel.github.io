@@ -11,16 +11,16 @@ const featuredRepos = Array.isArray(repos) ? repos.filter(repo => !repo.fork) : 
 
 <MainLayout title="Projects">
 	<header class="max-w-5xl mx-auto px-8 pt-32 pb-20">
-		<h1 class="text-5xl md:text-7xl font-black tracking-tightest leading-tight text-black mb-8">
-			Crafted <span class="text-blue-600">Solutions.</span>
+		<h1 class="text-5xl md:text-7xl font-semibold tracking-heading leading-tight text-text-primary mb-8">
+			Crafted <span class="text-accent-blue">Solutions.</span>
 		</h1>
-		<p class="text-xl md:text-2xl text-gray-500 font-medium leading-relaxed max-w-xl">
+		<p class="text-xl md:text-2xl text-text-primary/70 font-normal leading-relaxed max-w-xl">
 			A curated selection of applications and experiments, synced directly from my GitHub.
 		</p>
 	</header>
 
 	<section class="max-w-5xl mx-auto px-8 pb-32">
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+		<div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-12">
 			{featuredRepos.map((repo) => (
 				<ProjectCard 
 					title={repo.name.replace(/-/g, ' ')}
@@ -33,15 +33,9 @@ const featuredRepos = Array.isArray(repos) ? repos.filter(repo => !repo.fork) : 
 		</div>
 
 		{featuredRepos.length === 0 && (
-			<div class="p-20 text-center border border-black/[0.03] bg-white rounded-3xl text-gray-400 font-bold tracking-tight">
+			<div class="p-20 text-center border border-border-light bg-bg-surface rounded-card text-text-secondary font-semibold tracking-tight">
 				Syncing with GitHub...
 			</div>
 		)}
 	</section>
 </MainLayout>
-
-<style>
-	.tracking-tightest {
-		letter-spacing: -0.05em;
-	}
-</style>
