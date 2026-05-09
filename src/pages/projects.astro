@@ -5,6 +5,16 @@ import { fetchFeaturedRepos } from '../utils/github';
 import { Github } from 'lucide-astro';
 
 const featured = await fetchFeaturedRepos();
+
+const customDescriptions: Record<string, string> = {
+    'phandaniel.github.io': 'A high-fidelity editorial portfolio and technical journal built with Astro and Tailwind CSS, focusing on performance and minimalist design.',
+    'chess': 'A sophisticated chess engine and UI implementation developed in Python, exploring game logic and move validation algorithms.'
+};
+
+const customImages: Record<string, string> = {
+    'chess': 'https://images.unsplash.com/photo-1528819622765-d6bcf132f793?q=80&w=800&auto=format&fit=crop',
+    'phandaniel.github.io': 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop'
+};
 ---
 
 <MainLayout title="Projects">
@@ -18,15 +28,18 @@ const featured = await fetchFeaturedRepos();
 
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 			{
-				featured.map((project) => (
-					<ProjectCard 
-						title={project.title} 
-						description={project.description} 
-						url={project.url} 
-						language={project.language} 
-						imageUrl={project.imageUrl} 
-					/>
-				))
+				featured.map((project) => {
+                    const repoName = project.url.split('/').pop()?.toLowerCase() || '';
+                    return (
+                        <ProjectCard 
+                            title={project.title} 
+                            description={customDescriptions[repoName] || project.description} 
+                            url={project.url} 
+                            language={project.language} 
+                            imageUrl={customImages[repoName] || project.imageUrl} 
+                        />
+                    );
+                })
 			}
 		</div>
 
@@ -36,6 +49,7 @@ const featured = await fetchFeaturedRepos();
 					<a 
 						href="https://github.com/phandaniel" 
 						target="_blank" 
+                        rel="noopener noreferrer"
 						class="font-serif text-2xl hover:text-brand-blue flex items-center justify-center gap-2 transition-colors duration-300"
 					>
 						View digital forge on GitHub 

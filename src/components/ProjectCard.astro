@@ -12,14 +12,14 @@ interface Props {
 const { title, description, url, language, imageUrl } = Astro.props;
 ---
 
-<a href={url} target="_blank" rel="noopener" class="group card flex flex-col overflow-hidden no-underline">
+<a href={url} target="_blank" rel="noopener noreferrer" class="group card flex flex-col overflow-hidden no-underline">
 	{
 		imageUrl && (
 			<div class="h-40 overflow-hidden border-b border-zinc-100">
 				<img 
 					src={imageUrl} 
 					alt={title} 
-					class="w-full h-full object-cover grayscale-[0.4] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" 
+					class="w-full h-full object-cover grayscale-[0.5] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" 
 				/>
 			</div>
 		)
