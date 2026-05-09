@@ -1,0 +1,27 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname === "/" ? "" : pathname.slice(1).replace(/\/$/, "");
+
+const links = [
+    { href: "/", label: "Home" },
+    { href: "/projects", label: "Projects" },
+];
+---
+
+<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-stone-50/80 border-b border-zinc-200/50">
+    <nav class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="text-lg font-bold tracking-tighter text-zinc-900 hover:opacity-50 transition-opacity font-sans">
+            HD
+        </a>
+        <div class="flex gap-6">
+            {links.map(link => (
+                <a 
+                    href={link.href} 
+                    class={`text-sm transition-colors ${currentPath === link.href.slice(1) ? "font-medium text-zinc-900" : "text-zinc-500 hover:text-zinc-900"}`}
+                >
+                    {link.label}
+                </a>
+            ))}
+        </div>
+    </nav>
+</header>

@@ -1,5 +1,5 @@
 ---
-import Nav from '../components/Nav.astro';
+import Header from '../components/Header.astro';
 import '../styles/global.css';
 
 interface Props {
@@ -11,7 +11,7 @@ const { title, description = "Daniel Phan - Digital Craftsman & Full-Stack Devel
 ---
 
 <!doctype html>
-<html lang="en" class="selection:bg-accent-blue/10 selection:text-accent-blue">
+<html lang="en" class="selection:bg-zinc-200 selection:text-zinc-900">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -21,18 +21,19 @@ const { title, description = "Daniel Phan - Digital Craftsman & Full-Stack Devel
 		<title>{title} | Daniel Phan</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400&display=swap" rel="stylesheet">
 	</head>
-	<body class="antialiased">
-		<Nav />
+	<body class="bg-stone-50 text-zinc-900 antialiased font-sans">
+		<Header />
 		<main>
 			<slot />
 		</main>
-		<footer class="max-w-5xl mx-auto px-8 py-20 border-t border-border-light text-sm font-medium text-text-secondary text-center md:text-left">
-			<div class="flex flex-col md:flex-row justify-between items-center gap-8">
+		<footer class="max-w-4xl mx-auto px-6 py-20 border-t border-zinc-200/50 text-sm font-medium text-zinc-500">
+			<div class="flex flex-col md:flex-row justify-between items-center gap-6">
 				<p>&copy; {new Date().getFullYear()} Daniel Phan. Crafted with precision.</p>
-				<div class="flex gap-10">
-					<a href="https://github.com/dphan18" class="hover:text-text-primary transition-colors no-underline">GitHub</a>
-					<a href="https://linkedin.com/in/danielphan" class="hover:text-text-primary transition-colors no-underline">LinkedIn</a>
+				<div class="flex gap-8">
+					<a href="https://github.com/dphan18" class="hover:text-zinc-900 transition-colors">GitHub</a>
+					<a href="https://linkedin.com/in/danielphan" class="hover:text-zinc-900 transition-colors">LinkedIn</a>
 				</div>
 			</div>
 		</footer>

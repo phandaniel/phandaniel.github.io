@@ -4,32 +4,34 @@ test.describe('Portfolio Basic Flow', () => {
   test('home page has correct title and header', async ({ page }) => {
     await page.goto('/');
     await expect(page).toHaveTitle(/Home | Daniel Phan/);
-    await expect(page.getByText('Digital Craftsman', { exact: true })).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'Precision in every pixel.' })).toBeVisible();
+    // Use the specific badge element to avoid strict mode violations
+    await expect(page.locator('span:has-text("Digital Craftsman")').first()).toBeVisible();
+    await expect(page.getByRole('heading', { name: "Hi, I'm Daniel." })).toBeVisible();
   });
 
   test('navigation to projects works', async ({ page }) => {
     await page.goto('/');
-    await page.getByRole('link', { name: 'Projects' }).click();
+    // Use the nav link specifically
+    await page.locator('header nav').getByRole('link', { name: 'Projects' }).click();
     await expect(page).toHaveURL(/\/projects/);
-    await expect(page.getByRole('heading', { name: 'Crafted Solutions.' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Projects', exact: true })).toBeVisible();
   });
 
   test('blog post renders correctly', async ({ page }) => {
     await page.goto('/');
-    // Click the first blog post link
-    await page.locator('article h3').first().click();
+    // The blog posts are now links with large serif font
+    const firstPost = page.locator('a[href^="/blog/"]').first();
+    await firstPost.click();
     await expect(page.getByRole('heading', { level: 1 })).toBeVisible();
     await expect(page.getByText('The Three Pillars of Precision')).toBeVisible();
   });
 
   test('projects page loads cards', async ({ page }) => {
     await page.goto('/projects');
-    // We expect at least one project card to be rendered or the syncing state
+    // Project cards are now links to external GitHub
     const cards = page.locator('a[target="_blank"]');
-    const syncingState = page.getByText('Syncing with GitHub...');
+    const emptyState = page.getByText('Syncing with the digital forge...');
     
-    // Check if either cards are visible or syncing state is visible
-    await expect(cards.first().or(syncingState)).toBeVisible();
+    await expect(cards.first().or(emptyState)).toBeVisible();
   });
 });
