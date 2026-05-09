@@ -1,38 +1,38 @@
 # Design System
 
 ## Overview
-This portfolio uses a pristine, premium light mode design system inspired by modern minimalist principles (elegant, clear, and precise).
+This portfolio uses a pristine, premium light mode design system inspired by Apple's signature aesthetic (elegant, clear, and precise).
 
 ## Color Palette
 The theme uses a soft, sophisticated light palette driven by CSS variables in `style.css`.
 
-- **Background Body (`--bg-body`):** `#f5f5f7` - A soft, warm off-white for the main body.
+- **Background Body (`--bg-body`):** `#f5f5f7` - The iconic Apple light gray.
 - **Background Card (`--bg-card`):** `#ffffff` - Pure white for content cards to create elevation.
-- **Text Primary (`--text-primary`):** `#1d1d1f` - Deep charcoal for high readability without harshness.
-- **Text Secondary (`--text-secondary`):** `#515154` - Muted slate gray for descriptions.
-- **Accent (`--accent`):** `#0066cc` - A professional, modern blue for primary actions.
+- **Text Primary (`--text-primary`):** `#1d1d1f` - Deep charcoal for high readability.
+- **Text Secondary (`--text-secondary`):** `#515154` - Muted gray for descriptions.
+- **Accent (`--accent`):** `#0071e3` - Apple Signature Blue for primary actions.
 
 ## Typography
-- **Primary Font:** 'Inter', sans-serif (Geometric Sans).
+- **Primary Font:** System Font Stack (`-apple-system`, `BlinkMacSystemFont`, etc.)
 - **Header Weights:** 700 (Bold).
 - **Body Weights:** 400 (Regular) to 500 (Medium).
-- **Line Height:** 1.5 - 1.6 for maximum legibility.
-- **Letter Spacing:** Tighter spacing (`-0.03em`) on hero headers for a premium feel.
+- **Line Height:** 1.5 for maximum legibility.
+- **Letter Spacing:** Tighter spacing (`-0.03em`) on large headers.
 
 ## Component Architecture
 
 ### 1. Navigation
-- **Glassmorphism:** Uses `backdrop-filter: blur(20px)` and a semi-transparent white background (`rgba(245, 245, 247, 0.75)`) for an elegant, floating feel.
-- **Precision Border:** A subtle `1px` bottom border defines the navigation area.
+- **Glassmorphism:** Uses `backdrop-filter: blur(20px)` and a semi-transparent white background (`rgba(245, 245, 247, 0.8)`) for an elegant, floating feel.
 
-### 2. Project & Info Cards
-- **Soft Depth:** Removed harsh borders in favor of very soft, diffused shadows (`rgba(0,0,0,0.06)`).
-- **Tactile Hover:** Cards lift (`translateY(-8px)`) and shadows expand smoothly on interaction.
-- **Rounded Corners:** Consistent `18px` radius for a friendly yet modern look.
+### 2. Floating Cards (Projects & Topics)
+- **Soft Depth:** Uses low-opacity diffused shadows (`rgba(0,0,0,0.04)`).
+- **Tactile Hover:** Cards lift (`translateY(-4px)`) and shadows expand smoothly.
+- **Rounded Corners:** Consistent `18px` radius.
 
-### 3. Grid System
-- Uses **CSS Grid** with `repeat(auto-fill, minmax(340px, 1fr))` for a fluid, responsive gallery.
+### 3. Contact Form
+- **Soft Inputs:** Light gray borders (`#d2d2d7`) and `12px` rounded corners.
+- **Premium Focus:** Blue border (`#0071e3`) with a soft blue outer glow (`rgba(0, 113, 227, 0.2)`).
 
-### 4. Animations
-- **Staggered Reveal:** CSS-driven staggered animations (`reveal-1`, `reveal-2`, `reveal-3`) create a purposeful entrance experience.
-- **Cubic Bezier:** Uses `cubic-bezier(0.2, 0.8, 0.2, 1)` for smooth, natural movement.
+### 4. Buttons
+- **Pill Shape:** Modern `980px` border-radius.
+- **Interactive Scale:** Subtle scale-up effect (`scale(1.04)`) on hover.
