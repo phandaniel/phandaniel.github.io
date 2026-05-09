@@ -2,7 +2,13 @@
 import MainLayout from '../layouts/MainLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 
-// 1. Fetch GitHub repos with Error Handling & Authentication
+// 1. Image Overrides Mapping
+const customImages: Record<string, string> = {
+    'chess': 'https://images.unsplash.com/photo-1528819622765-d6bcf132f793?q=80&w=800&auto=format&fit=crop',
+    'phandaniel.github.io': 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop'
+};
+
+// 2. Fetch GitHub repos with Error Handling & Authentication
 let repos = [];
 try {
 	const GITHUB_TOKEN = import.meta.env.GITHUB_TOKEN;
@@ -44,7 +50,7 @@ const featuredRepos = Array.isArray(repos) ? repos.filter(repo => !repo.fork) : 
 					description={repo.description || "No description provided."}
 					url={repo.html_url}
 					language={repo.language}
-					imageUrl={`https://opengraph.githubassets.com/1/phandaniel/${repo.name}`}
+					imageUrl={customImages[repo.name] || `https://opengraph.githubassets.com/1/phandaniel/${repo.name}`}
 				/>
 			))}
 		</div>
