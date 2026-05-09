@@ -9,58 +9,94 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header class="navbar">
-        <a class="logo" href="index.html">DP</a>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="index.html" aria-label="Home">Home</a></li>
-                <li><a href="projects.html" class="active" aria-label="Projects">Projects</a></li>
-                <li><a href="topics.html" aria-label="Topics">Topics</a></li>
-                <li><a href="contact.html" aria-label="Contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <a class="logo" href="index.html">DP</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html" aria-label="Home">Home</a></li>
+                    <li><a href="projects.html" class="active" aria-label="Projects">Projects</a></li>
+                    <li><a href="topics.html" aria-label="Topics">Topics</a></li>
+                    <li><a href="contact.html" aria-label="Contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main class="content">
-        <h1 class="reveal">Projects</h1>
-        <p class="reveal">Here are some things I've been working on:</p>
+
+    <main class="container">
+        <header class="projects-header reveal">
+            <h1>Featured Projects</h1>
+            <p>A collection of web applications, hardware experiments, and digital experiences I've crafted.</p>
+        </header>
+
         <div class="projects-grid">
-            <article class="project reveal">
-                <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&w=800&q=60" alt="Screenshot of website redesign" />
-                <div class="project-info">
+            <!-- Project 1 -->
+            <article class="project-card reveal">
+                <div class="card-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&w=800&q=60" alt="Website redesign showcase">
+                </div>
+                <div class="card-content">
                     <h2>Website Redesign</h2>
-                    <p>Revamping my personal site with a modern look and better accessibility.</p>
-                    <a href="https://github.com/dphan18/dphan18.github.io">GitHub Repo</a>
+                    <p>A high-performance portfolio redesign focusing on accessibility, modern dark mode aesthetics, and seamless user experiences.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/dphan18/dphan18.github.io" class="btn btn-primary">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                        <a href="#" class="btn btn-outline">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
                 </div>
             </article>
-            <article class="project reveal">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=60" alt="Data visualizer screenshot" />
-                <div class="project-info">
+
+            <!-- Project 2 -->
+            <article class="project-card reveal">
+                <div class="card-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=60" alt="Data visualizer dashboard">
+                </div>
+                <div class="card-content">
                     <h2>Data Visualizer</h2>
-                    <p>A small tool for exploring CSV data directly in the browser.</p>
-                    <a href="https://github.com/dphan18/data-visualizer">GitHub Repo</a>
+                    <p>A browser-based tool for exploring and visualizing complex CSV datasets with interactive charts and real-time filtering.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/dphan18/data-visualizer" class="btn btn-primary">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
                 </div>
             </article>
-            <article class="project reveal">
-                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=60" alt="Smart home dashboard" />
-                <div class="project-info">
-                    <h2>Home Automation Setup</h2>
-                    <p>Experimenting with smart devices and custom dashboards.</p>
-                    <a href="https://github.com/dphan18/home-automation">GitHub Repo</a>
+
+            <!-- Project 3 -->
+            <article class="project-card reveal">
+                <div class="card-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=60" alt="Smart home automation dashboard">
+                </div>
+                <div class="card-content">
+                    <h2>Home Automation</h2>
+                    <p>An IoT integration platform for managing smart home devices via a custom-built dashboard and localized control server.</p>
+                    <div class="card-actions">
+                        <a href="https://github.com/dphan18/home-automation" class="btn btn-primary">
+                            <i class="fab fa-github"></i> Source Code
+                        </a>
+                    </div>
                 </div>
             </article>
         </div>
     </main>
+
     <footer>
-        <p>&copy; <span id="year"></span> Daniel Phan</p>
-        <div class="social-links">
-            <a href="https://github.com/dphan18" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
-            <a href="https://www.linkedin.com/in/danielphan" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
-            <a href="https://twitter.com/dphan18" aria-label="Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Daniel Phan. Crafted with precision.</p>
+            <div class="social-links">
+                <a href="https://github.com/dphan18" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/danielphan" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/dphan18" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
         </div>
     </footer>
+
     <script src="main.js"></script>
 </body>
 </html>
