@@ -15,9 +15,9 @@ const philosophies = [
 const stack = ["Astro", "TypeScript", "Tailwind CSS", "Node.js", "React", "Next.js", "PostgreSQL", "Docker"];
 ---
 <MainLayout title="Home">
-	<!-- Hero Section -->
-	<section class="max-w-4xl mx-auto px-6 flex flex-col justify-center min-h-[85vh] py-32">
-		<h1 class="font-serif text-6xl md:text-8xl leading-tight mb-8">
+	<!-- Hero Section: Added significant pt-40 to fix header overlap -->
+	<section class="max-w-4xl mx-auto px-6 pt-40 pb-16 md:pb-24">
+		<h1 class="font-serif text-5xl md:text-7xl leading-tight mb-8">
 			Hi, I'm Daniel. <br/>
 			Software engineer & digital craftsman.
 		</h1>
@@ -43,10 +43,10 @@ const stack = ["Astro", "TypeScript", "Tailwind CSS", "Node.js", "React", "Next.
 		</div>
 	</section>
 
-	<!-- Selected Works Section -->
-	<section class="max-w-4xl mx-auto px-6 py-48">
+	<!-- Selected Works Section: Unified container spacing -->
+	<section class="max-w-4xl mx-auto px-6 py-16 md:py-24">
 		<span class="section-label">Selected Works</span>
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 			{featured.map(p => (
 				<ProjectCard 
 					title={p.title} 
@@ -57,28 +57,30 @@ const stack = ["Astro", "TypeScript", "Tailwind CSS", "Node.js", "React", "Next.
 				/>
 			))}
 		</div>
-		<a href="/projects" class="group inline-flex items-center gap-2 text-sm font-bold text-zinc-900 hover:text-brand-blue transition-colors">
-			View all projects 
-			<ArrowRight size={16} class="transition-transform group-hover:translate-x-1" />
-		</a>
+		<div class="mt-8">
+			<a href="/projects" class="group inline-flex items-center gap-2 text-sm font-bold text-zinc-900 hover:text-brand-blue transition-colors no-underline">
+				View all projects 
+				<ArrowRight size={16} class="transition-transform group-hover:translate-x-1" />
+			</a>
+		</div>
 	</section>
 
-	<!-- Philosophy Section -->
-	<section class="max-w-4xl mx-auto px-6 py-48">
+	<!-- Philosophy Section: Refined 3-column grid -->
+	<section class="max-w-4xl mx-auto px-6 py-16 md:py-24">
 		<span class="section-label">Philosophy</span>
 		<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
 			{philosophies.map(p => (
 				<div class="flex flex-col gap-4">
 					<span class="font-mono text-xs text-zinc-300">{p.id}</span>
-					<h3 class="text-xl font-semibold">{p.title}</h3>
+					<h3 class="text-xl font-semibold tracking-tight">{p.title}</h3>
 					<p class="text-zinc-500 text-sm leading-relaxed">{p.desc}</p>
 				</div>
 			))}
 		</div>
 	</section>
 
-	<!-- Tech Stack Section -->
-	<section class="max-w-4xl mx-auto px-6 py-48">
+	<!-- Tech Stack Section: Unified container spacing -->
+	<section class="max-w-4xl mx-auto px-6 py-16 md:py-24">
 		<span class="section-label">Toolkit</span>
 		<div class="flex flex-wrap gap-3">
 			{stack.map(s => (
