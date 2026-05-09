@@ -3,57 +3,45 @@
 A high-fidelity, editorial personal portfolio and technical journal built with **Astro** and **Tailwind CSS**. This project follows the "Digital Craftsman" philosophy: precision in engineering, minimalism in design, and brutal performance.
 
 ## 💎 Design Philosophy
-This portfolio is built as a custom UI application, moving away from standard document-based rendering to a high-end editorial aesthetic.
+This portfolio is built as a custom UI application, moving away from standard document-based rendering to an "Editorial Minimalism" aesthetic.
 
-- **Editorial Minimalism:** A sophisticated `stone-50` and `zinc-900` palette that emphasizes content through whitespace and typography.
-- **Dual-Font System:** A mix of precision **System Sans-Serif** for UI elements and elegant **Serif (Newsreader)** for long-form headers and storytelling.
-- **Bento-Style Dashboard:** Projects are organized in a high-density, interactive grid with tactile hover states and micro-animations.
-- **Glassmorphism:** A sticky navigation layer with advanced `backdrop-blur` for a native, modern layered feel.
+- **Minimalist Landing:** A focused Home page that introduces the brand with maximum impact and intentional whitespace.
+- **Editorial Typography:** A sophisticated dual-font system mixing precision **System Sans-Serif** with elegant **Serif (Newsreader)**.
+- **Technical Journal:** A curated, year-grouped directory of engineering insights and architectural thoughts.
+- **Glassmorphism:** High-precision sticky navigation with `backdrop-blur` for a native, layered feel.
 
 ## 🚀 Technical Architecture
-- **Framework:** [Astro 4](https://astro.build/) — Zero-JS by default, delivering sub-second load times and peak SEO performance.
-- **Styling:** [Tailwind CSS](https://tailwindcss.com/) — A custom-configured design system with precise typography and color tokens.
-- **Content:** [Markdown Collections](https://docs.astro.build/en/guides/content-collections/) — Type-safe, file-based technical blogging with isolated `@tailwindcss/typography` styling.
-- **Data Integration:** [GitHub REST API](https://docs.github.com/en/rest) — Real-time automated synchronization of featured repositories.
-- **Quality Assurance:** [Playwright](https://playwright.dev/) — Comprehensive E2E testing suite verifying navigation, rendering, and API integration.
+- **Framework:** [Astro 6](https://astro.build/) — Leveraging the modern Content Layer API for sub-second performance.
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/) — High-precision utility-first design system.
+- **Content:** [Markdown Collections](https://docs.astro.build/en/guides/content-collections/) — Type-safe, file-based technical blogging.
+- **Data Integration:** [GitHub REST API](https://docs.github.com/en/rest) — Real-time automated project synchronization.
+- **Verification:** [Playwright](https://playwright.dev/) — End-to-End (E2E) testing suite for all core functional flows.
 
 ## 📂 Core Structure
-- `src/pages/index.astro` — The editorial home page and technical journal feed.
-- `src/pages/projects.astro` — A high-performance interactive gallery of technical work.
-- `src/content/blog/` — The source for all long-form technical writing.
-- `src/components/` — Atomic UI components (Header, ProjectCards) built with utility-first precision.
+- `src/pages/index.astro` — Focused minimalist hero entrance.
+- `src/pages/projects.astro` — Interactive dashboard of technical solutions.
+- `src/pages/blog/index.astro` — Editorial directory of technical writing.
+- `src/content/blog/` — Source Markdown for technical journal entries.
 - `tests/` — Automated E2E verification suite.
 
 ## 🏁 Getting Started
 
-### Installation
-1. **Clone the repository:**
-   ```bash
-   git clone [repository-url]
-   cd phandaniel.github.io
-   ```
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-### Development
-Start the local server at `http://localhost:4321`:
+### Installation & Development
 ```bash
+npm install
 npm run dev
 ```
+Access the site at `http://localhost:4321`.
 
-### Verification
-Execute the full E2E testing suite:
+### Quality Control
 ```bash
 npm test
 ```
 
 ### Production Build
-Generate a highly-optimized static build:
 ```bash
 npm run build
 ```
 
 ---
-© 2026 Daniel Phan. Built with precision.
+© 2026 Daniel Phan. Crafted with precision.
