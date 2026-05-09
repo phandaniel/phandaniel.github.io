@@ -4,11 +4,12 @@ import ProjectCard from '../components/ProjectCard.astro';
 import { fetchFeaturedRepos } from '../utils/github';
 import { getCollection } from 'astro:content';
 import { SITE_METADATA } from '../data/constants';
+import { Terminal } from 'lucide-astro';
 
 const curatedProjects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 const githubRepos = await fetchFeaturedRepos();
 
-// Filter out GitHub repos that are already in curated projects (by URL or custom field if needed)
+// Filter out GitHub repos that are already in curated projects
 const curatedUrls = new Set(curatedProjects.map(p => p.data.url));
 const filteredGithub = githubRepos.filter(r => !curatedUrls.has(r.url));
 
@@ -23,19 +24,28 @@ const allProjects = [
     ...filteredGithub
 ];
 ---
+
 <MainLayout 
     title="Projects" 
-    description="A comprehensive dashboard of technical solutions, architectural experiments, and open-source contributions by Daniel Phan."
+    description="Explore a curated dashboard of technical solutions, ranging from high-performance web applications to advanced system implementations."
 >
-	<div class="max-w-4xl mx-auto px-6 py-12">
-		<header class="mb-16">
-			<h1 class="font-serif text-5xl md:text-6xl text-zinc-900 leading-tight mb-4">Projects</h1>
-			<p class="font-sans text-lg text-zinc-500 max-w-xl">
-				A dashboard of technical solutions, architectural experiments, and open-source contributions.
+	<div class="max-w-6xl mx-auto px-6 py-20">
+		<!-- Dashboard Header -->
+		<header class="mb-20">
+            <div class="flex items-center gap-3 text-brand-blue mb-4">
+                <Terminal size={24} strokeWidth={2.5} />
+                <span class="text-xs font-bold uppercase tracking-[0.3em]">Engineering Portfolio</span>
+            </div>
+			<h1 class="font-serif text-5xl md:text-7xl text-zinc-900 leading-tight mb-6">
+                Projects
+            </h1>
+			<p class="font-sans text-xl text-zinc-500 max-w-2xl leading-relaxed">
+				A dashboard of technical solutions, architectural experiments, and open-source contributions. Focused on performance, precision, and clean code.
 			</p>
 		</header>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+		<!-- Projects Dashboard Grid -->
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 			{allProjects.map((project) => (
 				<ProjectCard 
 					title={project.title} 
@@ -50,10 +60,9 @@ const allProjects = [
 		{allProjects.length === 0 && (
 			<div class="p-20 text-center bg-white border border-zinc-200 rounded-3xl">
 				<a 
-                    href={`https://github.com/${SITE_METADATA.author.toLowerCase().replace(/\s+/g, '')}`} 
+                    href={`https://github.com/phandaniel`} 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    aria-label="View profile on GitHub"
                     class="font-serif text-2xl text-zinc-900 hover:text-brand-blue transition-colors inline-flex items-center gap-2 no-underline"
                 >
 					View my digital forge on GitHub 
