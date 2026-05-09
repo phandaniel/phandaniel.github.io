@@ -1,23 +1,48 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import { fetchFeaturedRepos } from '../utils/github';
+import { Github } from 'lucide-astro';
 
-let repos = [];
-const overrides = { 'chess': 'https://images.unsplash.com/photo-1528819622765-d6bcf132f793?q=80&w=800&auto=format&fit=crop', 'phandaniel.github.io': 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800&auto=format&fit=crop' };
-
-try {
-	const res = await fetch('https://api.github.com/users/phandaniel/repos', { headers: import.meta.env.GITHUB_TOKEN ? { Authorization: `Bearer ${import.meta.env.GITHUB_TOKEN}`, 'User-Agent': 'Astro' } : { 'User-Agent': 'Astro' } });
-	if (res.ok) repos = await res.json();
-} catch (e) { console.error(e); }
-
-const featured = Array.isArray(repos) ? repos.filter(r => !r.fork) : [];
+const featured = await fetchFeaturedRepos();
 ---
+
 <MainLayout title="Projects">
 	<div class="max-w-4xl mx-auto px-6 py-20">
-		<header class="mb-16"><h1 class="font-serif text-5xl md:text-6xl mb-4">Projects</h1><p class="text-text-muted text-lg max-w-xl">A dashboard of technical solutions and architectural experiments.</p></header>
+		<header class="mb-16">
+			<h1 class="font-serif text-5xl md:text-6xl mb-4">Projects</h1>
+			<p class="text-text-muted text-lg max-w-xl">
+				A dashboard of technical solutions and architectural experiments.
+			</p>
+		</header>
+
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-			{featured.map(r => <ProjectCard title={r.name.replace(/-/g, ' ')} description={r.description} url={r.html_url} language={r.language} imageUrl={overrides[r.name] || `https://opengraph.githubassets.com/1/phandaniel/${r.name}`} />)}
+			{
+				featured.map((project) => (
+					<ProjectCard 
+						title={project.title} 
+						description={project.description} 
+						url={project.url} 
+						language={project.language} 
+						imageUrl={project.imageUrl} 
+					/>
+				))
+			}
 		</div>
-		{featured.length === 0 && <div class="p-20 text-center bg-white border border-zinc-200 rounded-card"><a href="https://github.com/phandaniel" target="_blank" class="font-serif text-2xl hover:text-brand-blue flex items-center justify-center gap-2">View digital forge on GitHub <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a></div>}
+
+		{
+			featured.length === 0 && (
+				<div class="p-20 text-center bg-white border border-zinc-200 rounded-card">
+					<a 
+						href="https://github.com/phandaniel" 
+						target="_blank" 
+						class="font-serif text-2xl hover:text-brand-blue flex items-center justify-center gap-2 transition-colors duration-300"
+					>
+						View digital forge on GitHub 
+						<Github size={24} strokeWidth={2} />
+					</a>
+				</div>
+			)
+		}
 	</div>
 </MainLayout>
