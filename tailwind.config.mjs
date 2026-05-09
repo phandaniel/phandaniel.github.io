@@ -4,7 +4,15 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+        sans: [
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          'Helvetica',
+          'Arial',
+          'sans-serif',
+        ],
       },
       colors: {
         'bg-body': '#f5f5f7',
@@ -29,7 +37,7 @@ export default {
       },
       lineHeight: {
         'body': '1.47059',
-      }
+      },
     },
   },
   plugins: [],

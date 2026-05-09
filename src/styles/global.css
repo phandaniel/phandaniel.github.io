@@ -33,10 +33,6 @@
     @apply font-semibold tracking-heading text-text-primary;
   }
 
-  h4, h5, h6 {
-    @apply font-bold tracking-tight text-text-primary;
-  }
-
   p {
     @apply font-normal text-text-primary;
   }
@@ -54,10 +50,12 @@
   .btn-primary {
     @apply inline-block bg-accent-blue text-white rounded-pill font-semibold border-none transition-all duration-300;
     padding: 14px 28px;
+    text-decoration: none !important;
   }
 
   .btn-primary:hover {
-    @apply bg-accent-blue-hover scale-[1.02];
+    @apply bg-accent-blue-hover scale-[1.02] shadow-sm;
+    text-decoration: none !important;
   }
 
   .card {
@@ -68,8 +66,12 @@
     @apply -translate-y-1 shadow-hover;
   }
 
+  .section-padding {
+    @apply py-[80px] px-[20px];
+  }
+
   .input-field {
-    @apply bg-bg-surface border border-border-light rounded-input px-4 py-4 outline-none transition-all duration-300;
+    @apply bg-bg-surface border border-border-light rounded-input px-4 py-4 outline-none transition-all duration-300 w-full;
   }
 
   .input-field:focus {
