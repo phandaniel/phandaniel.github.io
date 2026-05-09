@@ -44,6 +44,7 @@ const featuredRepos = Array.isArray(repos) ? repos.filter(repo => !repo.fork) : 
 					description={repo.description || "No description provided."}
 					url={repo.html_url}
 					language={repo.language}
+					imageUrl={`https://opengraph.githubassets.com/1/phandaniel/${repo.name}`}
 				/>
 			))}
 		</div>
