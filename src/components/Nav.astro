@@ -3,21 +3,21 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname === "/" ? "" : pathname.slice(1).replace(/\/$/, "");
 ---
 
-<header class="fixed top-0 left-0 right-0 z-50 bg-apple-bg/80 backdrop-blur-xl border-b border-apple-border">
-    <nav class="max-w-4xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="/" class="text-xl font-bold tracking-tighter hover:opacity-70 transition-opacity">
+<header class="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-2xl border-b border-black/[0.03]">
+    <nav class="max-w-5xl mx-auto px-8 h-20 flex items-center justify-between">
+        <a href="/" class="text-xl font-black tracking-tighter text-black hover:opacity-50 transition-opacity">
             HD
         </a>
-        <div class="flex gap-10">
+        <div class="flex gap-12">
             <a 
                 href="/" 
-                class={`text-sm font-semibold transition-colors hover:text-apple-blue ${currentPath === "" ? "text-apple-blue" : "text-apple-secondary"}`}
+                class={`text-sm font-bold tracking-tight transition-all hover:text-black ${currentPath === "" ? "text-black" : "text-gray-400"}`}
             >
                 Home
             </a>
             <a 
                 href="/projects" 
-                class={`text-sm font-semibold transition-colors hover:text-apple-blue ${currentPath === "projects" ? "text-apple-blue" : "text-apple-secondary"}`}
+                class={`text-sm font-bold tracking-tight transition-all hover:text-black ${currentPath === "projects" ? "text-black" : "text-gray-400"}`}
             >
                 Projects
             </a>

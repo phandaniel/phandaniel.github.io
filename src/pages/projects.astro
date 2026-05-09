@@ -10,28 +10,38 @@ const featuredRepos = Array.isArray(repos) ? repos.filter(repo => !repo.fork) : 
 ---
 
 <MainLayout title="Projects">
-	<header class="mb-16">
-		<h1 class="text-4xl font-extrabold mb-4">Featured Work</h1>
-		<p class="text-lg text-apple-secondary max-w-xl">
-			A curated selection of applications and experiments, synced directly from GitHub.
+	<header class="max-w-5xl mx-auto px-8 pt-32 pb-20">
+		<h1 class="text-5xl md:text-7xl font-black tracking-tightest leading-tight text-black mb-8">
+			Crafted <span class="text-blue-600">Solutions.</span>
+		</h1>
+		<p class="text-xl md:text-2xl text-gray-500 font-medium leading-relaxed max-w-xl">
+			A curated selection of applications and experiments, synced directly from my GitHub.
 		</p>
 	</header>
 
-	<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-		{featuredRepos.map((repo) => (
-			<ProjectCard 
-				title={repo.name.replace(/-/g, ' ')}
-				description={repo.description || "No description provided."}
-				url={repo.html_url}
-				language={repo.language}
-				stars={repo.stargazers_count}
-			/>
-		))}
-	</div>
-
-	{featuredRepos.length === 0 && (
-		<div class="p-10 text-center border-2 border-dashed border-apple-border rounded-2xl text-apple-secondary">
-			Unable to load repositories. Please check connection or API limits.
+	<section class="max-w-5xl mx-auto px-8 pb-32">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+			{featuredRepos.map((repo) => (
+				<ProjectCard 
+					title={repo.name.replace(/-/g, ' ')}
+					description={repo.description || "No description provided."}
+					url={repo.html_url}
+					language={repo.language}
+					stars={repo.stargazers_count}
+				/>
+			))}
 		</div>
-	)}
+
+		{featuredRepos.length === 0 && (
+			<div class="p-20 text-center border border-black/[0.03] bg-white rounded-3xl text-gray-400 font-bold tracking-tight">
+				Syncing with GitHub...
+			</div>
+		)}
+	</section>
 </MainLayout>
+
+<style>
+	.tracking-tightest {
+		letter-spacing: -0.05em;
+	}
+</style>
