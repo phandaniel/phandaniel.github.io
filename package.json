@@ -45,5 +45,13 @@
     "@astrojs/tailwind": {
       "astro": "$astro"
     }
+  },
+  "lint-staged": {
+    "*.{js,ts,astro,json,md}": [
+      "prettier --write"
+    ],
+    "*.{js,ts,astro}": [
+      "eslint --fix"
+    ]
   }
 }
