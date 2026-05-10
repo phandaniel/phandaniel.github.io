@@ -28,26 +28,14 @@ const finalImageUrl = imageUrl || `https://opengraph.githubassets.com/1/phandani
 >
 	<div class="h-44 overflow-hidden border-b border-zinc-100 bg-zinc-50 relative flex items-center justify-center">
         {finalImageUrl ? (
-            typeof finalImageUrl === 'string' ? (
-                <img 
-                    src={finalImageUrl} 
-                    alt="" 
-                    loading="lazy"
-                    width="800"
-                    height="400"
-                    class="w-full h-full object-cover grayscale-[0.4] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" 
-                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                />
-            ) : (
-                <Image 
-                    src={finalImageUrl} 
-                    alt=""
-                    width={800}
-                    height={400}
-                    format="webp"
-                    class="w-full h-full object-cover grayscale-[0.4] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" 
-                />
-            )
+            <Image 
+                src={finalImageUrl} 
+                alt={`Screenshot or preview of ${title} project`}
+                width={800}
+                height={400}
+                format="webp"
+                class="w-full h-full object-cover grayscale-[0.4] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" 
+            />
         ) : null}
         
         <!-- Robust Placeholder Icon (Visible if image fails or is missing) -->

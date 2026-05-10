@@ -6,10 +6,19 @@ export interface FeaturedRepo {
 	imageUrl: string;
 }
 
+export interface GitHubRepository {
+	name: string;
+	description: string | null;
+	html_url: string;
+	language: string | null;
+	fork: boolean;
+	[key: string]: any;
+}
+
 /**
  * Cache for GitHub API responses to prevent rate limiting during build
  */
-const repoCache = new Map<string, any[]>();
+const repoCache = new Map<string, FeaturedRepo[]>();
 
 export async function fetchFeaturedRepos(username: string = 'phandaniel'): Promise<FeaturedRepo[]> {
 	const GITHUB_TOKEN = import.meta.env.GITHUB_TOKEN;
@@ -39,11 +48,11 @@ export async function fetchFeaturedRepos(username: string = 'phandaniel'): Promi
 			return [];
 		}
 
-		const repos: any[] = await response.json();
+		const repos: GitHubRepository[] = await response.json();
 
 		const featured = repos
-			.filter((repo: any) => !repo.fork)
-			.map((repo: any) => ({
+			.filter((repo) => !repo.fork)
+			.map((repo) => ({
 				title: repo.name.replace(/-/g, ' '),
 				description: repo.description || 'No description provided.',
 				url: repo.html_url,

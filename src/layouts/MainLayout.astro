@@ -1,20 +1,23 @@
 ---
 import Header from '../components/Header.astro';
+import { SITE_METADATA } from '../data/constants';
 import '../styles/global.css';
 
 interface Props {
 	title: string;
 	description?: string;
     canonicalURL?: string | URL;
+    image?: string;
 }
 
 const { 
     title, 
-    description = "Daniel Phan - Digital Craftsman & Full-Stack Developer",
-    canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://phandaniel.github.io")
+    description = SITE_METADATA.defaultDescription,
+    canonicalURL = new URL(Astro.url.pathname, Astro.site || SITE_METADATA.siteUrl),
+    image = "/og-image.png" // Fallback to a default OG image
 } = Astro.props;
 
-const siteTitle = `${title} | Daniel Phan`;
+const siteTitle = `${title} | ${SITE_METADATA.author}`;
 ---
 <html lang="en" class="selection:bg-zinc-200">
 	<head>
@@ -23,6 +26,20 @@ const siteTitle = `${title} | Daniel Phan`;
 		<meta name="description" content={description} />
         <link rel="canonical" href={canonicalURL} />
         <title>{siteTitle}</title>
+
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalURL} />
+        <meta property="og:title" content={siteTitle} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={new URL(image, canonicalURL)} />
+
+        <!-- Twitter -->
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={canonicalURL} />
+        <meta property="twitter:title" content={siteTitle} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={new URL(image, canonicalURL)} />
 		
 		<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
