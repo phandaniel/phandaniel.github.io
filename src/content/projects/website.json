@@ -1,1 +1,9 @@
-{ "title": "Digital Craftsman Portfolio", "description": "A high-fidelity editorial portfolio and technical journal. Built with Astro 6 and Tailwind CSS, featuring automated GitHub integration, E2E testing with Playwright, and a minimalist Design System.", "url": "https://github.com/phandaniel/phandaniel.github.io", "language": "Astro", "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80", "githubRepo": "phandaniel.github.io", "order": 1 }
+{
+  "title": "Digital Craftsman Portfolio",
+  "description": "A high-fidelity editorial portfolio and technical journal. Built with Astro 6 and Tailwind CSS, featuring automated GitHub integration, E2E testing with Playwright, and a minimalist Design System.",
+  "url": "https://github.com/phandaniel/phandaniel.github.io",
+  "language": "Astro",
+  "image": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+  "githubRepo": "phandaniel.github.io",
+  "order": 1
+}

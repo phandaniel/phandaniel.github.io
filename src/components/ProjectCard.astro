@@ -3,11 +3,11 @@ import { Image } from 'astro:assets';
 import { ArrowUpRight, Code2 } from 'lucide-astro';
 
 interface Props {
-	title: string;
-	description: string;
-	url: string;
-	language?: string;
-	imageUrl?: string | any;
+  title: string;
+  description: string;
+  url: string;
+  language?: string;
+  imageUrl?: string | any;
 }
 
 const { title, description, url, language, imageUrl } = Astro.props;
@@ -16,61 +16,75 @@ const { title, description, url, language, imageUrl } = Astro.props;
 // 1. imageUrl (Curated or custom)
 // 2. GitHub OpenGraph (based on title)
 // 3. Null (which triggers the icon fallback in the template)
-const finalImageUrl = imageUrl || `https://opengraph.githubassets.com/1/phandaniel/${title.toLowerCase().replace(/\s+/g, '-')}`;
+const finalImageUrl =
+  imageUrl ||
+  `https://opengraph.githubassets.com/1/phandaniel/${title.toLowerCase().replace(/\s+/g, '-')}`;
 ---
 
-<a 
-    href={url} 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    aria-label={`View project: ${title}`} 
-    class="group card flex flex-col overflow-hidden no-underline border border-zinc-200/50 hover:border-brand-blue/30 transition-all duration-300"
+<a
+  href={url}
+  target="_blank"
+  rel="noopener noreferrer"
+  aria-label={`View project: ${title}`}
+  class="group card flex flex-col overflow-hidden no-underline border border-zinc-200/50 hover:border-brand-blue/30 transition-all duration-300"
 >
-	<div class="h-44 overflow-hidden border-b border-zinc-100 bg-zinc-50 relative flex items-center justify-center">
-        {finalImageUrl ? (
-            <Image 
-                src={finalImageUrl} 
-                alt={`Screenshot or preview of ${title} project`}
-                width={800}
-                height={400}
-                format="webp"
-                class="w-full h-full object-cover grayscale-[0.4] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" 
-            />
-        ) : null}
-        
-        <!-- Robust Placeholder Icon (Visible if image fails or is missing) -->
-        <div class="absolute inset-0 flex items-center justify-center bg-zinc-50 text-zinc-300 group-hover:text-brand-blue/20 transition-colors duration-500 -z-10">
-            <Code2 size={48} strokeWidth={1} />
-        </div>
-	</div>
+  <div
+    class="h-44 overflow-hidden border-b border-zinc-100 bg-zinc-50 relative flex items-center justify-center"
+  >
+    {
+      finalImageUrl ? (
+        <Image
+          src={finalImageUrl}
+          alt={`Screenshot or preview of ${title} project`}
+          width={800}
+          height={400}
+          format="webp"
+          class="w-full h-full object-cover grayscale-[0.4] opacity-90 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+        />
+      ) : null
+    }
 
-	<div class="p-6 flex flex-col justify-between flex-grow">
-		<div>
-			<div class="flex justify-between items-start mb-4">
-				<h3 class="text-xl font-semibold tracking-tight text-zinc-900 group-hover:text-brand-blue transition-colors duration-300 leading-tight">
-                    {title}
-                </h3>
-				<ArrowUpRight 
-                    size={20} 
-                    strokeWidth={2.5} 
-                    class="text-zinc-300 group-hover:text-brand-blue group-hover:-translate-y-1 group-hover:translate-x-1 transition-all duration-300 shrink-0 ml-4" 
-                    aria-hidden="true" 
-                />
-			</div>
-			<p class="text-zinc-500 text-sm leading-relaxed line-clamp-3 mb-6">
-                {description}
-            </p>
-		</div>
-		
-        <div class="flex items-center justify-between mt-auto">
-            {language && (
-                <span class="px-3 py-1 bg-stone-100 text-zinc-600 text-[10px] font-bold uppercase tracking-wider rounded-md border border-zinc-200/50">
-                    {language}
-                </span>
-            )}
-            <span class="text-[10px] font-bold text-brand-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300 uppercase tracking-widest">
-                Source Code
-            </span>
-        </div>
-	</div>
+    <!-- Robust Placeholder Icon (Visible if image fails or is missing) -->
+    <div
+      class="absolute inset-0 flex items-center justify-center bg-zinc-50 text-zinc-300 group-hover:text-brand-blue/20 transition-colors duration-500 -z-10"
+    >
+      <Code2 size={48} strokeWidth={1} />
+    </div>
+  </div>
+
+  <div class="p-6 flex flex-col justify-between flex-grow">
+    <div>
+      <div class="flex justify-between items-start mb-4">
+        <h3
+          class="text-xl font-semibold tracking-tight text-zinc-900 group-hover:text-brand-blue transition-colors duration-300 leading-tight"
+        >
+          {title}
+        </h3>
+        <ArrowUpRight
+          size={20}
+          strokeWidth={2.5}
+          class="text-zinc-300 group-hover:text-brand-blue group-hover:-translate-y-1 group-hover:translate-x-1 transition-all duration-300 shrink-0 ml-4"
+          aria-hidden="true"
+        />
+      </div>
+      <p class="text-zinc-500 text-sm leading-relaxed line-clamp-3 mb-6">
+        {description}
+      </p>
+    </div>
+
+    <div class="flex items-center justify-between mt-auto">
+      {
+        language && (
+          <span class="px-3 py-1 bg-stone-100 text-zinc-600 text-[10px] font-bold uppercase tracking-wider rounded-md border border-zinc-200/50">
+            {language}
+          </span>
+        )
+      }
+      <span
+        class="text-[10px] font-bold text-brand-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300 uppercase tracking-widest"
+      >
+        Source Code
+      </span>
+    </div>
+  </div>
 </a>

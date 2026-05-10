@@ -5,6 +5,6 @@ export default defineConfig({
   integrations: [tailwind()],
   site: 'https://phandaniel.github.io',
   image: {
-    domains: ['opengraph.githubassets.com'],
+    domains: ['opengraph.githubassets.com', 'images.unsplash.com'],
   },
 });

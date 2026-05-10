@@ -2,27 +2,46 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getCollection } from 'astro:content';
 
-const posts = (await getCollection('blog')).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-const byYear = posts.reduce((acc, p) => { const y = p.data.pubDate.getFullYear(); if (!acc[y]) acc[y] = []; acc[y].push(p); return acc; }, {} as any);
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const byYear = posts.reduce((acc, p) => {
+  const y = p.data.pubDate.getFullYear();
+  if (!acc[y]) acc[y] = [];
+  acc[y].push(p);
+  return acc;
+}, {} as any);
 const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
 ---
+
 <MainLayout title="Writing">
-    <div class="max-w-2xl mx-auto px-6 py-20">
-        <header class="mb-20"><h1 class="font-serif text-5xl tracking-tight">Writing</h1></header>
-        <div class="space-y-20">
-            {years.map(y => (
-                <section>
-                    <div class="sticky top-16 z-20 bg-stone-50/90 backdrop-blur-sm py-4 border-b border-zinc-200/50 mb-4 text-xs font-bold uppercase tracking-[0.2em] text-zinc-400">{y}</div>
-                    <div class="flex flex-col">
-                        {byYear[y].map(p => (
-                            <a href={`/blog/${p.id}`} class="group flex items-baseline justify-between py-6 border-b border-zinc-100 hover:border-zinc-200">
-                                <span class="font-serif text-xl md:text-2xl group-hover:text-brand-blue transition-colors">{p.data.title}</span>
-                                <span class="text-xs text-text-muted tabular-nums uppercase ml-8">{p.data.pubDate.toLocaleDateString('en-us', { month: 'short', day: '2-digit' })}</span>
-                            </a>
-                        ))}
-                    </div>
-                </section>
-            ))}
-        </div>
+  <div class="max-w-2xl mx-auto px-6 py-20">
+    <header class="mb-20"><h1 class="font-serif text-5xl tracking-tight">Writing</h1></header>
+    <div class="space-y-20">
+      {
+        years.map((y) => (
+          <section>
+            <div class="sticky top-16 z-20 bg-stone-50/90 backdrop-blur-sm py-4 border-b border-zinc-200/50 mb-4 text-xs font-bold uppercase tracking-[0.2em] text-zinc-400">
+              {y}
+            </div>
+            <div class="flex flex-col">
+              {byYear[y].map((p: any) => (
+                <a
+                  href={`/blog/${p.id}`}
+                  class="group flex items-baseline justify-between py-6 border-b border-zinc-100 hover:border-zinc-200"
+                >
+                  <span class="font-serif text-xl md:text-2xl group-hover:text-brand-blue transition-colors">
+                    {p.data.title}
+                  </span>
+                  <span class="text-xs text-text-muted tabular-nums uppercase ml-8">
+                    {p.data.pubDate.toLocaleDateString('en-us', { month: 'short', day: '2-digit' })}
+                  </span>
+                </a>
+              ))}
+            </div>
+          </section>
+        ))
+      }
     </div>
+  </div>
 </MainLayout>

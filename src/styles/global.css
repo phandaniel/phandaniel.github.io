@@ -10,16 +10,28 @@
     background-image: radial-gradient(#e5e7eb 0.5px, transparent 0.5px);
     background-size: 24px 24px;
   }
-  h1, h2, h3 { @apply font-semibold tracking-tight; }
-  a { @apply no-underline transition-all duration-300; }
+  h1,
+  h2,
+  h3 {
+    @apply font-semibold tracking-tight;
+  }
+  a {
+    @apply no-underline transition-all duration-300;
+  }
 }
 
 @layer components {
-  .card { @apply bg-bg-surface rounded-card shadow-subtle border border-zinc-200/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-hover hover:border-zinc-300; }
-  .nav-link { @apply text-sm transition-colors text-text-muted hover:text-text-main; }
-  .nav-link.active { @apply font-medium text-text-main; }
-  
+  .card {
+    @apply bg-bg-surface rounded-card shadow-subtle border border-zinc-200/50 transition-all duration-300 hover:-translate-y-1 hover:shadow-hover hover:border-zinc-300;
+  }
+  .nav-link {
+    @apply text-sm transition-colors text-text-muted hover:text-text-main;
+  }
+  .nav-link.active {
+    @apply font-medium text-text-main;
+  }
+
   .section-label {
-    @apply text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400 mb-8 block;
+    @apply text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-600 mb-8 block;
   }
 }

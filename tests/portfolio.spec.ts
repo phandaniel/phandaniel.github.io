@@ -37,7 +37,7 @@ test.describe('Portfolio Basic Flow', () => {
     // Project cards are now links to external GitHub in the main area
     const cards = page.locator('main').locator('a[target="_blank"]');
     const emptyState = page.getByText('View my digital forge on GitHub');
-    
+
     await expect(cards.first().or(emptyState)).toBeVisible();
   });
 });

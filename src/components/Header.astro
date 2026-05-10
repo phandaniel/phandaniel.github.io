@@ -1,12 +1,29 @@
 ---
-const links = [ { h: "/", l: "Home" }, { h: "/projects", l: "Projects" }, { h: "/blog", l: "Blog" } ];
-const curr = new URL(Astro.request.url).pathname.replace(/\/$/, "") || "/";
+const links = [
+  { h: '/', l: 'Home' },
+  { h: '/projects', l: 'Projects' },
+  { h: '/blog', l: 'Blog' },
+];
+const curr = new URL(Astro.request.url).pathname.replace(/\/$/, '') || '/';
 ---
-<header class="sticky top-0 z-50 w-full backdrop-blur-md bg-stone-50/80 border-b border-zinc-200/50">
-    <nav class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="/" class="text-lg font-bold tracking-tighter hover:opacity-50 transition-opacity">HD</a>
-        <div class="flex gap-6">
-            {links.map(n => <a href={n.h} class={`nav-link ${curr === n.h ? "active" : ""}`}>{n.l}</a>)}
-        </div>
-    </nav>
+
+<header
+  class="sticky top-0 z-50 w-full backdrop-blur-md bg-stone-50/80 border-b border-zinc-200/50"
+>
+  <nav class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a
+      href="/"
+      class="text-lg font-bold tracking-tighter hover:opacity-50 transition-opacity"
+      aria-label="Home">HD</a
+    >
+    <div class="flex gap-6">
+      {
+        links.map((n) => (
+          <a href={n.h} class={`nav-link ${curr === n.h ? 'active' : ''}`}>
+            {n.l}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
 </header>

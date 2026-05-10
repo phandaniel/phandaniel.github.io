@@ -1,7 +1,7 @@
 ---
 title: "Minimalist Web Architecture: The Digital Craftsman's Approach"
-description: "Why less is more when it comes to high-performance web applications."
-pubDate: "2026-05-08"
+description: 'Why less is more when it comes to high-performance web applications.'
+pubDate: '2026-05-08'
 ---
 
 In the modern web, we are often overwhelmed by complexity. As a **Digital Craftsman**, my approach focuses on stripping away the non-essential to reveal the core purpose of a product.

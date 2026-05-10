@@ -1,1 +1,9 @@
-{ "title": "Chess Engine", "description": "A sophisticated chess engine implementation focusing on move validation, minimax optimization, and a clean web-based UI. Built to explore game theory and advanced state management.", "url": "https://github.com/phandaniel/chess", "language": "TypeScript", "image": "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?auto=format&fit=crop&w=800&q=80", "githubRepo": "chess", "order": 2 }
+{
+  "title": "Chess Engine",
+  "description": "A sophisticated chess engine implementation focusing on move validation, minimax optimization, and a clean web-based UI. Built to explore game theory and advanced state management.",
+  "url": "https://github.com/phandaniel/chess",
+  "language": "TypeScript",
+  "image": "https://images.unsplash.com/photo-1528819622765-d6bcf132f793?auto=format&fit=crop&w=800&q=80",
+  "githubRepo": "chess",
+  "order": 2
+}
