@@ -211,8 +211,8 @@
           // Don't render completely empty rows that might have been scraped
           if (version === 'Unknown' || version.length > 50) return;
 
-          // Clean up version string (e.g., "Unsupported: 1 (Yarrow)" -> "1 (Yarrow)")
-          let cleanVersion = version.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '');
+          // Clean up version string (e.g., "Unsupported: 1 (Yarrow)" -> "1")
+          let cleanVersion = version.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').replace(/\s*\(.*?\)\s*/g, '').trim();
 
           const tr = document.createElement('tr');
           
