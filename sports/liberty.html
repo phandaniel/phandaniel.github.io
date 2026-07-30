@@ -24,7 +24,6 @@
           <tr>
             <th>Date</th>
             <th>Opponent</th>
-            <th>Time/TV</th>
             <th>Result</th>
           </tr>
         </thead>
@@ -60,10 +59,6 @@
           let tv = getVal(['tv']);
           
           if (date === '—') return;
-          
-          let timetv = time !== '—' ? time : '';
-          if (tv !== '—') timetv += (timetv ? ' / ' : '') + tv;
-          if (!timetv) timetv = 'TBA';
 
           let statusText = 'Upcoming';
           let statusClass = 'status-preview';
@@ -86,7 +81,6 @@
           tr.innerHTML = `
             <td class="version">${cleanStr(date)}</td>
             <td>${cleanStr(opponent)}</td>
-            <td>${cleanStr(timetv)}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           tbody.appendChild(tr);

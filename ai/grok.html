@@ -24,7 +24,6 @@
           <tr>
             <th>Version</th>
             <th>Release Date</th>
-            <th>Description</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -57,7 +56,6 @@
           let version = getVal(['version', 'model']);
           let date = getVal(['date']);
           let status = getVal(['status']);
-          let desc = getVal(['description', 'features']);
 
           if (version === '—' || version.length > 50) return;
 
@@ -85,7 +83,6 @@
           tr.innerHTML = `
             <td class="version">${cleanStr(version)}</td>
             <td>${cleanStr(date)}</td>
-            <td>${cleanStr(desc)}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           tbody.appendChild(tr);
