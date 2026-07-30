@@ -15,12 +15,12 @@ window.renderAI = {
     let statusClass = 'status-unsupported';
     
     const sLower = status.toLowerCase();
-    if (sLower.includes('active') || sLower.includes('supported') || sLower.includes('current')) {
-      statusText = 'Supported';
-      statusClass = 'status-supported';
-    } else {
+    if (sLower.includes('unsupported') || sLower.includes('discontinued')) {
       statusText = 'Unsupported';
       statusClass = 'status-unsupported';
+    } else {
+      statusText = 'Supported';
+      statusClass = 'status-supported';
     }
 
     return `
