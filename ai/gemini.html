@@ -70,12 +70,12 @@
           } else if (sLower.includes('active') || sLower.includes('supported') || sLower.includes('current')) {
             statusText = 'Active';
             statusClass = 'status-supported';
-          } else if (sLower.includes('upcoming') || sLower.includes('unreleased')) {
-            statusText = 'Upcoming';
+          } else if (sLower.includes('upcoming') || sLower.includes('unreleased') || sLower.includes('preview') || sLower.includes('future')) {
+            statusText = 'Preview';
             statusClass = 'status-preview';
           } else if (status !== '—') {
             let cleanStatus = status.split('[')[0];
-            if (cleanStatus.toLowerCase().includes('latest version')) {
+            if (cleanStatus.toLowerCase().includes('latest')) {
               statusText = 'Latest';
               statusClass = 'status-supported';
             } else {
