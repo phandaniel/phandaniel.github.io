@@ -26,6 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     {
+      name: 'Developer Tools',
+      items: [
+        { name: 'Kubernetes', url: 'dev/kubernetes.html', accent: '#326ce5' }
+      ]
+    },
+    {
       name: 'Sports',
       items: [
         { name: 'Liberty Flames', url: 'sports/liberty.html', accent: '#990000' }

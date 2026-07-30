@@ -1,0 +1,224 @@
+[
+  {
+    "Version": "Unsupported:  1.0",
+    "Release date": "10 July 2015",
+    "End of Life date[92]": "",
+    "Notes": "Original Release"
+  },
+  {
+    "Version": "Unsupported:  1.1",
+    "Release date": "9 November 2015",
+    "End of Life date[92]": "",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.2",
+    "Release date": "16 March 2016",
+    "End of Life date[92]": "23 October 2016",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.3",
+    "Release date": "1 July 2016",
+    "End of Life date[92]": "1 November 2016",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.4",
+    "Release date": "26 September 2016",
+    "End of Life date[92]": "21 April 2017",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.5",
+    "Release date": "12 December 2016",
+    "End of Life date[92]": "1 October 2017",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.6",
+    "Release date": "28 March 2017",
+    "End of Life date[92]": "23 November 2017",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.7",
+    "Release date": "30 June 2017",
+    "End of Life date[92]": "4 April 2018",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.8",
+    "Release date": "28 August 2017",
+    "End of Life date[92]": "12 July 2018",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.9",
+    "Release date": "15 December 2017",
+    "End of Life date[92]": "29 September 2018",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.10",
+    "Release date": "28 March 2018",
+    "End of Life date[92]": "13 February 2019",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.11",
+    "Release date": "3 July 2018",
+    "End of Life date[92]": "1 May 2019",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.12",
+    "Release date": "27 September 2018",
+    "End of Life date[92]": "8 July 2019",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.13",
+    "Release date": "3 December 2018",
+    "End of Life date[92]": "15 October 2019",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.14",
+    "Release date": "25 March 2019",
+    "End of Life date[92]": "11 December 2019",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.15",
+    "Release date": "20 June 2019",
+    "End of Life date[92]": "6 May 2020",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.16",
+    "Release date": "22 October 2019",
+    "End of Life date[92]": "2 September 2020",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.17",
+    "Release date": "9 December 2019",
+    "End of Life date[92]": "13 January 2021",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.18",
+    "Release date": "25 March 2020",
+    "End of Life date[92]": "18 June 2021",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.19",
+    "Release date": "26 August 2020",
+    "End of Life date[92]": "28 October 2021",
+    "Notes": "From Kubernetes version 1.19 on, the support window has been extended to one year of full support plus two months of maintenance mode period."
+  },
+  {
+    "Version": "Unsupported:  1.20",
+    "Release date": "8 December 2020",
+    "End of Life date[92]": "28 February 2022",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.21",
+    "Release date": "8 April 2021",
+    "End of Life date[92]": "28 June 2022",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.22",
+    "Release date": "4 August 2021",
+    "End of Life date[92]": "28 October 2022",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.23",
+    "Release date": "7 December 2021",
+    "End of Life date[92]": "28 February 2023",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.24",
+    "Release date": "3 May 2022",
+    "End of Life date[92]": "28 July 2023",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported:  1.25",
+    "Release date": "23 August 2022",
+    "End of Life date[92]": "27 October 2023",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 1.26",
+    "Release date": "9 December 2022",
+    "End of Life date[92]": "24 February 2024",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 1.27",
+    "Release date": "11 April 2023",
+    "End of Life date[92]": "28 June 2024",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 1.28",
+    "Release date": "15 August 2023",
+    "End of Life date[92]": "28 October 2024",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 1.29",
+    "Release date": "13 December 2023",
+    "End of Life date[92]": "28 February 2025",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 1.30",
+    "Release date": "17 April 2024",
+    "End of Life date[92]": "28 June 2025",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 1.31",
+    "Release date": "13 August 2024",
+    "End of Life date[92]": "28 October 2025",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 1.32",
+    "Release date": "11 December 2024",
+    "End of Life date[92]": "28 February 2026",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 1.33",
+    "Release date": "23 April 2025",
+    "End of Life date[92]": "28 June 2026",
+    "Notes": ""
+  },
+  {
+    "Version": "Supported: 1.34",
+    "Release date": "27 August 2025",
+    "End of Life date[92]": "27 October 2026",
+    "Notes": ""
+  },
+  {
+    "Version": "Supported: 1.35",
+    "Release date": "17 December 2025",
+    "End of Life date[92]": "28 February 2027",
+    "Notes": ""
+  },
+  {
+    "Version": "Latest version: 1.36",
+    "Release date": "22 April 2026",
+    "End of Life date[92]": "28 June 2027",
+    "Notes": ""
+  }
+]
