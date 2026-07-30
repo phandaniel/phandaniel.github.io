@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Starship Launches</title>
+  <title>Starship</title>
   <meta name="description" content="A tracking page for SpaceX Starship launches.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,9 +26,6 @@
           <tr>
             <th>Flight</th>
             <th>Date</th>
-            <th>Booster</th>
-            <th>Ship</th>
-            <th>Payload</th>
             <th>Outcome</th>
           </tr>
         </thead>
@@ -62,12 +59,9 @@
 
           let flight = getVal(['flightno']);
           let date = getVal(['date and time', 'date andtime']).replace(/\s?\d{2}:\d{2}:\d{2}.*/, '');
-          let booster = getVal(['version,booster']);
-          let ship = getVal(['version,ship']);
-          let payload = getVal(['payload']);
           let outcome = getVal(['launch outcome']);
 
-          if (date === '—' || [date, booster, ship, payload].some(s => s && s.length > 80)) return;
+          if (date === '—' || date.length > 80) return;
 
           const yearMatch = date.match(/20\d{2}/);
           if (yearMatch && parseInt(yearMatch[0]) > 2026) return;
@@ -93,18 +87,12 @@
 
           flight = cleanStr(flight);
           date = cleanStr(date);
-          booster = cleanStr(booster);
-          ship = cleanStr(ship);
-          payload = cleanStr(payload);
 
           const tr = document.createElement('tr');
           
           tr.innerHTML = `
             <td class="flight-no">${flight !== '—' ? '#' + flight : '—'}</td>
             <td>${date}</td>
-            <td>${booster}</td>
-            <td>${ship}</td>
-            <td>${payload}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           
