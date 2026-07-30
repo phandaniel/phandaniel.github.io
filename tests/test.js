@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
-const files = ['index.html', 'ubuntu.html', 'linux.html', 'ios.html', 'starship.html', 'claude.html', 'grok.html', 'gemini.html', 'chatgpt.html'];
+const files = ['linux/fedora.html', 'linux/ubuntu.html', 'linux/kernel.html', 'os/ios.html', 'space/starship.html', 'ai/claude.html', 'ai/grok.html', 'ai/gemini.html', 'ai/chatgpt.html'];
 let passed = true;
 
 (async () => {
