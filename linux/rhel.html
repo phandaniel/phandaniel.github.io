@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fedora - Phantom Telemetry</title>
-  <meta name="description" content="A beautiful overview of Fedora Linux release history.">
+  <title>RHEL - Phantom Telemetry</title>
+  <meta name="description" content="A beautiful overview of Red Hat Enterprise Linux release history.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=2">
+  <link rel="stylesheet" href="../assets/css/style.css?v=3">
 </head>
 <body style="--accent: #ffffff;">
   <div class="container">
         
 
     <header>
-      <h1>Fedora</h1>
+      <h1>RHEL</h1>
     </header>
 
     <div id="loading" class="loading">Loading timeline data...</div>
@@ -26,7 +26,8 @@
           <tr>
             <th>Version</th>
             <th>Release Date</th>
-            <th>End of Life</th>
+            <th>Last Minor Release</th>
+            <th>End of Full Support</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -39,8 +40,8 @@
   <script>
     async function loadData() {
       try {
-        const response = await fetch('../data/fedora.json');
-        if (!response.ok) throw new Error("Could not fetch fedora.json");
+        const response = await fetch('../data/rhel.json');
+        if (!response.ok) throw new Error("Could not fetch rhel.json");
         const data = await response.json();
         
         // Reverse the array to show the newest versions at the top
@@ -58,9 +59,11 @@
           
           const getVal = (keys) => window.utils.getVal(keys, release);
 
-          const version = getVal(['version']);
-          const releaseDate = getVal(['release']);
-          const eol = getVal(['end-of-life', 'eol', 'end of life']);
+          const version = getVal(['rhelversion', 'version']);
+          const releaseDate = getVal(['release date', 'released']);
+          const minor = getVal(['last minorrelease', 'last minor release']);
+          const fullSupport = getVal(['end of full support']);
+          const eol = fullSupport;
           
           // Determine status loosely based on EOL text
           let statusClass = 'status-eol';
@@ -79,15 +82,23 @@
           // Don't render completely empty rows that might have been scraped
           if (version === '—' || version.length > 50) return;
 
-          // Clean up version string (e.g., "Unsupported: 1 (Yarrow)" -> "1")
-          let cleanVersion = version.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').replace(/\s*\(.*?\)\s*/g, '').trim();
+          // Clean up values
+          const cleanVal = (val) => val ? val.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').trim() : '';
+
+          let cleanVersion = cleanVal(version).replace(/\s*\(.*?\)\s*/g, '');
+          let cleanMinor = cleanVal(minor);
+          let cleanFullSupport = cleanVal(fullSupport);
+          
+          if (cleanMinor.toLowerCase().includes('n/a') || cleanMinor === '—') cleanMinor = '<span style="color: var(--text-muted); font-weight: 400;">&mdash;</span>';
+          if (cleanFullSupport.toLowerCase().includes('n/a') || cleanFullSupport === '—') cleanFullSupport = '<span style="color: var(--text-muted); font-weight: 400;">&mdash;</span>';
 
           const tr = document.createElement('tr');
           
           tr.innerHTML = `
-            <td class="version">Fedora ${cleanVersion}</td>
+            <td class="version">RHEL ${cleanVersion}</td>
             <td>${releaseDate}</td>
-            <td>${eol}</td>
+            <td>${cleanMinor}</td>
+            <td>${cleanFullSupport}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           

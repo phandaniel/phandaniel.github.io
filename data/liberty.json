@@ -1,98 +1,126 @@
 [
   {
-    "Date": "September 5",
-    "Time": "12:00 p.m.",
-    "Opponent": "at James Madison*",
-    "Site": "Bridgeforth StadiumHarrisonburg, VA",
-    "TV": "ESPNU",
-    "Result": ""
-  },
-  {
-    "Date": "September 12",
-    "Time": "6:00 p.m.",
-    "Opponent": "Gardner\u2013Webb*",
-    "Site": "Williams StadiumLynchburg, VA",
-    "TV": "ESPN+",
-    "Result": ""
-  },
-  {
-    "Date": "September 19",
+    "Date": "August 30",
     "Time": "4:00 p.m.",
-    "Opponent": "Ball State*",
+    "Opponent": "Maine*",
     "Site": "Williams StadiumLynchburg, VA",
     "TV": "ESPN+",
-    "Result": ""
+    "Result": "W 28\u20137",
+    "Attendance": "20,337"
   },
   {
-    "Date": "September 24",
-    "Time": "7:30 p.m.",
-    "Opponent": "at Coastal Carolina*",
-    "Site": "Brooks StadiumConway, SC",
-    "TV": "ESPN",
-    "Result": ""
-  },
-  {
-    "Date": "October 2",
-    "Time": "7:00 p.m.",
-    "Opponent": "at Delaware",
-    "Site": "Delaware StadiumNewark, DE",
+    "Date": "September 6",
+    "Time": "12:00 p.m.",
+    "Opponent": "at Jacksonville State",
+    "Site": "AmFirst StadiumJacksonville, AL",
     "TV": "CBSSN",
-    "Result": ""
+    "Result": "L 24\u201334",
+    "Attendance": "20,755"
+  },
+  {
+    "Date": "September 13",
+    "Time": "5:00 p.m.",
+    "Opponent": "at Bowling Green*",
+    "Site": "Doyt Perry StadiumBowling Green, OH",
+    "TV": "ESPN+",
+    "Result": "L 13\u201323",
+    "Attendance": "23,159"
+  },
+  {
+    "Date": "September 20",
+    "Time": "3:30 p.m.",
+    "Opponent": "James Madison*",
+    "Site": "Williams StadiumLynchburg, VA (Battle of the Blue Ridge)",
+    "TV": "ESPNU",
+    "Result": "L 13\u201331",
+    "Attendance": "24,022"
+  },
+  {
+    "Date": "September 27",
+    "Time": "6:00 p.m.",
+    "Opponent": "at Old Dominion*",
+    "Site": "S.B. Ballard StadiumNorfolk, VA",
+    "TV": "ESPN+",
+    "Result": "L 7\u201321",
+    "Attendance": "18,435"
   },
   {
     "Date": "October 8",
+    "Time": "8:00 p.m.",
+    "Opponent": "at UTEP",
+    "Site": "Sun BowlEl Paso, TX",
+    "TV": "CBSSN",
+    "Result": "W 19\u20138",
+    "Attendance": "9,286"
+  },
+  {
+    "Date": "October 14",
     "Time": "7:00 p.m.",
-    "Opponent": "Sam Houston",
+    "Opponent": "New Mexico State",
     "Site": "Williams StadiumLynchburg, VA",
-    "TV": "ESPNU",
-    "Result": ""
-  },
-  {
-    "Date": "October 22",
-    "Time": "7:00 p.m.",
-    "Opponent": "at Kennesaw State",
-    "Site": "Fifth Third StadiumKennesaw, GA",
     "TV": "CBSSN",
-    "Result": ""
+    "Result": "W 30\u201327",
+    "Attendance": "16,312"
   },
   {
-    "Date": "October 31",
+    "Date": "November 1",
     "Time": "3:30 p.m.",
-    "Opponent": "FIU",
+    "Opponent": "Delaware",
     "Site": "Williams StadiumLynchburg, VA",
     "TV": "CBSSN",
-    "Result": ""
+    "Result": "W 59\u201330",
+    "Attendance": "18,455"
   },
   {
-    "Date": "November 7",
-    "Time": "5:00 p.m.",
-    "Opponent": "at New Mexico State",
-    "Site": "Aggie Memorial StadiumLas Cruces, NM",
-    "TV": "ESPN Platforms",
-    "Result": ""
-  },
-  {
-    "Date": "November 14",
-    "Time": "3:30 p.m.",
-    "Opponent": "Middle Tennessee",
-    "Site": "Williams StadiumLynchburg, VA",
-    "TV": "CBSSN",
-    "Result": ""
-  },
-  {
-    "Date": "November 21",
+    "Date": "November 8",
     "Time": "1:00 p.m.",
-    "Opponent": "Western Kentucky",
+    "Opponent": "Missouri State",
     "Site": "Williams StadiumLynchburg, VA",
-    "TV": "ESPN Platforms",
-    "Result": ""
+    "TV": "ESPN+",
+    "Result": "L 17\u201321",
+    "Attendance": "18,407"
   },
   {
-    "Date": "November 28",
-    "Time": "2:00 p.m.",
-    "Opponent": "at Missouri State",
-    "Site": "Robert W. Plaster StadiumSpringfield, MO",
-    "TV": "ESPN Platforms",
-    "Result": ""
+    "Date": "November 15",
+    "Time": "5:00 p.m.",
+    "Opponent": "at FIU",
+    "Site": "Pitbull StadiumMiami, FL",
+    "TV": "ESPN+",
+    "Result": "L 27\u201334 OT",
+    "Attendance": "14,167"
+  },
+  {
+    "Date": "November 22",
+    "Time": "3:00 p.m.",
+    "Opponent": "at Louisiana Tech",
+    "Site": "Joe Aillet StadiumRuston, LA",
+    "TV": "ESPN+",
+    "Result": "L 28\u201334 OT",
+    "Attendance": "10,107"
+  },
+  {
+    "Date": "November 29",
+    "Time": "3:30 p.m.",
+    "Opponent": "Kennesaw State",
+    "Site": "Williams StadiumLynchburg, VA",
+    "TV": "CBSSN",
+    "Result": "L 42\u201348 2OT",
+    "Attendance": "12,695"
+  },
+  {
+    "Quarter": "Flames",
+    "1": "7",
+    "2": "3",
+    "3": "0",
+    "4": "14",
+    "Total": "24"
+  },
+  {
+    "Quarter": "Gamecocks",
+    "1": "7",
+    "2": "10",
+    "3": "7",
+    "4": "10",
+    "Total": "34"
   }
 ]

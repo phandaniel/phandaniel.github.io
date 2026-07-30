@@ -12,7 +12,7 @@ def scrape_wiki(url, output_file):
     tables = []
     for tbl in soup.find_all('table', {'class': 'wikitable'}):
         tbl_headers = [th.text.strip().lower() for th in tbl.find_all('th')]
-        if any('version' in h or 'release' in h or 'opponent' in h or 'result' in h or 'flight' in h or 'payload' in h or 'outcome' in h for h in tbl_headers):
+        if any('version' in h or 'release' in h or 'opponent' in h or 'result' in h or 'flight' in h or 'payload' in h or 'outcome' in h or 'score' in h or 'record' in h or 'game' in h for h in tbl_headers):
             tables.append(tbl)
 
     if not tables:
@@ -87,10 +87,12 @@ scrape_wiki('https://en.wikipedia.org/wiki/Claude_(AI)', 'data/claude.json')
 scrape_wiki('https://en.wikipedia.org/wiki/Grok_(chatbot)', 'data/grok.json')
 scrape_wiki('https://en.wikipedia.org/wiki/Gemini_(language_model)', 'data/gemini.json')
 scrape_wiki('https://en.wikipedia.org/wiki/ChatGPT', 'data/chatgpt.json')
-scrape_wiki('https://en.wikipedia.org/wiki/2026_Liberty_Flames_football_team', 'data/liberty.json')
+scrape_wiki('https://en.wikipedia.org/wiki/2025_Liberty_Flames_football_team', 'data/liberty.json')
 scrape_wiki('https://en.wikipedia.org/wiki/Kubernetes', 'data/kubernetes.json')
-scrape_wiki('https://en.wikipedia.org/wiki/2026_Washington_Commanders_season', 'data/commanders.json')
+scrape_wiki('https://en.wikipedia.org/wiki/2025_Washington_Commanders_season', 'data/commanders.json')
+scrape_wiki('https://en.wikipedia.org/wiki/2025%E2%80%9326_Washington_Wizards_season', 'data/wizards.json')
 scrape_wiki('https://en.wikipedia.org/wiki/History_of_Python', 'data/python.json')
 scrape_wiki('https://en.wikipedia.org/wiki/Android_version_history', 'data/android.json')
 scrape_wiki('https://en.wikipedia.org/wiki/List_of_Vulcan_launches', 'data/vulcan.json')
 scrape_wiki('https://en.wikipedia.org/wiki/List_of_New_Glenn_launches', 'data/newglenn.json')
+scrape_wiki('https://en.wikipedia.org/wiki/Red_Hat_Enterprise_Linux', 'data/rhel.json')

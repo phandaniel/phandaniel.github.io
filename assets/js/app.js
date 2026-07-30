@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Fedora', url: 'linux/fedora.html', accent: '#ffffff' },
         { name: 'Ubuntu', url: 'linux/ubuntu.html', accent: '#ffffff' },
         { name: 'Linux Kernel', url: 'linux/kernel.html', accent: '#ffffff' },
-        { name: 'iOS', url: 'os/ios.html', accent: '#ffffff' },
+        { name: 'Red Hat Enterprise Linux', url: 'linux/rhel.html', accent: '#ffffff' },
+        { name: 'Apple iOS', url: 'os/ios.html', accent: '#ffffff' },
         { name: 'Android', url: 'os/android.html', accent: '#ffffff' }
       ]
     },
@@ -39,7 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
       name: 'Sports',
       items: [
         { name: 'Liberty Flames', url: 'sports/liberty.html', accent: '#ffffff' },
-        { name: 'Commanders', url: 'sports/commanders.html', accent: '#ffffff' }
+        { name: 'Commanders', url: 'sports/commanders.html', accent: '#ffffff' },
+        { name: 'Wizards', url: 'sports/wizards.html', accent: '#ffffff' }
       ]
     }
   ];

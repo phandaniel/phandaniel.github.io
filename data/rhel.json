@@ -1,0 +1,83 @@
+[
+  {
+    "RHELversion": "Unsupported:  2.1",
+    "Last minorrelease": "U-7",
+    "Release date": "26 March 2002 (AS) 1 May 2003 (ES)",
+    "End of Full Support": "30 November 2004",
+    "End of MaintenanceSupport 1 (RHEL 5, 6, 7)": "31 May 2005",
+    "End of  Maintenance Support (RHEL 8, 9, 10),  Maintenance Support 2 (RHEL 5, 6, 7)  (product retirement)": "31 May 2009",
+    "End of ExtendedLifecycle Support": "\u2014N/a"
+  },
+  {
+    "RHELversion": "Unsupported:  3",
+    "Last minorrelease": "U-9",
+    "Release date": "23 October 2003",
+    "End of Full Support": "20 July 2006",
+    "End of MaintenanceSupport 1 (RHEL 5, 6, 7)": "30 June 2007",
+    "End of  Maintenance Support (RHEL 8, 9, 10),  Maintenance Support 2 (RHEL 5, 6, 7)  (product retirement)": "31 October 2010",
+    "End of ExtendedLifecycle Support": "30 January 2014"
+  },
+  {
+    "RHELversion": "Unsupported:  4",
+    "Last minorrelease": "U-9",
+    "Release date": "14 February 2005",
+    "End of Full Support": "31 March 2009",
+    "End of MaintenanceSupport 1 (RHEL 5, 6, 7)": "16 February 2011",
+    "End of  Maintenance Support (RHEL 8, 9, 10),  Maintenance Support 2 (RHEL 5, 6, 7)  (product retirement)": "29 February 2012",
+    "End of ExtendedLifecycle Support": "31 March 2017"
+  },
+  {
+    "RHELversion": "Unsupported:  5",
+    "Last minorrelease": "5.11",
+    "Release date": "15 March 2007",
+    "End of Full Support": "8 January 2013",
+    "End of MaintenanceSupport 1 (RHEL 5, 6, 7)": "31 January 2014",
+    "End of  Maintenance Support (RHEL 8, 9, 10),  Maintenance Support 2 (RHEL 5, 6, 7)  (product retirement)": "31 March 2017",
+    "End of ExtendedLifecycle Support": "30 November 2020"
+  },
+  {
+    "RHELversion": "Unsupported:  6",
+    "Last minorrelease": "6.10",
+    "Release date": "10 November 2010",
+    "End of Full Support": "10 May 2016",
+    "End of MaintenanceSupport 1 (RHEL 5, 6, 7)": "10 May 2017",
+    "End of  Maintenance Support (RHEL 8, 9, 10),  Maintenance Support 2 (RHEL 5, 6, 7)  (product retirement)": "30 November 2020",
+    "End of ExtendedLifecycle Support": "30 June 2024"
+  },
+  {
+    "RHELversion": "Supported:  7",
+    "Last minorrelease": "7.9",
+    "Release date": "10 June 2014",
+    "End of Full Support": "6 August 2019",
+    "End of MaintenanceSupport 1 (RHEL 5, 6, 7)": "6 August 2020",
+    "End of  Maintenance Support (RHEL 8, 9, 10),  Maintenance Support 2 (RHEL 5, 6, 7)  (product retirement)": "30 June 2024",
+    "End of ExtendedLifecycle Support": "31 May 2029"
+  },
+  {
+    "RHELversion": "Supported: 8",
+    "Last minorrelease": "8.10",
+    "Release date": "7 May 2019",
+    "End of Full Support": "May 2024",
+    "End of MaintenanceSupport 1 (RHEL 5, 6, 7)": "\u2014N/a",
+    "End of  Maintenance Support (RHEL 8, 9, 10),  Maintenance Support 2 (RHEL 5, 6, 7)  (product retirement)": "May 2029",
+    "End of ExtendedLifecycle Support": "31 May 2031"
+  },
+  {
+    "RHELversion": "Supported: 9",
+    "Last minorrelease": "9.8",
+    "Release date": "08 Nov 2022",
+    "End of Full Support": "May 2027",
+    "End of MaintenanceSupport 1 (RHEL 5, 6, 7)": "\u2014N/a",
+    "End of  Maintenance Support (RHEL 8, 9, 10),  Maintenance Support 2 (RHEL 5, 6, 7)  (product retirement)": "May 2032",
+    "End of ExtendedLifecycle Support": "31 May 2034"
+  },
+  {
+    "RHELversion": "Latest version: 10",
+    "Last minorrelease": "10.2",
+    "Release date": "13 May 2025",
+    "End of Full Support": "May 2030",
+    "End of MaintenanceSupport 1 (RHEL 5, 6, 7)": "\u2014N/a",
+    "End of  Maintenance Support (RHEL 8, 9, 10),  Maintenance Support 2 (RHEL 5, 6, 7)  (product retirement)": "May 2035",
+    "End of ExtendedLifecycle Support": "31 May 2037"
+  }
+]
