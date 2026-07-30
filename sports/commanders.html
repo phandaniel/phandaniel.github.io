@@ -40,6 +40,7 @@
         const response = await fetch('../data/commanders.json');
         if (!response.ok) throw new Error("Could not fetch");
         const data = await response.json();
+        data.reverse();
         
         const tbody = document.getElementById('table-body');
         const loading = document.getElementById('loading');
@@ -57,6 +58,10 @@
           let result = getVal(['result']);
           
           if (date === '—') return;
+          if (date.toLowerCase() === 'bye') {
+            opponent = '—';
+            result = 'Upcoming';
+          }
 
           let statusText = 'Upcoming';
           let statusClass = 'status-preview';
