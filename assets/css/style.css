@@ -186,10 +186,6 @@ tr:hover td {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   min-width: 220px;
-  max-height: 80vh;
-  overflow-y: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
   display: flex;
   flex-direction: column;
   padding: 6px;
@@ -198,9 +194,6 @@ tr:hover td {
   transform: translateY(-5px) scale(0.98);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   transform-origin: top right;
-}
-.dropdown-content::-webkit-scrollbar {
-  display: none;
 }
 .dropdown-content.show {
   opacity: 1;
