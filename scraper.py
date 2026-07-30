@@ -47,3 +47,4 @@ scrape_wiki('https://en.wikipedia.org/wiki/Fedora_Linux_release_history', 'fedor
 scrape_wiki('https://en.wikipedia.org/wiki/Ubuntu_version_history', 'ubuntu.json')
 scrape_wiki('https://en.wikipedia.org/wiki/Linux_kernel_version_history', 'linux.json')
 scrape_wiki('https://en.wikipedia.org/wiki/IOS_version_history', 'ios.json')
+scrape_wiki('https://en.wikipedia.org/wiki/List_of_Starship_launches', 'starship.json')
