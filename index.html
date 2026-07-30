@@ -15,7 +15,6 @@
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
       --accent: #3b82f6;
-      --accent-hover: #2563eb;
       --border: rgba(255, 255, 255, 0.1);
     }
     
@@ -29,12 +28,16 @@
         radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15), transparent 25%),
         radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.1), transparent 25%);
       min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .container {
-      max-width: 1000px;
-      margin: 0 auto;
+      width: 100%;
+      max-width: 1200px;
       padding: 60px 20px;
+      box-sizing: border-box;
     }
 
     header {
@@ -58,80 +61,56 @@
       font-weight: 300;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
+    .table-container {
+      width: 100%;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 24px;
       backdrop-filter: blur(10px);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      border-color: rgba(255, 255, 255, 0.2);
+      overflow-x: auto;
     }
 
-    .card-header {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
     }
 
-    .card h2 {
-      margin: 0;
-      font-size: 1.75rem;
+    th, td {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    th {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--text-muted);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .version {
+      font-weight: 700;
+      color: var(--text-main);
+      font-size: 1.1rem;
+    }
+
+    .codename {
       color: var(--accent);
       font-weight: 600;
     }
 
-    .card .codename {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 600;
-    }
-
-    .details-container {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 12px;
-      padding: 16px;
-    }
-
-    .card .detail {
-      display: flex;
-      flex-direction: column;
-      font-size: 0.95rem;
-    }
-
-    .card .detail span {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 2px;
-    }
-
-    .card .detail strong {
-      color: #e2e8f0;
-      font-weight: 400;
-    }
-    
     .loading {
       text-align: center;
       font-size: 1.2rem;
@@ -147,17 +126,16 @@
     
     .status-badge {
       display: inline-block;
-      padding: 4px 8px;
-      border-radius: 4px;
+      padding: 4px 10px;
+      border-radius: 6px;
       font-size: 0.75rem;
       font-weight: 700;
       text-transform: uppercase;
-      margin-top: 10px;
-      align-self: flex-start;
+      letter-spacing: 1px;
     }
-    .status-active { background: rgba(52, 211, 153, 0.2); color: #34d399; }
-    .status-eol { background: rgba(248, 113, 113, 0.2); color: #f87171; }
-    .status-future { background: rgba(96, 165, 250, 0.2); color: #60a5fa; }
+    .status-active { background: rgba(52, 211, 153, 0.15); color: #34d399; }
+    .status-eol { background: rgba(248, 113, 113, 0.15); color: #f87171; }
+    .status-future { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
   </style>
 </head>
 <body>
@@ -168,7 +146,22 @@
     </header>
 
     <div id="loading" class="loading">Loading timeline data...</div>
-    <div id="grid" class="grid"></div>
+    
+    <div class="table-container" id="table-container" style="display: none;">
+      <table>
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Codename</th>
+            <th>Release Date</th>
+            <th>End of Life</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <script>
@@ -178,9 +171,15 @@
         if (!response.ok) throw new Error("Could not fetch data.json");
         const data = await response.json();
         
-        const grid = document.getElementById('grid');
+        // Reverse the array to show the newest versions at the top
+        data.reverse();
+
+        const tbody = document.getElementById('table-body');
         const loading = document.getElementById('loading');
+        const tableContainer = document.getElementById('table-container');
+        
         loading.style.display = 'none';
+        tableContainer.style.display = 'block';
 
         data.forEach(release => {
           const keys = Object.keys(release);
@@ -215,29 +214,17 @@
           // Don't render completely empty rows that might have been scraped
           if (version === 'Unknown' || version.length > 50) return;
 
-          const card = document.createElement('div');
-          card.className = 'card';
+          const tr = document.createElement('tr');
           
-          card.innerHTML = `
-            <div class="card-header">
-              <h2>Fedora ${version}</h2>
-              <div class="codename">${codename}</div>
-            </div>
-            
-            <div class="details-container">
-              <div class="detail">
-                <span>Release Date</span>
-                <strong>${releaseDate}</strong>
-              </div>
-              <div class="detail">
-                <span>End of Life</span>
-                <strong>${eol}</strong>
-              </div>
-            </div>
-            <div class="status-badge ${statusClass}">${statusText}</div>
+          tr.innerHTML = `
+            <td class="version">Fedora ${version}</td>
+            <td class="codename">${codename}</td>
+            <td>${releaseDate}</td>
+            <td>${eol}</td>
+            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           
-          grid.appendChild(card);
+          tbody.appendChild(tr);
         });
       } catch (err) {
         document.getElementById('loading').innerText = 'Data not generated yet. The GitHub Action will create data.json soon!';
