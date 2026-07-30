@@ -221,16 +221,14 @@
                const key = keys.find(k => k.toLowerCase().includes(str));
                if (key && release[key].trim()) return release[key];
             }
-            return 'Unknown';
+            return '—';
           };
 
           const version = getVal(['version']);
           const releaseDate = getVal(['original release date', 'release date', 'released', 'release']);
           let lastRelease = getVal(['last release']);
           
-          if (lastRelease === 'Unknown') lastRelease = '&mdash;';
-          
-          if (version === 'Unknown' || version.length > 50) return;
+          if (version === '—' || version.length > 50) return;
 
           let statusText = 'Unsupported';
           let statusClass = 'status-unsupported';

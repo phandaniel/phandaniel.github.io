@@ -224,7 +224,7 @@
                const key = keys.find(k => k.toLowerCase().includes(str));
                if (key && release[key].trim()) return release[key];
             }
-            return 'Unknown';
+            return '—';
           };
 
           const version = getVal(['version']);
@@ -232,7 +232,7 @@
           const standardSupport = getVal(['standard support']);
           const extSecurity = getVal(['extended security']);
           const legacyAddOn = getVal(['legacy add-on']);
-          const eol = standardSupport !== 'Unknown' ? standardSupport : getVal(['end of life', 'end-of-life', 'eol', 'supported until']);
+          const eol = standardSupport !== '—' ? standardSupport : getVal(['end of life', 'end-of-life', 'eol', 'supported until']);
           
           // Determine status loosely based on EOL text
           let statusClass = 'status-eol';
@@ -249,7 +249,7 @@
           }
 
           // Don't render completely empty rows that might have been scraped
-          if (version === 'Unknown' || version.length > 50) return;
+          if (version === '—' || version.length > 50) return;
 
           // Clean up values
           const cleanVal = (val) => val ? val.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').trim() : '';

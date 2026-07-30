@@ -222,7 +222,7 @@
                const key = keys.find(k => k.toLowerCase().includes(str));
                if (key && release[key].trim()) return release[key];
             }
-            return 'Unknown';
+            return '—';
           };
 
           const version = getVal(['version']);
@@ -244,7 +244,7 @@
           }
 
           // Don't render completely empty rows that might have been scraped
-          if (version === 'Unknown' || version.length > 50) return;
+          if (version === '—' || version.length > 50) return;
 
           // Clean up version string (e.g., "Unsupported: 1 (Yarrow)" -> "1")
           let cleanVersion = version.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').replace(/\s*\(.*?\)\s*/g, '').trim();
