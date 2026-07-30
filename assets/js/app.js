@@ -94,6 +94,30 @@ document.addEventListener('DOMContentLoaded', () => {
       if (content && content.classList.contains('show')) content.classList.remove('show');
     }
   });
+
+  // Smart submenu positioning
+  document.querySelectorAll('.has-submenu').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      const submenu = item.querySelector('.submenu');
+      if (!submenu) return;
+      
+      submenu.style.top = '0';
+      submenu.style.bottom = 'auto';
+      
+      const rect = submenu.getBoundingClientRect();
+      // If it overflows bottom, align it to bottom instead
+      if (rect.bottom > window.innerHeight) {
+        submenu.style.top = 'auto';
+        submenu.style.bottom = '0';
+      }
+      // If it overflows top (unlikely but safe), force top align
+      const rectAfter = submenu.getBoundingClientRect();
+      if (rectAfter.top < 0) {
+        submenu.style.top = '0';
+        submenu.style.bottom = 'auto';
+      }
+    });
+  });
 });
 
 window.utils = {
