@@ -120,6 +120,9 @@ tr:hover td {
 .status-supported { background: rgba(52, 211, 153, 0.15); color: #34d399; }
 .status-partial { background: rgba(250, 204, 21, 0.15); color: #facc15; }
 .status-preview { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+.status-active { background: rgba(52, 211, 153, 0.15); color: #34d399; }
+.status-eol { background: rgba(248, 113, 113, 0.15); color: #f87171; }
+.status-future { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
 
 /* Menu CSS */
 .dropdown-menu {
