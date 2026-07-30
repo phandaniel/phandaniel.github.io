@@ -27,9 +27,6 @@
     "Notes": "Following previous conventions, Linux 7.0 is not a major upgrade over the Linux 6.x series, but instead what would have been considered Linux 6.20."
   },
   {
-    "Version": "Legend:UnsupportedSupportedLatest versionPreview versionFuture version"
-  },
-  {
     "Version": "Unsupported: 6.19",
     "Original release date": "8 February 2026",
     "Last release": "6.19.14",
@@ -207,9 +204,6 @@
     "EOL": "January 2023",
     "Prominent features": "Performance improvements on Intel Xeon 'Ice Lake', AMD Ryzen 'Threadripper', AMD EPYC New hardware support including Intel, AMD, Qualcomm",
     "Notes": "Named \"Hurr durr I'ma  ninja sloth\""
-  },
-  {
-    "Version": "Legend:UnsupportedSupportedLatest versionPreview versionFuture version"
   },
   {
     "Version": "Unsupported: 5.19",
@@ -390,9 +384,6 @@
     "EOL": "June 2019",
     "Prominent features": "",
     "Notes": ""
-  },
-  {
-    "Version": "Legend:UnsupportedSupportedLatest versionPreview versionFuture version"
   },
   {
     "Version": "Unsupported: 4.20",
@@ -584,9 +575,6 @@
     "Notes": "Named \"Hurr durr I'ma  sheep\" (Internet poll)"
   },
   {
-    "Version": "Legend:UnsupportedSupportedLatest versionPreview versionFuture version"
-  },
-  {
     "Version": "Unsupported: 3.19",
     "Original release date": "8 February 2015",
     "Last release": "3.19.8",
@@ -762,9 +750,6 @@
     "EOL": "October 2013",
     "Prominent features": "Btrfs: automatic defragmentation and scrubbing support",
     "Notes": "7th LTS release Named Sneaky Weasel"
-  },
-  {
-    "Version": "Legend:UnsupportedSupportedLatest versionPreview versionFuture version"
   },
   {
     "Version": "Unsupported: 2.6.39",
@@ -1126,9 +1111,6 @@
     "Notes": "2.6.2\u20132.6.4 was named Feisty Dunnart2.6.5\u20132.6.9 was named Zonked Quokka 2.6.9: RHEL 4.x The 2.5 kernels were development kernels"
   },
   {
-    "Version": "Legend:UnsupportedSupportedLatest versionPreview versionFuture version"
-  },
-  {
     "Version": "Unsupported: 2.4",
     "Original release date": "4 January 2001",
     "Last release": "2.4.37.11",
@@ -1289,8 +1271,5 @@
     "EOL": "EOL",
     "Prominent features": "i386 support PATA support Minix support VGA text mode Hardcoded Finnish keyboard Supports up to 8MB RAM",
     "Notes": ""
-  },
-  {
-    "Version": "Legend:UnsupportedSupportedLatest versionPreview versionFuture version"
   }
 ]

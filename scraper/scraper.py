@@ -70,7 +70,7 @@ def scrape_wiki(url, output_file):
                     break
                 col_idx += 1
                 
-            if entry.get(headers[0]):
+            if entry.get(headers[0]) and len(entry) > 1:
                 releases.append(entry)
 
     with open(output_file, 'w') as f:
