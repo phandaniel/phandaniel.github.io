@@ -63,15 +63,9 @@
           } else if (sLower.includes('upcoming') || sLower.includes('unreleased') || sLower.includes('preview') || sLower.includes('future')) {
             statusText = 'Preview';
             statusClass = 'status-preview';
-          } else if (status !== '—') {
-            let cleanStatus = status.split('[')[0];
-            if (cleanStatus.toLowerCase().includes('latest')) {
-              statusText = 'Latest';
-              statusClass = 'status-supported';
-            } else {
-              statusText = cleanStatus.trim();
-              statusClass = 'status-partial';
-            }
+          } else {
+            statusText = 'Unsupported';
+            statusClass = 'status-unsupported';
           }
 
           const cleanStr = window.utils.cleanStr;

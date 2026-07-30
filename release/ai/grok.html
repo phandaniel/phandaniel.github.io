@@ -62,9 +62,9 @@
           } else if (sLower.includes('upcoming') || sLower.includes('unreleased')) {
             statusText = 'Upcoming';
             statusClass = 'status-preview';
-          } else if (status !== '—') {
-            statusText = status.split('[')[0].replace(/[^a-zA-Z]/g, '');
-            statusClass = 'status-partial';
+          } else {
+            statusText = 'Unsupported';
+            statusClass = 'status-unsupported';
           }
 
           const cleanStr = window.utils.cleanStr;
