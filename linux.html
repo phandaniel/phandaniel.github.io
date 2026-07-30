@@ -162,13 +162,6 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    .legend {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 20px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
     .status-unsupported { background: rgba(248, 113, 113, 0.15); color: #f87171; }
     .status-supported { background: rgba(52, 211, 153, 0.15); color: #34d399; }
     .status-preview { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
@@ -189,11 +182,6 @@
     <div id="loading" class="loading">Loading timeline data...</div>
     
     <div class="table-container" id="table-container" style="display: none;">
-      <div class="legend">
-        <span class="status-badge status-unsupported">Unsupported</span>
-        <span class="status-badge status-supported">Supported</span>
-        <span class="status-badge status-preview">Preview</span>
-      </div>
       <table>
         <thead>
           <tr>
@@ -249,7 +237,7 @@
           
           const vLower = version.toLowerCase();
           if (vLower.includes('preview version') || vLower.includes('future version')) {
-            statusText = 'Preview';
+            statusText = 'Upcoming';
             statusClass = 'status-preview';
           } else if ((vLower.includes('supported') || vLower.includes('latest')) && !vLower.includes('unsupported')) {
             statusText = 'Supported';
