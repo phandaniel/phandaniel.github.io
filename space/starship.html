@@ -61,7 +61,7 @@
           const getVal = (keys) => window.utils.getVal(keys, release);
 
           let flight = getVal(['flightno']);
-          let date = getVal(['date and time', 'date andtime']);
+          let date = getVal(['date and time', 'date andtime']).replace(/\s?\d{2}:\d{2}:\d{2}.*/, '');
           let booster = getVal(['version,booster']);
           let ship = getVal(['version,ship']);
           let payload = getVal(['payload']);
