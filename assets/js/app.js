@@ -105,5 +105,34 @@ window.utils = {
     }
     return '—';
   },
-  cleanStr: (s) => s.replace(/\[\d+\]/g, '').replace(/—N\/a/gi, '&mdash;').trim()
+  cleanStr: (s) => s.replace(/\[\d+\]/g, '').replace(/—N\/a/gi, '&mdash;').trim(),
+  renderTable: async (options) => {
+    try {
+      const response = await fetch(options.url);
+      if (!response.ok) throw new Error("Could not fetch " + options.url);
+      let data = await response.json();
+      
+      if (options.processData) data = options.processData(data);
+      
+      const tbody = document.getElementById('table-body');
+      const loading = document.getElementById('loading');
+      const tableContainer = document.getElementById('table-container');
+      
+      loading.style.display = 'none';
+      tableContainer.style.display = 'block';
+
+      data.forEach(item => {
+        const trHTML = options.renderRow(item);
+        if (trHTML) {
+          const tr = document.createElement('tr');
+          tr.innerHTML = trHTML;
+          tbody.appendChild(tr);
+        }
+      });
+    } catch (err) {
+      const loading = document.getElementById('loading');
+      if(loading) loading.innerText = 'Error loading data.';
+      console.error(err);
+    }
+  }
 };

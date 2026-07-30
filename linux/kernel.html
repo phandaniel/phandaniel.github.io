@@ -37,22 +37,15 @@
   </div>
 
   <script>
-    async function loadData() {
-      try {
-        const response = await fetch('../data/linux.json');
-        if (!response.ok) throw new Error("Could not fetch linux.json");
-        const data = await response.json();
-        
-        // No reverse needed, Linux table is mostly newest-first already
-        
-        const tbody = document.getElementById('table-body');
-        const loading = document.getElementById('loading');
-        const tableContainer = document.getElementById('table-container');
-        
-        loading.style.display = 'none';
-        tableContainer.style.display = 'block';
-
-        data.forEach(release => {
+    window.basePath = "../";
+    window.addEventListener('DOMContentLoaded', () => {
+      window.utils.renderTable({
+        url: '../data/linux.json',
+        processData: (data) => {
+          // No reverse needed, Linux table is mostly newest-first already
+          return data;
+        },
+        renderRow: (release) => {
           const keys = Object.keys(release);
           
           const getVal = (keys) => window.utils.getVal(keys, release);
@@ -77,25 +70,17 @@
 
           let cleanVersion = version.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').replace(/\s*\(.*?\)\s*/g, '').trim();
 
-          const tr = document.createElement('tr');
-          
-          tr.innerHTML = `
+          return `
             <td class="version">v${cleanVersion}</td>
             <td>${releaseDate}</td>
             <td>${lastRelease}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           
-          tbody.appendChild(tr);
-        });
-      } catch (err) {
-        document.getElementById('loading').innerText = 'Data not generated yet. The GitHub Action will create data soon!';
-        console.error(err);
-      }
-    }
-
-    loadData();
-  </script>
+          }
+      });
+    });
+</script>
 
   
 <script>window.basePath = "../";</script>

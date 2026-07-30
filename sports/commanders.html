@@ -35,21 +35,14 @@
 
   <script>
     window.basePath = "../";
-    async function loadData() {
-      try {
-        const response = await fetch('../data/commanders.json');
-        if (!response.ok) throw new Error("Could not fetch");
-        const data = await response.json();
-        data.reverse();
-        
-        const tbody = document.getElementById('table-body');
-        const loading = document.getElementById('loading');
-        const tableContainer = document.getElementById('table-container');
-        
-        loading.style.display = 'none';
-        tableContainer.style.display = 'block';
-
-        data.forEach(game => {
+    window.addEventListener('DOMContentLoaded', () => {
+      window.utils.renderTable({
+        url: '../data/commanders.json',
+        processData: (data) => {
+          data.reverse();
+          return data;
+        },
+        renderRow: (game) => {
           const keys = Object.keys(game);
           const getVal = (searchStrs) => window.utils.getVal(searchStrs, game);
 
@@ -60,7 +53,7 @@
           if (date === '—') return;
           if (date.toLowerCase() === 'bye') {
             opponent = '—';
-            result = 'Upcoming';
+            result = '—';
           }
 
           let statusText = 'Upcoming';
@@ -79,25 +72,22 @@
           } else if (result !== '—' && result !== '') {
             statusText = result.split('[')[0];
             statusClass = 'status-partial';
+          } else if (date.toLowerCase() === 'bye') {
+            statusText = '—';
+            statusClass = 'status-partial';
           }
 
           const cleanStr = window.utils.cleanStr;
 
-          const tr = document.createElement('tr');
-          tr.innerHTML = `
+          return `
             <td class="version">${cleanStr(date)}</td>
             <td>${cleanStr(opponent)}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
-          tbody.appendChild(tr);
-        });
-      } catch (err) {
-        document.getElementById('loading').innerText = 'Data not generated yet.';
-        console.error(err);
-      }
-    }
-    loadData();
-  </script>
+          }
+      });
+    });
+</script>
   <script src="../assets/js/app.js?v=5"></script>
 </body>
 </html>

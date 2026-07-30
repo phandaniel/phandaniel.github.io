@@ -37,68 +37,46 @@
   </div>
 
   <script>
-    async function loadData() {
-      try {
-        const loading = document.getElementById('loading');
-        const tableContainer = document.getElementById('table-container');
-        
-        loading.style.display = 'none';
-        tableContainer.style.display = 'block';
+    window.basePath = "../";
+    window.addEventListener('DOMContentLoaded', () => {
+      window.utils.renderTable({
+        url: '../data/kubernetes.json',
+        processData: (data) => data.reverse(),
+        renderRow: (release) => {
+          const getVal = (keys) => window.utils.getVal(keys, release);
+          
+          let rawVersion = getVal(['version']);
+          let date = getVal(['release date', 'date']);
+          let eol = getVal(['end of life', 'end of life date', 'end of life date[92]']);
+          
+          if (rawVersion === '—' || rawVersion.length > 50) return;
 
-        fetch('../data/kubernetes.json')
-        .then(res => res.json())
-        .then(data => {
-          const tbody = document.getElementById('table-body');
-          data.reverse().forEach(release => {
-            const getVal = (keys) => window.utils.getVal(keys, release);
-            
-            let rawVersion = getVal(['version']);
-            let date = getVal(['release date', 'date']);
-            let eol = getVal(['end of life', 'end of life date', 'end of life date[92]']);
-            
-            if (rawVersion === '—' || rawVersion.length > 50) return;
+          let version = rawVersion;
+          let statusText = 'Active';
+          let statusClass = 'status-supported';
+          
+          if (rawVersion.toLowerCase().includes('unsupported')) {
+              statusText = 'Unsupported';
+              statusClass = 'status-unsupported';
+              version = rawVersion.replace(/unsupported:?\s*/i, '');
+          } else {
+              statusText = 'Supported';
+              statusClass = 'status-supported';
+              version = rawVersion.replace(/(latest version|supported|future release|preview):?\s*/i, '');
+          }
 
-            let version = rawVersion;
-            let statusText = 'Active';
-            let statusClass = 'status-supported';
-            
-            if (rawVersion.toLowerCase().includes('unsupported')) {
-                statusText = 'Unsupported';
-                statusClass = 'status-unsupported';
-                version = rawVersion.replace(/unsupported:?\s*/i, '');
-            } else {
-                statusText = 'Supported';
-                statusClass = 'status-supported';
-                version = rawVersion.replace(/(latest version|supported|future release|preview):?\s*/i, '');
-            }
+          const cleanStr = (s) => (s || '—').trim();
 
-            const cleanStr = (s) => (s || '—').trim();
-
-            const tr = document.createElement('tr');
-            tr.innerHTML = `
-              <td class="version">${cleanStr(version)}</td>
-              <td>${cleanStr(date)}</td>
-              <td>${cleanStr(eol)}</td>
-              <td><span class="status-badge ${statusClass}">${statusText}</span></td>
-            `;
-            tbody.appendChild(tr);
-          });
-        })
-        .catch(err => {
-          document.getElementById('loading').innerText = 'Data not generated yet. The GitHub Action will create data soon!';
-          console.error('Error loading kubernetes data:', err);
-        });
-      } catch (err) {
-        document.getElementById('loading').innerText = 'Data not generated yet. The GitHub Action will create data soon!';
-        console.error(err);
-      }
-    }
-
-    loadData();
+          return `
+            <td class="version">${cleanStr(version)}</td>
+            <td>${cleanStr(date)}</td>
+            <td>${cleanStr(eol)}</td>
+            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+          `;
+        }
+      });
+    });
   </script>
-
-  
-<script>window.basePath = "../";</script>
   <script src="../assets/js/app.js?v=5"></script>
 </body>
 </html>

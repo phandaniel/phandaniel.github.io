@@ -34,22 +34,15 @@
   </div>
 
   <script>
-    async function loadData() {
-      try {
-        const response = await fetch('../data/gemini.json');
-        if (!response.ok) throw new Error("Could not fetch");
-        const data = await response.json();
-        
-        data.reverse();
-
-        const tbody = document.getElementById('table-body');
-        const loading = document.getElementById('loading');
-        const tableContainer = document.getElementById('table-container');
-        
-        loading.style.display = 'none';
-        tableContainer.style.display = 'block';
-
-        data.forEach(release => {
+    window.basePath = "../";
+    window.addEventListener('DOMContentLoaded', () => {
+      window.utils.renderTable({
+        url: '../data/gemini.json',
+        processData: (data) => {
+          data.reverse();
+          return data;
+        },
+        renderRow: (release) => {
           const keys = Object.keys(release);
           const getVal = (searchStrs) => window.utils.getVal(searchStrs, release);
 
@@ -86,21 +79,15 @@
 
           const cleanStr = window.utils.cleanStr;
 
-          const tr = document.createElement('tr');
-          tr.innerHTML = `
+          return `
             <td class="version">${cleanStr(version)}</td>
             <td>${cleanStr(date)}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
-          tbody.appendChild(tr);
-        });
-      } catch (err) {
-        document.getElementById('loading').innerText = 'Data not generated yet.';
-        console.error(err);
-      }
-    }
-    loadData();
-  </script>
+          }
+      });
+    });
+</script>
   <script>window.basePath = "../";</script>
   <script src="../assets/js/app.js?v=5"></script>
 </body>

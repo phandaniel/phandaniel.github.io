@@ -39,23 +39,16 @@
   </div>
 
   <script>
-    async function loadData() {
-      try {
-        const response = await fetch('../data/ubuntu.json');
-        if (!response.ok) throw new Error("Could not fetch ubuntu.json");
-        const data = await response.json();
-        
-        // Reverse the array to show the newest versions at the top
+    window.basePath = "../";
+    window.addEventListener('DOMContentLoaded', () => {
+      window.utils.renderTable({
+        url: '../data/ubuntu.json',
+        processData: (data) => {
+          // Reverse the array to show the newest versions at the top
         data.reverse();
-
-        const tbody = document.getElementById('table-body');
-        const loading = document.getElementById('loading');
-        const tableContainer = document.getElementById('table-container');
-        
-        loading.style.display = 'none';
-        tableContainer.style.display = 'block';
-
-        data.forEach(release => {
+          return data;
+        },
+        renderRow: (release) => {
           const keys = Object.keys(release);
           
           const getVal = (keys) => window.utils.getVal(keys, release);
@@ -95,9 +88,7 @@
           if (cleanExtSec.toLowerCase().includes('n/a') || cleanExtSec === '—') cleanExtSec = '<span style="color: var(--text-muted); font-weight: 400;">&mdash;</span>';
           if (cleanLegacy.toLowerCase().includes('n/a') || cleanLegacy === '—') cleanLegacy = '<span style="color: var(--text-muted); font-weight: 400;">&mdash;</span>';
 
-          const tr = document.createElement('tr');
-          
-          tr.innerHTML = `
+          return `
             <td class="version">Ubuntu ${cleanVersion}</td>
             <td>${releaseDate}</td>
             <td>${cleanStdSupport}</td>
@@ -106,16 +97,10 @@
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           
-          tbody.appendChild(tr);
-        });
-      } catch (err) {
-        document.getElementById('loading').innerText = 'Data not generated yet. The GitHub Action will create data soon!';
-        console.error(err);
-      }
-    }
-
-    loadData();
-  </script>
+          }
+      });
+    });
+</script>
 
   
 <script>window.basePath = "../";</script>

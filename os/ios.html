@@ -38,22 +38,15 @@
   </div>
 
   <script>
-    async function loadData() {
-      try {
-        const response = await fetch('../data/ios.json');
-        if (!response.ok) throw new Error("Could not fetch ios.json");
-        const data = await response.json();
-        
-        data.reverse(); // Newest first
-
-        const tbody = document.getElementById('table-body');
-        const loading = document.getElementById('loading');
-        const tableContainer = document.getElementById('table-container');
-        
-        loading.style.display = 'none';
-        tableContainer.style.display = 'block';
-
-        data.forEach(release => {
+    window.basePath = "../";
+    window.addEventListener('DOMContentLoaded', () => {
+      window.utils.renderTable({
+        url: '../data/ios.json',
+        processData: (data) => {
+          data.reverse(); // Newest first
+          return data;
+        },
+        renderRow: (release) => {
           const keys = Object.keys(release);
           
           const getVal = (keys) => window.utils.getVal(keys, release);
@@ -90,9 +83,7 @@
           // Remove citation links like [1][2]
           eol = eol.replace(/\[\d+\]/g, '');
 
-          const tr = document.createElement('tr');
-          
-          tr.innerHTML = `
+          return `
             <td class="version">${cleanVersion}</td>
             <td>${initialRelease}</td>
             <td>${latestVersion}</td>
@@ -100,16 +91,10 @@
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           
-          tbody.appendChild(tr);
-        });
-      } catch (err) {
-        document.getElementById('loading').innerText = 'Data not generated yet. The GitHub Action will create data soon!';
-        console.error(err);
-      }
-    }
-
-    loadData();
-  </script>
+          }
+      });
+    });
+</script>
 
   
 <script>window.basePath = "../";</script>

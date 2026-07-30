@@ -36,12 +36,12 @@
   </div>
 
   <script>
-    async function loadData() {
-      try {
-        const response = await fetch('../data/starship.json');
-        if (!response.ok) throw new Error("Could not fetch starship.json");
-        const data = await response.json();
-        // Filter to keep only numbered flights and exactly one upcoming unnumbered flight
+    window.basePath = "../";
+    window.addEventListener('DOMContentLoaded', () => {
+      window.utils.renderTable({
+        url: '../data/starship.json',
+        processData: (data) => {
+          // Filter to keep only numbered flights and exactly one upcoming unnumbered flight
         let foundUpcoming = false;
         const filteredData = data.filter(release => {
           const date = window.utils.getVal(['date and time', 'date andtime'], release);
@@ -61,15 +61,9 @@
 
         // Data is chronological. Reverse so newest/upcoming are on top.
         filteredData.reverse();
-
-        const tbody = document.getElementById('table-body');
-        const loading = document.getElementById('loading');
-        const tableContainer = document.getElementById('table-container');
-        
-        loading.style.display = 'none';
-        tableContainer.style.display = 'block';
-
-        filteredData.forEach(release => {
+          return filteredData;
+        },
+        renderRow: (release) => {
           const keys = Object.keys(release);
           const getVal = (keys) => window.utils.getVal(keys, release);
 
@@ -99,24 +93,16 @@
           flight = cleanStr(flight);
           date = cleanStr(date);
 
-          const tr = document.createElement('tr');
-          
-          tr.innerHTML = `
+          return `
             <td class="flight-no">${flight !== '—' ? '#' + flight : '—'}</td>
             <td>${date}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           
-          tbody.appendChild(tr);
-        });
-      } catch (err) {
-        document.getElementById('loading').innerText = 'Data not generated yet. The GitHub Action will create data soon!';
-        console.error(err);
-      }
-    }
-
-    loadData();
-  </script>
+          }
+      });
+    });
+</script>
 
   
 <script>window.basePath = "../";</script>

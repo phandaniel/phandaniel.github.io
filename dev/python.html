@@ -37,78 +37,56 @@
   </div>
 
   <script>
-    async function loadData() {
-      try {
-        const loading = document.getElementById('loading');
-        const tableContainer = document.getElementById('table-container');
-        
-        loading.style.display = 'none';
-        tableContainer.style.display = 'block';
+    window.basePath = "../";
+    window.addEventListener('DOMContentLoaded', () => {
+      window.utils.renderTable({
+        url: '../data/python.json',
+        processData: (data) => data.reverse(),
+        renderRow: (release) => {
+          const getVal = (keys) => window.utils.getVal(keys, release);
+          
+          let rawVersion = getVal(['version']);
+          let microVersion = getVal(['latest micro version']);
+          let date = getVal(['release date']);
+          let support = getVal(['end of full support']);
+          
+          if (rawVersion === '—' || rawVersion.length > 50) return;
 
-        fetch('../data/python.json')
-        .then(res => res.json())
-        .then(data => {
-          const tbody = document.getElementById('table-body');
-          data.reverse().forEach(release => {
-            const getVal = (keys) => window.utils.getVal(keys, release);
-            
-            let rawVersion = getVal(['version']);
-            let microVersion = getVal(['latest micro version']);
-            let date = getVal(['release date']);
-            let support = getVal(['end of full support']);
-            
-            if (rawVersion === '—' || rawVersion.length > 50) return;
+          let version = rawVersion;
+          let statusText = 'Supported';
+          let statusClass = 'status-supported';
+          
+          if (rawVersion.toLowerCase().includes('unsupported')) {
+              statusText = 'Unsupported';
+              statusClass = 'status-unsupported';
+              version = rawVersion.replace(/unsupported:?\s*/i, '');
+          } else if (rawVersion.toLowerCase().includes('future version') || rawVersion.toLowerCase().includes('future release')) {
+              statusText = 'Upcoming';
+              statusClass = 'status-preview';
+              version = rawVersion.replace(/future (version|release):?\s*/i, '');
+          } else if (rawVersion.toLowerCase().includes('latest version')) {
+              statusText = 'Supported';
+              statusClass = 'status-supported';
+              version = rawVersion.replace(/latest version:?\s*/i, '');
+          } else {
+              statusText = 'Supported';
+              statusClass = 'status-supported';
+              version = rawVersion.replace(/supported:?\s*/i, '');
+          }
 
-            let version = rawVersion;
-            let statusText = 'Supported';
-            let statusClass = 'status-supported';
-            
-            if (rawVersion.toLowerCase().includes('unsupported')) {
-                statusText = 'Unsupported';
-                statusClass = 'status-unsupported';
-                version = rawVersion.replace(/unsupported:?\s*/i, '');
-            } else if (rawVersion.toLowerCase().includes('future version') || rawVersion.toLowerCase().includes('future release')) {
-                statusText = 'Upcoming';
-                statusClass = 'status-preview';
-                version = rawVersion.replace(/future (version|release):?\s*/i, '');
-            } else if (rawVersion.toLowerCase().includes('latest version')) {
-                statusText = 'Supported';
-                statusClass = 'status-supported';
-                version = rawVersion.replace(/latest version:?\s*/i, '');
-            } else {
-                statusText = 'Supported';
-                statusClass = 'status-supported';
-                version = rawVersion.replace(/supported:?\s*/i, '');
-            }
+          const cleanStr = (s) => (s || '—').trim();
 
-            const cleanStr = (s) => (s || '—').trim();
-
-            const tr = document.createElement('tr');
-            tr.innerHTML = `
-              <td class="version">${cleanStr(version)}</td>
-              <td>${cleanStr(microVersion)}</td>
-              <td>${cleanStr(date)}</td>
-              <td>${cleanStr(support)}</td>
-              <td><span class="status-badge ${statusClass}">${statusText}</span></td>
-            `;
-            tbody.appendChild(tr);
-          });
-        })
-        .catch(err => {
-          document.getElementById('loading').innerText = 'Data not generated yet. The GitHub Action will create data soon!';
-          console.error('Error loading python data:', err);
-        });
-      } catch (err) {
-        document.getElementById('loading').innerText = 'Data not generated yet. The GitHub Action will create data soon!';
-        console.error(err);
-      }
-    }
-
-    loadData();
+          return `
+            <td class="version">${cleanStr(version)}</td>
+            <td>${cleanStr(microVersion)}</td>
+            <td>${cleanStr(date)}</td>
+            <td>${cleanStr(support)}</td>
+            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+          `;
+        }
+      });
+    });
   </script>
-
-  
-<script>window.basePath = "../";</script>
   <script src="../assets/js/app.js?v=5"></script>
 </body>
 </html>
