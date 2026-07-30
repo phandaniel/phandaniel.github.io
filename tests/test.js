@@ -30,7 +30,7 @@ let passed = true;
     });
 
     try {
-      await page.goto(`file://${process.cwd()}/${file}`, { waitUntil: 'networkidle0' });
+      await page.goto(`file://${process.cwd()}/../${file}`, { waitUntil: 'networkidle0' });
       
       // Check if table populated
       const rowCount = await page.$$eval('#table-body tr', rows => rows.length);
