@@ -67,18 +67,18 @@
                 statusText = 'Unsupported';
                 statusClass = 'status-unsupported';
                 version = rawVersion.replace(/unsupported:?\s*/i, '');
-            } else if (rawVersion.toLowerCase().includes('future release')) {
-                statusText = 'Future Release';
-                statusClass = 'status-future';
-                version = rawVersion.replace(/future release:?\s*/i, '');
+            } else if (rawVersion.toLowerCase().includes('future version') || rawVersion.toLowerCase().includes('future release')) {
+                statusText = 'Upcoming';
+                statusClass = 'status-preview';
+                version = rawVersion.replace(/future (version|release):?\s*/i, '');
             } else if (rawVersion.toLowerCase().includes('latest version')) {
-                statusText = 'Latest';
+                statusText = 'Supported';
                 statusClass = 'status-supported';
                 version = rawVersion.replace(/latest version:?\s*/i, '');
             } else {
                 statusText = 'Supported';
                 statusClass = 'status-supported';
-                version = rawVersion.replace(/(supported):?\s*/i, '');
+                version = rawVersion.replace(/supported:?\s*/i, '');
             }
 
             const cleanStr = (s) => (s || '—').trim();
