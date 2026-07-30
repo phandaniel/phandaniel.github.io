@@ -1,0 +1,1181 @@
+[
+  {
+    "Version": "Preview version: 7.2",
+    "Original release date": "",
+    "Last release": "",
+    "Maintainer": "",
+    "EOL": "",
+    "Prominent features": "",
+    "Notes": ""
+  },
+  {
+    "Version": "Latest version: 7.1",
+    "Original release date": "14 June 2026",
+    "Last release": "7.1.5",
+    "Maintainer": "Linus Torvalds",
+    "EOL": "",
+    "Prominent features": "Added new NTFS driver (formally NTFSPLUS) Removal of legacy code, including the i486, some PCI and PCMCIA drivers, bus mouse, etc. Apple SMC power driver for battery information on Apple Silicon Enabled Intel FRED by default Real Time support enabled on 32-bit ARM New Coreboot framebuffer driver Intel QAT Zstd support Power reporting for AMD Ryzen AI NPUs",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 7.0",
+    "Original release date": "12 April 2026",
+    "Last release": "7.0.12",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "",
+    "Prominent features": "Introduced fsnotify to create a standard API for file IO error reporting Live health monitoring on XFS filesystems Added support for Clang capability analysis Better io_uring support for filters open_tree(2) function extended Phase II swap performance with swap table Time slice extension added to rseq Preemption selection simplified AccECN enabled by default BTRFS experimental support for the remap tree kmalloc_obj() introduced",
+    "Notes": "Following previous conventions, Linux 7.0 is not a major upgrade over the Linux 6.x series, but instead what would have been considered Linux 6.20."
+  },
+  {
+    "Version": "Unsupported: 6.19",
+    "Original release date": "8 February 2026",
+    "Last release": "6.19.14",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "22 April 2026",
+    "Prominent features": "listns(2) system call added for namespaces Live update orchestrator Support for PCIe Link Encryption  Improvements to the BTRFS filesystem EXT4 filesystem now supports block sizes that are larger than the page size Graphical updates including a color pipeline API and a sharpness property Updates to io_uring Added support for SFrame stack unwinding",
+    "Notes": ""
+  },
+  {
+    "Version": "Supported: 6.18",
+    "Original release date": "30 November 2025",
+    "Last release": "6.18.36",
+    "Maintainer": "December 2028",
+    "EOL": "Improved kernel memory allocation performance with slub sheaves A device mapper target for persistent cache Process Namespaces as file handles Support for Accurate Explicit Congestion Notification in TCP Add support for PSP encryption of TCP connections Better swapping performance UDP receive performance improvements BPF signed programs More scalable NFS servers by removing caching Introduction of memdesc_flags_t, for a future leaner struct page Remove bcachefs core code",
+    "Prominent features": "26th LTS release"
+  },
+  {
+    "Version": "Unsupported: 6.17",
+    "Original release date": "28 September 2025",
+    "Last release": "6.17.13",
+    "Maintainer": "18 December 2025",
+    "EOL": "Easier CPU bug mitigation selection New file_getattr/file_setattr system calls Better and more secure core dumping Initial priority inheritance support for solving priority inversion Unconditionally compile task scheduler with SMP support Per NUMA node proactive reclaim, for better control of memory reclaim on NUMA systems Introduce a new fallocate(2) flag, for more efficient writing of zeroes Runtime Verification: Support for Linear temporal logic monitors Change bcachefs status from 'Supported' to 'Externally maintained'",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 6.16",
+    "Original release date": "27 July 2025",
+    "Last release": "6.16.12",
+    "Maintainer": "12 October 2025",
+    "EOL": "XFS support for large atomic writes USB audio offload support Initial support for Intel Trusted Domain Extensions Allow to zero-copy send TCP payloads from DMABUF memory Automatic weighted interleaved memory allocation policy Support for Intel Advanced Performance Extensions Add support for sending coredumps over an AF_UNIX socket Futex improvements Some Ext4 performance improvements Build optimization for the local CPU on x86",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 6.15",
+    "Original release date": "25 May 2025",
+    "Last release": "6.15.11",
+    "Maintainer": "20 August 2025",
+    "EOL": "Btrfs: fast Zstd compression support",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 6.14",
+    "Original release date": "24 March 2025",
+    "Last release": "6.14.11",
+    "Maintainer": "10 June 2025",
+    "EOL": "Improved Wine speed Copilot keyboard key support",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 6.13",
+    "Original release date": "20 January 2025",
+    "Last release": "6.13.12",
+    "Maintainer": "20 April 2025",
+    "EOL": "New handheld support Intel Arc B series support",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Supported: 6.12",
+    "Original release date": "17 November 2024",
+    "Last release": "6.12.94",
+    "Maintainer": "December 2028",
+    "EOL": "Real-time support for x86/x86_64, RISC-V, and ARM64 Userspace scheduler extensions support QR codes for DRM panic messages",
+    "Prominent features": "25th LTS release 5th SLTS with 10 years of support through 2035. Used in Debian 13 \"Trixie\" and RHEL 10.0"
+  },
+  {
+    "Version": "Unsupported: 6.11",
+    "Original release date": "15 September 2024",
+    "Last release": "6.11.11",
+    "Maintainer": "5 December 2024",
+    "EOL": "Atomic writes support for buffered I/O Dedicated bucket slab allocator to help protect against heap spraying vDSO implementation of getrandom()",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 6.10",
+    "Original release date": "14 July 2024",
+    "Last release": "6.10.14",
+    "Maintainer": "Greg Kroah-Hartman & Sasha Levin",
+    "EOL": "10 October 2024",
+    "Prominent features": "Memory-allocation profiling Encrypted interactions with trusted platform modules",
+    "Notes": "Named \"Baby Opossum Posse\" The one last minute change was made in the credits of the ReiserFS README as requested by the original developer."
+  },
+  {
+    "Version": "Unsupported: 6.9",
+    "Original release date": "12 May 2024",
+    "Last release": "6.9.10",
+    "Maintainer": "27 July 2024",
+    "EOL": "Improved performance for Intel Core Ultra (Meteor Lake) Support for AMD P-State Preferred Cores Intel FRED (Flexible Return Event Delivery) Support for larger console frame-buffer fonts for 4K displays Faster boot times for systems with lots of RAM and using HugeTLBs DM VDO (Device Mapper Virtual Data Optimizer) mainlined Hibernate LZ4 compression support"
+  },
+  {
+    "Version": "Unsupported: 6.8",
+    "Original release date": "10 March 2024",
+    "Last release": "6.8.12",
+    "Maintainer": "30 May 2024",
+    "EOL": "Deadline servers for better realtime scheduling Multi-size transparent huge pages for anonymous memory Two new syscalls for better mount management: listmount() and statmount() Data type profiling with perf Forbid users from writing to partitions used by filesystems New system calls to deal with multiple stacked LSMs Driver for new Intel Xe graphics",
+    "Prominent features": "Used in Ubuntu 24.04 LTS"
+  },
+  {
+    "Version": "Unsupported: 6.7",
+    "Original release date": "7 January 2024",
+    "Last release": "6.7.12",
+    "Maintainer": "3 April 2024",
+    "EOL": "Initial Bcachefs filesystem support Itanium support removed Intel Meteor Lake Graphics declared stable Initial Nouveau support for Nvidia GSP firmware Ability to disable IA-32 support at boot time on AMD64 Expansion of AMD Seamless Boot Support Improvement in loading of x86 microcode Support for RAID stripe tree, simple quota accounting, and temporary FSID added to Btrfs JFS minor stability improvements",
+    "Prominent features": "According to Linus Torvalds, \"one of the largest kernel releases we've ever had\""
+  },
+  {
+    "Version": "Supported: 6.6",
+    "Original release date": "29 October 2023",
+    "Last release": "6.6.143",
+    "Maintainer": "December 2027",
+    "EOL": "The new EEVDF process scheduler was merged. It aims to replace the CFS scheduler. Intel Shadow Stack was finally merged; Exploiting ROPs is now harder Support for Partial SMT Performance Improvement for CPUs with a lot of cores and shared Last Level Caches Continued Intel Meteor Lake graphics and sound enablement/improvements Better performance for Ext4 and io_uring Security: add io_uring_disabled to shrink kernel's attack surface DEFLATE compression support for EROFS",
+    "Prominent features": "24th LTS release The CFS scheduler was the de facto standard for 16+ years ReiserFS is now declared to be obsolete and flagged for removal in 2025."
+  },
+  {
+    "Version": "Unsupported: 6.5",
+    "Original release date": "27 August 2023",
+    "Last release": "6.5.13",
+    "Maintainer": "28 November 2023",
+    "EOL": "Initial USB4 v2.0 support MIDI 2.0 support",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 6.4",
+    "Original release date": "25 June 2023",
+    "Last release": "6.4.16",
+    "Maintainer": "13 September 2023",
+    "EOL": "Intel Linear Address Masking Partial support for Apple M2 Autonomous frequency and power control on AMD Zen architecture CPUs Support for RISC-V hibernation on future laptops Improvements for LoongArch CPU architecture Further Intel Meteor Lake Graphics development 4K resolution support for Rockchip Direct Rendering Manager driver Better AMDgpu support for the Steam Deck Optimizations to EROFS, Btrfs, F2FS, NTFS, and Ext4 Support for Intel Lunar Lake HD Audio Continued Wi-Fi 7 development Quality of life improvements for Apple silicon  users Further Rust up-streaming to support the first Rust drivers Removal of SLOB memory allocator",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 6.3",
+    "Original release date": "23 April 2023",
+    "Last release": "6.3.13",
+    "Maintainer": "11 July 2023",
+    "EOL": "Even more Rust in the kernel Initial Support for Intel Meteor Lake Display Intel Meteor Lake VPUs (\"Versatile Processing Unit\") support AMD Automatic IBRS Intel TPMI driver was merged, hopes are this will give more control over power management. Big Performance Improvement for EXT4. Nice Improvements for BTRFS too IPv4 BIG TCP support, maybe better network performance Microsoft Hyper-V nested hypervisor support. Faster kernel builds and with lower peak memory use. Removed support for the Intel ICC compiler.",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 6.2",
+    "Original release date": "19 February 2023",
+    "Last release": "6.2.16",
+    "Maintainer": "17 May 2023",
+    "EOL": "Intel Arc drivers are now deemed \"stable\" and on by default. Initial FOSS support for NVIDIA GeForce 30 Series. But performance is poor for now. Support for Apple's M1 Call Depth Tracking as a better performance alternative to IBRS for older Intel CPUs Some Power-savings improvements when the system is idle or lightly loaded. Support for running Raspberry Pi in 4K@60\u00a0Hz Better performance and scalability for running RAID5/6 in btrfs-like systems More Rust in the kernel",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Supported: 6.1",
+    "Original release date": "11 December 2022",
+    "Last release": "6.1.176",
+    "Maintainer": "December 2027 August 2033",
+    "EOL": "Support for writing kernel modules in Rust Multi-Gen LRU page reclaiming (not yet enabled by default) Btrfs performance improvements Support for more sound hardware Improved support for game controllers",
+    "Prominent features": "23rd LTS releaseUsed in Debian 12 \"Bookworm\" 4th SLTS release (which CIP is planning to support until August 2033) 6.1.28 is named Curry Ramen"
+  },
+  {
+    "Version": "Unsupported: 6.0",
+    "Original release date": "2 October 2022",
+    "Last release": "6.0.19",
+    "Maintainer": "January 2023",
+    "EOL": "Performance improvements on Intel Xeon 'Ice Lake', AMD Ryzen 'Threadripper', AMD EPYC New hardware support including Intel, AMD, Qualcomm",
+    "Prominent features": "Named \"Hurr durr I'ma  ninja sloth\""
+  },
+  {
+    "Version": "Unsupported: 5.19",
+    "Original release date": "31 July 2022",
+    "Last release": "5.19.17",
+    "Maintainer": "Greg Kroah-Hartman & Sasha Levin",
+    "EOL": "October 2022",
+    "Prominent features": "Initial support for LoongArch Support for Big TCP More secure encrypted virtualization with AMD SEV-SNP and Intel TDX Armv9 Scalable Matrix Extension support Introduce Intel In-Field Scan driver to run targeted low level diagnostics outside of the CPU's architectural error detection capabilities a.out support removed",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 5.18",
+    "Original release date": "22 May 2022",
+    "Last release": "5.18.19",
+    "Maintainer": "August 2022",
+    "EOL": "Support for Indirect Branch Tracking on Intel CPUs User events fprobe, for probing multiple functions with a single probe handler Headers rearchitecturing preparations for faster compilation times Stricter memcpy() compile-time bounds checking Switch to C11",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 5.17",
+    "Original release date": "20 March 2022",
+    "Last release": "5.17.15",
+    "Maintainer": "June 2022",
+    "EOL": "BPF CO-RE support Random number generator improvements New Real-Time Linux Analysis (RTLA) tool Support giving names to anonymous memory Mitigate straight-line speculation attacks",
+    "Prominent features": "Used in Ubuntu 22.04 LTS on newer hardware Named Superb Owl"
+  },
+  {
+    "Version": "Unsupported: 5.16",
+    "Original release date": "9 January 2022",
+    "Last release": "5.16.20",
+    "Maintainer": "April 2022",
+    "EOL": "New futex_waitv() system call for faster game performance Memory folios infrastructure for a faster memory management Add support for AMX instructions Improve write congestion",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Supported: 5.15",
+    "Original release date": "31 October 2021",
+    "Last release": "5.15.210",
+    "Maintainer": "December 2026",
+    "EOL": "New experimental NTFS file system implementation ksmbd, an in-kernel SMB 3 server Migrate memory pages to persistent memory in lieu of discard DAMON, a data access monitor Introduce process_mrelease(2) system call",
+    "Prominent features": "22nd LTS release; used in  Ubuntu 22.04 LTS, Slackware 15, UEK 7 Named Trick or Treat"
+  },
+  {
+    "Version": "Unsupported: 5.14",
+    "Original release date": "29 August 2021",
+    "Last release": "5.14.21",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "November 2021",
+    "Prominent features": "",
+    "Notes": "Used in RHEL 9.x and derivatives (Red Hat ignores LTS-Kernel, own kernel-backports) and SLE 15 SP4/openSUSE Leap 15.4"
+  },
+  {
+    "Version": "Unsupported: 5.13",
+    "Original release date": "27 June 2021",
+    "Last release": "5.13.19",
+    "Maintainer": "Greg Kroah-Hartman & Sasha Levin",
+    "EOL": "September 2021",
+    "Prominent features": "Support for Zstd compressed modules Landlock Linux security module",
+    "Notes": "Named Opossums on Parade"
+  },
+  {
+    "Version": "Unsupported: 5.12",
+    "Original release date": "25 April 2021",
+    "Last release": "5.12.19",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "July 2021",
+    "Prominent features": "",
+    "Notes": "Named Frozen Wasteland"
+  },
+  {
+    "Version": "Unsupported: 5.11",
+    "Original release date": "14 February 2021",
+    "Last release": "5.11.22",
+    "Maintainer": "May 2021",
+    "EOL": "",
+    "Prominent features": "Named \"\ud83d\udc95 Valentine's Day Edition \ud83d\udc95\""
+  },
+  {
+    "Version": "Supported: 5.10",
+    "Original release date": "13 December 2020",
+    "Last release": "5.10.259",
+    "Maintainer": "Greg Kroah-Hartman & Sasha Levin",
+    "EOL": "December 2026 January 2031",
+    "Prominent features": "Support for ARM64 memory tagging extension (MTE)",
+    "Notes": "21st LTS release; used in Debian 11 \"Bullseye\" 3rd SLTS release (which CIP is planning to support until January 2031) Named \"Dare mighty things\""
+  },
+  {
+    "Version": "Unsupported: 5.9",
+    "Original release date": "11 October 2020",
+    "Last release": "5.9.16",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "December 2020",
+    "Prominent features": "",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 5.8",
+    "Original release date": "2 August 2020",
+    "Last release": "5.8.18",
+    "Maintainer": "November 2020",
+    "EOL": "",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 5.7",
+    "Original release date": "31 May 2020",
+    "Last release": "5.7.19",
+    "Maintainer": "August 2020",
+    "EOL": "",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 5.6",
+    "Original release date": "29 March 2020",
+    "Last release": "5.6.19",
+    "Maintainer": "June 2020",
+    "EOL": "Initial USB4 support Year 2038 fix for 32-bit systems WireGuard",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 5.5",
+    "Original release date": "26 January 2020",
+    "Last release": "5.5.19",
+    "Maintainer": "April 2020",
+    "EOL": "",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 5.4",
+    "Original release date": "24 November 2019",
+    "Last release": "5.4.302",
+    "Maintainer": "Greg Kroah-Hartman & Sasha Levin",
+    "EOL": "December 2025",
+    "Prominent features": "",
+    "Notes": "20th LTS release, used in Ubuntu 20.04 LTS5.4-rc2 is named Nesting Opossum 5.4-rc5 is named Kleptomaniac Octopus"
+  },
+  {
+    "Version": "Unsupported: 5.3",
+    "Original release date": "15 September 2019",
+    "Last release": "5.3.18",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "December 2019",
+    "Prominent features": "",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 5.2",
+    "Original release date": "7 July 2019",
+    "Last release": "5.2.20",
+    "Maintainer": "October 2019",
+    "EOL": "",
+    "Prominent features": "5.2-rc2 is named Golden Lions 5.2 is named Bobtail Squid"
+  },
+  {
+    "Version": "Unsupported: 5.1",
+    "Original release date": "5 May 2019",
+    "Last release": "5.1.21",
+    "Maintainer": "July 2019",
+    "EOL": "io_uring API, a new way to do asynchronous I/O (AIO), the older API/interface \"aio\" had problems and performance issues.",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 5.0",
+    "Original release date": "3 March 2019",
+    "Last release": "5.0.21",
+    "Maintainer": "June 2019",
+    "EOL": "",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 4.20",
+    "Original release date": "23 December 2018",
+    "Last release": "4.20.17",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "March 2019",
+    "Prominent features": "",
+    "Notes": "Named Shy Crocodile"
+  },
+  {
+    "Version": "Supported: 4.19",
+    "Original release date": "22 October 2018",
+    "Last release": "4.19.325 4.19.325-cip124",
+    "Maintainer": "Greg Kroah-Hartman & Sasha Levin Ulrich Hecht & Pavel Machek",
+    "EOL": "December 2024 January 2029",
+    "Prominent features": "",
+    "Notes": "19th LTS release. Used in Debian 10 \"Buster\". Second SLTS release (which CIP is planning to support until January 2029). Named \"People's Front\""
+  },
+  {
+    "Version": "Unsupported: 4.18",
+    "Original release date": "12 August 2018",
+    "Last release": "4.18.20",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "November 2018",
+    "Prominent features": "",
+    "Notes": "RHEL 8.x (Red Hat ignores LTS-Kernel, own kernel-backports)"
+  },
+  {
+    "Version": "Unsupported: 4.17",
+    "Original release date": "3 June 2018",
+    "Last release": "4.17.19",
+    "Maintainer": "August 2018",
+    "EOL": "",
+    "Prominent features": "Named Merciless Moray"
+  },
+  {
+    "Version": "Unsupported: 4.16",
+    "Original release date": "1 April 2018",
+    "Last release": "4.16.18",
+    "Maintainer": "June 2018",
+    "EOL": "",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 4.15",
+    "Original release date": "28 January 2018",
+    "Last release": "4.15.18",
+    "Maintainer": "April 2018",
+    "EOL": "",
+    "Prominent features": "Used in Ubuntu 18.04 LTS"
+  },
+  {
+    "Version": "Unsupported: 4.14",
+    "Original release date": "12 November 2017",
+    "Last release": "4.14.336",
+    "Maintainer": "Greg Kroah-Hartman & Sasha Levin",
+    "EOL": "January 2024",
+    "Prominent features": "Zstd compression for Btrfs and Squashfs",
+    "Notes": "18th LTS release 4.14.1 is named Petit Gorille"
+  },
+  {
+    "Version": "Unsupported: 4.13",
+    "Original release date": "3 September 2017",
+    "Last release": "4.13.16",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "November 2017",
+    "Prominent features": "",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 4.12",
+    "Original release date": "2 July 2017",
+    "Last release": "4.12.14",
+    "Maintainer": "September 2017",
+    "EOL": "BFQ I/O scheduler Kyber I/O scheduler USB-C support",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 4.11",
+    "Original release date": "30 April 2017",
+    "Last release": "4.11.12",
+    "Maintainer": "July 2017",
+    "EOL": "",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 4.10",
+    "Original release date": "19 February 2017",
+    "Last release": "4.10.17",
+    "Maintainer": "May 2017",
+    "EOL": "",
+    "Prominent features": "4.10-rc5 was named Anniversary Edition 4.10-rc6 was named Fearless Coyote"
+  },
+  {
+    "Version": "Unsupported: 4.9",
+    "Original release date": "11 December 2016",
+    "Last release": "4.9.337",
+    "Maintainer": "Greg Kroah-Hartman & Sasha Levin",
+    "EOL": "January 2023",
+    "Prominent features": "",
+    "Notes": "17th LTS release. Used in Debian 9 \"Stretch\". Named Roaring Lionus"
+  },
+  {
+    "Version": "Unsupported: 4.8",
+    "Original release date": "25 September 2016",
+    "Last release": "4.8.17",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "January 2017",
+    "Prominent features": "",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 4.7",
+    "Original release date": "24 July 2016",
+    "Last release": "4.7.10",
+    "Maintainer": "October 2016",
+    "EOL": "Schedutil governor Async discard support EFI bootloader control driver",
+    "Prominent features": "Named Psychotic Stoned Sheep"
+  },
+  {
+    "Version": "Unsupported: 4.6",
+    "Original release date": "15 May 2016",
+    "Last release": "4.6.7",
+    "Maintainer": "August 2016",
+    "EOL": "",
+    "Prominent features": "Named Charred Weasel"
+  },
+  {
+    "Version": "Unsupported: 4.5",
+    "Original release date": "13 March 2016",
+    "Last release": "4.5.7",
+    "Maintainer": "June 2016",
+    "EOL": "",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Supported: 4.4",
+    "Original release date": "10 January 2016",
+    "Last release": "4.4.302 4.4.302-cip103",
+    "Maintainer": "Greg Kroah-Hartman & Sasha Levin  Ulrich Hecht & Pavel Machek",
+    "EOL": "February 2022 January 2027",
+    "Prominent features": "",
+    "Notes": "16th LTS release, used in Slackware 14.2. Canonical provided extended support until April 2021. As the first kernel selected for Super Long Term Support (SLTS), the Civil Infrastructure Platform will provide support until at least 2026. Used in Ubuntu 16.04 LTS"
+  },
+  {
+    "Version": "Unsupported: 4.3",
+    "Original release date": "1 November 2015",
+    "Last release": "4.3.6",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "February 2016",
+    "Prominent features": "",
+    "Notes": "Named Blurry Fish Butt"
+  },
+  {
+    "Version": "Unsupported: 4.2",
+    "Original release date": "30 August 2015",
+    "Last release": "4.2.8",
+    "Maintainer": "December 2015",
+    "EOL": "",
+    "Prominent features": "Canonical provided extended support until July 2016."
+  },
+  {
+    "Version": "Unsupported: 4.1",
+    "Original release date": "22 June 2015",
+    "Last release": "4.1.52",
+    "Maintainer": "Sasha Levin (formerly Greg Kroah-Hartman)",
+    "EOL": "May 2018",
+    "Prominent features": "",
+    "Notes": "15th LTS release. 4.1.1 was named Series 4800"
+  },
+  {
+    "Version": "Unsupported: 4.0",
+    "Original release date": "12 April 2015",
+    "Last release": "4.0.9",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "July 2015",
+    "Prominent features": "Initial live patching support lazytime mount option",
+    "Notes": "Named \"Hurr durr I'ma  sheep\" (Internet poll)"
+  },
+  {
+    "Version": "Unsupported: 3.19",
+    "Original release date": "8 February 2015",
+    "Last release": "3.19.8",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "May 2015",
+    "Prominent features": "",
+    "Notes": "Canonical provided extended support until July 2016."
+  },
+  {
+    "Version": "Unsupported: 3.18",
+    "Original release date": "7 December 2014",
+    "Last release": "3.18.140",
+    "Maintainer": "Greg Kroah-Hartman (formerly Sasha Levin) (formerly Greg Kroah-Hartman)",
+    "EOL": "January 2017",
+    "Prominent features": "OverlayFS eBPF DCTCP support",
+    "Notes": "14th LTS release, named Diseased Newt"
+  },
+  {
+    "Version": "Unsupported: 3.17",
+    "Original release date": "5 October 2014",
+    "Last release": "3.17.8",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "January 2015",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 3.16",
+    "Original release date": "3 August 2014",
+    "Last release": "3.16.85",
+    "Maintainer": "Ben Hutchings (formerly Greg Kroah-Hartman)",
+    "EOL": "Maintained until October 2014, then May 2016 to June 2020",
+    "Prominent features": "",
+    "Notes": "13th LTS release. Was used in Debian 8 \"Jessie\". Canonical provided extended support until April 2016. 3.16.1 was named Museum of Fishiegoodies"
+  },
+  {
+    "Version": "Unsupported: 3.15",
+    "Original release date": "8 June 2014",
+    "Last release": "3.15.10",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "August 2014",
+    "Prominent features": "LZ4 compression support for zram"
+  },
+  {
+    "Version": "Unsupported: 3.14",
+    "Original release date": "30 March 2014",
+    "Last release": "3.14.79",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "August 2016",
+    "Prominent features": "zram support",
+    "Notes": "12th LTS release, named Shuffling Zombie Juror"
+  },
+  {
+    "Version": "Unsupported: 3.13",
+    "Original release date": "19 January 2014",
+    "Last release": "3.13.11",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "April 2014",
+    "Prominent features": "",
+    "Notes": "Canonical provided extended support until April 2016. Named One Giant Leap for Frogkind (NASA LADEE launch photo) Used in Ubuntu 14.04 LTS"
+  },
+  {
+    "Version": "Unsupported: 3.12",
+    "Original release date": "3 November 2013",
+    "Last release": "3.12.74",
+    "Maintainer": "Ji\u0159\u00ed Slab\u00fd (formerly Greg Kroah-Hartman)",
+    "EOL": "May 2017",
+    "Prominent features": "",
+    "Notes": "11th LTS release, named Suicidal Squirrel"
+  },
+  {
+    "Version": "Unsupported: 3.11",
+    "Original release date": "2 September 2013",
+    "Last release": "3.11.10",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "November 2013",
+    "Prominent features": "zswap support",
+    "Notes": "Canonical provided extended support until August 2014. Named Linux for Workgroups after the 20 years of Windows 3.11"
+  },
+  {
+    "Version": "Unsupported: 3.10",
+    "Original release date": "30 June 2013",
+    "Last release": "3.10.108",
+    "Maintainer": "Willy Tarreau (formerly Greg Kroah-Hartman)",
+    "EOL": "November 2017",
+    "Prominent features": "bcache support",
+    "Notes": "10th LTS release,3.10.6 was named TOSSUG Baby Fish used in Slackware 14.1 RHEL 7.x"
+  },
+  {
+    "Version": "Unsupported: 3.9",
+    "Original release date": "28 April 2013",
+    "Last release": "3.9.11",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "July 2013",
+    "Prominent features": "dm-cache support suspend-freeze Intel P-state support",
+    "Notes": "3.9.6 was named Black Squirrel Wakeup Call"
+  },
+  {
+    "Version": "Unsupported: 3.8",
+    "Original release date": "18 February 2013",
+    "Last release": "3.8.13",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "May 2013",
+    "Prominent features": "F2FS file system i386 support removed",
+    "Notes": "Canonical provided extended support until August 2014. Named Unicycling Gorilla 3.8.5 was named Displaced Humerus Anterior"
+  },
+  {
+    "Version": "Unsupported: 3.7",
+    "Original release date": "10 December 2012",
+    "Last release": "3.7.10",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "March 2013",
+    "Prominent features": "ARM64 support",
+    "Notes": "Named Terrified Chipmunk"
+  },
+  {
+    "Version": "Unsupported: 3.6",
+    "Original release date": "30 September 2012",
+    "Last release": "3.6.11",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "December 2012",
+    "Prominent features": "Initial support of send/receive and sub-volume quotas for Btrfs"
+  },
+  {
+    "Version": "Unsupported: 3.5",
+    "Original release date": "21 July 2012",
+    "Last release": "3.5.7",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "October 2012",
+    "Prominent features": "",
+    "Notes": "Canonical provided extended support until April 2014."
+  },
+  {
+    "Version": "Unsupported: 3.4",
+    "Original release date": "20 May 2012",
+    "Last release": "3.4.113",
+    "Maintainer": "Li Zefan (formerly Greg Kroah-Hartman)",
+    "EOL": "October 2016",
+    "Prominent features": "",
+    "Notes": "9th LTS release"
+  },
+  {
+    "Version": "Unsupported: 3.3",
+    "Original release date": "18 March 2012",
+    "Last release": "3.3.8",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "June 2012",
+    "Prominent features": ""
+  },
+  {
+    "Version": "Unsupported: 3.2",
+    "Original release date": "4 January 2012",
+    "Last release": "3.2.102",
+    "Maintainer": "Ben Hutchings",
+    "EOL": "May 2018",
+    "Prominent features": "",
+    "Notes": "8th LTS release, used in Ubuntu 12.04 LTS and optionally in 12.04\u00a0ESM, Debian\u00a07 \"Wheezy\" and Slackware\u00a014.0. Canonical promised to (at least) provide long-term support until April 2017; Support has continued for months after. 3.2 to 3.5 was named Saber-toothed Squirrel"
+  },
+  {
+    "Version": "Unsupported: 3.1",
+    "Original release date": "24 October 2011",
+    "Last release": "3.1.10",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "January 2012",
+    "Prominent features": "",
+    "Notes": "3.1 provided the base for real-time tree.3.1-rc2 was named Wet Seal3.1 was named Divemaster Edition (Linus' diving activities)"
+  },
+  {
+    "Version": "Unsupported: 3.0",
+    "Original release date": "21 July 2011",
+    "Last release": "3.0.101",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "October 2013",
+    "Prominent features": "Btrfs: automatic defragmentation and scrubbing support",
+    "Notes": "7th LTS release Named Sneaky Weasel"
+  },
+  {
+    "Version": "Unsupported: 2.6.39",
+    "Original release date": "18 May 2011",
+    "Last release": "2.6.39.4",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "August 2011",
+    "Prominent features": "",
+    "Notes": "Last stable release of the 2.6 kernel series"
+  },
+  {
+    "Version": "Unsupported: 2.6.38",
+    "Original release date": "14 March 2011",
+    "Last release": "2.6.38.8",
+    "Maintainer": "June 2011",
+    "EOL": "",
+    "Prominent features": "Named Flesh-Eating Bats with Fangs"
+  },
+  {
+    "Version": "Unsupported: 2.6.37",
+    "Original release date": "4 January 2011",
+    "Last release": "2.6.37.6",
+    "Maintainer": "March 2011",
+    "EOL": ""
+  },
+  {
+    "Version": "Unsupported: 2.6.36",
+    "Original release date": "20 October 2010",
+    "Last release": "2.6.36.4",
+    "Maintainer": "February 2011",
+    "EOL": "AppArmor security module"
+  },
+  {
+    "Version": "Unsupported: 2.6.35",
+    "Original release date": "1 August 2010",
+    "Last release": "2.6.35.14",
+    "Maintainer": "Andi Kleen",
+    "EOL": "March 2012",
+    "Prominent features": "",
+    "Notes": "6th LTS release2.6.35.7 was named Yokohama"
+  },
+  {
+    "Version": "Unsupported: 2.6.34",
+    "Original release date": "16 May 2010",
+    "Last release": "2.6.34.15",
+    "Maintainer": "Paul Gortmaker",
+    "EOL": "February 2014",
+    "Prominent features": "",
+    "Notes": "5th LTS releaseIt was named Sheep on Meth"
+  },
+  {
+    "Version": "Unsupported: 2.6.33",
+    "Original release date": "24 February 2010",
+    "Last release": "2.6.33.20",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "November 2011",
+    "Prominent features": "nouveau driver",
+    "Notes": "4th LTS release. It was the base for real-time-tree, replaced by 3.0.x."
+  },
+  {
+    "Version": "Unsupported: 2.6.32",
+    "Original release date": "2 December 2009",
+    "Last release": "2.6.32.71",
+    "Maintainer": "Willy Tarreau (formerly Greg Kroah-Hartman)",
+    "EOL": "March 2016",
+    "Prominent features": "Kernel same-page merging (KSM)",
+    "Notes": "3rd LTS release, used in Debian\u00a06 Squeeze. Canonical also provided support until April 2015. RHEL 6.x"
+  },
+  {
+    "Version": "Unsupported: 2.6.31",
+    "Original release date": "9 September 2009",
+    "Last release": "2.6.31.14",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "July 2010",
+    "Prominent features": "USB 3.0 support"
+  },
+  {
+    "Version": "Unsupported: 2.6.30",
+    "Original release date": "9 June 2009",
+    "Last release": "2.6.30.9",
+    "Maintainer": "October 2009",
+    "EOL": "Tomoyo Linux security module",
+    "Prominent features": "2.6.30-rc4\u20132.6.30-rc6 was named Vindictive Armadillo Releases between 2.6 and 2.9 were named 2.Man-Eating Seals of Antiquity"
+  },
+  {
+    "Version": "Unsupported: 2.6.29",
+    "Original release date": "23 March 2009",
+    "Last release": "2.6.29.6",
+    "Maintainer": "July 2009",
+    "EOL": "Btrfs support",
+    "Prominent features": "Named Temporary Tasmanian Devil"
+  },
+  {
+    "Version": "Unsupported: 2.6.28",
+    "Original release date": "24 December 2008",
+    "Last release": "2.6.28.10",
+    "Maintainer": "May 2009",
+    "EOL": "ext4 stable support",
+    "Prominent features": "2.6.28-rc1\u20132.6.28-rc6 was named Killer Bat of Doom 2.6.28 was named Erotic Pickled Herring"
+  },
+  {
+    "Version": "Unsupported: 2.6.27",
+    "Original release date": "9 October 2008",
+    "Last release": "2.6.27.62",
+    "Maintainer": "Willy Tarreau (formerly Adrian Bunk, and formerly Greg Kroah-Hartman)",
+    "EOL": "March 2012",
+    "Prominent features": "",
+    "Notes": "2nd LTS release2.6.27.3 was named Trembling Tortoise"
+  },
+  {
+    "Version": "Unsupported: 2.6.26",
+    "Original release date": "13 July 2008",
+    "Last release": "2.6.26.8",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "November 2008",
+    "Prominent features": "",
+    "Notes": "2.6.26\u20132.6.27 was named Rotary Wombat"
+  },
+  {
+    "Version": "Unsupported: 2.6.25",
+    "Original release date": "16 April 2008",
+    "Last release": "2.6.25.20",
+    "Maintainer": "November 2008",
+    "EOL": "Smack Linux security module",
+    "Prominent features": "Named Funky Weasel is Jiggy wit it"
+  },
+  {
+    "Version": "Unsupported: 2.6.24",
+    "Original release date": "24 January 2008",
+    "Last release": "2.6.24.7",
+    "Maintainer": "May 2008",
+    "EOL": "cgroups support",
+    "Prominent features": "2.6.23-rc4\u20132.6.23-rc6 was named Pink Farting Weasel 2.6.23-rc7\u20132.6.23\u20132.6.24 was named Arr Matey! A Hairy Bilge Rat! (TLAPD 2007) 2.6.24.1 was named Err Metey! A Heury Beelge-a Ret!"
+  },
+  {
+    "Version": "Unsupported: 2.6.23",
+    "Original release date": "9 October 2007",
+    "Last release": "2.6.23.17",
+    "Maintainer": "February 2008",
+    "EOL": "CFS process scheduler"
+  },
+  {
+    "Version": "Unsupported: 2.6.22",
+    "Original release date": "8 July 2007",
+    "Last release": "2.6.22.19",
+    "Maintainer": "February 2008",
+    "EOL": "New 802.11 (Wi-Fi) stack SLUB memory allocator",
+    "Prominent features": "2.6.22-rc3\u20132.6.22-rc4 was named Jeff Thinks I Should Change This, But To What? 2.6.22-rc5\u20132.6.22 was named Holy Dancing Manatees, Batman!"
+  },
+  {
+    "Version": "Unsupported: 2.6.21",
+    "Original release date": "25 April 2007",
+    "Last release": "2.6.21.7",
+    "Maintainer": "August 2007",
+    "EOL": "GPIO support Dynticks",
+    "Prominent features": "Named Nocturnal Monster Puppy"
+  },
+  {
+    "Version": "Unsupported: 2.6.20",
+    "Original release date": "4 February 2007",
+    "Last release": "2.6.20.21",
+    "Maintainer": "October 2007",
+    "EOL": "Kernel-based Virtual Machine (KVM)",
+    "Prominent features": "Named Homicidal Dwarf Hamster"
+  },
+  {
+    "Version": "Unsupported: 2.6.19",
+    "Original release date": "29 November 2006",
+    "Last release": "2.6.19.7",
+    "Maintainer": "March 2007",
+    "EOL": "AHCI support GFS2",
+    "Prominent features": "Named Avast! A bilge rat! (TLAPD 2006)"
+  },
+  {
+    "Version": "Unsupported: 2.6.18",
+    "Original release date": "20 September 2006",
+    "Last release": "2.6.18.8",
+    "Maintainer": "February 2007 2.6.18: RHEL 5.x",
+    "EOL": "NCQ and SATA hotplug support"
+  },
+  {
+    "Version": "Unsupported: 2.6.17",
+    "Original release date": "17 June 2006",
+    "Last release": "2.6.17.14",
+    "Maintainer": "October 2006",
+    "EOL": "splice()",
+    "Prominent features": "2.6.17-rc5 was named Lordi Rules (Eurovision 2006 winners) 2.6.17-rc6\u20132.6.17 was named Crazed Snow-Weasel"
+  },
+  {
+    "Version": "Unsupported: 2.6.16",
+    "Original release date": "20 March 2006",
+    "Last release": "2.6.16.62",
+    "Maintainer": "Adrian Bunk (formerly Greg Kroah-Hartman)",
+    "EOL": "July 2008",
+    "Prominent features": "OCFS2 support SLOB memory allocator",
+    "Notes": "1st LTS release2.6.16.28-rc2 was named Stable Penguin"
+  },
+  {
+    "Version": "Unsupported: 2.6.15",
+    "Original release date": "2 January 2006",
+    "Last release": "2.6.15.7",
+    "Maintainer": "Greg Kroah-Hartman",
+    "EOL": "May 2006",
+    "Prominent features": "S.M.A.R.T. support",
+    "Notes": "Named Sliding Snow Leopard"
+  },
+  {
+    "Version": "Unsupported: 2.6.14",
+    "Original release date": "27 October 2005",
+    "Last release": "2.6.14.7",
+    "Maintainer": "January 2006",
+    "EOL": "FUSE support",
+    "Prominent features": "Named Affluent Albatross"
+  },
+  {
+    "Version": "Unsupported: 2.6.13",
+    "Original release date": "28 August 2005",
+    "Last release": "2.6.13.5",
+    "Maintainer": "December 2005",
+    "EOL": "initramfs",
+    "Prominent features": "Named Woozy Numbat The 2.6.12 release was the first one managed by Git."
+  },
+  {
+    "Version": "Unsupported: 2.6.12",
+    "Original release date": "18 June 2005",
+    "Last release": "2.6.12.6",
+    "Maintainer": "August 2005",
+    "EOL": ""
+  },
+  {
+    "Version": "Unsupported: 2.6.11",
+    "Original release date": "2 March 2005",
+    "Last release": "2.6.11.12",
+    "Maintainer": "June 2005",
+    "EOL": ""
+  },
+  {
+    "Version": "Unsupported: 2.6.10",
+    "Original release date": "24 December 2004",
+    "Last release": "",
+    "Maintainer": "",
+    "EOL": "",
+    "Prominent features": "Switchable and modular I/O schedulers",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 2.6.9",
+    "Original release date": "19 October 2004",
+    "Last release": "",
+    "Maintainer": "",
+    "EOL": "",
+    "Prominent features": "",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 2.6.8",
+    "Original release date": "14 August 2004",
+    "Last release": "",
+    "Maintainer": "",
+    "EOL": "",
+    "Prominent features": "",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 2.6.7",
+    "Original release date": "16 June 2004",
+    "Last release": "",
+    "Maintainer": "",
+    "EOL": "",
+    "Prominent features": "",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 2.6.6",
+    "Original release date": "10 May 2004",
+    "Last release": "",
+    "Maintainer": "",
+    "EOL": "",
+    "Prominent features": "CFQ I/O scheduler Laptop mode",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 2.6.5",
+    "Original release date": "4 April 2004",
+    "Last release": "",
+    "Maintainer": "",
+    "EOL": "",
+    "Prominent features": "Adaptive lazy readahead",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 2.6.4",
+    "Original release date": "11 March 2004",
+    "Last release": "",
+    "Maintainer": "",
+    "EOL": "",
+    "Prominent features": "Intel x86-64 support ARMv6 support Virtual console UTF-8 mode support",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 2.6.3",
+    "Original release date": "18 February 2004",
+    "Last release": "",
+    "Maintainer": "",
+    "EOL": "",
+    "Prominent features": "Power Mac G5 support",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 2.6.2",
+    "Original release date": "4 February 2004",
+    "Last release": "",
+    "Maintainer": "",
+    "EOL": "",
+    "Prominent features": "RAID 6 support",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 2.6.1",
+    "Original release date": "9 January 2004",
+    "Last release": "",
+    "Maintainer": "",
+    "EOL": "",
+    "Prominent features": "EFI support",
+    "Notes": ""
+  },
+  {
+    "Version": "Unsupported: 2.6",
+    "Original release date": "17 December 2003",
+    "Last release": "",
+    "Maintainer": "Linus Torvalds",
+    "EOL": "December 2004",
+    "Prominent features": "O(1) scheduler Preemption (2.5.4) Advanced Linux Sound Architecture (ALSA) SELinux security module",
+    "Notes": "2.6.2\u20132.6.4 was named Feisty Dunnart2.6.5\u20132.6.9 was named Zonked Quokka 2.6.9: RHEL 4.x The 2.5 kernels were development kernels"
+  },
+  {
+    "Version": "Unsupported: 2.4",
+    "Original release date": "4 January 2001",
+    "Last release": "2.4.37.11",
+    "Maintainer": "Willy Tarreau (formerly Marcelo Tosatti)",
+    "EOL": "December 2011",
+    "Prominent features": "JFS support (2.4.24) XFS support (2.4.20) ext3 support (2.4.15) ReiserFS support (2.4.1) tmpfs support GFS support Netfilter (2.3.15)",
+    "Notes": "The 2.3 kernels were development kernels 2.4.9: RHEL 2.1 2.4.10: Featured a complete rewrite of the Virtual Memory Management (VMM) subsystem. 2.4.21: RHEL 3.x"
+  },
+  {
+    "Version": "Unsupported: 2.2",
+    "Original release date": "26 January 1999",
+    "Last release": "2.2.26",
+    "Maintainer": "Marc-Christian Petersen (formerly Alan Cox)",
+    "EOL": "Made unofficially obsolete with the 2.2.27-rc2",
+    "Prominent features": "USB devices support Frame-buffer console ipchains Video4Linux NTFS (readonly), FAT32 and HFS support Initial IPv6 support SPX support Loop device support Scheduling classes and scheduler SMP support SLAB memory allocator",
+    "Notes": "The 2.1 kernels were development kernels"
+  },
+  {
+    "Version": "Unsupported: 2.0",
+    "Original release date": "9 June 1996",
+    "Last release": "2.0.40",
+    "Maintainer": "David Weinehall",
+    "EOL": "officially made obsolete with the kernel 2.2.0 release",
+    "Prominent features": "Symmetric multiprocessing (SMP) support",
+    "Notes": "Larry Ewing created the Tux mascot  in 1996"
+  },
+  {
+    "Version": "Unsupported: 1.3",
+    "Original release date": "12 June 1995",
+    "Last release": "1.3.100",
+    "Maintainer": "Linus Torvalds",
+    "EOL": "EOL",
+    "Prominent features": "/dev/random watchdog timer Automatic modules loading initrd boot support bzImage support",
+    "Notes": "Greased Weasel"
+  },
+  {
+    "Version": "Unsupported: 1.2",
+    "Original release date": "7 March 1995",
+    "Last release": "1.2.13",
+    "Maintainer": "Round-robin scheduling",
+    "EOL": "Linux '95"
+  },
+  {
+    "Version": "Unsupported: 1.1",
+    "Original release date": "6 April 1994",
+    "Last release": "1.1.95",
+    "Maintainer": "ipfw Dual IDE interface support ATAPI CD-ROM support",
+    "EOL": ""
+  },
+  {
+    "Version": "Unsupported: 1.0",
+    "Original release date": "14 March 1994",
+    "Last release": "1.0.9",
+    "Maintainer": "Open Sound System (OSS) NTP support",
+    "EOL": ""
+  },
+  {
+    "Version": "Unsupported: 0.99",
+    "Original release date": "13 December 1992",
+    "Last release": "0.99.15j",
+    "Maintainer": "Xiafs support ext2 support NFS support kmalloc",
+    "EOL": "The Linux 0.99 tar.bz2 archive grew from 426\u00a0kB to 1009\u00a0kB on the way to 1.0."
+  },
+  {
+    "Version": "Unsupported: 0.98",
+    "Original release date": "29 September 1992",
+    "Last release": "0.98.6",
+    "Maintainer": "TCP/IP support SCSI tape support ISO 9660 support",
+    "EOL": ""
+  },
+  {
+    "Version": "Unsupported: 0.97",
+    "Original release date": "1 August 1992",
+    "Last release": "0.97.6",
+    "Maintainer": "Initial procfs PS/2 mouse support Microsoft bus mouse support SCSI CD-ROM support",
+    "EOL": ""
+  },
+  {
+    "Version": "Unsupported: 0.96",
+    "Original release date": "22 May 1992",
+    "Last release": "0.96c.2",
+    "Maintainer": "ext support (0.96c) FAT16 support Shared libraries Logitech bus mouse support",
+    "EOL": ""
+  },
+  {
+    "Version": "Unsupported: 0.95",
+    "Original release date": "8 March 1992",
+    "Last release": "0.95c+",
+    "Maintainer": "Login prompt Initial parallel port printer support Initial reboot support",
+    "EOL": "Jump from 0.12 to 0.95 First version released under the GPL. Although the license change took effect as of the first of February 1992."
+  },
+  {
+    "Version": "Unsupported: 0.12",
+    "Original release date": "15 January 1992",
+    "Last release": "",
+    "Maintainer": "Job control Virtual consoles pty Symbolic links Virtual memory",
+    "EOL": ""
+  },
+  {
+    "Version": "Unsupported: 0.11",
+    "Original release date": "8 December 1991",
+    "Last release": "",
+    "Maintainer": "Demand-loading from disk CGA, MGA and EGA support malloc",
+    "EOL": "First kernel where other people start making real contributions"
+  },
+  {
+    "Version": "Unsupported: 0.10",
+    "Original release date": "November 1991",
+    "Last release": "",
+    "Maintainer": "Initial floppy driver support Supports up to 16MB RAM",
+    "EOL": "Jump from 0.03 to 0.10 First release where Minix isn't needed anymore"
+  },
+  {
+    "Version": "Unsupported: 0.03",
+    "Original release date": "October 1991",
+    "Last release": "",
+    "Maintainer": "Multithreaded filesystem",
+    "EOL": ""
+  },
+  {
+    "Version": "Unsupported: 0.02",
+    "Original release date": "5 October 1991",
+    "Last release": "",
+    "Maintainer": "US keyboard support",
+    "EOL": "First \"usable\" release; for wider distribution"
+  },
+  {
+    "Version": "Unsupported: 0.01",
+    "Original release date": "17 September 1991",
+    "Last release": "",
+    "Maintainer": "i386 support PATA support Minix support VGA text mode Hardcoded Finnish keyboard Supports up to 8MB RAM",
+    "EOL": ""
+  }
+]

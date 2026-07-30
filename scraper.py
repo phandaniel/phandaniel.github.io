@@ -9,38 +9,40 @@ def scrape_wiki(url, output_file):
     response = requests.get(url, headers=req_headers)
     soup = BeautifulSoup(response.text, 'html.parser')
 
-    table = None
+    tables = []
     for tbl in soup.find_all('table', {'class': 'wikitable'}):
         tbl_headers = [th.text.strip().lower() for th in tbl.find_all('th')]
         if any('version' in h or 'release' in h for h in tbl_headers):
-            table = tbl
-            break
+            tables.append(tbl)
 
-    if not table:
-        print(f"Could not find the release history table for {url}.")
+    if not tables:
+        print(f"Could not find any release history tables for {url}.")
         return
-
-    header_row = table.find('tr')
-    headers_list = [th.text.strip().replace('\n', ' ') for th in header_row.find_all(['th', 'td'])]
 
     releases = []
 
-    for row in table.find_all('tr')[1:]:
-        cols = row.find_all(['td', 'th'])
-        cols_text = [re.sub(r'\[.*?\]', '', c.text.strip().replace('\n', ' ')) for c in cols]
-        
-        if len(cols_text) > 1:
-            release = {}
-            for i in range(min(len(headers_list), len(cols_text))):
-                release[headers_list[i]] = cols_text[i]
+    for table in tables:
+        header_row = table.find('tr')
+        if not header_row: continue
+        headers_list = [th.text.strip().replace('\n', ' ') for th in header_row.find_all(['th', 'td'])]
+
+        for row in table.find_all('tr')[1:]:
+            cols = row.find_all(['td', 'th'])
+            cols_text = [re.sub(r'\[.*?\]', '', c.text.strip().replace('\n', ' ')) for c in cols]
             
-            if any(v for v in release.values()):
-                releases.append(release)
+            if len(cols_text) > 1:
+                release = {}
+                for i in range(min(len(headers_list), len(cols_text))):
+                    release[headers_list[i]] = cols_text[i]
+                
+                if any(v for v in release.values()):
+                    releases.append(release)
 
     with open(output_file, 'w') as f:
         json.dump(releases, f, indent=2)
 
-    print(f"Successfully scraped {len(releases)} releases into {output_file}.")
+    print(f"Successfully scraped {len(releases)} releases from {len(tables)} tables into {output_file}.")
 
 scrape_wiki('https://en.wikipedia.org/wiki/Fedora_Linux_release_history', 'fedora.json')
 scrape_wiki('https://en.wikipedia.org/wiki/Ubuntu_version_history', 'ubuntu.json')
+scrape_wiki('https://en.wikipedia.org/wiki/Linux_kernel_version_history', 'linux.json')

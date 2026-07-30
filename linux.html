@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ubuntu Release History</title>
-  <meta name="description" content="A beautiful overview of Ubuntu Linux release history.">
+  <title>Linux Kernel History</title>
+  <meta name="description" content="A beautiful overview of Linux Kernel version history.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
       --card-bg: rgba(30, 41, 59, 0.7);
       --text-main: #f8fafc;
       --text-muted: #94a3b8;
-      --accent: #f97316; /* Ubuntu orange */
+      --accent: #facc15; /* Yellow for Tux beak */
       --border: rgba(255, 255, 255, 0.1);
     }
     
@@ -25,8 +25,8 @@
       background-color: var(--bg-color);
       color: var(--text-main);
       background-image: 
-        radial-gradient(circle at 15% 50%, rgba(249, 115, 22, 0.15), transparent 25%),
-        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.1), transparent 25%);
+        radial-gradient(circle at 15% 50%, rgba(250, 204, 21, 0.15), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.1), transparent 25%);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -68,7 +68,7 @@
     
     .nav-link.active {
       background: var(--accent);
-      color: white;
+      color: #000;
     }
 
     header {
@@ -80,7 +80,7 @@
       font-size: 3rem;
       font-weight: 700;
       margin-bottom: 10px;
-      background: linear-gradient(to right, #f97316, #fcd34d);
+      background: linear-gradient(to right, #facc15, #fef08a);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       letter-spacing: -1px;
@@ -162,12 +162,12 @@
   <div class="container">
     <nav class="nav-menu">
       <a href="index.html" class="nav-link">Fedora</a>
-      <a href="ubuntu.html" class="nav-link active">Ubuntu</a>
-      <a href="linux.html" class="nav-link">Linux Kernel</a>
+      <a href="ubuntu.html" class="nav-link">Ubuntu</a>
+      <a href="linux.html" class="nav-link active">Linux Kernel</a>
     </nav>
 
     <header>
-      <h1>Ubuntu Release History</h1>
+      <h1>Linux Kernel History</h1>
     </header>
 
     <div id="loading" class="loading">Loading timeline data...</div>
@@ -191,11 +191,11 @@
   <script>
     async function loadData() {
       try {
-        const response = await fetch('ubuntu.json');
-        if (!response.ok) throw new Error("Could not fetch ubuntu.json");
+        const response = await fetch('linux.json');
+        if (!response.ok) throw new Error("Could not fetch linux.json");
         const data = await response.json();
         
-        // Reverse the array to show the newest versions at the top
+        // Reverse array
         data.reverse();
 
         const tbody = document.getElementById('table-body');
@@ -217,15 +217,14 @@
           };
 
           const version = getVal(['version']);
-          const releaseDate = getVal(['release date', 'released', 'release']);
+          const releaseDate = getVal(['original release date', 'release date', 'released', 'release']);
           const eol = getVal(['end of life', 'end-of-life', 'eol', 'supported until']);
           
-          // Determine status loosely based on EOL text
           let statusClass = 'status-eol';
           let statusText = 'End of Life';
           
           const eolLower = eol.toLowerCase();
-          if (eolLower.includes('tba') || eolLower.includes('future') || new Date(eol) > new Date()) {
+          if (eolLower.includes('tba') || eolLower.includes('future') || eolLower.includes('maintained') || eolLower.includes('current') || new Date(eol) > new Date()) {
              statusClass = 'status-active';
              statusText = 'Supported';
           }
@@ -234,16 +233,14 @@
              statusText = 'Upcoming';
           }
 
-          // Don't render completely empty rows that might have been scraped
           if (version === 'Unknown' || version.length > 50) return;
 
-          // Clean up version string
           let cleanVersion = version.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').replace(/\s*\(.*?\)\s*/g, '').trim();
 
           const tr = document.createElement('tr');
           
           tr.innerHTML = `
-            <td class="version">Ubuntu ${cleanVersion}</td>
+            <td class="version">v${cleanVersion}</td>
             <td>${releaseDate}</td>
             <td>${eol}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
