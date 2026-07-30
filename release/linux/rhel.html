@@ -58,11 +58,13 @@
           const minor = getVal(['last minorrelease', 'last minor release']);
           const fullSupport = getVal(['end of full support']);
           const els = getVal(['end of extendedlifecycle support', 'end of extended lifecycle support', 'end of extended lifecycle support (els)']);
-          const eol = fullSupport;
+          let eol = els;
+          if (!eol || eol.includes('N/a') || eol === '—') {
+            eol = fullSupport;
+          }
           
-          // Determine status loosely based on EOL text
-          let statusClass = 'status-eol';
-          let statusText = 'End of Life';
+          let statusClass = 'status-unsupported';
+          let statusText = 'Unsupported';
           
           const eolLower = eol.toLowerCase();
           if (eolLower.includes('tba') || eolLower.includes('future') || new Date(eol) > new Date()) {
