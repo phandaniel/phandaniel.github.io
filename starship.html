@@ -8,227 +8,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #0b0f19;
-      --card-bg: rgba(15, 23, 42, 0.7);
-      --text-main: #e2e8f0;
-      --text-muted: #94a3b8;
-      --accent: #f97316;
-      --border: rgba(255, 255, 255, 0.05);
-    }
-    
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-main);
-      background-image: 
-        radial-gradient(circle at 10% 20%, rgba(249, 115, 22, 0.08), transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.08), transparent 40%);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      padding: 60px 20px;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-        .dropdown-menu {
-      position: fixed;
-      top: 24px;
-      right: 24px;
-      z-index: 1000;
-    }
-
-    .dropdown-btn {
-      background: rgba(15, 23, 42, 0.85);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--text-main);
-      padding: 12px;
-      border-radius: 50%;
-      cursor: pointer;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    .dropdown-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
-      transform: scale(1.05);
-    }
-
-    .dropdown-content {
-      position: absolute;
-      top: 60px;
-      right: 0;
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 16px;
-      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      min-width: 200px;
-      display: flex;
-      flex-direction: column;
-      padding: 8px;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(-10px);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .dropdown-content.show {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0);
-    }
-
-    .nav-link {
-      padding: 12px 16px;
-      border-radius: 10px;
-      text-decoration: none;
-      color: var(--text-muted);
-      font-weight: 500;
-      letter-spacing: 0.3px;
-      transition: all 0.2s ease;
-      display: block;
-      margin-bottom: 2px;
-    }
-    
-    .nav-link:hover {
-      color: var(--text-main);
-      background: rgba(255, 255, 255, 0.05);
-      padding-left: 20px;
-    }
-    
-    .nav-link.active {
-      background: var(--accent);
-      color: #000000;
-      font-weight: 600;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      background: linear-gradient(90deg, #f97316 0%, #fcd34d 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: -1.5px;
-      text-transform: uppercase;
-    }
-
-    .table-container {
-      width: 100%;
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 24px;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-      overflow-x: auto;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      text-align: left;
-    }
-
-    th, td {
-      padding: 18px 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    th {
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--text-muted);
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    tr:last-child td {
-      border-bottom: none;
-    }
-
-    tr:hover td {
-      background: rgba(255, 255, 255, 0.02);
-    }
-
-    .flight-no {
-      font-weight: 600;
-      color: var(--text-main);
-      font-size: 1.1rem;
-    }
-
-    .loading {
-      text-align: center;
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      padding: 50px;
-      animation: pulse 1.5s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
-    }
-    
-    .status-badge {
-      display: inline-block;
-      padding: 5px 12px;
-      border-radius: 8px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .status-unsupported { background: rgba(248, 113, 113, 0.15); color: #f87171; }
-    .status-supported { background: rgba(52, 211, 153, 0.15); color: #34d399; }
-    .status-partial { background: rgba(250, 204, 21, 0.15); color: #facc15; }
-    .status-preview { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
-  </style>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body style="--accent: #f97316;">
   <div class="container">
-        <div class="dropdown-menu">
-      <button class="dropdown-btn" id="dropdownBtn">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-      </button>
-      <div class="dropdown-content" id="dropdownContent">
-        <a href="index.html" class="nav-link">Fedora</a>
-        <a href="ubuntu.html" class="nav-link">Ubuntu</a>
-        <a href="linux.html" class="nav-link">Linux Kernel</a>
-        <a href="ios.html" class="nav-link">iOS</a>
-        <a href="starship.html" class="nav-link active">Starship</a>
-      </div>
-    </div>
+        
 
     <header>
       <h1>Starship Launches</h1>
@@ -257,7 +41,7 @@
   <script>
     async function loadData() {
       try {
-        const response = await fetch('starship.json');
+        const response = await fetch('data/starship.json');
         if (!response.ok) throw new Error("Could not fetch starship.json");
         const data = await response.json();
         
@@ -274,13 +58,7 @@
         data.forEach(release => {
           const keys = Object.keys(release);
           
-          const getVal = (searchStrs) => {
-            for (let str of searchStrs) {
-               const key = keys.find(k => k.toLowerCase().includes(str));
-               if (key && release[key].trim()) return release[key];
-            }
-            return '—';
-          };
+          const getVal = (keys) => window.utils.getVal(keys, release);
 
           let flight = getVal(['flightno']);
           let date = getVal(['date and time', 'date andtime']);
@@ -308,7 +86,7 @@
           }
 
           // Strip wikipedia citations
-          const cleanStr = (s) => s.replace(/\[\d+\]/g, '').replace(/—N\/a/gi, '&mdash;');
+          const cleanStr = window.utils.cleanStr;');
 
           flight = cleanStr(flight);
           date = cleanStr(date);
@@ -338,19 +116,7 @@
     loadData();
   </script>
 
-  <script>
-    document.getElementById('dropdownBtn').addEventListener('click', function(e) {
-      document.getElementById('dropdownContent').classList.toggle('show');
-      e.stopPropagation();
-    });
-    document.addEventListener('click', function(e) {
-      if (!e.target.closest('.dropdown-menu')) {
-        let content = document.getElementById('dropdownContent');
-        if(content && content.classList.contains('show')) {
-          content.classList.remove('show');
-        }
-      }
-    });
-  </script>
+  
+<script src="assets/js/app.js"></script>
 </body>
 </html>
