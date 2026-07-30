@@ -289,7 +289,7 @@
           let payload = getVal(['payload']);
           let outcome = getVal(['launch outcome']);
 
-          if (date === '—') return;
+          if (date === '—' || date.length > 100) return;
 
           let statusText = 'Upcoming';
           let statusClass = 'status-preview';
