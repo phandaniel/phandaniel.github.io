@@ -162,9 +162,17 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-    .status-active { background: rgba(52, 211, 153, 0.15); color: #34d399; }
-    .status-eol { background: rgba(248, 113, 113, 0.15); color: #f87171; }
-    .status-future { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
+    .legend {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .status-unsupported { background: rgba(248, 113, 113, 0.15); color: #f87171; }
+    .status-supported { background: rgba(52, 211, 153, 0.15); color: #34d399; }
+    .status-latest { background: rgba(250, 204, 21, 0.15); color: #facc15; }
+    .status-preview { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
   </style>
 </head>
 <body>
@@ -182,12 +190,17 @@
     <div id="loading" class="loading">Loading timeline data...</div>
     
     <div class="table-container" id="table-container" style="display: none;">
+      <div class="legend">
+        <span class="status-badge status-unsupported">Unsupported</span>
+        <span class="status-badge status-supported">Supported</span>
+        <span class="status-badge status-latest">Latest version</span>
+        <span class="status-badge status-preview">Preview version</span>
+      </div>
       <table>
         <thead>
           <tr>
             <th>Version</th>
             <th>Release Date</th>
-            <th>End of Life</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -226,32 +239,23 @@
 
           const version = getVal(['version']);
           const releaseDate = getVal(['original release date', 'release date', 'released', 'release']);
-          let eol = getVal(['end of life', 'end-of-life', 'eol', 'supported until']);
           
-          let maintainer = getVal(['maintainer']);
-          // Wikipedia table header misalignment fix: if maintainer is a date and EOL is a long feature list
-          if (eol.length > 40 && maintainer.match(/(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}/i)) {
-             eol = maintainer;
-          }
-
-          // Clean up EOL text
-          eol = eol.replace(/Maintained until\s*/i, '').replace(/, then.*/i, '').trim();
-          if (eol.length > 30) eol = eol.substring(0, 30) + '...';
-
-          let statusClass = 'status-eol';
-          let statusText = 'End of Life';
-          
-          const eolLower = eol.toLowerCase();
-          if (eolLower.includes('tba') || eolLower.includes('future') || eolLower.includes('maintained') || eolLower.includes('current') || new Date(eol) > new Date()) {
-             statusClass = 'status-active';
-             statusText = 'Supported';
-          }
-          if (releaseDate.toLowerCase().includes('future') || new Date(releaseDate) > new Date()) {
-             statusClass = 'status-future';
-             statusText = 'Upcoming';
-          }
-
           if (version === 'Unknown' || version.length > 50) return;
+
+          let statusText = 'Unsupported';
+          let statusClass = 'status-unsupported';
+          
+          const vLower = version.toLowerCase();
+          if (vLower.includes('latest version')) {
+            statusText = 'Latest version';
+            statusClass = 'status-latest';
+          } else if (vLower.includes('preview version') || vLower.includes('future version')) {
+            statusText = 'Preview version';
+            statusClass = 'status-preview';
+          } else if (vLower.includes('supported') && !vLower.includes('unsupported')) {
+            statusText = 'Supported';
+            statusClass = 'status-supported';
+          }
 
           let cleanVersion = version.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').replace(/\s*\(.*?\)\s*/g, '').trim();
 
@@ -260,7 +264,6 @@
           tr.innerHTML = `
             <td class="version">v${cleanVersion}</td>
             <td>${releaseDate}</td>
-            <td>${eol}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           
