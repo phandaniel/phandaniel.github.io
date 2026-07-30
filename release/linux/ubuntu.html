@@ -61,8 +61,8 @@
           const eol = standardSupport !== '—' ? standardSupport : getVal(['end of life', 'end-of-life', 'eol', 'supported until']);
           
           // Determine status loosely based on EOL text
-          let statusClass = 'status-eol';
-          let statusText = 'End of Life';
+          let statusClass = 'status-unsupported';
+          let statusText = 'Unsupported';
           
           const eolLower = eol.toLowerCase();
           if (eolLower.includes('tba') || eolLower.includes('future') || new Date(eol) > new Date()) {
