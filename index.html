@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fedora Release History</title>
+  <meta name="description" content="A beautiful overview of Fedora Linux release history.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --border: rgba(255, 255, 255, 0.1);
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Outfit', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      background-image: 
+        radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.15), transparent 25%),
+        radial-gradient(circle at 85% 30%, rgba(16, 185, 129, 0.1), transparent 25%);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: linear-gradient(to right, #60a5fa, #34d399);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: -1px;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .card-header {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 1.75rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .card .codename {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    .details-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 12px;
+      padding: 16px;
+    }
+
+    .card .detail {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.95rem;
+    }
+
+    .card .detail span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+    }
+
+    .card .detail strong {
+      color: #e2e8f0;
+      font-weight: 400;
+    }
+    
+    .loading {
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      padding: 50px;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.5; }
+    }
+    
+    .status-badge {
+      display: inline-block;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-top: 10px;
+      align-self: flex-start;
+    }
+    .status-active { background: rgba(52, 211, 153, 0.2); color: #34d399; }
+    .status-eol { background: rgba(248, 113, 113, 0.2); color: #f87171; }
+    .status-future { background: rgba(96, 165, 250, 0.2); color: #60a5fa; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Fedora Release History</h1>
+      <p class="subtitle">Beautifully automated with GitHub Actions</p>
+    </header>
+
+    <div id="loading" class="loading">Loading timeline data...</div>
+    <div id="grid" class="grid"></div>
+  </div>
+
+  <script>
+    async function loadData() {
+      try {
+        const response = await fetch('data.json');
+        if (!response.ok) throw new Error("Could not fetch data.json");
+        const data = await response.json();
+        
+        const grid = document.getElementById('grid');
+        const loading = document.getElementById('loading');
+        loading.style.display = 'none';
+
+        data.forEach(release => {
+          const keys = Object.keys(release);
+          
+          const getVal = (searchStrs) => {
+            for (let str of searchStrs) {
+               const key = keys.find(k => k.toLowerCase().includes(str));
+               if (key && release[key].trim()) return release[key];
+            }
+            return 'Unknown';
+          };
+
+          const version = getVal(['version']);
+          const codename = getVal(['codename', 'name']);
+          const releaseDate = getVal(['release date', 'released']);
+          const eol = getVal(['end of life', 'supported until']);
+          
+          // Determine status loosely based on EOL text
+          let statusClass = 'status-eol';
+          let statusText = 'End of Life';
+          
+          const eolLower = eol.toLowerCase();
+          if (eolLower.includes('tba') || eolLower.includes('future') || new Date(eol) > new Date()) {
+             statusClass = 'status-active';
+             statusText = 'Supported';
+          }
+          if (releaseDate.toLowerCase().includes('future') || new Date(releaseDate) > new Date()) {
+             statusClass = 'status-future';
+             statusText = 'Upcoming';
+          }
+
+          // Don't render completely empty rows that might have been scraped
+          if (version === 'Unknown' || version.length > 50) return;
+
+          const card = document.createElement('div');
+          card.className = 'card';
+          
+          card.innerHTML = `
+            <div class="card-header">
+              <h2>Fedora ${version}</h2>
+              <div class="codename">${codename}</div>
+            </div>
+            
+            <div class="details-container">
+              <div class="detail">
+                <span>Release Date</span>
+                <strong>${releaseDate}</strong>
+              </div>
+              <div class="detail">
+                <span>End of Life</span>
+                <strong>${eol}</strong>
+              </div>
+            </div>
+            <div class="status-badge ${statusClass}">${statusText}</div>
+          `;
+          
+          grid.appendChild(card);
+        });
+      } catch (err) {
+        document.getElementById('loading').innerText = 'Data not generated yet. The GitHub Action will create data.json soon!';
+        console.error(err);
+      }
+    }
+
+    loadData();
+  </script>
+</body>
+</html>
