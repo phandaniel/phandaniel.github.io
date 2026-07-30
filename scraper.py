@@ -21,22 +21,57 @@ def scrape_wiki(url, output_file):
 
     releases = []
 
-    for table in tables:
-        header_row = table.find('tr')
+    for t in tables:
+        header_row = t.find('tr')
         if not header_row: continue
-        headers_list = [th.text.strip().replace('\n', ' ') for th in header_row.find_all(['th', 'td'])]
-
-        for row in table.find_all('tr')[1:]:
-            cols = row.find_all(['td', 'th'])
-            cols_text = [re.sub(r'\[.*?\]', '', c.text.strip().replace('\n', ' ')) for c in cols]
+        headers = [th.text.strip().replace('\n', ' ') for th in header_row.find_all(['th', 'td'])]
+        
+        rowspans = {}
+        for row in t.find_all('tr')[1:]:
+            cells = row.find_all(['th', 'td'])
+            if not cells: continue
             
-            if len(cols_text) > 1:
-                release = {}
-                for i in range(min(len(headers_list), len(cols_text))):
-                    release[headers_list[i]] = cols_text[i]
+            # Skip subheader rows (like iPad, iPhone, iPod)
+            if cells[0].text.strip() in ['iPad', 'Server', 'Desktop']: continue
+            
+            col_idx = 0
+            cell_idx = 0
+            entry = {}
+            
+            while col_idx < len(headers):
+                if col_idx in rowspans and rowspans[col_idx]['span'] > 0:
+                    entry[headers[col_idx]] = rowspans[col_idx]['value']
+                    rowspans[col_idx]['span'] -= 1
+                    col_idx += 1
+                    continue
+                    
+                if cell_idx < len(cells):
+                    cell = cells[cell_idx]
+                    val = re.sub(r'\[.*?\]', '', cell.text.strip().replace('\n', ' '))
+                    entry[headers[col_idx]] = val
+                    
+                    if cell.has_attr('rowspan'):
+                        try:
+                            span = int(cell['rowspan'])
+                            if span > 1:
+                                rowspans[col_idx] = {'span': span - 1, 'value': val}
+                        except ValueError:
+                            pass
+                    
+                    if cell.has_attr('colspan'):
+                        try:
+                            cspan = int(cell['colspan'])
+                            col_idx += (cspan - 1)
+                        except ValueError:
+                            pass
+                            
+                    cell_idx += 1
+                else:
+                    break
+                col_idx += 1
                 
-                if any(v for v in release.values()):
-                    releases.append(release)
+            if entry.get(headers[0]):
+                releases.append(entry)
 
     with open(output_file, 'w') as f:
         json.dump(releases, f, indent=2)

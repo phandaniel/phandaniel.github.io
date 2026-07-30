@@ -403,5 +403,8 @@
     "Extended securitymaintenance until": "\u2014N/a",
     "Legacy Add-OnCoverage until": "\u2014N/a",
     "Initial kernel version": "\u2014N/a"
+  },
+  {
+    "Version": "Legend:UnsupportedSupportedLatest versionPreview versionFuture version"
   }
 ]
