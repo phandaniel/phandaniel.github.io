@@ -195,9 +195,8 @@
         if (!response.ok) throw new Error("Could not fetch linux.json");
         const data = await response.json();
         
-        // Reverse array
-        data.reverse();
-
+        // No reverse needed, Linux table is mostly newest-first already
+        
         const tbody = document.getElementById('table-body');
         const loading = document.getElementById('loading');
         const tableContainer = document.getElementById('table-container');
@@ -218,8 +217,18 @@
 
           const version = getVal(['version']);
           const releaseDate = getVal(['original release date', 'release date', 'released', 'release']);
-          const eol = getVal(['end of life', 'end-of-life', 'eol', 'supported until']);
+          let eol = getVal(['end of life', 'end-of-life', 'eol', 'supported until']);
           
+          let maintainer = getVal(['maintainer']);
+          // Wikipedia table header misalignment fix: if maintainer is a date and EOL is a long feature list
+          if (eol.length > 40 && maintainer.match(/(January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{4}/i)) {
+             eol = maintainer;
+          }
+
+          // Clean up EOL text
+          eol = eol.replace(/Maintained until\s*/i, '').replace(/, then.*/i, '').trim();
+          if (eol.length > 30) eol = eol.substring(0, 30) + '...';
+
           let statusClass = 'status-eol';
           let statusText = 'End of Life';
           
