@@ -41,9 +41,26 @@
         const response = await fetch('../data/starship.json');
         if (!response.ok) throw new Error("Could not fetch starship.json");
         const data = await response.json();
-        
-        // Data is roughly chronological from Wikipedia. Let's reverse it so newest/upcoming are on top.
-        data.reverse();
+        // Filter to keep only numbered flights and exactly one upcoming unnumbered flight
+        let foundUpcoming = false;
+        const filteredData = data.filter(release => {
+          const date = window.utils.getVal(['date and time', 'date andtime'], release);
+          const flight = window.utils.getVal(['flightno'], release);
+          
+          if (!date || date === '—' || date.length > 80) return false;
+          
+          if (!flight || flight === '—') {
+            if (!foundUpcoming) {
+              foundUpcoming = true;
+              return true;
+            }
+            return false;
+          }
+          return true;
+        });
+
+        // Data is chronological. Reverse so newest/upcoming are on top.
+        filteredData.reverse();
 
         const tbody = document.getElementById('table-body');
         const loading = document.getElementById('loading');
@@ -52,19 +69,13 @@
         loading.style.display = 'none';
         tableContainer.style.display = 'block';
 
-        data.forEach(release => {
+        filteredData.forEach(release => {
           const keys = Object.keys(release);
-          
           const getVal = (keys) => window.utils.getVal(keys, release);
 
           let flight = getVal(['flightno']);
           let date = getVal(['date and time', 'date andtime']).replace(/\s?\d{2}:\d{2}:\d{2}.*/, '');
           let outcome = getVal(['launch outcome']);
-
-          if (date === '—' || date.length > 80) return;
-
-          const yearMatch = date.match(/20\d{2}/);
-          if (yearMatch && parseInt(yearMatch[0]) > 2026) return;
 
           let statusText = 'Upcoming';
           let statusClass = 'status-preview';
