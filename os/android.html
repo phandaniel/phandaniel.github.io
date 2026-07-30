@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=2">
+  <link rel="stylesheet" href="../assets/css/style.css?v=5">
 </head>
 <body style="--accent: #ffffff;">
   <div class="container">
@@ -25,7 +25,6 @@
           <tr>
             <th>Name</th>
             <th>Version</th>
-            <th>API Level</th>
             <th>Release Date</th>
             <th>Status</th>
           </tr>
@@ -76,7 +75,7 @@
                 statusClass = 'status-preview';
                 version = rawVersion.replace(/future release:?\s*/i, '');
             } else if (rawVersion.toLowerCase().includes('latest version')) {
-                statusText = 'Latest';
+                statusText = 'Supported';
                 statusClass = 'status-supported';
                 version = rawVersion.replace(/latest version:?\s*/i, '');
             } else {
@@ -94,7 +93,6 @@
             tr.innerHTML = `
               <td class="version">${cleanName}</td>
               <td>${cleanVersion}</td>
-              <td>${cleanStr(api)}</td>
               <td>${cleanStr(date)}</td>
               <td><span class="status-badge ${statusClass}">${statusText}</span></td>
             `;
@@ -115,6 +113,6 @@
   </script>
 
   <script>window.basePath = "../";</script>
-  <script src="../assets/js/app.js?v=4"></script>
+  <script src="../assets/js/app.js?v=5"></script>
 </body>
 </html>
