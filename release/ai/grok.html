@@ -52,12 +52,12 @@
 
           if (version === '—' || version.length > 50) return;
 
-          let statusText = 'Discontinued';
+          let statusText = 'Unsupported';
           let statusClass = 'status-unsupported';
           
           const sLower = status.toLowerCase();
           if (sLower.includes('active') || sLower.includes('supported') || sLower.includes('current')) {
-            statusText = 'Active';
+            statusText = 'Supported';
             statusClass = 'status-supported';
           } else if (sLower.includes('upcoming') || sLower.includes('unreleased')) {
             statusText = 'Upcoming';
