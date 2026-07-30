@@ -1,46 +1,46 @@
 # Version History Tracker
 
-A sleek, automated, and dynamic set of tracking dashboards that provide up-to-date version histories and release data for major tech ecosystems. 
+A collection of dashboards that track version histories and release data.
 
 Currently tracking:
-- **Operating Systems**: Fedora, Ubuntu, Linux Kernel, RHEL, Apple iOS, Android
-- **Artificial Intelligence**: ChatGPT, Claude, Gemini, Grok
-- **Aerospace**: SpaceX Starship, ULA Vulcan, Blue Origin New Glenn
-- **Developer Tools**: Kubernetes, Python
-- **Sports**: Liberty Flames, Commanders, Wizards
+* Operating Systems: Fedora, Ubuntu, Linux Kernel, RHEL, Apple iOS, Android
+* Artificial Intelligence: ChatGPT, Claude, Gemini, Grok
+* Aerospace: SpaceX Starship, ULA Vulcan, Blue Origin New Glenn
+* Developer Tools: Kubernetes, Python
+* Sports: Liberty Flames, Commanders, Wizards
 
-## 🚀 Live Demo
+## Live Demo
 View the live tracking pages at: [https://phandaniel.github.io/](https://phandaniel.github.io/)
 
-## ✨ Features
-- **Automated Data Pipelines**: A custom Python scraper running on GitHub Actions seamlessly fetches and parses raw data directly from Wikipedia every single day.
-- **Robust Data Parsing**: Equipped with a custom intelligent table parser that tracks merged `rowspan` and `colspan` HTML elements to perfectly extract chronological release dates, device support, and status indicators.
-- **DRY Architecture**: Engineered using strict "Don't Repeat Yourself" principles. CSS and Javascript are highly modularized inside the `assets/` directory, while dynamic data rests cleanly in the `data/` folder.
-- **Modern UI**: Designed with a sleek, dark-mode glassmorphism aesthetic, complete with dynamic status badges, micro-animations, and a unified top-right dropdown navigation menu.
-- **Zero-Dependency Frontend**: The UI is built with purely vanilla HTML, CSS, and Javascript. No massive frameworks required.
+## Features
+* Automated Data Pipelines: A Python scraper running on GitHub Actions fetches and parses data from Wikipedia daily.
+* Data Parsing: A table parser extracts release dates, device support, and status indicators.
+* DRY Architecture: CSS and Javascript are modularized in the assets/ directory. Data is stored in the data/ folder.
+* UI: Uses a dark theme with status badges and a top navigation menu.
+* Zero-Dependency Frontend: Built with vanilla HTML, CSS, and Javascript.
 
-## 📁 Directory Structure
+## Directory Structure
 ```text
 /
 ├── assets/
-│   ├── css/style.css       # Unified glassmorphism styling
-│   └── js/app.js           # Dynamic navigation and utility functions
+│   ├── css/style.css
+│   └── js/app.js
 ├── data/
-│   └── *.json              # Daily auto-generated raw data payloads
+│   └── *.json
 ├── .github/workflows/
-│   └── scrape.yml          # GitHub Actions cron automation
+│   └── scrape.yml
 ├── scraper/
-│   └── scraper.py          # The core Python Wikipedia scraping engine
+│   └── scraper.py
 ├── tests/
-│   └── test.js             # Automated Puppeteer test suite
-├── ai/, dev/, linux/, os/, space/, sports/
-│   └── *.html              # Categorized tracking dashboards
-└── index.html              # Main dashboard entrypoint
+│   └── test.js
+├── release/
+│   └── ai/, dev/, linux/, os/, space/, sports/
+└── index.html
 ```
 
-## 🛠️ How it works
-1. **GitHub Actions** spins up an environment daily.
-2. It executes `scraper.py`, which pulls down Wikipedia's raw HTML.
-3. The script isolates the relevant release tables and intelligently formats them into clean JSON structures.
-4. The JSON is written to the `data/` directory and automatically pushed back to the `master` branch.
-5. GitHub Pages deploys the updated data, which the frontend fetches asynchronously to dynamically build the user interface!
+## How it works
+1. GitHub Actions runs a daily cron job.
+2. It executes scraper.py, which downloads Wikipedia HTML.
+3. The script extracts release tables and formats them into JSON.
+4. The JSON is written to the data/ directory and committed to the master branch.
+5. GitHub Pages hosts the site, and the frontend fetches the JSON data to build the UI.
