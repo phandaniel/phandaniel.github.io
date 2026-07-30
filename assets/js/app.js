@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Fedora', url: 'linux/fedora.html', accent: '#ffffff' },
         { name: 'Ubuntu', url: 'linux/ubuntu.html', accent: '#ffffff' },
         { name: 'Linux Kernel', url: 'linux/kernel.html', accent: '#ffffff' },
-        { name: 'Red Hat Enterprise Linux', url: 'linux/rhel.html', accent: '#ffffff' },
+        { name: 'RHEL', url: 'linux/rhel.html', accent: '#ffffff' },
         { name: 'Apple iOS', url: 'os/ios.html', accent: '#ffffff' },
         { name: 'Android', url: 'os/android.html', accent: '#ffffff' }
       ]

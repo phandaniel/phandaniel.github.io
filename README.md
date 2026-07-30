@@ -3,11 +3,11 @@
 A sleek, automated, and dynamic set of tracking dashboards that provide up-to-date version histories and release data for major tech ecosystems. 
 
 Currently tracking:
-- **Fedora Linux**
-- **Ubuntu Linux**
-- **Linux Kernel**
-- **Apple iOS**
-- **SpaceX Starship Launches**
+- **Operating Systems**: Fedora, Ubuntu, Linux Kernel, RHEL, Apple iOS, Android
+- **Artificial Intelligence**: ChatGPT, Claude, Gemini, Grok
+- **Aerospace**: SpaceX Starship, ULA Vulcan, Blue Origin New Glenn
+- **Developer Tools**: Kubernetes, Python
+- **Sports**: Liberty Flames, Commanders, Wizards
 
 ## 🚀 Live Demo
 View the live tracking pages at: [https://phandaniel.github.io/](https://phandaniel.github.io/)
@@ -29,8 +29,13 @@ View the live tracking pages at: [https://phandaniel.github.io/](https://phandan
 │   └── *.json              # Daily auto-generated raw data payloads
 ├── .github/workflows/
 │   └── scrape.yml          # GitHub Actions cron automation
-├── scraper.py              # The core Python Wikipedia scraping engine
-└── *.html                  # Individual frontend tracking dashboards
+├── scraper/
+│   └── scraper.py          # The core Python Wikipedia scraping engine
+├── tests/
+│   └── test.js             # Automated Puppeteer test suite
+├── ai/, dev/, linux/, os/, space/, sports/
+│   └── *.html              # Categorized tracking dashboards
+└── index.html              # Main dashboard entrypoint
 ```
 
 ## 🛠️ How it works

@@ -82,7 +82,7 @@
           return `
             <td class="version">${cleanStr(date)}</td>
             <td>${cleanStr(opponent)}</td>
-            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+            <td>${date.toLowerCase() === 'bye' ? '—' : `<span class="status-badge ${statusClass}">${statusText}</span>`}</td>
           `;
           }
       });

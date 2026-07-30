@@ -52,14 +52,11 @@
 
           if (version === '—' || version.length > 50) return;
 
-          let statusText = 'Unknown';
-          let statusClass = 'status-preview';
+          let statusText = 'Discontinued';
+          let statusClass = 'status-unsupported';
           
           const sLower = status.toLowerCase();
-          if (sLower.includes('discontinued') || sLower.includes('unsupported')) {
-            statusText = 'Discontinued';
-            statusClass = 'status-unsupported';
-          } else if (sLower.includes('active') || sLower.includes('supported') || sLower.includes('current')) {
+          if (sLower.includes('active') || sLower.includes('supported') || sLower.includes('current')) {
             statusText = 'Active';
             statusClass = 'status-supported';
           } else if (sLower.includes('upcoming') || sLower.includes('unreleased')) {
