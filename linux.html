@@ -44,26 +44,35 @@
     }
 
     .nav-menu {
-      display: flex;
-      gap: 15px;
+      display: inline-flex;
+      gap: 5px;
       margin-bottom: 40px;
-      background: rgba(0, 0, 0, 0.2);
-      padding: 8px;
-      border-radius: 12px;
+      background: rgba(30, 41, 59, 0.85);
+      padding: 6px;
+      border-radius: 50px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      position: sticky;
+      top: 20px;
+      z-index: 100;
     }
     
     .nav-link {
-      padding: 10px 20px;
-      border-radius: 8px;
+      padding: 10px 28px;
+      border-radius: 40px;
       text-decoration: none;
       color: var(--text-muted);
       font-weight: 600;
-      transition: all 0.3s;
+      letter-spacing: 0.5px;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
     }
     
     .nav-link:hover {
       color: var(--text-main);
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(255, 255, 255, 0.06);
     }
     
     .nav-link.active {
