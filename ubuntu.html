@@ -178,7 +178,9 @@
           <tr>
             <th>Version</th>
             <th>Release Date</th>
-            <th>End of Life</th>
+            <th>Standard Support</th>
+            <th>Extended Security</th>
+            <th>Legacy Add-On</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -218,7 +220,10 @@
 
           const version = getVal(['version']);
           const releaseDate = getVal(['release date', 'released', 'release']);
-          const eol = getVal(['end of life', 'end-of-life', 'eol', 'supported until']);
+          const standardSupport = getVal(['standard support']);
+          const extSecurity = getVal(['extended security']);
+          const legacyAddOn = getVal(['legacy add-on']);
+          const eol = standardSupport !== 'Unknown' ? standardSupport : getVal(['end of life', 'end-of-life', 'eol', 'supported until']);
           
           // Determine status loosely based on EOL text
           let statusClass = 'status-eol';
@@ -237,15 +242,22 @@
           // Don't render completely empty rows that might have been scraped
           if (version === 'Unknown' || version.length > 50) return;
 
-          // Clean up version string
-          let cleanVersion = version.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').replace(/\s*\(.*?\)\s*/g, '').trim();
+          // Clean up values
+          const cleanVal = (val) => val ? val.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').trim() : '';
+
+          let cleanVersion = cleanVal(version).replace(/\s*\(.*?\)\s*/g, '');
+          let cleanStdSupport = cleanVal(standardSupport);
+          let cleanExtSec = cleanVal(extSecurity);
+          let cleanLegacy = cleanVal(legacyAddOn);
 
           const tr = document.createElement('tr');
           
           tr.innerHTML = `
             <td class="version">Ubuntu ${cleanVersion}</td>
             <td>${releaseDate}</td>
-            <td>${eol}</td>
+            <td>${cleanStdSupport}</td>
+            <td>${cleanExtSec}</td>
+            <td>${cleanLegacy}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           
