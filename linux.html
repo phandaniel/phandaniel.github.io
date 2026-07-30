@@ -193,8 +193,8 @@
       <div class="legend">
         <span class="status-badge status-unsupported">Unsupported</span>
         <span class="status-badge status-supported">Supported</span>
-        <span class="status-badge status-latest">Latest version</span>
-        <span class="status-badge status-preview">Preview version</span>
+        <span class="status-badge status-latest">Latest</span>
+        <span class="status-badge status-preview">Preview</span>
       </div>
       <table>
         <thead>
@@ -251,10 +251,10 @@
           
           const vLower = version.toLowerCase();
           if (vLower.includes('latest version')) {
-            statusText = 'Latest version';
+            statusText = 'Latest';
             statusClass = 'status-latest';
           } else if (vLower.includes('preview version') || vLower.includes('future version')) {
-            statusText = 'Preview version';
+            statusText = 'Preview';
             statusClass = 'status-preview';
           } else if (vLower.includes('supported') && !vLower.includes('unsupported')) {
             statusText = 'Supported';
