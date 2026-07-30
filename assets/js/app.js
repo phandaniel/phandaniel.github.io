@@ -24,6 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
       items: [
         { name: 'Starship', url: 'space/starship.html', accent: '#f97316' }
       ]
+    },
+    {
+      name: 'Sports',
+      items: [
+        { name: 'Liberty Flames', url: 'sports/liberty.html', accent: '#990000' }
+      ]
     }
   ];
   

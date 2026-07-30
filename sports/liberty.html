@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Liberty Flames Schedule</title>
+  <meta name="description" content="A tracking page for Liberty Flames football schedule.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css?v=2">
+</head>
+<body style="--accent: #990000;">
+  <div class="container">
+    <header>
+      <h1>Liberty Flames</h1>
+    </header>
+
+    <div id="loading" class="loading">Loading timeline data...</div>
+    
+    <div class="table-container" id="table-container" style="display: none;">
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Opponent</th>
+            <th>Time/TV</th>
+            <th>Result</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    window.basePath = "../";
+    async function loadData() {
+      try {
+        const response = await fetch('../data/liberty.json');
+        if (!response.ok) throw new Error("Could not fetch");
+        const data = await response.json();
+        
+        const tbody = document.getElementById('table-body');
+        const loading = document.getElementById('loading');
+        const tableContainer = document.getElementById('table-container');
+        
+        loading.style.display = 'none';
+        tableContainer.style.display = 'block';
+
+        data.forEach(game => {
+          const keys = Object.keys(game);
+          const getVal = (searchStrs) => window.utils.getVal(searchStrs, game);
+
+          let date = getVal(['date']);
+          let opponent = getVal(['opponent']);
+          let result = getVal(['result']);
+          let time = getVal(['time']);
+          let tv = getVal(['tv']);
+          
+          if (date === '—') return;
+          
+          let timetv = time !== '—' ? time : '';
+          if (tv !== '—') timetv += (timetv ? ' / ' : '') + tv;
+          if (!timetv) timetv = 'TBA';
+
+          let statusText = 'Upcoming';
+          let statusClass = 'status-preview';
+          
+          const rLower = result.toLowerCase();
+          if (rLower.includes('w ')) {
+            statusText = 'Win';
+            statusClass = 'status-supported';
+          } else if (rLower.includes('l ')) {
+            statusText = 'Loss';
+            statusClass = 'status-unsupported';
+          } else if (result !== '—') {
+            statusText = result.split('[')[0];
+            statusClass = 'status-partial';
+          }
+
+          const cleanStr = window.utils.cleanStr;
+
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td class="version">${cleanStr(date)}</td>
+            <td>${cleanStr(opponent)}</td>
+            <td>${cleanStr(timetv)}</td>
+            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+          `;
+          tbody.appendChild(tr);
+        });
+      } catch (err) {
+        document.getElementById('loading').innerText = 'Data not generated yet.';
+        console.error(err);
+      }
+    }
+    loadData();
+  </script>
+  <script src="../assets/js/app.js?v=2"></script>
+</body>
+</html>

@@ -12,7 +12,7 @@ def scrape_wiki(url, output_file):
     tables = []
     for tbl in soup.find_all('table', {'class': 'wikitable'}):
         tbl_headers = [th.text.strip().lower() for th in tbl.find_all('th')]
-        if any('version' in h or 'release' in h for h in tbl_headers):
+        if any('version' in h or 'release' in h or 'opponent' in h or 'result' in h for h in tbl_headers):
             tables.append(tbl)
 
     if not tables:
@@ -87,3 +87,4 @@ scrape_wiki('https://en.wikipedia.org/wiki/Claude_(AI)', 'data/claude.json')
 scrape_wiki('https://en.wikipedia.org/wiki/Grok_(chatbot)', 'data/grok.json')
 scrape_wiki('https://en.wikipedia.org/wiki/Gemini_(language_model)', 'data/gemini.json')
 scrape_wiki('https://en.wikipedia.org/wiki/ChatGPT', 'data/chatgpt.json')
+scrape_wiki('https://en.wikipedia.org/wiki/2026_Liberty_Flames_football_team', 'data/liberty.json')
