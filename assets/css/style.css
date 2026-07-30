@@ -260,3 +260,32 @@ tr:hover td {
   visibility: visible;
   transform: translateX(0);
 }
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  .container {
+    padding: 16px 12px;
+  }
+  th, td {
+    padding: 12px 10px;
+    font-size: 0.85rem;
+  }
+  .table-container {
+    padding: 12px;
+  }
+  .home-btn, .dropdown-menu {
+    top: 12px;
+  }
+  .home-btn {
+    left: 12px;
+    padding: 8px;
+  }
+  .dropdown-menu {
+    right: 12px;
+  }
+  .menu-btn {
+    padding: 8px;
+  }
+}
