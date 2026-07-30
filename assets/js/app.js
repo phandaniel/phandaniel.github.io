@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
         { name: 'Fedora', url: 'linux/fedora.html', accent: '#ffffff' },
         { name: 'Ubuntu', url: 'linux/ubuntu.html', accent: '#ffffff' },
         { name: 'Linux Kernel', url: 'linux/kernel.html', accent: '#ffffff' },
-        { name: 'iOS', url: 'os/ios.html', accent: '#ffffff' }
+        { name: 'iOS', url: 'os/ios.html', accent: '#ffffff' },
+        { name: 'Android', url: 'os/android.html', accent: '#ffffff' }
       ]
     },
     {
@@ -28,7 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'Developer Tools',
       items: [
-        { name: 'Kubernetes', url: 'dev/kubernetes.html', accent: '#ffffff' }
+        { name: 'Kubernetes', url: 'dev/kubernetes.html', accent: '#ffffff' },
+        { name: 'Python', url: 'dev/python.html', accent: '#ffffff' }
       ]
     },
     {
