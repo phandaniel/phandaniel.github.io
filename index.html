@@ -152,7 +152,6 @@
         <thead>
           <tr>
             <th>Version</th>
-            <th>Codename</th>
             <th>Release Date</th>
             <th>End of Life</th>
             <th>Status</th>
@@ -193,9 +192,8 @@
           };
 
           const version = getVal(['version']);
-          const codename = getVal(['codename', 'name']);
-          const releaseDate = getVal(['release date', 'released']);
-          const eol = getVal(['end of life', 'supported until']);
+          const releaseDate = getVal(['release']);
+          const eol = getVal(['end-of-life', 'eol', 'end of life']);
           
           // Determine status loosely based on EOL text
           let statusClass = 'status-eol';
@@ -214,11 +212,13 @@
           // Don't render completely empty rows that might have been scraped
           if (version === 'Unknown' || version.length > 50) return;
 
+          // Clean up version string (e.g., "Unsupported: 1 (Yarrow)" -> "1 (Yarrow)")
+          let cleanVersion = version.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '');
+
           const tr = document.createElement('tr');
           
           tr.innerHTML = `
-            <td class="version">Fedora ${version}</td>
-            <td class="codename">${codename}</td>
+            <td class="version">Fedora ${cleanVersion}</td>
             <td>${releaseDate}</td>
             <td>${eol}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
