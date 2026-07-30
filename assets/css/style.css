@@ -267,10 +267,12 @@ tr:hover td {
   }
   .container {
     padding: 16px 12px;
+    padding-top: 70px;
   }
   th, td {
     padding: 12px 10px;
     font-size: 0.85rem;
+    white-space: nowrap;
   }
   .table-container {
     padding: 12px;
