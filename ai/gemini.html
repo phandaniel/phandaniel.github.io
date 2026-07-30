@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=5">
+  <link rel="stylesheet" href="../assets/css/style.css?v=6">
 </head>
 <body style="--accent: #ffffff;">
   <div class="container">
@@ -53,14 +53,11 @@
 
           if (version === '—' || version.length > 50) return;
 
-          let statusText = 'Unknown';
-          let statusClass = 'status-preview';
+          let statusText = 'Discontinued';
+          let statusClass = 'status-unsupported';
           
           const sLower = status.toLowerCase();
-          if (sLower.includes('discontinued') || sLower.includes('unsupported')) {
-            statusText = 'Discontinued';
-            statusClass = 'status-unsupported';
-          } else if (sLower.includes('active') || sLower.includes('supported') || sLower.includes('current')) {
+          if (sLower.includes('active') || sLower.includes('supported') || sLower.includes('current')) {
             statusText = 'Active';
             statusClass = 'status-supported';
           } else if (sLower.includes('upcoming') || sLower.includes('unreleased') || sLower.includes('preview') || sLower.includes('future')) {
@@ -89,6 +86,6 @@
     });
 </script>
   <script>window.basePath = "../";</script>
-  <script src="../assets/js/app.js?v=5"></script>
+  <script src="../assets/js/app.js?v=6"></script>
 </body>
 </html>

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=5">
+  <link rel="stylesheet" href="../assets/css/style.css?v=6">
 </head>
 <body style="--accent: #ffffff;">
   <div class="container">
@@ -66,7 +66,7 @@
           
           const eolLower = eol.toLowerCase();
           if (eolLower.includes('tba') || eolLower.includes('future') || new Date(eol) > new Date()) {
-             statusClass = 'status-active';
+             statusClass = 'status-supported';
              statusText = 'Supported';
           }
           if (releaseDate.toLowerCase().includes('future') || new Date(releaseDate) > new Date()) {
@@ -81,6 +81,10 @@
           const cleanVal = (val) => val ? val.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').trim() : '';
 
           let cleanVersion = cleanVal(version).replace(/\s*\(.*?\)\s*/g, '');
+          let cleanDate = releaseDate;
+          if (cleanDate.includes('(AS)')) {
+            cleanDate = cleanDate.split('(AS)')[0].trim();
+          }
           let cleanMinor = cleanVal(minor);
           let cleanFullSupport = cleanVal(fullSupport);
           let cleanELS = cleanVal(els).replace(/—N\/a|N\/a/i, 'N/A').replace('—', 'N/A');
@@ -91,7 +95,7 @@
 
           return `
             <td class="version">RHEL ${cleanVersion}</td>
-            <td>${releaseDate}</td>
+            <td>${cleanDate}</td>
             <td>${cleanMinor}</td>
             <td>${cleanFullSupport}</td>
             <td>${cleanELS}</td>
@@ -105,6 +109,6 @@
 
   
 <script>window.basePath = "../";</script>
-  <script src="../assets/js/app.js?v=5"></script>
+  <script src="../assets/js/app.js?v=6"></script>
 </body>
 </html>
