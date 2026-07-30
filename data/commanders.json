@@ -1,0 +1,223 @@
+[
+  {
+    "Week": "1",
+    "Date": "August 14",
+    "Time (ET)": "7:00\u00a0p.m.",
+    "Opponent": "Miami Dolphins",
+    "Result": "",
+    "Record": "",
+    "Venue": "Northwest Stadium",
+    "Recap": ""
+  },
+  {
+    "Week": "2",
+    "Date": "August 22",
+    "Time (ET)": "12:00\u00a0p.m.",
+    "Opponent": "at Detroit Lions",
+    "Result": "",
+    "Record": "",
+    "Venue": "Ford Field",
+    "Recap": ""
+  },
+  {
+    "Week": "3",
+    "Date": "August 28",
+    "Time (ET)": "6:00\u00a0p.m.",
+    "Opponent": "at Baltimore Ravens",
+    "Result": "",
+    "Record": "",
+    "Venue": "M&T Bank Stadium",
+    "Recap": ""
+  },
+  {
+    "Week": "1",
+    "Date": "September 13",
+    "Time (ET)": "4:25\u00a0p.m.",
+    "Opponent": "at Philadelphia Eagles",
+    "Result": "",
+    "Record": "",
+    "Venue": "Lincoln Financial Field",
+    "Network": "Fox",
+    "Recap": ""
+  },
+  {
+    "Week": "2",
+    "Date": "September 20",
+    "Time (ET)": "4:25\u00a0p.m.",
+    "Opponent": "at Dallas Cowboys",
+    "Result": "",
+    "Record": "",
+    "Venue": "AT&T Stadium",
+    "Network": "Fox",
+    "Recap": ""
+  },
+  {
+    "Week": "3",
+    "Date": "September 27",
+    "Time (ET)": "1:00\u00a0p.m.",
+    "Opponent": "Seattle Seahawks",
+    "Result": "",
+    "Record": "",
+    "Venue": "Northwest Stadium",
+    "Network": "Fox",
+    "Recap": ""
+  },
+  {
+    "Week": "4",
+    "Date": "October 4",
+    "Time (ET)": "9:30\u00a0a.m.",
+    "Opponent": "Indianapolis Colts",
+    "Result": "",
+    "Record": "",
+    "Venue": "Tottenham Hotspur Stadium (London)",
+    "Network": "NFLN",
+    "Recap": ""
+  },
+  {
+    "Week": "5",
+    "Date": "October 11",
+    "Time (ET)": "1:00\u00a0p.m.",
+    "Opponent": "New York Giants",
+    "Result": "",
+    "Record": "",
+    "Venue": "Northwest Stadium",
+    "Network": "Fox",
+    "Recap": ""
+  },
+  {
+    "Week": "6",
+    "Date": "October 19",
+    "Time (ET)": "8:15\u00a0p.m.",
+    "Opponent": "at San Francisco 49ers",
+    "Result": "",
+    "Record": "",
+    "Venue": "Levi's Stadium",
+    "Network": "ESPN/ABC",
+    "Recap": ""
+  },
+  {
+    "Week": "7",
+    "Date": "Bye"
+  },
+  {
+    "Week": "8",
+    "Date": "November 1",
+    "Time (ET)": "8:20\u00a0p.m.",
+    "Opponent": "Philadelphia Eagles",
+    "Result": "",
+    "Record": "",
+    "Venue": "Northwest Stadium",
+    "Network": "NBC",
+    "Recap": ""
+  },
+  {
+    "Week": "9",
+    "Date": "November 8",
+    "Time (ET)": "1:00\u00a0p.m.",
+    "Opponent": "Los Angeles Rams",
+    "Result": "",
+    "Record": "",
+    "Venue": "Northwest Stadium",
+    "Network": "Fox",
+    "Recap": ""
+  },
+  {
+    "Week": "10",
+    "Date": "November 12",
+    "Time (ET)": "8:30\u00a0p.m.",
+    "Opponent": "at New York Giants",
+    "Result": "",
+    "Record": "",
+    "Venue": "MetLife Stadium",
+    "Network": "Prime Video",
+    "Recap": ""
+  },
+  {
+    "Week": "11",
+    "Date": "November 23",
+    "Time (ET)": "8:15\u00a0p.m.",
+    "Opponent": "Cincinnati Bengals",
+    "Result": "",
+    "Record": "",
+    "Venue": "Northwest Stadium",
+    "Network": "ESPN",
+    "Recap": ""
+  },
+  {
+    "Week": "12",
+    "Date": "November 29",
+    "Time (ET)": "4:25\u00a0p.m.",
+    "Opponent": "at Arizona Cardinals",
+    "Result": "",
+    "Record": "",
+    "Venue": "State Farm Stadium",
+    "Network": "Fox",
+    "Recap": ""
+  },
+  {
+    "Week": "13",
+    "Date": "December 6",
+    "Time (ET)": "1:00\u00a0p.m.",
+    "Opponent": "at Tennessee Titans",
+    "Result": "",
+    "Record": "",
+    "Venue": "Nissan Stadium",
+    "Network": "CBS",
+    "Recap": ""
+  },
+  {
+    "Week": "14",
+    "Date": "December 13",
+    "Time (ET)": "1:00\u00a0p.m.",
+    "Opponent": "Houston Texans",
+    "Result": "",
+    "Record": "",
+    "Venue": "Northwest Stadium",
+    "Network": "CBS",
+    "Recap": ""
+  },
+  {
+    "Week": "15",
+    "Date": "December 20",
+    "Time (ET)": "1:00\u00a0p.m.",
+    "Opponent": "Atlanta Falcons",
+    "Result": "",
+    "Record": "",
+    "Venue": "Northwest Stadium",
+    "Network": "Fox",
+    "Recap": ""
+  },
+  {
+    "Week": "16",
+    "Date": "December 24/26/27/28",
+    "Time (ET)": "TBD",
+    "Opponent": "at Minnesota Vikings",
+    "Result": "",
+    "Record": "",
+    "Venue": "U.S. Bank Stadium",
+    "Network": "TBD",
+    "Recap": ""
+  },
+  {
+    "Week": "17",
+    "Date": "Dec. 31/January 2/3/4",
+    "Time (ET)": "TBD",
+    "Opponent": "at Jacksonville Jaguars",
+    "Result": "",
+    "Record": "",
+    "Venue": "EverBank Stadium",
+    "Network": "TBD",
+    "Recap": ""
+  },
+  {
+    "Week": "18",
+    "Date": "January 9/10",
+    "Time (ET)": "TBD",
+    "Opponent": "Dallas Cowboys",
+    "Result": "",
+    "Record": "",
+    "Venue": "Northwest Stadium",
+    "Network": "TBD",
+    "Recap": ""
+  }
+]

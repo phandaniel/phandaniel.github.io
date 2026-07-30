@@ -34,7 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'Sports',
       items: [
-        { name: 'Liberty Flames', url: 'sports/liberty.html', accent: '#ffffff' }
+        { name: 'Liberty Flames', url: 'sports/liberty.html', accent: '#ffffff' },
+        { name: 'Commanders', url: 'sports/commanders.html', accent: '#ffffff' }
       ]
     }
   ];

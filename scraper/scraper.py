@@ -89,3 +89,4 @@ scrape_wiki('https://en.wikipedia.org/wiki/Gemini_(language_model)', 'data/gemin
 scrape_wiki('https://en.wikipedia.org/wiki/ChatGPT', 'data/chatgpt.json')
 scrape_wiki('https://en.wikipedia.org/wiki/2026_Liberty_Flames_football_team', 'data/liberty.json')
 scrape_wiki('https://en.wikipedia.org/wiki/Kubernetes', 'data/kubernetes.json')
+scrape_wiki('https://en.wikipedia.org/wiki/2026_Washington_Commanders_season', 'data/commanders.json')
