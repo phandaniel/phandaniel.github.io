@@ -67,7 +67,7 @@
           let payload = getVal(['payload']);
           let outcome = getVal(['launch outcome']);
 
-          if (date === '—' || date.length > 100) return;
+          if (date === '—' || [date, booster, ship, payload].some(s => s && s.length > 80)) return;
 
           let statusText = 'Upcoming';
           let statusClass = 'status-preview';
