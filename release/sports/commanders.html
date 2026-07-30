@@ -25,6 +25,7 @@
             <th>Date</th>
             <th>Opponent</th>
             <th>Result</th>
+            <th>Score</th>
           </tr>
         </thead>
         <tbody id="table-body">
@@ -58,17 +59,21 @@
 
           let statusText = 'Upcoming';
           let statusClass = 'status-preview';
+          let scoreText = '—';
           
           const rLower = result.toLowerCase();
           if (rLower.includes('w ')) {
             statusText = 'Win';
             statusClass = 'status-supported';
+            scoreText = result.substring(rLower.indexOf('w ') + 2).trim().split('[')[0];
           } else if (rLower.includes('l ')) {
             statusText = 'Loss';
             statusClass = 'status-unsupported';
+            scoreText = result.substring(rLower.indexOf('l ') + 2).trim().split('[')[0];
           } else if (rLower.includes('t ')) {
             statusText = 'Tie';
             statusClass = 'status-partial';
+            scoreText = result.substring(rLower.indexOf('t ') + 2).trim().split('[')[0];
           } else if (result !== '—' && result !== '') {
             statusText = result.split('[')[0];
             statusClass = 'status-partial';
@@ -83,6 +88,7 @@
             <td class="version">${cleanStr(date)}</td>
             <td>${cleanStr(opponent)}</td>
             <td>${date.toLowerCase() === 'bye' ? '—' : `<span class="status-badge ${statusClass}">${statusText}</span>`}</td>
+            <td>${cleanStr(scoreText)}</td>
           `;
           }
       });
