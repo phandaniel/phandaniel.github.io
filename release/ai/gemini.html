@@ -60,9 +60,7 @@
           if (sLower.includes('active') || sLower.includes('supported') || sLower.includes('current')) {
             statusText = 'Supported';
             statusClass = 'status-supported';
-          } else if (sLower.includes('upcoming') || sLower.includes('unreleased') || sLower.includes('preview') || sLower.includes('future')) {
-            statusText = 'Preview';
-            statusClass = 'status-preview';
+
           } else {
             statusText = 'Unsupported';
             statusClass = 'status-unsupported';
