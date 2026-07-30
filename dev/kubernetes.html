@@ -16,7 +16,6 @@
 
     <header>
       <h1>Kubernetes</h1>
-      <p>Release history and support lifecycles for Kubernetes.</p>
     </header>
 
     <div id="loading" class="loading">Loading timeline data...</div>
@@ -64,21 +63,13 @@
             let statusClass = 'status-supported';
             
             if (rawVersion.toLowerCase().includes('unsupported')) {
-                statusText = 'EOL';
+                statusText = 'Unsupported';
                 statusClass = 'status-unsupported';
                 version = rawVersion.replace(/unsupported:?\s*/i, '');
-            } else if (rawVersion.toLowerCase().includes('latest version')) {
-                statusText = 'Latest';
-                statusClass = 'status-supported';
-                version = rawVersion.replace(/latest version:?\s*/i, '');
-            } else if (rawVersion.toLowerCase().includes('supported')) {
+            } else {
                 statusText = 'Supported';
                 statusClass = 'status-supported';
-                version = rawVersion.replace(/supported:?\s*/i, '');
-            } else if (rawVersion.toLowerCase().includes('future') || rawVersion.toLowerCase().includes('preview')) {
-                statusText = 'Upcoming';
-                statusClass = 'status-preview';
-                version = rawVersion.replace(/future release:?\s*/i, '').replace(/preview:?\s*/i, '');
+                version = rawVersion.replace(/(latest version|supported|future release|preview):?\s*/i, '');
             }
 
             const cleanStr = (s) => (s || '—').trim();
