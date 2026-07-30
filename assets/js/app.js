@@ -1,15 +1,30 @@
 
 document.addEventListener('DOMContentLoaded', () => {
-  const pages = [
-    { name: 'Fedora', url: 'linux/fedora.html', accent: '#3b82f6' },
-    { name: 'Ubuntu', url: 'linux/ubuntu.html', accent: '#e95420' },
-    { name: 'Linux Kernel', url: 'linux/kernel.html', accent: '#fbbf24' },
-    { name: 'iOS', url: 'os/ios.html', accent: '#0a84ff' },
-    { name: 'Starship', url: 'space/starship.html', accent: '#f97316' },
-    { name: 'ChatGPT', url: 'ai/chatgpt.html', accent: '#10a37f' },
-    { name: 'Claude', url: 'ai/claude.html', accent: '#d97757' },
-    { name: 'Gemini', url: 'ai/gemini.html', accent: '#1a73e8' },
-    { name: 'Grok', url: 'ai/grok.html', accent: '#1da1f2' }
+  const categories = [
+    {
+      name: 'Operating Systems',
+      items: [
+        { name: 'Fedora', url: 'linux/fedora.html', accent: '#3b82f6' },
+        { name: 'Ubuntu', url: 'linux/ubuntu.html', accent: '#e95420' },
+        { name: 'Linux Kernel', url: 'linux/kernel.html', accent: '#fbbf24' },
+        { name: 'iOS', url: 'os/ios.html', accent: '#0a84ff' }
+      ]
+    },
+    {
+      name: 'Artificial Intelligence',
+      items: [
+        { name: 'ChatGPT', url: 'ai/chatgpt.html', accent: '#10a37f' },
+        { name: 'Claude', url: 'ai/claude.html', accent: '#d97757' },
+        { name: 'Gemini', url: 'ai/gemini.html', accent: '#1a73e8' },
+        { name: 'Grok', url: 'ai/grok.html', accent: '#1da1f2' }
+      ]
+    },
+    {
+      name: 'Aerospace',
+      items: [
+        { name: 'Starship', url: 'space/starship.html', accent: '#f97316' }
+      ]
+    }
   ];
   
   let currentFile = window.location.pathname.split('/').slice(-2).join('/');
@@ -27,8 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
         </svg>
       </button>
       <div class="dropdown-content" id="dropdownContent">
-        <a href="${basePath}index.html" class="nav-link ${currentFile === 'index.html' ? 'active' : ''}" style="--accent: #8b5cf6;">Home</a>
-        ${pages.map(p => `<a href="${basePath}${p.url}" class="nav-link ${currentFile.endsWith(p.url) ? 'active' : ''}" style="--accent: ${p.accent};">${p.name}</a>`).join('')}
+        <a href="${basePath}index.html" class="nav-link ${currentFile === 'index.html' ? 'active' : ''}" style="--accent: #8b5cf6;">Home Dashboard</a>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); margin: 4px 0;"></div>
+        ${categories.map(cat => `
+          <div class="has-submenu">
+            <div class="nav-link submenu-toggle">${cat.name} <span>&rsaquo;</span></div>
+            <div class="submenu">
+              ${cat.items.map(p => `<a href="${basePath}${p.url}" class="nav-link ${currentFile.endsWith(p.url) ? 'active' : ''}" style="--accent: ${p.accent};">${p.name}</a>`).join('')}
+            </div>
+          </div>
+        `).join('')}
       </div>
     </div>
   `;

@@ -195,3 +195,42 @@ tr:hover td {
   color: #000000;
   font-weight: 600;
 }
+
+.has-submenu {
+  position: relative;
+}
+.submenu-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: default;
+}
+.submenu-toggle span {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+.submenu {
+  position: absolute;
+  top: 0;
+  right: 100%;
+  margin-right: 10px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: -5px 10px 30px rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  min-width: 160px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.has-submenu:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
