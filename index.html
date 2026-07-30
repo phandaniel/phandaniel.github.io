@@ -30,6 +30,12 @@
       max-width: 600px;
       margin: 0 auto;
     }
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      align-items: start;
+    }
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
@@ -93,57 +99,69 @@
       <p>Real-time, automated tracking of software versions, AI model iterations, and aerospace milestones.</p>
     </div>
 
-    <div class="category-title">Operating Systems</div>
-    <div class="grid">
-      <a href="linux/fedora.html" class="card" style="--card-accent: #3b82f6;">
-        <h2>Fedora Linux</h2>
-      </a>
-      <a href="linux/ubuntu.html" class="card" style="--card-accent: #e95420;">
-        <h2>Ubuntu Linux</h2>
-      </a>
-      <a href="linux/kernel.html" class="card" style="--card-accent: #fbbf24;">
-        <h2>Linux Kernel</h2>
-      </a>
-      <a href="os/ios.html" class="card" style="--card-accent: #0a84ff;">
-        <h2>Apple iOS</h2>
-      </a>
-    </div>
+    <div class="dashboard-grid">
+      <div>
+        <div class="category-title">Operating Systems</div>
+        <div class="grid">
+          <a href="linux/fedora.html" class="card" style="--card-accent: #3b82f6;">
+            <h2>Fedora Linux</h2>
+          </a>
+          <a href="linux/ubuntu.html" class="card" style="--card-accent: #e95420;">
+            <h2>Ubuntu Linux</h2>
+          </a>
+          <a href="linux/kernel.html" class="card" style="--card-accent: #fbbf24;">
+            <h2>Linux Kernel</h2>
+          </a>
+          <a href="os/ios.html" class="card" style="--card-accent: #0a84ff;">
+            <h2>Apple iOS</h2>
+          </a>
+        </div>
+      </div>
 
-    <div class="category-title">Artificial Intelligence</div>
-    <div class="grid">
-      <a href="ai/chatgpt.html" class="card" style="--card-accent: #10a37f;">
-        <h2>ChatGPT</h2>
-      </a>
-      <a href="ai/claude.html" class="card" style="--card-accent: #d97757;">
-        <h2>Claude</h2>
-      </a>
-      <a href="ai/gemini.html" class="card" style="--card-accent: #1a73e8;">
-        <h2>Gemini</h2>
-      </a>
-      <a href="ai/grok.html" class="card" style="--card-accent: #1da1f2;">
-        <h2>Grok</h2>
-      </a>
-    </div>
+      <div>
+        <div class="category-title">Artificial Intelligence</div>
+        <div class="grid">
+          <a href="ai/chatgpt.html" class="card" style="--card-accent: #10a37f;">
+            <h2>ChatGPT</h2>
+          </a>
+          <a href="ai/claude.html" class="card" style="--card-accent: #d97757;">
+            <h2>Claude</h2>
+          </a>
+          <a href="ai/gemini.html" class="card" style="--card-accent: #1a73e8;">
+            <h2>Gemini</h2>
+          </a>
+          <a href="ai/grok.html" class="card" style="--card-accent: #1da1f2;">
+            <h2>Grok</h2>
+          </a>
+        </div>
+      </div>
 
-    <div class="category-title">Aerospace</div>
-    <div class="grid">
-      <a href="space/starship.html" class="card" style="--card-accent: #f97316;">
-        <h2>SpaceX Starship</h2>
-      </a>
-    </div>
+      <div>
+        <div class="category-title">Aerospace</div>
+        <div class="grid">
+          <a href="space/starship.html" class="card" style="--card-accent: #f97316;">
+            <h2>SpaceX Starship</h2>
+          </a>
+        </div>
+      </div>
 
-    <div class="category-title">Developer Tools</div>
-    <div class="grid">
-      <a href="dev/kubernetes.html" class="card" style="--card-accent: #326ce5;">
-        <h2>Kubernetes</h2>
-      </a>
-    </div>
+      <div>
+        <div class="category-title">Developer Tools</div>
+        <div class="grid">
+          <a href="dev/kubernetes.html" class="card" style="--card-accent: #326ce5;">
+            <h2>Kubernetes</h2>
+          </a>
+        </div>
+      </div>
 
-    <div class="category-title">Sports</div>
-    <div class="grid">
-      <a href="sports/liberty.html" class="card" style="--card-accent: #990000;">
-        <h2>Liberty Flames</h2>
-      </a>
+      <div>
+        <div class="category-title">Sports</div>
+        <div class="grid">
+          <a href="sports/liberty.html" class="card" style="--card-accent: #990000;">
+            <h2>Liberty Flames</h2>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 
