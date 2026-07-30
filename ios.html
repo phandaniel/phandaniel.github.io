@@ -259,7 +259,7 @@
           latestVersion = latestVersion.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').trim();
 
           // Remove citation links like [1][2]
-          eol = eol.replace(/\\[\\d+\\]/g, '');
+          eol = eol.replace(/\[\d+\]/g, '');
 
           const tr = document.createElement('tr');
           

@@ -259,7 +259,7 @@
           }
 
           // Strip wikipedia citations
-          const cleanStr = (s) => s.replace(/\\[\\d+\\]/g, '').replace(/—N\\/a/gi, '&mdash;');
+          const cleanStr = (s) => s.replace(/\[\d+\]/g, '').replace(/—N\/a/gi, '&mdash;');
 
           flight = cleanStr(flight);
           date = cleanStr(date);
