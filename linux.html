@@ -201,6 +201,7 @@
           <tr>
             <th>Version</th>
             <th>Release Date</th>
+            <th>Last Release</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -239,6 +240,9 @@
 
           const version = getVal(['version']);
           const releaseDate = getVal(['original release date', 'release date', 'released', 'release']);
+          let lastRelease = getVal(['last release']);
+          
+          if (lastRelease === 'Unknown') lastRelease = '&mdash;';
           
           if (version === 'Unknown' || version.length > 50) return;
 
@@ -264,6 +268,7 @@
           tr.innerHTML = `
             <td class="version">v${cleanVersion}</td>
             <td>${releaseDate}</td>
+            <td>${lastRelease}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           
