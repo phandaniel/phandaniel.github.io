@@ -2,31 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ubuntu Release History</title>
-  <meta name="description" content="A beautiful overview of Ubuntu Linux release history.">
+  <title>iOS Version History</title>
+  <meta name="description" content="A beautiful overview of iOS version history.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #0f172a;
-      --card-bg: rgba(30, 41, 59, 0.7);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent: #f97316; /* Ubuntu orange */
+      --bg-color: #000000;
+      --card-bg: rgba(28, 28, 30, 0.7);
+      --text-main: #f5f5f7;
+      --text-muted: #86868b;
+      --accent: #0071e3;
       --border: rgba(255, 255, 255, 0.1);
     }
     
     body {
       margin: 0;
       padding: 0;
-      font-family: 'Outfit', sans-serif;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       background-color: var(--bg-color);
       color: var(--text-main);
       background-image: 
-        radial-gradient(circle at 15% 50%, rgba(249, 115, 22, 0.15), transparent 25%),
-        radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.1), transparent 25%);
+        radial-gradient(circle at 50% 0%, rgba(0, 113, 227, 0.15), transparent 50%),
+        radial-gradient(circle at 100% 100%, rgba(255, 255, 255, 0.05), transparent 50%);
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -47,13 +47,13 @@
       display: inline-flex;
       gap: 5px;
       margin-bottom: 40px;
-      background: rgba(30, 41, 59, 0.85);
+      background: rgba(28, 28, 30, 0.85);
       padding: 6px;
       border-radius: 50px;
       border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       position: sticky;
       top: 20px;
       z-index: 100;
@@ -64,45 +64,47 @@
       border-radius: 40px;
       text-decoration: none;
       color: var(--text-muted);
-      font-weight: 600;
-      letter-spacing: 0.5px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
     }
     
     .nav-link:hover {
       color: var(--text-main);
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(255, 255, 255, 0.08);
     }
     
     .nav-link.active {
-      background: var(--accent);
-      color: white;
+      background: #ffffff;
+      color: #000000;
+      font-weight: 600;
     }
 
     header {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     h1 {
-      font-size: 3rem;
+      font-size: 3.5rem;
       font-weight: 700;
       margin-bottom: 10px;
-      background: linear-gradient(to right, #f97316, #fcd34d);
+      background: linear-gradient(180deg, #fff 0%, #a1a1a6 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      letter-spacing: -1px;
+      letter-spacing: -1.5px;
     }
 
     .table-container {
       width: 100%;
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 20px;
+      border-radius: 24px;
       padding: 24px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
       overflow-x: auto;
     }
 
@@ -113,14 +115,14 @@
     }
 
     th, td {
-      padding: 16px 20px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     th {
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
       color: var(--text-muted);
       font-weight: 600;
       white-space: nowrap;
@@ -135,9 +137,9 @@
     }
 
     .version {
-      font-weight: 700;
+      font-weight: 600;
       color: var(--text-main);
-      font-size: 1.1rem;
+      font-size: 1.15rem;
     }
 
     .loading {
@@ -155,29 +157,29 @@
     
     .status-badge {
       display: inline-block;
-      padding: 4px 10px;
-      border-radius: 6px;
+      padding: 5px 12px;
+      border-radius: 8px;
       font-size: 0.75rem;
-      font-weight: 700;
+      font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
-    .status-active { background: rgba(52, 211, 153, 0.15); color: #34d399; }
-    .status-eol { background: rgba(248, 113, 113, 0.15); color: #f87171; }
-    .status-future { background: rgba(96, 165, 250, 0.15); color: #60a5fa; }
+    .status-unsupported { background: rgba(255, 69, 58, 0.15); color: #ff453a; }
+    .status-supported { background: rgba(48, 209, 88, 0.15); color: #30d158; }
+    .status-preview { background: rgba(10, 132, 255, 0.15); color: #0a84ff; }
   </style>
 </head>
 <body>
   <div class="container">
     <nav class="nav-menu">
       <a href="index.html" class="nav-link">Fedora</a>
-      <a href="ubuntu.html" class="nav-link active">Ubuntu</a>
+      <a href="ubuntu.html" class="nav-link">Ubuntu</a>
       <a href="linux.html" class="nav-link">Linux Kernel</a>
-      <a href="ios.html" class="nav-link">iOS</a>
+      <a href="ios.html" class="nav-link active">iOS</a>
     </nav>
 
     <header>
-      <h1>Ubuntu Release History</h1>
+      <h1>iOS Version History</h1>
     </header>
 
     <div id="loading" class="loading">Loading timeline data...</div>
@@ -187,10 +189,10 @@
         <thead>
           <tr>
             <th>Version</th>
-            <th>Release Date</th>
-            <th>Standard Support</th>
-            <th>Extended Security</th>
-            <th>Legacy Add-On</th>
+            <th>Initial Release</th>
+            <th>Latest Version</th>
+            <th>Latest Release Date</th>
+            <th>Device EOL</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -203,12 +205,11 @@
   <script>
     async function loadData() {
       try {
-        const response = await fetch('ubuntu.json');
-        if (!response.ok) throw new Error("Could not fetch ubuntu.json");
+        const response = await fetch('ios.json');
+        if (!response.ok) throw new Error("Could not fetch ios.json");
         const data = await response.json();
         
-        // Reverse the array to show the newest versions at the top
-        data.reverse();
+        data.reverse(); // Newest first
 
         const tbody = document.getElementById('table-body');
         const loading = document.getElementById('loading');
@@ -229,48 +230,45 @@
           };
 
           const version = getVal(['version']);
-          const releaseDate = getVal(['release date', 'released', 'release']);
-          const standardSupport = getVal(['standard support']);
-          const extSecurity = getVal(['extended security']);
-          const legacyAddOn = getVal(['legacy add-on']);
-          const eol = standardSupport !== '—' ? standardSupport : getVal(['end of life', 'end-of-life', 'eol', 'supported until']);
-          
-          // Determine status loosely based on EOL text
-          let statusClass = 'status-eol';
-          let statusText = 'End of Life';
-          
-          const eolLower = eol.toLowerCase();
-          if (eolLower.includes('tba') || eolLower.includes('future') || new Date(eol) > new Date()) {
-             statusClass = 'status-active';
-             statusText = 'Supported';
-          }
-          if (releaseDate.toLowerCase().includes('future') || new Date(releaseDate) > new Date()) {
-             statusClass = 'status-future';
-             statusText = 'Upcoming';
-          }
+          let initialRelease = getVal(['initial release']);
+          let latestVersion = getVal(['latest version']);
+          let latestReleaseDate = getVal(['latest release date']);
+          let eol = getVal(['end-of-life', 'eol', 'device']);
 
-          // Don't render completely empty rows that might have been scraped
           if (version === '—' || version.length > 50) return;
 
-          // Clean up values
-          const cleanVal = (val) => val ? val.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').trim() : '';
-
-          let cleanVersion = cleanVal(version).replace(/\s*\(.*?\)\s*/g, '');
-          let cleanStdSupport = cleanVal(standardSupport);
-          let cleanExtSec = cleanVal(extSecurity);
-          let cleanLegacy = cleanVal(legacyAddOn);
+          let statusText = 'Unsupported';
+          let statusClass = 'status-unsupported';
           
-          if (cleanExtSec.toLowerCase().includes('n/a') || cleanExtSec === '—') cleanExtSec = '<span style="color: var(--text-muted); font-weight: 400;">&mdash;</span>';
-          if (cleanLegacy.toLowerCase().includes('n/a') || cleanLegacy === '—') cleanLegacy = '<span style="color: var(--text-muted); font-weight: 400;">&mdash;</span>';
+          const vLower = version.toLowerCase();
+          const eolLower = eol.toLowerCase();
+
+          if (vLower.includes('preview version') || vLower.includes('future version') || vLower.includes('beta')) {
+            statusText = 'Upcoming';
+            statusClass = 'status-preview';
+          } else if ((vLower.includes('supported') || vLower.includes('latest')) && !vLower.includes('unsupported')) {
+            statusText = 'Supported';
+            statusClass = 'status-supported';
+          } else if (eolLower.includes('present') || eolLower.includes('current') || eolLower.includes('supported')) {
+             statusText = 'Supported';
+             statusClass = 'status-supported';
+          }
+
+          let cleanVersion = version.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').replace(/\s*\(.*?\)\s*/g, '').trim();
+
+          latestVersion = latestVersion.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').trim();
+
+          // Remove citation links like [1][2]
+          eol = eol.replace(/\\[\\d+\\]/g, '');
 
           const tr = document.createElement('tr');
           
           tr.innerHTML = `
-            <td class="version">Ubuntu ${cleanVersion}</td>
-            <td>${releaseDate}</td>
-            <td>${cleanStdSupport}</td>
-            <td>${cleanExtSec}</td>
-            <td>${cleanLegacy}</td>
+            <td class="version">iOS ${cleanVersion}</td>
+            <td>${initialRelease}</td>
+            <td>${latestVersion}</td>
+            <td>${latestReleaseDate}</td>
+            <td>${eol}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           
