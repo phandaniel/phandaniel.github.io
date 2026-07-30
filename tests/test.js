@@ -1,7 +1,7 @@
 const puppeteer = require('puppeteer');
 const fs = require('fs');
 
-const files = ['linux/fedora.html', 'linux/ubuntu.html', 'linux/kernel.html', 'linux/rhel.html', 'os/ios.html', 'os/android.html', 'space/starship.html', 'space/vulcan.html', 'space/newglenn.html', 'ai/claude.html', 'ai/grok.html', 'ai/gemini.html', 'ai/chatgpt.html', 'dev/kubernetes.html', 'dev/python.html', 'sports/liberty.html', 'sports/commanders.html', 'sports/wizards.html'];
+const files = ['release/linux/fedora.html', 'release/linux/ubuntu.html', 'release/linux/kernel.html', 'release/linux/rhel.html', 'release/os/ios.html', 'release/os/android.html', 'release/space/starship.html', 'release/space/vulcan.html', 'release/space/newglenn.html', 'release/ai/claude.html', 'release/ai/grok.html', 'release/ai/gemini.html', 'release/ai/chatgpt.html', 'release/dev/kubernetes.html', 'release/dev/python.html', 'release/sports/liberty.html', 'release/sports/commanders.html', 'release/sports/wizards.html'];
 let passed = true;
 
 (async () => {

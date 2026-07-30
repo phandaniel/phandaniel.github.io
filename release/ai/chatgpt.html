@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Gemini - Phantom Telemetry</title>
-  <meta name="description" content="A tracking page for Gemini versions.">
+  <title>ChatGPT - Phantom Telemetry</title>
+  <meta name="description" content="A tracking page for ChatGPT versions.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=6">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=6">
 </head>
 <body style="--accent: #ffffff;">
   <div class="container">
     <header>
-      <h1>Gemini</h1>
+      <h1>ChatGPT</h1>
     </header>
 
     <div id="loading" class="loading">Loading timeline data...</div>
@@ -34,10 +34,10 @@
   </div>
 
   <script>
-    window.basePath = "../";
+    window.basePath = "../../";
     window.addEventListener('DOMContentLoaded', () => {
       window.utils.renderTable({
-        url: '../data/gemini.json',
+        url: '../../data/chatgpt.json',
         processData: (data) => {
           data.reverse();
           return data;
@@ -50,7 +50,6 @@
           let date = getVal(['date']);
           let status = getVal(['status']);
 
-
           if (version === '—' || version.length > 50) return;
 
           let statusText = 'Discontinued';
@@ -60,18 +59,12 @@
           if (sLower.includes('active') || sLower.includes('supported') || sLower.includes('current')) {
             statusText = 'Active';
             statusClass = 'status-supported';
-          } else if (sLower.includes('upcoming') || sLower.includes('unreleased') || sLower.includes('preview') || sLower.includes('future')) {
-            statusText = 'Preview';
+          } else if (sLower.includes('upcoming') || sLower.includes('unreleased')) {
+            statusText = 'Upcoming';
             statusClass = 'status-preview';
           } else if (status !== '—') {
-            let cleanStatus = status.split('[')[0];
-            if (cleanStatus.toLowerCase().includes('latest')) {
-              statusText = 'Latest';
-              statusClass = 'status-supported';
-            } else {
-              statusText = cleanStatus.trim();
-              statusClass = 'status-partial';
-            }
+            statusText = status.split('[')[0].replace(/[^a-zA-Z]/g, '');
+            statusClass = 'status-partial';
           }
 
           const cleanStr = window.utils.cleanStr;
@@ -85,7 +78,7 @@
       });
     });
 </script>
-  <script>window.basePath = "../";</script>
-  <script src="../assets/js/app.js?v=6"></script>
+  <script>window.basePath = "../../";</script>
+  <script src="../../assets/js/app.js?v=6"></script>
 </body>
 </html>

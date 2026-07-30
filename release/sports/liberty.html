@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Washington Wizards - Phantom Telemetry</title>
-  <meta name="description" content="A tracking page for Washington Wizards games.">
+  <title>Liberty Flames - Phantom Telemetry</title>
+  <meta name="description" content="A tracking page for Liberty Flames football schedule.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=6">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=6">
 </head>
 <body style="--accent: #ffffff;">
   <div class="container">
     <header>
-      <h1>Washington Wizards</h1>
+      <h1>Liberty Flames</h1>
     </header>
 
     <div id="loading" class="loading">Loading timeline data...</div>
@@ -23,8 +23,8 @@
         <thead>
           <tr>
             <th>Date</th>
-            <th>Team</th>
-            <th>Score</th>
+            <th>Opponent</th>
+            <th>Result</th>
           </tr>
         </thead>
         <tbody id="table-body">
@@ -34,10 +34,10 @@
   </div>
 
   <script>
-    window.basePath = "../";
+    window.basePath = "../../";
     window.addEventListener('DOMContentLoaded', () => {
       window.utils.renderTable({
-        url: '../data/wizards.json',
+        url: '../../data/liberty.json',
         processData: (data) => {
           data.reverse();
           return data;
@@ -47,8 +47,10 @@
           const getVal = (searchStrs) => window.utils.getVal(searchStrs, game);
 
           let date = getVal(['date']);
-          let opponent = getVal(['team']);
-          let result = getVal(['score']);
+          let opponent = getVal(['opponent']);
+          let result = getVal(['result']);
+          let time = getVal(['time']);
+          let tv = getVal(['tv']);
           
           if (date === '—') return;
 
@@ -62,10 +64,7 @@
           } else if (rLower.includes('l ')) {
             statusText = 'Loss';
             statusClass = 'status-unsupported';
-          } else if (rLower.includes('t ')) {
-            statusText = 'Tie';
-            statusClass = 'status-partial';
-          } else if (result !== '—' && result !== '') {
+          } else if (result !== '—') {
             statusText = result.split('[')[0];
             statusClass = 'status-partial';
           }
@@ -81,6 +80,6 @@
       });
     });
 </script>
-  <script src="../assets/js/app.js?v=6"></script>
+  <script src="../../assets/js/app.js?v=6"></script>
 </body>
 </html>

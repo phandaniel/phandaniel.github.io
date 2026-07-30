@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Linux Kernel - Phantom Telemetry</title>
-  <meta name="description" content="A beautiful overview of Linux Kernel version history.">
+  <title>iOS - Phantom Telemetry</title>
+  <meta name="description" content="A beautiful overview of iOS version history.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=6">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=6">
 </head>
 <body style="--accent: #ffffff;">
   <div class="container">
         
 
     <header>
-      <h1>Linux Kernel</h1>
+      <h1>iOS</h1>
     </header>
 
     <div id="loading" class="loading">Loading timeline data...</div>
@@ -25,8 +25,9 @@
         <thead>
           <tr>
             <th>Version</th>
-            <th>Release Date</th>
-            <th>Last Release</th>
+            <th>Initial Release</th>
+            <th>Latest Version</th>
+            <th>Latest Release Date</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -37,12 +38,12 @@
   </div>
 
   <script>
-    window.basePath = "../";
+    window.basePath = "../../";
     window.addEventListener('DOMContentLoaded', () => {
       window.utils.renderTable({
-        url: '../data/linux.json',
+        url: '../../data/ios.json',
         processData: (data) => {
-          // No reverse needed, Linux table is mostly newest-first already
+          data.reverse(); // Newest first
           return data;
         },
         renderRow: (release) => {
@@ -51,29 +52,42 @@
           const getVal = (keys) => window.utils.getVal(keys, release);
 
           const version = getVal(['version']);
-          const releaseDate = getVal(['original release date', 'release date', 'released', 'release']);
-          let lastRelease = getVal(['last release']);
-          
+          let initialRelease = getVal(['initial release']);
+          let latestVersion = getVal(['latest version']);
+          let latestReleaseDate = getVal(['latest release date']);
+          let eol = getVal(['end-of-life', 'eol', 'device']);
+
           if (version === '—' || version.length > 50) return;
 
           let statusText = 'Unsupported';
           let statusClass = 'status-unsupported';
           
-          const vLower = version.toLowerCase();
-          if (vLower.includes('preview version') || vLower.includes('future version')) {
+          const vLower = latestVersion.toLowerCase();
+          const eolLower = eol.toLowerCase();
+
+          if (vLower.includes('preview version') || vLower.includes('future version') || vLower.includes('beta')) {
             statusText = 'Upcoming';
             statusClass = 'status-preview';
           } else if ((vLower.includes('supported') || vLower.includes('latest')) && !vLower.includes('unsupported')) {
             statusText = 'Supported';
             statusClass = 'status-supported';
+          } else if (eolLower.includes('present') || eolLower.includes('current') || eolLower.includes('supported')) {
+             statusText = 'Supported';
+             statusClass = 'status-supported';
           }
 
           let cleanVersion = version.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').replace(/\s*\(.*?\)\s*/g, '').trim();
 
+          latestVersion = latestVersion.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').trim();
+
+          // Remove citation links like [1][2]
+          eol = eol.replace(/\[\d+\]/g, '');
+
           return `
-            <td class="version">v${cleanVersion}</td>
-            <td>${releaseDate}</td>
-            <td>${lastRelease}</td>
+            <td class="version">${cleanVersion}</td>
+            <td>${initialRelease}</td>
+            <td>${latestVersion}</td>
+            <td>${latestReleaseDate}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           
@@ -83,7 +97,7 @@
 </script>
 
   
-<script>window.basePath = "../";</script>
-  <script src="../assets/js/app.js?v=6"></script>
+<script>window.basePath = "../../";</script>
+  <script src="../../assets/js/app.js?v=6"></script>
 </body>
 </html>

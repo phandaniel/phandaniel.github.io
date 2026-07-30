@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ubuntu - Phantom Telemetry</title>
-  <meta name="description" content="A beautiful overview of Ubuntu Linux release history.">
+  <title>Fedora - Phantom Telemetry</title>
+  <meta name="description" content="A beautiful overview of Fedora Linux release history.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=6">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=6">
 </head>
 <body style="--accent: #ffffff;">
   <div class="container">
         
 
     <header>
-      <h1>Ubuntu</h1>
+      <h1>Fedora</h1>
     </header>
 
     <div id="loading" class="loading">Loading timeline data...</div>
@@ -26,9 +26,7 @@
           <tr>
             <th>Version</th>
             <th>Release Date</th>
-            <th>Standard Support</th>
-            <th>Extended Security</th>
-            <th>Legacy Add-On</th>
+            <th>End of Life</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -39,10 +37,10 @@
   </div>
 
   <script>
-    window.basePath = "../";
+    window.basePath = "../../";
     window.addEventListener('DOMContentLoaded', () => {
       window.utils.renderTable({
-        url: '../data/ubuntu.json',
+        url: '../../data/fedora.json',
         processData: (data) => {
           // Reverse the array to show the newest versions at the top
         data.reverse();
@@ -54,11 +52,8 @@
           const getVal = (keys) => window.utils.getVal(keys, release);
 
           const version = getVal(['version']);
-          const releaseDate = getVal(['release date', 'released', 'release']);
-          const standardSupport = getVal(['standard support']);
-          const extSecurity = getVal(['extended security']);
-          const legacyAddOn = getVal(['legacy add-on']);
-          const eol = standardSupport !== '—' ? standardSupport : getVal(['end of life', 'end-of-life', 'eol', 'supported until']);
+          const releaseDate = getVal(['release']);
+          const eol = getVal(['end-of-life', 'eol', 'end of life']);
           
           // Determine status loosely based on EOL text
           let statusClass = 'status-eol';
@@ -77,23 +72,13 @@
           // Don't render completely empty rows that might have been scraped
           if (version === '—' || version.length > 50) return;
 
-          // Clean up values
-          const cleanVal = (val) => val ? val.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').trim() : '';
-
-          let cleanVersion = cleanVal(version).replace(/\s*\(.*?\)\s*/g, '');
-          let cleanStdSupport = cleanVal(standardSupport);
-          let cleanExtSec = cleanVal(extSecurity);
-          let cleanLegacy = cleanVal(legacyAddOn);
-          
-          if (cleanExtSec.toLowerCase().includes('n/a') || cleanExtSec === '—') cleanExtSec = '<span style="color: var(--text-muted); font-weight: 400;">&mdash;</span>';
-          if (cleanLegacy.toLowerCase().includes('n/a') || cleanLegacy === '—') cleanLegacy = '<span style="color: var(--text-muted); font-weight: 400;">&mdash;</span>';
+          // Clean up version string (e.g., "Unsupported: 1 (Yarrow)" -> "1")
+          let cleanVersion = version.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').replace(/\s*\(.*?\)\s*/g, '').trim();
 
           return `
-            <td class="version">Ubuntu ${cleanVersion}</td>
+            <td class="version">Fedora ${cleanVersion}</td>
             <td>${releaseDate}</td>
-            <td>${cleanStdSupport}</td>
-            <td>${cleanExtSec}</td>
-            <td>${cleanLegacy}</td>
+            <td>${eol}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           
@@ -103,7 +88,7 @@
 </script>
 
   
-<script>window.basePath = "../";</script>
-  <script src="../assets/js/app.js?v=6"></script>
+<script>window.basePath = "../../";</script>
+  <script src="../../assets/js/app.js?v=6"></script>
 </body>
 </html>

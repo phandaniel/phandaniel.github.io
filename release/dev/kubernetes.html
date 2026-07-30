@@ -2,19 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Android - Phantom Telemetry</title>
-  <meta name="description" content="A beautiful overview of Android release history.">
+  <title>Kubernetes - Phantom Telemetry</title>
+  <meta name="description" content="A beautiful overview of Kubernetes release history.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../assets/css/style.css?v=6">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=6">
 </head>
 <body style="--accent: #ffffff;">
   <div class="container">
         
+
     <header>
-      <h1>Android</h1>
+      <h1>Kubernetes</h1>
     </header>
 
     <div id="loading" class="loading">Loading timeline data...</div>
@@ -23,9 +24,9 @@
       <table>
         <thead>
           <tr>
-            <th>Name</th>
             <th>Version</th>
             <th>Release Date</th>
+            <th>End of Life</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -36,57 +37,46 @@
   </div>
 
   <script>
-    window.basePath = "../";
+    window.basePath = "../../";
     window.addEventListener('DOMContentLoaded', () => {
       window.utils.renderTable({
-        url: '../data/android.json',
-        processData: (data) => data.filter(r => r['name'] || r['Name']).reverse(),
+        url: '../../data/kubernetes.json',
+        processData: (data) => data.reverse(),
         renderRow: (release) => {
           const getVal = (keys) => window.utils.getVal(keys, release);
           
-          let name = getVal(['name']);
-          let rawVersion = getVal(['version number(s)', 'version']);
-          let api = getVal(['api level']);
-          let date = getVal(['release date', 'initial release date']);
+          let rawVersion = getVal(['version']);
+          let date = getVal(['release date', 'date']);
+          let eol = getVal(['end of life', 'end of life date', 'end of life date[92]']);
           
           if (rawVersion === '—' || rawVersion.length > 50) return;
 
           let version = rawVersion;
-          let statusText = 'Supported';
+          let statusText = 'Active';
           let statusClass = 'status-supported';
           
           if (rawVersion.toLowerCase().includes('unsupported')) {
               statusText = 'Unsupported';
               statusClass = 'status-unsupported';
               version = rawVersion.replace(/unsupported:?\s*/i, '');
-          } else if (rawVersion.toLowerCase().includes('future release')) {
-              statusText = 'Upcoming';
-              statusClass = 'status-preview';
-              version = rawVersion.replace(/future release:?\s*/i, '');
-          } else if (rawVersion.toLowerCase().includes('latest version')) {
-              statusText = 'Supported';
-              statusClass = 'status-supported';
-              version = rawVersion.replace(/latest version:?\s*/i, '');
           } else {
               statusText = 'Supported';
               statusClass = 'status-supported';
-              version = rawVersion.replace(/(supported):?\s*/i, '');
+              version = rawVersion.replace(/(latest version|supported|future release|preview):?\s*/i, '');
           }
 
           const cleanStr = (s) => (s || '—').trim();
-          let cleanName = cleanStr(name).replace(/\[\d+\]/g, '');
-          let cleanVersion = cleanStr(version).replace(/\[\d+\]/g, '');
 
           return `
-            <td class="version">${cleanName}</td>
-            <td>${cleanVersion}</td>
+            <td class="version">${cleanStr(version)}</td>
             <td>${cleanStr(date)}</td>
+            <td>${cleanStr(eol)}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
         }
       });
     });
   </script>
-  <script src="../assets/js/app.js?v=6"></script>
+  <script src="../../assets/js/app.js?v=6"></script>
 </body>
 </html>
