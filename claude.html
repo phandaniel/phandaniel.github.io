@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Claude Versions</title>
+  <meta name="description" content="A tracking page for Claude versions.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=2">
+</head>
+<body style="--accent: #d97757;">
+  <div class="container">
+    <header>
+      <h1>Claude</h1>
+    </header>
+
+    <div id="loading" class="loading">Loading timeline data...</div>
+    
+    <div class="table-container" id="table-container" style="display: none;">
+      <table>
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Release Date</th>
+            
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    async function loadData() {
+      try {
+        const response = await fetch('data/claude.json');
+        if (!response.ok) throw new Error("Could not fetch");
+        const data = await response.json();
+        
+        data.reverse();
+
+        const tbody = document.getElementById('table-body');
+        const loading = document.getElementById('loading');
+        const tableContainer = document.getElementById('table-container');
+        
+        loading.style.display = 'none';
+        tableContainer.style.display = 'block';
+
+        data.forEach(release => {
+          const keys = Object.keys(release);
+          const getVal = (searchStrs) => window.utils.getVal(searchStrs, release);
+
+          let version = getVal(['version', 'model']);
+          let date = getVal(['date']);
+          let status = getVal(['status']);
+          
+
+          if (version === '—' || version.length > 50) return;
+
+          let statusText = 'Unknown';
+          let statusClass = 'status-preview';
+          
+          const sLower = status.toLowerCase();
+          if (sLower.includes('discontinued') || sLower.includes('unsupported')) {
+            statusText = 'Discontinued';
+            statusClass = 'status-unsupported';
+          } else if (sLower.includes('active') || sLower.includes('supported') || sLower.includes('current')) {
+            statusText = 'Active';
+            statusClass = 'status-supported';
+          } else if (sLower.includes('upcoming') || sLower.includes('unreleased')) {
+            statusText = 'Upcoming';
+            statusClass = 'status-preview';
+          } else if (status !== '—') {
+            statusText = status.split('[')[0].replace(/[^a-zA-Z]/g, '');
+            statusClass = 'status-partial';
+          }
+
+          const cleanStr = window.utils.cleanStr;
+
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td class="version">${cleanStr(version)}</td>
+            <td>${cleanStr(date)}</td>
+            
+            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+          `;
+          tbody.appendChild(tr);
+        });
+      } catch (err) {
+        document.getElementById('loading').innerText = 'Data not generated yet.';
+        console.error(err);
+      }
+    }
+    loadData();
+  </script>
+  <script src="assets/js/app.js?v=2"></script>
+</body>
+</html>

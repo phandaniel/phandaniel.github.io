@@ -5,7 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: 'Ubuntu', url: 'ubuntu.html', accent: '#e95420' },
     { name: 'Linux Kernel', url: 'linux.html', accent: '#fbbf24' },
     { name: 'iOS', url: 'ios.html', accent: '#0a84ff' },
-    { name: 'Starship', url: 'starship.html', accent: '#f97316' }
+    { name: 'Starship', url: 'starship.html', accent: '#f97316' },
+    { name: 'ChatGPT', url: 'chatgpt.html', accent: '#10a37f' },
+    { name: 'Claude', url: 'claude.html', accent: '#d97757' },
+    { name: 'Gemini', url: 'gemini.html', accent: '#1a73e8' },
+    { name: 'Grok', url: 'grok.html', accent: '#1da1f2' }
   ];
   
   let currentFile = window.location.pathname.split('/').pop() || 'index.html';

@@ -1,0 +1,132 @@
+[
+  {
+    "Version": "Claude",
+    "Release date": "14 March 2023",
+    "Status[50][51]": "Discontinued"
+  },
+  {
+    "Version": "Claude 2",
+    "Release date": "11 July 2023",
+    "Status[50][51]": "Discontinued"
+  },
+  {
+    "Version": "Claude Instant 1.2",
+    "Release date": "9 August 2023",
+    "Status[50][51]": "Discontinued"
+  },
+  {
+    "Version": "Claude 2.1",
+    "Release date": "21 November 2023",
+    "Status[50][51]": "Discontinued"
+  },
+  {
+    "Version": "Claude 3 Opus",
+    "Release date": "4 March 2024",
+    "Status[50][51]": "Retired"
+  },
+  {
+    "Version": "Claude 3 Sonnet",
+    "Release date": "4 March 2024",
+    "Status[50][51]": "Discontinued"
+  },
+  {
+    "Version": "Claude 3 Haiku",
+    "Release date": "13 March 2024",
+    "Status[50][51]": "Discontinued"
+  },
+  {
+    "Version": "Claude 3.5 Sonnet",
+    "Release date": "20 June 2024",
+    "Status[50][51]": "Discontinued"
+  },
+  {
+    "Version": "Claude 3.5 Sonnet (new)",
+    "Release date": "22 October 2024",
+    "Status[50][51]": "Discontinued"
+  },
+  {
+    "Version": "Claude 3.5 Haiku",
+    "Release date": "22 October 2024",
+    "Status[50][51]": "Discontinued"
+  },
+  {
+    "Version": "Claude 3.7 Sonnet",
+    "Release date": "24 February 2025",
+    "Status[50][51]": "Discontinued"
+  },
+  {
+    "Version": "Claude Sonnet 4",
+    "Release date": "22 May 2025",
+    "Status[50][51]": "Retired"
+  },
+  {
+    "Version": "Claude Opus 4",
+    "Release date": "22 May 2025",
+    "Status[50][51]": "Retired"
+  },
+  {
+    "Version": "Claude Opus 4.1",
+    "Release date": "5 August 2025",
+    "Status[50][51]": "Deprecated"
+  },
+  {
+    "Version": "Claude Sonnet 4.5",
+    "Release date": "29 September 2025",
+    "Status[50][51]": "Active"
+  },
+  {
+    "Version": "Claude Haiku 4.5",
+    "Release date": "15 October 2025",
+    "Status[50][51]": "Active"
+  },
+  {
+    "Version": "Claude Opus 4.5",
+    "Release date": "24 November 2025",
+    "Status[50][51]": "Active"
+  },
+  {
+    "Version": "Claude Opus 4.6",
+    "Release date": "5 February 2026",
+    "Status[50][51]": "Active"
+  },
+  {
+    "Version": "Claude Sonnet 4.6",
+    "Release date": "17 February 2026",
+    "Status[50][51]": "Active"
+  },
+  {
+    "Version": "Claude Mythos Preview",
+    "Release date": "7 April 2026",
+    "Status[50][51]": "Limited availability"
+  },
+  {
+    "Version": "Claude Opus 4.7",
+    "Release date": "16 April 2026",
+    "Status[50][51]": "Active"
+  },
+  {
+    "Version": "Claude Opus 4.8",
+    "Release date": "28 May 2026",
+    "Status[50][51]": "Active"
+  },
+  {
+    "Version": "Claude Mythos 5",
+    "Release date": "9 June 2026",
+    "Status[50][51]": "Limited availability"
+  },
+  {
+    "Version": "Claude Fable 5",
+    "Release date": "9 June 2026",
+    "Status[50][51]": "Active"
+  },
+  {
+    "Version": "Claude Sonnet 5",
+    "Release date": "30 June 2026",
+    "Status[50][51]": "Active"
+  },
+  {
+    "Version": "Claude Opus 5",
+    "Release date": "24 July 2026",
+    "Status[50][51]": "Active"
+  }
+]

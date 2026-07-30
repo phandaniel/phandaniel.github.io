@@ -1,0 +1,182 @@
+[
+  {
+    "Version": "1.0 Nano",
+    "Release date": "6 December 2023",
+    "Status[76][55]": "Unsupported: Discontinued",
+    "Description": "Designed for on-device tasks and first available in Google's Pixel 8 Pro."
+  },
+  {
+    "Version": "1.0 Pro",
+    "Release date": "13 December 2023",
+    "Status[76][55]": "Unsupported: Discontinued",
+    "Description": "Designed for a diverse range of tasks."
+  },
+  {
+    "Version": "1.0 Ultra",
+    "Release date": "8 February 2024",
+    "Status[76][55]": "Unsupported: Discontinued",
+    "Description": "Google's most powerful offering in the Gemini 1.0 family."
+  },
+  {
+    "Version": "1.5 Pro",
+    "Release date": "15 February 2024",
+    "Status[76][55]": "Unsupported: Discontinued",
+    "Description": "As a successor to the 1.0 series of models, 1.5 Pro offers significantly increased context size (up to 1 million tokens). It is designed to be the most capable model in the Gemini 1.5 family."
+  },
+  {
+    "Version": "1.5 Flash",
+    "Release date": "14 May 2024",
+    "Status[76][55]": "Unsupported: Discontinued",
+    "Description": "This version got renamed from 'Nano' to 'Flash'. It is also Gemini's free model."
+  },
+  {
+    "Version": "2.0 Flash",
+    "Release date": "30 January 2025",
+    "Status[76][55]": "Unsupported: Discontinued",
+    "Description": "Developed by Google with a focus on multimodality, agentic capabilities, and speed."
+  },
+  {
+    "Version": "2.0 Flash-Lite",
+    "Release date": "25 February 2025",
+    "Status[76][55]": "Unsupported: Discontinued",
+    "Description": "First-ever Gemini Flash-Lite model designed for cost-efficiency and speed."
+  },
+  {
+    "Version": "2.0 Pro",
+    "Release date": "5 February 2025",
+    "Status[76][55]": "Unsupported: Discontinued",
+    "Description": ""
+  },
+  {
+    "Version": "2.5 Pro",
+    "Release date": "25 March 2025",
+    "Status[76][55]": "Latest version: Latest version",
+    "Description": ""
+  },
+  {
+    "Version": "2.5 Flash",
+    "Release date": "17 April 2025",
+    "Status[76][55]": "Supported: Supported",
+    "Description": "An incremental improvement from Gemini 2.5."
+  },
+  {
+    "Version": "2.5 Flash-Lite",
+    "Release date": "17 June 2025",
+    "Status[76][55]": "Supported: Supported",
+    "Description": ""
+  },
+  {
+    "Version": "2.5 Flash Image (Nano Banana)",
+    "Release date": "26 August 2025 (Publicly)",
+    "Status[76][55]": "Supported: Supported",
+    "Description": ""
+  },
+  {
+    "Version": "3 Pro",
+    "Release date": "18 November 2025",
+    "Status[76][55]": "Unsupported: Discontinued preview",
+    "Description": "Gemini 3 Pro is not a modification or a fine-tune or a prior model. It is the foundational model of the Gemini 3 series. A sparse mixture-of-experts, natively multimodal, reasoning model. It can process text, visual, and audio inputs. It supports up to 1,000,000 input tokens and 64,000 output tokens."
+  },
+  {
+    "Version": "3 Deep Think",
+    "Release date": "3 December 2025",
+    "Status[76][55]": "Future version: Preview",
+    "Description": "Based on the 2.5 Pro \"Deep Think\" mode that achieved high ratings in IOI"
+  },
+  {
+    "Version": "3 Pro Image (Nano Banana Pro)",
+    "Release date": "20 November 2025",
+    "Status[76][55]": "Future version: Preview",
+    "Description": "An improved version of Nano Banana which includes better text rendering and better real world knowledge."
+  },
+  {
+    "Version": "3 Flash",
+    "Release date": "17 December 2025",
+    "Status[76][55]": "Future version: Preview",
+    "Description": "Based on Gemini 3 Pro."
+  },
+  {
+    "Version": "3.1 Pro",
+    "Release date": "19 February 2026",
+    "Status[76][55]": "Future version: Preview",
+    "Description": "Based on Gemini 3 Pro. Created to handle complex reasoning tasks across large datasets and diverse inputs, including text, audio, image, video, and entire codebases."
+  },
+  {
+    "Version": "3.1 Flash Image (Nano Banana 2)",
+    "Release date": "26 February 2026",
+    "Status[76][55]": "Future version: Preview",
+    "Description": "Based on Gemini 3 Flash. Designed to generate both image and text outputs."
+  },
+  {
+    "Version": "3.1 Flash Lite",
+    "Release date": "3 March 2026",
+    "Status[76][55]": "Supported: Supported",
+    "Description": "Based on Gemini 3 Pro. It is optimized for high-volume, latency-sensitive tasks such as translation, and text classification."
+  },
+  {
+    "Version": "3.5 Flash",
+    "Release date": "19 May 2026",
+    "Status[76][55]": "Supported: Supported",
+    "Description": "Based on Gemini 3 Flash."
+  },
+  {
+    "Version": "3.5 Flash-Lite",
+    "Release date": "21 July 2026",
+    "Status[76][55]": "Latest version: Latest version",
+    "Description": "Based on Gemini 3.1 Flash-Lite. It is optimized for high-volume, latency-sensitive tasks such as translation, text classification, and supporting agentic workflows."
+  },
+  {
+    "Version": "3.6 Flash",
+    "Release date": "21 July 2026",
+    "Status[76][55]": "Latest version: Latest version",
+    "Description": "Based on Gemini 3.5 Flash. Offers improvements in coding, general knowledge, and multimodal processing, alongside increased token efficiency relative to its predecessor."
+  },
+  {
+    "Generation": "1.0",
+    "Variant": "Nano-1",
+    "Release date": "6 December 2023",
+    "Parameters": "1.8B",
+    "Context length": "32,768",
+    "Notes": "Distilled from \"larger Gemini models\", 4-bit quantized"
+  },
+  {
+    "Generation": "1.0",
+    "Variant": "Nano-2",
+    "Release date": "6 December 2023",
+    "Parameters": "3.25B",
+    "Context length": "32,768",
+    "Notes": "Distilled from \"larger Gemini models\", 4-bit quantized"
+  },
+  {
+    "Generation": "1.0",
+    "Variant": "Pro",
+    "Release date": "13 December 2023",
+    "Parameters": "Not publicly known",
+    "Context length": "32,768",
+    "Notes": ""
+  },
+  {
+    "Generation": "1.0",
+    "Variant": "Ultra",
+    "Release date": "8 February 2024",
+    "Parameters": "Not publicly known",
+    "Context length": "32,768",
+    "Notes": ""
+  },
+  {
+    "Generation": "1.5",
+    "Variant": "Pro",
+    "Release date": "15 February 2024",
+    "Parameters": "Not publicly known",
+    "Context length": "10,000,000",
+    "Notes": "1 million tokens in production API"
+  },
+  {
+    "Generation": "1.5",
+    "Variant": "Mini",
+    "Release date": "14 May 2024",
+    "Parameters": "Not publicly known",
+    "Context length": "10,000,000",
+    "Notes": "1 million tokens in production API"
+  }
+]

@@ -88,3 +88,7 @@ scrape_wiki('https://en.wikipedia.org/wiki/Ubuntu_version_history', 'data/ubuntu
 scrape_wiki('https://en.wikipedia.org/wiki/Linux_kernel_version_history', 'data/linux.json')
 scrape_wiki('https://en.wikipedia.org/wiki/IOS_version_history', 'data/ios.json')
 scrape_wiki('https://en.wikipedia.org/wiki/List_of_Starship_launches', 'data/starship.json')
+scrape_wiki('https://en.wikipedia.org/wiki/Claude_(AI)', 'data/claude.json')
+scrape_wiki('https://en.wikipedia.org/wiki/Grok_(chatbot)', 'data/grok.json')
+scrape_wiki('https://en.wikipedia.org/wiki/Gemini_(language_model)', 'data/gemini.json')
+scrape_wiki('https://en.wikipedia.org/wiki/ChatGPT', 'data/chatgpt.json')
