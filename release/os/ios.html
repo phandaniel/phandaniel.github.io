@@ -47,8 +47,6 @@
           return data;
         },
         renderRow: (release) => {
-          const keys = Object.keys(release);
-          
           const getVal = (keys) => window.utils.getVal(keys, release);
 
           const version = getVal(['version']);
@@ -98,6 +96,7 @@
 
   
 <script>window.basePath = "../../";</script>
+  <script src="../../assets/js/categories.js"></script>
   <script src="../../assets/js/app.js?v=6"></script>
 </body>
 </html>

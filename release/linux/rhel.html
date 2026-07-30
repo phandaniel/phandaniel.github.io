@@ -49,8 +49,6 @@
           return data;
         },
         renderRow: (release) => {
-          const keys = Object.keys(release);
-          
           const getVal = (keys) => window.utils.getVal(keys, release);
 
           const version = getVal(['rhelversion', 'version']);
@@ -72,7 +70,7 @@
              statusText = 'Supported';
           }
           if (releaseDate.toLowerCase().includes('future') || new Date(releaseDate) > new Date()) {
-             statusClass = 'status-future';
+             statusClass = 'status-preview';
              statusText = 'Upcoming';
           }
 
@@ -80,7 +78,7 @@
           if (version === '—' || version.length > 50) return;
 
           // Clean up values
-          const cleanVal = (val) => val ? val.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').trim() : '';
+          const cleanVal = window.utils.cleanVal; (val) => val ? val.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').trim() : '';
 
           let cleanVersion = cleanVal(version).replace(/\s*\(.*?\)\s*/g, '');
           let cleanDate = releaseDate;
@@ -91,9 +89,9 @@
           let cleanFullSupport = cleanVal(fullSupport);
           let cleanELS = cleanVal(els).replace(/—N\/a|N\/a/i, 'N/A').replace('—', 'N/A');
           
-          if (cleanMinor.toLowerCase().includes('n/a') || cleanMinor === '—') cleanMinor = '<span style="color: var(--text-muted); font-weight: 400;">&mdash;</span>';
-          if (cleanFullSupport.toLowerCase().includes('n/a') || cleanFullSupport === '—') cleanFullSupport = '<span style="color: var(--text-muted); font-weight: 400;">&mdash;</span>';
-          if (cleanELS.toLowerCase().includes('n/a') || cleanELS === '—') cleanELS = '<span style="color: var(--text-muted); font-weight: 400;">&mdash;</span>';
+          if (cleanMinor.toLowerCase().includes('n/a') || cleanMinor === '—') cleanMinor = window.utils.emDash();
+          if (cleanFullSupport.toLowerCase().includes('n/a') || cleanFullSupport === '—') cleanFullSupport = window.utils.emDash();
+          if (cleanELS.toLowerCase().includes('n/a') || cleanELS === '—') cleanELS = window.utils.emDash();
 
           return `
             <td class="version">RHEL ${cleanVersion}</td>
@@ -111,6 +109,7 @@
 
   
 <script>window.basePath = "../../";</script>
+  <script src="../../assets/js/categories.js"></script>
   <script src="../../assets/js/app.js?v=6"></script>
 </body>
 </html>

@@ -49,8 +49,6 @@
           return data;
         },
         renderRow: (release) => {
-          const keys = Object.keys(release);
-          
           const getVal = (keys) => window.utils.getVal(keys, release);
 
           const version = getVal(['version']);
@@ -66,11 +64,11 @@
           
           const eolLower = eol.toLowerCase();
           if (eolLower.includes('tba') || eolLower.includes('future') || new Date(eol) > new Date()) {
-             statusClass = 'status-active';
+             statusClass = 'status-supported';
              statusText = 'Supported';
           }
           if (releaseDate.toLowerCase().includes('future') || new Date(releaseDate) > new Date()) {
-             statusClass = 'status-future';
+             statusClass = 'status-preview';
              statusText = 'Upcoming';
           }
 
@@ -78,15 +76,15 @@
           if (version === '—' || version.length > 50) return;
 
           // Clean up values
-          const cleanVal = (val) => val ? val.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').trim() : '';
+          const cleanVal = window.utils.cleanVal; (val) => val ? val.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').trim() : '';
 
           let cleanVersion = cleanVal(version).replace(/\s*\(.*?\)\s*/g, '');
           let cleanStdSupport = cleanVal(standardSupport);
           let cleanExtSec = cleanVal(extSecurity);
           let cleanLegacy = cleanVal(legacyAddOn);
           
-          if (cleanExtSec.toLowerCase().includes('n/a') || cleanExtSec === '—') cleanExtSec = '<span style="color: var(--text-muted); font-weight: 400;">&mdash;</span>';
-          if (cleanLegacy.toLowerCase().includes('n/a') || cleanLegacy === '—') cleanLegacy = '<span style="color: var(--text-muted); font-weight: 400;">&mdash;</span>';
+          if (cleanExtSec.toLowerCase().includes('n/a') || cleanExtSec === '—') cleanExtSec = window.utils.emDash();
+          if (cleanLegacy.toLowerCase().includes('n/a') || cleanLegacy === '—') cleanLegacy = window.utils.emDash();
 
           return `
             <td class="version">Ubuntu ${cleanVersion}</td>
@@ -104,6 +102,7 @@
 
   
 <script>window.basePath = "../../";</script>
+  <script src="../../assets/js/categories.js"></script>
   <script src="../../assets/js/app.js?v=6"></script>
 </body>
 </html>

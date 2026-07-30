@@ -47,8 +47,6 @@
           return data;
         },
         renderRow: (release) => {
-          const keys = Object.keys(release);
-          
           const getVal = (keys) => window.utils.getVal(keys, release);
 
           const version = getVal(['version']);
@@ -56,16 +54,16 @@
           const eol = getVal(['end-of-life', 'eol', 'end of life']);
           
           // Determine status loosely based on EOL text
-          let statusClass = 'status-eol';
+          let statusClass = 'status-unsupported';
           let statusText = 'End of Life';
           
           const eolLower = eol.toLowerCase();
           if (eolLower.includes('tba') || eolLower.includes('future') || new Date(eol) > new Date()) {
-             statusClass = 'status-active';
+             statusClass = 'status-supported';
              statusText = 'Supported';
           }
           if (releaseDate.toLowerCase().includes('future') || new Date(releaseDate) > new Date()) {
-             statusClass = 'status-future';
+             statusClass = 'status-preview';
              statusText = 'Upcoming';
           }
 
@@ -89,6 +87,7 @@
 
   
 <script>window.basePath = "../../";</script>
+  <script src="../../assets/js/categories.js"></script>
   <script src="../../assets/js/app.js?v=6"></script>
 </body>
 </html>

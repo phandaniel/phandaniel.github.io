@@ -33,51 +33,18 @@
     </div>
   </div>
 
+  <script src="../../assets/js/renderAI.js"></script>
   <script>
-    window.basePath = "../../";
     window.addEventListener('DOMContentLoaded', () => {
       window.utils.renderTable({
         url: '../../data/gemini.json',
-        processData: (data) => {
-          data.reverse();
-          return data;
-        },
-        renderRow: (release) => {
-          const keys = Object.keys(release);
-          const getVal = (searchStrs) => window.utils.getVal(searchStrs, release);
-
-          let version = getVal(['version', 'model']);
-          let date = getVal(['date']);
-          let status = getVal(['status']);
-
-
-          if (version === '—' || version.length > 50) return;
-
-          let statusText = 'Unsupported';
-          let statusClass = 'status-unsupported';
-          
-          const sLower = status.toLowerCase();
-          if (sLower.includes('active') || sLower.includes('supported') || sLower.includes('current')) {
-            statusText = 'Supported';
-            statusClass = 'status-supported';
-
-          } else {
-            statusText = 'Unsupported';
-            statusClass = 'status-unsupported';
-          }
-
-          const cleanStr = window.utils.cleanStr;
-
-          return `
-            <td class="version">${cleanStr(version)}</td>
-            <td>${cleanStr(date)}</td>
-            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
-          `;
-          }
+        processData: window.renderAI.processData,
+        renderRow: window.renderAI.renderRow
       });
     });
-</script>
+  </script>
   <script>window.basePath = "../../";</script>
+  <script src="../../assets/js/categories.js"></script>
   <script src="../../assets/js/app.js?v=6"></script>
 </body>
 </html>

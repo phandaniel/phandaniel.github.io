@@ -73,7 +73,7 @@
               version = rawVersion.replace(/(supported):?\s*/i, '');
           }
 
-          const cleanStr = (s) => (s || '—').trim();
+          const cleanStr = window.utils.cleanStr;
           let cleanName = cleanStr(name).replace(/\[\d+\]/g, '');
           let cleanVersion = cleanStr(version).replace(/\[\d+\]/g, '');
 
@@ -87,6 +87,7 @@
       });
     });
   </script>
+  <script src="../../assets/js/categories.js"></script>
   <script src="../../assets/js/app.js?v=6"></script>
 </body>
 </html>
