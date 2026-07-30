@@ -28,6 +28,7 @@
             <th>Release Date</th>
             <th>Last Minor Release</th>
             <th>End of Full Support</th>
+            <th>End of Extended Lifecycle Support</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -63,6 +64,7 @@
           const releaseDate = getVal(['release date', 'released']);
           const minor = getVal(['last minorrelease', 'last minor release']);
           const fullSupport = getVal(['end of full support']);
+          const els = getVal(['end of extendedlifecycle support', 'end of extended lifecycle support', 'end of extended lifecycle support (els)']);
           const eol = fullSupport;
           
           // Determine status loosely based on EOL text
@@ -88,9 +90,11 @@
           let cleanVersion = cleanVal(version).replace(/\s*\(.*?\)\s*/g, '');
           let cleanMinor = cleanVal(minor);
           let cleanFullSupport = cleanVal(fullSupport);
+          let cleanELS = cleanVal(els).replace(/—N\/a|N\/a/i, 'N/A').replace('—', 'N/A');
           
           if (cleanMinor.toLowerCase().includes('n/a') || cleanMinor === '—') cleanMinor = '<span style="color: var(--text-muted); font-weight: 400;">&mdash;</span>';
           if (cleanFullSupport.toLowerCase().includes('n/a') || cleanFullSupport === '—') cleanFullSupport = '<span style="color: var(--text-muted); font-weight: 400;">&mdash;</span>';
+          if (cleanELS.toLowerCase().includes('n/a') || cleanELS === '—') cleanELS = '<span style="color: var(--text-muted); font-weight: 400;">&mdash;</span>';
 
           const tr = document.createElement('tr');
           
@@ -99,6 +103,7 @@
             <td>${releaseDate}</td>
             <td>${cleanMinor}</td>
             <td>${cleanFullSupport}</td>
+            <td>${cleanELS}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           

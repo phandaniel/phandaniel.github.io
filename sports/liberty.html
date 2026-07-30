@@ -40,6 +40,7 @@
         const response = await fetch('../data/liberty.json');
         if (!response.ok) throw new Error("Could not fetch");
         const data = await response.json();
+        data.reverse();
         
         const tbody = document.getElementById('table-body');
         const loading = document.getElementById('loading');
