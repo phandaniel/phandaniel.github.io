@@ -2,107 +2,149 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Fedora Release History</title>
-  <meta name="description" content="A beautiful overview of Fedora Linux release history.">
+  <title>PhanDaniel Dashboards</title>
+  <meta name="description" content="A tracking hub for technology and aerospace versions.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css?v=2">
+  <style>
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+      margin-bottom: 2rem;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      margin-bottom: 1rem;
+      background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      padding: 1rem;
+    }
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--card-accent, var(--border));
+      transition: height 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+      border-color: var(--card-accent, var(--border));
+    }
+    .card:hover::before {
+      height: 100%;
+      opacity: 0.05;
+    }
+    .card h2 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: var(--card-accent, var(--text));
+    }
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .category-title {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin: 3rem 1rem 1rem;
+      font-weight: 600;
+    }
+  </style>
 </head>
-<body style="--accent: #3b82f6;">
-  <div class="container">
-        
+<body style="--accent: #8b5cf6;">
+  <div class="container" style="max-width: 1000px;">
+    <div class="hero">
+      <h1>Data Dashboards</h1>
+      <p>Real-time, automated tracking of software versions, AI model iterations, and aerospace milestones.</p>
+    </div>
 
-    <header>
-      <h1>Fedora Release History</h1>
-    </header>
+    <div class="category-title">Operating Systems</div>
+    <div class="grid">
+      <a href="linux/fedora.html" class="card" style="--card-accent: #3b82f6;">
+        <h2>Fedora Linux</h2>
+        <p>Release history and lifecycles for Fedora Workstation.</p>
+      </a>
+      <a href="linux/ubuntu.html" class="card" style="--card-accent: #e95420;">
+        <h2>Ubuntu Linux</h2>
+        <p>Long Term Support (LTS) and interim Ubuntu release tracking.</p>
+      </a>
+      <a href="linux/kernel.html" class="card" style="--card-accent: #fbbf24;">
+        <h2>Linux Kernel</h2>
+        <p>Mainline and stable kernel version history.</p>
+      </a>
+      <a href="os/ios.html" class="card" style="--card-accent: #0a84ff;">
+        <h2>Apple iOS</h2>
+        <p>Historical iOS versions and current support status.</p>
+      </a>
+    </div>
 
-    <div id="loading" class="loading">Loading timeline data...</div>
-    
-    <div class="table-container" id="table-container" style="display: none;">
-      <table>
-        <thead>
-          <tr>
-            <th>Version</th>
-            <th>Release Date</th>
-            <th>End of Life</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody id="table-body">
-        </tbody>
-      </table>
+    <div class="category-title">Artificial Intelligence</div>
+    <div class="grid">
+      <a href="ai/chatgpt.html" class="card" style="--card-accent: #10a37f;">
+        <h2>ChatGPT</h2>
+        <p>OpenAI's foundational models including GPT-4 and o1.</p>
+      </a>
+      <a href="ai/claude.html" class="card" style="--card-accent: #d97757;">
+        <h2>Claude</h2>
+        <p>Anthropic's family of constitutional AI models.</p>
+      </a>
+      <a href="ai/gemini.html" class="card" style="--card-accent: #1a73e8;">
+        <h2>Gemini</h2>
+        <p>Google's multimodal flagship language models.</p>
+      </a>
+      <a href="ai/grok.html" class="card" style="--card-accent: #1da1f2;">
+        <h2>Grok</h2>
+        <p>xAI's generative artificial intelligence models.</p>
+      </a>
+    </div>
+
+    <div class="category-title">Aerospace</div>
+    <div class="grid">
+      <a href="space/starship.html" class="card" style="--card-accent: #f97316;">
+        <h2>SpaceX Starship</h2>
+        <p>Timeline of Starship integrated flight tests and milestones.</p>
+      </a>
     </div>
   </div>
 
-  <script>
-    async function loadData() {
-      try {
-        const response = await fetch('data/fedora.json');
-        if (!response.ok) throw new Error("Could not fetch fedora.json");
-        const data = await response.json();
-        
-        // Reverse the array to show the newest versions at the top
-        data.reverse();
-
-        const tbody = document.getElementById('table-body');
-        const loading = document.getElementById('loading');
-        const tableContainer = document.getElementById('table-container');
-        
-        loading.style.display = 'none';
-        tableContainer.style.display = 'block';
-
-        data.forEach(release => {
-          const keys = Object.keys(release);
-          
-          const getVal = (keys) => window.utils.getVal(keys, release);
-
-          const version = getVal(['version']);
-          const releaseDate = getVal(['release']);
-          const eol = getVal(['end-of-life', 'eol', 'end of life']);
-          
-          // Determine status loosely based on EOL text
-          let statusClass = 'status-eol';
-          let statusText = 'End of Life';
-          
-          const eolLower = eol.toLowerCase();
-          if (eolLower.includes('tba') || eolLower.includes('future') || new Date(eol) > new Date()) {
-             statusClass = 'status-active';
-             statusText = 'Supported';
-          }
-          if (releaseDate.toLowerCase().includes('future') || new Date(releaseDate) > new Date()) {
-             statusClass = 'status-future';
-             statusText = 'Upcoming';
-          }
-
-          // Don't render completely empty rows that might have been scraped
-          if (version === '—' || version.length > 50) return;
-
-          // Clean up version string (e.g., "Unsupported: 1 (Yarrow)" -> "1")
-          let cleanVersion = version.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').replace(/\s*\(.*?\)\s*/g, '').trim();
-
-          const tr = document.createElement('tr');
-          
-          tr.innerHTML = `
-            <td class="version">Fedora ${cleanVersion}</td>
-            <td>${releaseDate}</td>
-            <td>${eol}</td>
-            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
-          `;
-          
-          tbody.appendChild(tr);
-        });
-      } catch (err) {
-        document.getElementById('loading').innerText = 'Data not generated yet. The GitHub Action will create data soon!';
-        console.error(err);
-      }
-    }
-
-    loadData();
-  </script>
-
-  
-<script src="assets/js/app.js?v=2"></script>
+  <script>window.basePath = "./";</script>
+  <script src="assets/js/app.js?v=2"></script>
 </body>
 </html>

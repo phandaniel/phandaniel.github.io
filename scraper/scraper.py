@@ -75,11 +75,6 @@ def scrape_wiki(url, output_file):
 
     with open(output_file, 'w') as f:
         json.dump(releases, f, indent=2)
-        
-    legacy_file = output_file.replace('data/', '')
-    if legacy_file != output_file:
-        with open(legacy_file, 'w') as f:
-            json.dump(releases, f, indent=2)
 
     print(f"Successfully scraped {len(releases)} releases from {len(tables)} tables into {output_file}.")
 

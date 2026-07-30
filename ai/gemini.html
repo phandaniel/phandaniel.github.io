@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Grok Versions</title>
-  <meta name="description" content="A tracking page for Grok versions.">
+  <title>Gemini Versions</title>
+  <meta name="description" content="A tracking page for Gemini versions.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=2">
+  <link rel="stylesheet" href="../assets/css/style.css?v=2">
 </head>
-<body style="--accent: #1da1f2;">
+<body style="--accent: #1a73e8;">
   <div class="container">
     <header>
-      <h1>Grok</h1>
+      <h1>Gemini</h1>
     </header>
 
     <div id="loading" class="loading">Loading timeline data...</div>
@@ -37,7 +37,7 @@
   <script>
     async function loadData() {
       try {
-        const response = await fetch('data/grok.json');
+        const response = await fetch('../data/gemini.json');
         if (!response.ok) throw new Error("Could not fetch");
         const data = await response.json();
         
@@ -97,6 +97,7 @@
     }
     loadData();
   </script>
-  <script src="assets/js/app.js?v=2"></script>
+  <script>window.basePath = "../";</script>
+  <script src="../assets/js/app.js?v=2"></script>
 </body>
 </html>

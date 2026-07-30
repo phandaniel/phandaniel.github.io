@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>iOS Version History</title>
+  <meta name="description" content="A beautiful overview of iOS version history.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/style.css?v=2">
+</head>
+<body style="--accent: #0a84ff;">
+  <div class="container">
+        
+
+    <header>
+      <h1>iOS Version History</h1>
+    </header>
+
+    <div id="loading" class="loading">Loading timeline data...</div>
+    
+    <div class="table-container" id="table-container" style="display: none;">
+      <table>
+        <thead>
+          <tr>
+            <th>Version</th>
+            <th>Initial Release</th>
+            <th>Latest Version</th>
+            <th>Latest Release Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    async function loadData() {
+      try {
+        const response = await fetch('../data/ios.json');
+        if (!response.ok) throw new Error("Could not fetch ios.json");
+        const data = await response.json();
+        
+        data.reverse(); // Newest first
+
+        const tbody = document.getElementById('table-body');
+        const loading = document.getElementById('loading');
+        const tableContainer = document.getElementById('table-container');
+        
+        loading.style.display = 'none';
+        tableContainer.style.display = 'block';
+
+        data.forEach(release => {
+          const keys = Object.keys(release);
+          
+          const getVal = (keys) => window.utils.getVal(keys, release);
+
+          const version = getVal(['version']);
+          let initialRelease = getVal(['initial release']);
+          let latestVersion = getVal(['latest version']);
+          let latestReleaseDate = getVal(['latest release date']);
+          let eol = getVal(['end-of-life', 'eol', 'device']);
+
+          if (version === '—' || version.length > 50) return;
+
+          let statusText = 'Unsupported';
+          let statusClass = 'status-unsupported';
+          
+          const vLower = latestVersion.toLowerCase();
+          const eolLower = eol.toLowerCase();
+
+          if (vLower.includes('preview version') || vLower.includes('future version') || vLower.includes('beta')) {
+            statusText = 'Upcoming';
+            statusClass = 'status-preview';
+          } else if ((vLower.includes('supported') || vLower.includes('latest')) && !vLower.includes('unsupported')) {
+            statusText = 'Supported';
+            statusClass = 'status-supported';
+          } else if (eolLower.includes('present') || eolLower.includes('current') || eolLower.includes('supported')) {
+             statusText = 'Supported';
+             statusClass = 'status-supported';
+          }
+
+          let cleanVersion = version.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').replace(/\s*\(.*?\)\s*/g, '').trim();
+
+          latestVersion = latestVersion.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').trim();
+
+          // Remove citation links like [1][2]
+          eol = eol.replace(/\[\d+\]/g, '');
+
+          const tr = document.createElement('tr');
+          
+          tr.innerHTML = `
+            <td class="version">${cleanVersion}</td>
+            <td>${initialRelease}</td>
+            <td>${latestVersion}</td>
+            <td>${latestReleaseDate}</td>
+            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+          `;
+          
+          tbody.appendChild(tr);
+        });
+      } catch (err) {
+        document.getElementById('loading').innerText = 'Data not generated yet. The GitHub Action will create data soon!';
+        console.error(err);
+      }
+    }
+
+    loadData();
+  </script>
+
+  
+<script>window.basePath = "../";</script>
+  <script src="../assets/js/app.js?v=2"></script>
+</body>
+</html>
