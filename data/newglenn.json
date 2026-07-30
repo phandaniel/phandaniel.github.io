@@ -1,0 +1,219 @@
+[
+  {
+    "Flight No.": "NG-1",
+    "Date and time (UTC)": "January 16, 202507:03",
+    "Booster[a]": "GS1-1So You're Telling Me There's a Chance",
+    "Launch site": "Cape Canaveral, LC\u201136A",
+    "Payload": "Blue Ring Pathfinder",
+    "Payload mass": "Unknown",
+    "Orbit": "MEO",
+    "Customer": "Blue Origin",
+    "Launchoutcome": "Success",
+    "Boosterlanding": "Failure (Jacklyn)"
+  },
+  {
+    "Flight No.": "NG-1",
+    "Date and time (UTC)": "Maiden/demonstration flight of New Glenn, carrying the Blue Ring Pathfinder. First of four National Security Space Launch demonstration flights for New Glenn. The January 13 launch attempt was scrubbed due to problems with the rocket. The second stage with non-separable payload was inserted into a 2,400\u00a0km (1,500\u00a0mi) \u00d7 19,300\u00a0km (12,000\u00a0mi) medium Earth orbit at an inclination of 30\u00b0. The first stage was lost and failed to land."
+  },
+  {
+    "Flight No.": "NG-2",
+    "Date and time (UTC)": "November 13, 202520:55",
+    "Booster[a]": "GS1-2-1Never Tell Me The Odds",
+    "Launch site": "Cape Canaveral, LC\u201136A",
+    "Payload": "ESCAPADE(Blue & Gold)",
+    "Payload mass": "1,070\u00a0kg (2,360\u00a0lb)",
+    "Orbit": "Sun-Earth L2 to Areocentric",
+    "Customer": "NASA",
+    "Launchoutcome": "Success",
+    "Boosterlanding": "Success (Jacklyn)"
+  },
+  {
+    "Flight No.": "NG-2",
+    "Date and time (UTC)": "Second of four National Security Space Launch demonstration flights for New Glenn, carrying the ESCAPADE (Escape and Plasma Acceleration and Dynamics Explorers) mission for NASA as part of their low-cost SIMPLEx program, aiming to investigate Mars' magnetosphere and a technology demonstration payload named Viasat InRange for Viasat. New Glenn deployed two spacecraft to a loiter orbit around the Earth-Sun L2 Lagrange point. The upper stage was placed into a heliocentric disposal orbit. NASA paid Blue Origin about $20 million for the launch. Delayed from October 13, 2024; ESCAPADE was originally intended to be launched on the debut flight of New Glenn. A launch attempt on November 9, 2025 was scrubbed due to weather conditions, with a future launch date scheduled for November 12. This was delayed a day further due to a solar storm. First successful first stage landing for New Glenn."
+  },
+  {
+    "Flight No.": "NG-3",
+    "Date and time (UTC)": "April 19, 2026 11:25",
+    "Booster[a]": "GS1-2-2Never Tell Me The Odds",
+    "Launch site": "Cape Canaveral, LC\u201136A",
+    "Payload": "BlueBird 7",
+    "Payload mass": "6,100\u00a0kg (13,400\u00a0lb)",
+    "Orbit": "LEO",
+    "Customer": "AST SpaceMobile",
+    "Launchoutcome": "Failure",
+    "Boosterlanding": "Success (Jacklyn)"
+  },
+  {
+    "Flight No.": "NG-3",
+    "Date and time (UTC)": "First mission for a commercial customer. First launch of an AST SpaceMobile Block 2 BlueBird satellite on New Glenn to expand cellular broadband satellite constellation. Multi-launch contract was signed in November 2024. First launch of a reused New Glenn first stage, previously flying on ESCAPADE in November 2025. The satellite was intended to be deployed to a 460\u00a0km (290\u00a0mi) low Earth orbit at an inclination of 49.4\u00b0. Due to an issue with the second stage, the satellite was left in an off-nominal 265\u00a0km (165\u00a0mi) \u00d7 465\u00a0km (289\u00a0mi) \u00d7 43\u00b0 orbit, too low to sustain operations, forcing it to be de-orbited. In response, the Federal Aviation Administration grounded New Glenn and required a mishap investigation. On May 22, the FAA cleared New Glenn to return to service."
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Unknown",
+    "Launch site": "Cape Canaveral, LC\u201136",
+    "Payload": "LeoSat \u00d7 48 (LN\u201101)",
+    "Payload mass": "~27,000\u00a0kg (60,000\u00a0lb)",
+    "Orbit": "LEO",
+    "Customer": "Amazon (Amazon Leo)"
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "The first set of Amazon Leo (formerly Project Kuiper) satellites to launch on New Glenn was planned for June 4, 2026. However, during a static fire test on May 28, 2026, booster GS1-3 (No, It's Necessary) and an upper stage exploded and were destroyed. The satellites were not on board the vehicle at the time of the explosion."
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Unknown",
+    "Launch site": "Cape Canaveral, LC\u201136",
+    "Payload": "Blue Moon Pathfinder Mission 1(MK1\u2011101 Endurance)",
+    "Payload mass": "21,715\u00a0kg (47,873\u00a0lb)",
+    "Orbit": "LEO to TLI",
+    "Customer": "NASA (CLPS)"
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Will carry a Blue Moon Mark 1 lander, planned to make a landing on the Moon. The lander will be deployed into a 185\u00a0km (115\u00a0mi)\u00a0\u00d7\u00a03,300\u20133,700\u00a0km (2,100\u20132,300\u00a0mi) low Earth orbit with an inclination of 28.5\u201351.6\u00b0, before the spacecraft propels itself with a trans-lunar injection (TLI) burn. During the mission Blue Moon will carry the Stereo Cameras for Lunar Plume Surface Studies (SCALPSS) and the Laser Retroreflective Array (LRA), as part of a task order from NASA's Commercial Lunar Payload Services (CLPS) program, awarded in July 2024."
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Unknown",
+    "Launch site": "Cape Canaveral, LC\u201136",
+    "Payload": "LeoSat\u00a0\u00d7\u00a048 (LN\u201102)",
+    "Payload mass": "Unknown",
+    "Orbit": "LEO",
+    "Customer": "Amazon (Amazon Leo)"
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Second launch of Amazon Leo (formerly Project Kuiper) satellites on New Glenn to expand LEO internet constellation. Amazon Leo was also founded by Blue Origin founder Jeff Bezos; however, the two companies are not directly connected. Initial launches of Amazon Leo on New Glenn will carry 48 satellites, with payload sizes expected to increase over time as vehicle performance is improved."
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Unknown",
+    "Launch site": "Cape Canaveral, LC\u201136",
+    "Payload": "BlueBird Block\u00a02\u00a0\u00d7\u00a04",
+    "Payload mass": "16,800\u00a0kg (37,000\u00a0lb)",
+    "Orbit": "LEO",
+    "Customer": "AST SpaceMobile"
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Second launch of AST SpaceMobile Block 2 BlueBird satellites on New Glenn to expand cellular broadband satellite constellation. Multi-launch contract was signed in November 2024. Subsequent launches are expected to carry 6 or 8 satellites."
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Unknown",
+    "Launch site": "Unknown",
+    "Payload": "NRO Task Order-4",
+    "Payload mass": "Unknown",
+    "Orbit": "Unknown",
+    "Customer": "NRO (NSSL)"
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "First National Security Space Launch (NSSL) Phase 3 Lane 1 task order for New Glenn, providing for one launch of a mission set for the NRO to be completed between Q4 2027 and Q1 2028. New Glenn was previously onboarded to the Phase 3 Lane 1 program in June 2024."
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Unknown",
+    "Launch site": "Cape Canaveral, LC\u201136",
+    "Payload": "Elytra Mission 1 and others",
+    "Payload mass": "Unknown",
+    "Orbit": "LEO",
+    "Customer": "NRO & others"
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "NRO Responsive Space Mission, carrying Firefly's Elytra orbital transfer vehicle and Xtenti's FANTM-RiDE payload dispenser. Originally planned to launch on Firefly Alpha from SLC-2W at Vandenberg, but was moved to New Glenn following the failure of \"Message in a Booster\" in April 2025. Hosted payloads include CubeSats from various research entities as part of ELaNa 42: DARLA (Saint Louis University), OrCa2 (Georgia Tech), R5-S3 (NASA), R5-S5 (NASA), TechEdSat-16 (NASA), and VSCP-1B (Virginia Tech)."
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Unknown",
+    "Launch site": "Cape Canaveral, LC\u201136",
+    "Payload": "Blue Moon MK1-102",
+    "Payload mass": "Unknown",
+    "Orbit": "TLI",
+    "Customer": "NASA (CLPS)"
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Will carry the VIPER rover, which was previously cancelled in 2024."
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Unknown",
+    "Launch site": "Cape Canaveral, LC\u201136",
+    "Payload": "Unknown",
+    "Payload mass": "Unknown",
+    "Orbit": "Unknown",
+    "Customer": "U.S. Space Force"
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Blue Origin, as the Requirement 3 provider is projected to be awarded seven NSSL Phase 3 Lane 2 missions starting in Order Year 2."
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Unknown",
+    "Launch site": "Cape Canaveral, LC\u201136",
+    "Payload": "Blue Moon Mark 2 Lander",
+    "Payload mass": "Unknown",
+    "Orbit": "LEO",
+    "Customer": "NASA (Artemis)"
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Sustaining HLS uncrewed lunar demo for Artemis V."
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Unknown",
+    "Launch site": "Cape Canaveral, LC\u201136",
+    "Payload": "Blue Moon Mark 2 Lander",
+    "Payload mass": "Unknown",
+    "Orbit": "LEO",
+    "Customer": "NASA (Artemis)"
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Sustaining HLS crewed lunar demo for Artemis V."
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Unknown",
+    "Launch site": "Cape Canaveral, LC\u201136",
+    "Payload": "Blue Moon Mark 2 Lander",
+    "Payload mass": "Unknown",
+    "Orbit": "Unknown",
+    "Customer": "NASA (Artemis)"
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "The agency expects Blue Origin to deliver a lunar surface habitat no earlier than fiscal year 2033 using a cargo version of its crewed human lander."
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Unknown",
+    "Launch site": "Cape Canaveral, LC\u201136",
+    "Payload": "Unknown",
+    "Payload mass": "Unknown",
+    "Orbit": "Unknown",
+    "Customer": "Eutelsat"
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Eutelsat now says it has no specific launch date slated for New Glenn, stating: \"New Glenn is part of our portfolio of launch options and will be activated based on our future needs taking into consideration industry conditions at the time. Our launch contract with Blue Origin for a Eutelsat unspecified satellite on a New Glenn rocket is still current. It will help to diversify options for access to space.\""
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Unknown",
+    "Launch site": "Cape Canaveral, LC\u201136",
+    "Payload": "Unknown",
+    "Payload mass": "Unknown",
+    "Orbit": "Unknown",
+    "Customer": "Telesat"
+  },
+  {
+    "Date and time (UTC)": "TBD",
+    "Booster[a]": "Telesat signed a multi-launch agreement with Blue Origin in 2019 for deployment of their LEO constellation. As of 2023, no specific launches under the agreement had been announced, although Telesat continues to retain launch optionality on New Glenn."
+  }
+]

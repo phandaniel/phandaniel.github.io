@@ -1,0 +1,433 @@
+[
+  {
+    "Flight No.": "1",
+    "Date / time (UTC)": "January 8, 202407:18",
+    "Rocket,configuration": "Vulcan Centaur VC2S",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "Peregrine lander",
+    "Payload mass": "1,283\u00a0kg (2,829\u00a0lb)",
+    "Orbit": "TLI",
+    "Customer": "Astrobotic Technology",
+    "Launchoutcome": "Success"
+  },
+  {
+    "Flight No.": "1",
+    "Date / time (UTC)": "January 8, 202407:18",
+    "Rocket,configuration": "Vulcan Centaur VC2S",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "Enterprise (space burial)",
+    "Payload mass": "1,283\u00a0kg (2,829\u00a0lb)",
+    "Orbit": "Heliocentric",
+    "Customer": "Celestis",
+    "Launchoutcome": "Success"
+  },
+  {
+    "Flight No.": "1",
+    "Date / time (UTC)": "Maiden flight of Vulcan Centaur and Vulcan Centaur VC2S Configuration. Certification-1 mission, the first of two launches needed to certify the rocket for National Security Space Launch (NSSL) missions. Payload from Celestis, demonstrated engine restart capability of the Centaur upper stage delivering multiple payloads to different orbits. The Peregrine payload failed in transit to the Moon, precluding a landing attempt, due to reasons unrelated to the launch vehicle."
+  },
+  {
+    "Flight No.": "2",
+    "Date / time (UTC)": "October 4, 202411:25",
+    "Rocket,configuration": "Vulcan Centaur VC2S",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "Mass simulator",
+    "Payload mass": "1,500\u00a0kg (3,300\u00a0lb)",
+    "Orbit": "Heliocentric",
+    "Customer": "United Launch Alliance",
+    "Launchoutcome": "Success"
+  },
+  {
+    "Flight No.": "2",
+    "Date / time (UTC)": "Certification-2 mission, the second of two launches needed to certify the rocket for NSSL missions. Originally scheduled to carry the first flight of Dream Chaser; however, due to schedule delays with Dream Chaser, ULA flew a mass simulator with experiments and demonstrations of future Centaur V technologies. Approximately 37 seconds into the launch, the nozzle on one of solid rocket boosters (SRB) fell off resulting in a shower of debris in the exhaust plume. Although the SRB continued to function for its full 90-second burn, the loss of the nozzle led to reduced and asymmetrical thrust causing the rocket to momentarily tilt slightly. The guidance system adjusted the main engines and extended their burn by roughly 20 seconds to compensate for the loss with the rocket achieving nominal orbital insertion. The nozzle failure was attributed to a manufacturing defect in an insulator located inside the nozzle."
+  },
+  {
+    "Flight No.": "3",
+    "Date / time (UTC)": "August 13, 202500:56",
+    "Rocket,configuration": "Vulcan Centaur VC4S",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "USSF-106 (NTS-3 & TBA)",
+    "Payload mass": "~1,250\u00a0kg (2,760\u00a0lb)",
+    "Orbit": "GSO",
+    "Customer": "U.S. Space Force",
+    "Launchoutcome": "Success"
+  },
+  {
+    "Flight No.": "3",
+    "Date / time (UTC)": "USSF-106 mission. Maiden flight of Vulcan Centaur VC4S Configuration. First NSSL mission for Vulcan Centaur. Carried Navigation Technology Satellite 3 (NTS-3), an experimental spacecraft to test technologies for next-generation GPS satellites."
+  },
+  {
+    "Flight No.": "4",
+    "Date / time (UTC)": "February 12, 202609:22",
+    "Rocket,configuration": "Vulcan Centaur VC4S",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "USSF-87",
+    "Payload mass": "Unknown",
+    "Orbit": "GSO",
+    "Customer": "U.S. Space Force",
+    "Launchoutcome": "Success"
+  },
+  {
+    "Flight No.": "4",
+    "Date / time (UTC)": "Primary GSSAP 7 & 8 with multiple secondary payloads aboard Northrop Grumman\u2019s ESPAStar platform. Once again one GEM 63XL SRB malfunctioned with the rocket core stage compensating and allowing the rocket to achieve a nominal orbital insertion. This second SRB malfunction has led to the US Space Force pausing NSSL launches on Vulcan until issues with its SRBs are resolved, potentially necessitating switching missions to other rockets. This was the first launch to use the ULA's Offline Vertical Integration (OVI) process and was ULA\u2019s longest mission to date, lasting nearly 10 hours from liftoff to end of mission."
+  },
+  {
+    "Date / time (UTC)": "September 2026",
+    "Rocket,  configuration": "Vulcan Centaur VC6L",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "LeoSat \u00d7 40 (LV-01)",
+    "Orbit": "LEO",
+    "Customer": "Amazon (Amazon Leo)"
+  },
+  {
+    "Date / time (UTC)": "September 2026",
+    "Rocket,  configuration": "First of 38 Vulcan Centaur launches for Amazon Leo, formerly Project Kuiper. First planned launch of Vulcan's most powerful configuration, VC6. First planned launch to use the shortened LEO-optimized Centaur V. First Vulcan to be integrated in VIF-A."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur VC6L",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "LeoSat \u00d7 40 (LV-02)",
+    "Orbit": "LEO",
+    "Customer": "Amazon (Amazon Leo)"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Second of 38 Vulcan Centaur launches for Amazon Leo, formerly Project Kuiper."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "USSF-57 (NG-OPIR-GEO 1)",
+    "Orbit": "GEO",
+    "Customer": "U.S. Space Force"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Next Generation Overhead Persistent Infrared satellite."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur VC2S",
+    "Launch site": "Vandenberg, SLC\u20113E",
+    "Payload": "SDA T1TR-B",
+    "Orbit": "LEO",
+    "Customer": "SDA"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Tranche 1 Tracking Layer B missile tracking satellites. First Vulcan launch from Vandenberg."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur VC4",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "NROL-64",
+    "Orbit": "TBA",
+    "Customer": "NRO"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "First NRO launch on Vulcan. Possibly SunRISE 1-6 as secondary."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur VC2S",
+    "Launch site": "Vandenberg, SLC\u20113E",
+    "Payload": "SDA T1TR-D",
+    "Orbit": "LEO",
+    "Customer": "SDA"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Tranche 1 Tracking Layer D missile tracking satellites."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Vandenberg, SLC\u20113E",
+    "Payload": "SDA T2TL-B",
+    "Orbit": "LEO",
+    "Customer": "SDA"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Tranche 2 Transport Layer B missile tracking satellites."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur VC4L",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "SSC Demo-1 (Dream Chaser Tenacity)",
+    "Orbit": "LEO (ISS)",
+    "Customer": "NASA (CRS)"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "First flight of Dream Chaser. Maiden flight of the Vulcan Centaur VC4L configuration."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "USSF-43 (LDPE-4 & TBA)",
+    "Orbit": "TBA",
+    "Customer": "U.S. Space Force"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Rapid On-orbit Space Technology Evaluation Ring (ROOSTER)-4"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur VC2L",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "WGS-11 (PTS-P1)",
+    "Orbit": "GEO",
+    "Customer": "U.S. Space Force"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Military communications satellite. Maiden flight of the Vulcan Centaur VC2L configuration. Protected Tactical Satcom prototype payload. The PTS payload will fly on dedicated Northrop Grumman built ESPAStar-HP satellite bus."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur VC4S",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "USSF-112",
+    "Orbit": "TBA",
+    "Customer": "U.S. Space Force"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Classified payload."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "USSF-23",
+    "Orbit": "TBA",
+    "Customer": "U.S. Space Force"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Classified payload."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "USSF-16",
+    "Orbit": "TBA",
+    "Customer": "U.S. Space Force"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Classified payload."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Vandenberg, SLC\u20113E",
+    "Payload": "USSF-114",
+    "Orbit": "TBA",
+    "Customer": "U.S. Space Force"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Classified payload."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Vandenberg, SLC\u20113E",
+    "Payload": "NROL-83",
+    "Orbit": "TBA",
+    "Customer": "NRO"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Classified NRO payload. First announced Vulcan Centaur launch from Vandenberg."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "Silentbarker 2A, 2B, 2C (NROL-118)",
+    "Orbit": "GEO",
+    "Customer": "U.S. Space Force (NRO)"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Classified USSF & NRO partnered program."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "NROL-56",
+    "Orbit": "TBA",
+    "Customer": "NRO"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Classified NRO payload."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Vandenberg, SLC\u20113E",
+    "Payload": "NROL-73",
+    "Orbit": "TBA",
+    "Customer": "NRO"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Classified NRO payload."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Vandenberg, SLC\u20113E",
+    "Payload": "NROL-100",
+    "Orbit": "TBA",
+    "Customer": "NRO"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Classified NRO payload."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "NROL-109",
+    "Orbit": "TBA",
+    "Customer": "NRO"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Classified NRO payload."
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "STP-5",
+    "Orbit": "LEO",
+    "Customer": "U.S. Space Force"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Two satellites for Department of Defense Strategic Capabilities Office"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "Missile Track Custody 1 (USSF-95)",
+    "Orbit": "MEO",
+    "Customer": "U.S. Space Force"
+  },
+  {
+    "Date / time (UTC)": "2026",
+    "Rocket,  configuration": "First launch of Missile Track Custody satellites."
+  },
+  {
+    "Date / time (UTC)": "Q2 2027",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "GPS IIIF-1",
+    "Orbit": "MEO",
+    "Customer": "U.S. Space Force"
+  },
+  {
+    "Date / time (UTC)": "Q2 2027",
+    "Rocket,  configuration": "First GPS Block IIIF navigation satellite."
+  },
+  {
+    "Date / time (UTC)": "Q2 2027",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "GPS IIIF-2",
+    "Orbit": "MEO",
+    "Customer": "U.S. Space Force"
+  },
+  {
+    "Date / time (UTC)": "Q2 2027",
+    "Rocket,  configuration": "Also designated USSF-49 under NSSL."
+  },
+  {
+    "Date / time (UTC)": "2027",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "USSF-50 (NG-OPIR-GEO 2)",
+    "Orbit": "GEO",
+    "Customer": "U.S. Space Force"
+  },
+  {
+    "Date / time (UTC)": "2027",
+    "Rocket,  configuration": "Next Generation Overhead Persistent Infrared satellite."
+  },
+  {
+    "Date / time (UTC)": "2027",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "NROL-88",
+    "Orbit": "TBA",
+    "Customer": "NRO"
+  },
+  {
+    "Date / time (UTC)": "2027",
+    "Rocket,  configuration": "Classified NRO Mission."
+  },
+  {
+    "Date / time (UTC)": "Q1 2028",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "GPS IIIF-3",
+    "Orbit": "MEO",
+    "Customer": "U.S. Space Force"
+  },
+  {
+    "Date / time (UTC)": "Q1 2028",
+    "Rocket,  configuration": "Also designated USSF-15 under NSSL."
+  },
+  {
+    "Date / time (UTC)": "Q3 2028",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "GPS IIIF-4",
+    "Orbit": "MEO",
+    "Customer": "U.S. Space Force"
+  },
+  {
+    "Date / time (UTC)": "Q3 2028",
+    "Rocket,  configuration": "Also designated USSF-88 under NSSL."
+  },
+  {
+    "Date / time (UTC)": "Q3 2028",
+    "Rocket,  configuration": "Vulcan Centaur",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "USSF-70 ",
+    "Orbit": "",
+    "Customer": "U.S. Space Force"
+  },
+  {
+    "Date / time (UTC)": "Q3 2028",
+    "Rocket,  configuration": "Swapped with Falcon 9 due to GPS IIII SV10 switch under National Security Space Launch."
+  },
+  {
+    "Date / time (UTC)": "TBD",
+    "Rocket,  configuration": "Vulcan Centaur VC6L",
+    "Launch site": "Cape Canaveral, SLC\u201141",
+    "Payload": "LeoSat \u00d7 45 (LV-03 to LV-38)",
+    "Orbit": "LEO",
+    "Customer": "Amazon (Amazon Leo)"
+  },
+  {
+    "Date / time (UTC)": "TBD",
+    "Rocket,  configuration": "38 Vulcan Centaur launches ordered for Amazon Leo."
+  }
+]

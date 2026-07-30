@@ -23,7 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'Aerospace',
       items: [
-        { name: 'Starship', url: 'space/starship.html', accent: '#ffffff' }
+        { name: 'Starship', url: 'space/starship.html', accent: '#ffffff' },
+        { name: 'Vulcan', url: 'space/vulcan.html', accent: '#ffffff' },
+        { name: 'New Glenn', url: 'space/newglenn.html', accent: '#ffffff' }
       ]
     },
     {

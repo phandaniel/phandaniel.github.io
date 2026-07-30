@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Starship - Phantom Telemetry</title>
-  <meta name="description" content="A tracking page for SpaceX Starship launches.">
+  <title>Vulcan - Phantom Telemetry</title>
+  <meta name="description" content="A tracking page for ULA Vulcan launches.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,7 +15,7 @@
         
 
     <header>
-      <h1>Starship</h1>
+      <h1>Vulcan</h1>
     </header>
 
     <div id="loading" class="loading">Loading timeline data...</div>
@@ -38,14 +38,14 @@
   <script>
     async function loadData() {
       try {
-        const response = await fetch('../data/starship.json');
-        if (!response.ok) throw new Error("Could not fetch starship.json");
+        const response = await fetch('../data/vulcan.json');
+        if (!response.ok) throw new Error("Could not fetch vulcan.json");
         const data = await response.json();
         // Filter to keep only numbered flights and exactly one upcoming unnumbered flight
         let foundUpcoming = false;
         const filteredData = data.filter(release => {
-          const date = window.utils.getVal(['date and time', 'date andtime'], release);
-          const flight = window.utils.getVal(['flightno'], release);
+          const date = window.utils.getVal(['date / time (utc)', 'date and time (utc)', 'date and time'], release);
+          const flight = window.utils.getVal(['flight no.', 'flightno'], release);
           
           if (!date || date === '—' || date.length > 80) return false;
           
@@ -73,9 +73,9 @@
           const keys = Object.keys(release);
           const getVal = (keys) => window.utils.getVal(keys, release);
 
-          let flight = getVal(['flightno']);
-          let date = getVal(['date and time', 'date andtime']).replace(/\s?\d{2}:\d{2}:\d{2}.*/, '');
-          let outcome = getVal(['launch outcome']);
+          let flight = getVal(['flight no.', 'flightno']);
+          let date = getVal(['date / time (utc)', 'date and time (utc)', 'date and time']).replace(/\s?\d{2}:\d{2}:\d{2}.*/, '');
+          let outcome = getVal(['launchoutcome', 'launch outcome']);
 
           let statusText = 'Upcoming';
           let statusClass = 'status-preview';
