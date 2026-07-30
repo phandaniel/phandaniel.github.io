@@ -4,37 +4,37 @@ document.addEventListener('DOMContentLoaded', () => {
     {
       name: 'Operating Systems',
       items: [
-        { name: 'Fedora', url: 'linux/fedora.html', accent: '#3b82f6' },
-        { name: 'Ubuntu', url: 'linux/ubuntu.html', accent: '#e95420' },
-        { name: 'Linux Kernel', url: 'linux/kernel.html', accent: '#fbbf24' },
-        { name: 'iOS', url: 'os/ios.html', accent: '#0a84ff' }
+        { name: 'Fedora', url: 'linux/fedora.html', accent: '#ffffff' },
+        { name: 'Ubuntu', url: 'linux/ubuntu.html', accent: '#ffffff' },
+        { name: 'Linux Kernel', url: 'linux/kernel.html', accent: '#ffffff' },
+        { name: 'iOS', url: 'os/ios.html', accent: '#ffffff' }
       ]
     },
     {
       name: 'Artificial Intelligence',
       items: [
-        { name: 'ChatGPT', url: 'ai/chatgpt.html', accent: '#10a37f' },
-        { name: 'Claude', url: 'ai/claude.html', accent: '#d97757' },
-        { name: 'Gemini', url: 'ai/gemini.html', accent: '#1a73e8' },
-        { name: 'Grok', url: 'ai/grok.html', accent: '#1da1f2' }
+        { name: 'ChatGPT', url: 'ai/chatgpt.html', accent: '#ffffff' },
+        { name: 'Claude', url: 'ai/claude.html', accent: '#ffffff' },
+        { name: 'Gemini', url: 'ai/gemini.html', accent: '#ffffff' },
+        { name: 'Grok', url: 'ai/grok.html', accent: '#ffffff' }
       ]
     },
     {
       name: 'Aerospace',
       items: [
-        { name: 'Starship', url: 'space/starship.html', accent: '#f97316' }
+        { name: 'Starship', url: 'space/starship.html', accent: '#ffffff' }
       ]
     },
     {
       name: 'Developer Tools',
       items: [
-        { name: 'Kubernetes', url: 'dev/kubernetes.html', accent: '#326ce5' }
+        { name: 'Kubernetes', url: 'dev/kubernetes.html', accent: '#ffffff' }
       ]
     },
     {
       name: 'Sports',
       items: [
-        { name: 'Liberty Flames', url: 'sports/liberty.html', accent: '#990000' }
+        { name: 'Liberty Flames', url: 'sports/liberty.html', accent: '#ffffff' }
       ]
     }
   ];
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </svg>
       </button>
       <div class="dropdown-content" id="dropdownContent">
-        <a href="${basePath}index.html" class="nav-link ${currentFile === 'index.html' ? 'active' : ''}" style="--accent: #8b5cf6;">Home Dashboard</a>
+        <a href="${basePath}index.html" class="nav-link ${currentFile === 'index.html' ? 'active' : ''}" style="--accent: #ffffff;">Home Dashboard</a>
         <div style="border-top: 1px solid rgba(255,255,255,0.1); margin: 4px 0;"></div>
         ${categories.map(cat => `
           <div class="has-submenu">
