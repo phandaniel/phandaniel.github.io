@@ -1,0 +1,145 @@
+[
+  {
+    "Version": "iPhone OS 1",
+    "Initial release date": "June 29, 2007",
+    "Latest version": "Unsupported: 1.1.5",
+    "Latest release date": "July 15, 2008",
+    "Device end-of-life": "None"
+  },
+  {
+    "Version": "iPhone OS 2",
+    "Initial release date": "July 11, 2008",
+    "Latest version": "Unsupported: 2.2.1",
+    "Latest release date": "January 27, 2009",
+    "Device end-of-life": "None"
+  },
+  {
+    "Version": "iPhone OS 3",
+    "Initial release date": "June 17, 2009",
+    "Latest version": "Unsupported: 3.2.2",
+    "Latest release date": "August 11, 2010",
+    "Device end-of-life": "None"
+  },
+  {
+    "Version": "iOS 4",
+    "Initial release date": "June 21, 2010",
+    "Latest version": "Unsupported: 4.3.5",
+    "Latest release date": "July 25, 2011",
+    "Device end-of-life": "None"
+  },
+  {
+    "Version": "iOS 5",
+    "Initial release date": "October 12, 2011",
+    "Latest version": "Unsupported: 5.1.1",
+    "Latest release date": "May 25, 2012",
+    "Device end-of-life": "1st"
+  },
+  {
+    "Version": "iOS 6",
+    "Initial release date": "September 19, 2012",
+    "Latest version": "Unsupported: 6.1.6",
+    "Latest release date": "February 21, 2014",
+    "Device end-of-life": "None"
+  },
+  {
+    "Version": "iOS 7",
+    "Initial release date": "September 18, 2013",
+    "Latest version": "Unsupported: 7.1.2",
+    "Latest release date": "June 30, 2014",
+    "Device end-of-life": "None"
+  },
+  {
+    "Version": "iOS 8",
+    "Initial release date": "September 17, 2014",
+    "Latest version": "Unsupported: 8.4.1",
+    "Latest release date": "August 13, 2015",
+    "Device end-of-life": "None"
+  },
+  {
+    "Version": "iOS 9",
+    "Initial release date": "September 16, 2015",
+    "Latest version": "Unsupported: 9.3.6",
+    "Latest release date": "July 22, 2019",
+    "Device end-of-life": "2, 3rd, Mini"
+  },
+  {
+    "Version": "iOS 10",
+    "Initial release date": "September 13, 2016",
+    "Latest version": "Unsupported: 10.3.4",
+    "Latest release date": "July 22, 2019",
+    "Device end-of-life": "4th"
+  },
+  {
+    "Version": "iOS 11",
+    "Initial release date": "September 19, 2017",
+    "Latest version": "Unsupported: 11.4.1",
+    "Latest release date": "July 9, 2018",
+    "Device end-of-life": "None"
+  },
+  {
+    "Version": "iOS 12",
+    "Initial release date": "September 17, 2018",
+    "Latest version": "Unsupported: 12.5.8",
+    "Latest release date": "January 26, 2026",
+    "Device end-of-life": "Air (1st), Mini 2, Mini 3"
+  },
+  {
+    "Version": "iOS 13",
+    "Initial release date": "September 19, 2019",
+    "Latest version": "Unsupported: 13.7",
+    "Latest release date": "September 1, 2020",
+    "Device end-of-life": "Moved to iPadOS"
+  },
+  {
+    "Version": "iOS 14",
+    "Initial release date": "September 16, 2020",
+    "Latest version": "Unsupported: 14.8.1",
+    "Latest release date": "October 26, 2021",
+    "Device end-of-life": "Moved to iPadOS"
+  },
+  {
+    "Version": "iOS 15",
+    "Initial release date": "September 20, 2021",
+    "Latest version": "Supported: 15.8.8",
+    "Latest release date": "May 11, 2026",
+    "Device end-of-life": "Moved to iPadOS"
+  },
+  {
+    "Version": "iOS 16",
+    "Initial release date": "September 12, 2022",
+    "Latest version": "Supported: 16.7.16",
+    "Latest release date": "May 11, 2026",
+    "Device end-of-life": "Moved to iPadOS"
+  },
+  {
+    "Version": "iOS 17",
+    "Initial release date": "September 18, 2023",
+    "Latest version": "Unsupported: 17.7.2",
+    "Latest release date": "November 19, 2024",
+    "Device end-of-life": "Moved to iPadOS"
+  },
+  {
+    "Version": "iOS 18",
+    "Initial release date": "September 16, 2024",
+    "Latest version": "Supported: 18.7.9",
+    "Latest release date": "May 11, 2026",
+    "Device end-of-life": "Moved to iPadOS"
+  },
+  {
+    "Version": "iOS 26",
+    "Initial release date": "September 15, 2025",
+    "Latest version": "Latest version: 26.6",
+    "Latest release date": "July 27, 2026",
+    "Device end-of-life": "Moved to iPadOS"
+  },
+  {
+    "Version": "iOS 27",
+    "Initial release date": "2026",
+    "Latest version": "Preview version: 27.0 beta 4",
+    "Latest release date": "July 20, 2026",
+    "Device end-of-life": "Moved to iPadOS"
+  },
+  {
+    "Version": "Legend:UnsupportedSupportedLatest versionPreview versionFuture version"
+  }
+]

@@ -1,0 +1,327 @@
+[
+  {
+    "Version[1]": "Unsupported: 1 (Yarrow)",
+    "Release[1]": "2003-11-05",
+    "End-of-life[2]": "2004-09-20",
+    "Kernel[3][a]": "2.4.22",
+    "GNOME[5]": "2.4"
+  },
+  {
+    "Version[1]": "Unsupported: 2 (Tettnang)",
+    "Release[1]": "2004-05-18",
+    "End-of-life[2]": "2005-04-11",
+    "Kernel[3][a]": "2.6.5",
+    "GNOME[5]": "2.6"
+  },
+  {
+    "Version[1]": "Unsupported: 3 (Heidelberg)",
+    "Release[1]": "2004-11-08",
+    "End-of-life[2]": "2006-01-16",
+    "Kernel[3][a]": "2.6.9",
+    "GNOME[5]": "2.8"
+  },
+  {
+    "Version[1]": "Unsupported: 4 (Stentz)",
+    "Release[1]": "2005-06-13",
+    "End-of-life[2]": "2006-08-07",
+    "Kernel[3][a]": "2.6.11",
+    "GNOME[5]": "2.10"
+  },
+  {
+    "Version[1]": "Unsupported: 5 (Bordeaux)",
+    "Release[1]": "2006-03-20",
+    "End-of-life[2]": "2007-07-02",
+    "Kernel[3][a]": "2.6.15",
+    "GNOME[5]": "2.14"
+  },
+  {
+    "Version[1]": "Unsupported: 6 (Zod)",
+    "Release[1]": "2006-10-24",
+    "End-of-life[2]": "2007-12-07",
+    "Kernel[3][a]": "2.6.18",
+    "GNOME[5]": "2.16"
+  },
+  {
+    "Version[1]": "Unsupported: 7 (Moonshine)",
+    "Release[1]": "2007-05-31",
+    "End-of-life[2]": "2008-06-13",
+    "Kernel[3][a]": "2.6.23",
+    "GNOME[5]": "2.18"
+  },
+  {
+    "Version[1]": "Unsupported: 8 (Werewolf)",
+    "Release[1]": "2007-11-08",
+    "End-of-life[2]": "2009-01-07",
+    "Kernel[3][a]": "2.6.26",
+    "GNOME[5]": "2.20"
+  },
+  {
+    "Version[1]": "Unsupported: 9 (Sulphur)",
+    "Release[1]": "2008-05-13",
+    "End-of-life[2]": "2009-07-10",
+    "Kernel[3][a]": "2.6.27",
+    "GNOME[5]": "2.22"
+  },
+  {
+    "Version[1]": "Unsupported: 10 (Cambridge)",
+    "Release[1]": "2008-11-25",
+    "End-of-life[2]": "2009-12-17",
+    "Kernel[3][a]": "2.6.27",
+    "GNOME[5]": "2.24"
+  },
+  {
+    "Version[1]": "Unsupported: 11 (Leonidas)",
+    "Release[1]": "2009-06-09",
+    "End-of-life[2]": "2010-06-25",
+    "Kernel[3][a]": "2.6.30",
+    "GNOME[5]": "2.26"
+  },
+  {
+    "Version[1]": "Unsupported: 12 (Constantine)",
+    "Release[1]": "2009-11-17",
+    "End-of-life[2]": "2010-12-02",
+    "Kernel[3][a]": "2.6.32",
+    "GNOME[5]": "2.28"
+  },
+  {
+    "Version[1]": "Unsupported: 13 (Goddard)",
+    "Release[1]": "2010-05-25",
+    "End-of-life[2]": "2011-06-24",
+    "Kernel[3][a]": "2.6.34",
+    "GNOME[5]": "2.30"
+  },
+  {
+    "Version[1]": "Unsupported: 14 (Laughlin)",
+    "Release[1]": "2010-11-02",
+    "End-of-life[2]": "2011-12-09",
+    "Kernel[3][a]": "2.6.35",
+    "GNOME[5]": "2.32"
+  },
+  {
+    "Version[1]": "Unsupported: 15 (Lovelock)",
+    "Release[1]": "2011-05-24",
+    "End-of-life[2]": "2012-06-26",
+    "Kernel[3][a]": "2.6.43",
+    "GNOME[5]": "3.0"
+  },
+  {
+    "Version[1]": "Unsupported: 16 (Verne)",
+    "Release[1]": "2011-11-08",
+    "End-of-life[2]": "2013-02-12",
+    "Kernel[3][a]": "3.6",
+    "GNOME[5]": "3.2"
+  },
+  {
+    "Version[1]": "Unsupported: 17 (Beefy Miracle)",
+    "Release[1]": "2012-05-29",
+    "End-of-life[2]": "2013-07-30",
+    "Kernel[3][a]": "3.9",
+    "GNOME[5]": "3.4"
+  },
+  {
+    "Version[1]": "Unsupported: 18 (Spherical Cow)",
+    "Release[1]": "2013-01-15",
+    "End-of-life[2]": "2014-01-14",
+    "Kernel[3][a]": "3.11",
+    "GNOME[5]": "3.6"
+  },
+  {
+    "Version[1]": "Unsupported: 19 (Schr\u00f6dinger's Cat)",
+    "Release[1]": "2013-07-02",
+    "End-of-life[2]": "2015-01-06",
+    "Kernel[3][a]": "3.14",
+    "GNOME[5]": "3.8"
+  },
+  {
+    "Version[1]": "Unsupported: 20 (Heisenbug)",
+    "Release[1]": "2013-12-17",
+    "End-of-life[2]": "2015-06-23",
+    "Kernel[3][a]": "3.19",
+    "GNOME[5]": "3.10"
+  },
+  {
+    "Version[1]": "Unsupported: 21",
+    "Release[1]": "2014-12-09",
+    "End-of-life[2]": "2015-12-01",
+    "Kernel[3][a]": "4.1",
+    "GNOME[5]": "3.14"
+  },
+  {
+    "Version[1]": "Unsupported: 22",
+    "Release[1]": "2015-05-26",
+    "End-of-life[2]": "2016-07-19",
+    "Kernel[3][a]": "4.4",
+    "GNOME[5]": "3.16"
+  },
+  {
+    "Version[1]": "Unsupported: 23",
+    "Release[1]": "2015-11-03",
+    "End-of-life[2]": "2016-12-20",
+    "Kernel[3][a]": "4.8",
+    "GNOME[5]": "3.18"
+  },
+  {
+    "Version[1]": "Unsupported: 24",
+    "Release[1]": "2016-06-21",
+    "End-of-life[2]": "2017-08-08",
+    "Kernel[3][a]": "4.11",
+    "GNOME[5]": "3.20"
+  },
+  {
+    "Version[1]": "Unsupported: 25",
+    "Release[1]": "2016-11-22",
+    "End-of-life[2]": "2017-12-12",
+    "Kernel[3][a]": "4.13",
+    "GNOME[5]": "3.22"
+  },
+  {
+    "Version[1]": "Unsupported: 26",
+    "Release[1]": "2017-07-11",
+    "End-of-life[2]": "2018-05-29",
+    "Kernel[3][a]": "4.16",
+    "GNOME[5]": "3.24"
+  },
+  {
+    "Version[1]": "Unsupported: 27",
+    "Release[1]": "2017-11-14",
+    "End-of-life[2]": "2018-11-30",
+    "Kernel[3][a]": "4.18",
+    "GNOME[5]": "3.26"
+  },
+  {
+    "Version[1]": "Unsupported: 28",
+    "Release[1]": "2018-05-01",
+    "End-of-life[2]": "2019-05-28",
+    "Kernel[3][a]": "5.0",
+    "GNOME[5]": "3.28"
+  },
+  {
+    "Version[1]": "Unsupported: 29",
+    "Release[1]": "2018-10-30",
+    "End-of-life[2]": "2019-11-26",
+    "Kernel[3][a]": "5.3",
+    "GNOME[5]": "3.30"
+  },
+  {
+    "Version[1]": "Unsupported: 30",
+    "Release[1]": "2019-04-30",
+    "End-of-life[2]": "2020-05-26",
+    "Kernel[3][a]": "5.6",
+    "GNOME[5]": "3.32"
+  },
+  {
+    "Version[1]": "Unsupported: 31",
+    "Release[1]": "2019-10-29",
+    "End-of-life[2]": "2020-11-24",
+    "Kernel[3][a]": "5.8",
+    "GNOME[5]": "3.34"
+  },
+  {
+    "Version[1]": "Unsupported: 32",
+    "Release[1]": "2020-04-28",
+    "End-of-life[2]": "2021-05-25",
+    "Kernel[3][a]": "5.11",
+    "GNOME[5]": "3.36"
+  },
+  {
+    "Version[1]": "Unsupported: 33",
+    "Release[1]": "2020-10-27",
+    "End-of-life[2]": "2021-11-30",
+    "Kernel[3][a]": "5.14",
+    "GNOME[5]": "3.38"
+  },
+  {
+    "Version[1]": "Unsupported: 34",
+    "Release[1]": "2021-04-27",
+    "End-of-life[2]": "2022-06-07",
+    "Kernel[3][a]": "5.17",
+    "GNOME[5]": "40"
+  },
+  {
+    "Version[1]": "Unsupported: 35",
+    "Release[1]": "2021-11-02",
+    "End-of-life[2]": "2022-12-13",
+    "Kernel[3][a]": "6.0",
+    "GNOME[5]": "41"
+  },
+  {
+    "Version[1]": "Unsupported: 36",
+    "Release[1]": "2022-05-10",
+    "End-of-life[2]": "2023-05-16",
+    "Kernel[3][a]": "6.2",
+    "GNOME[5]": "42"
+  },
+  {
+    "Version[1]": "Unsupported: 37",
+    "Release[1]": "2022-11-15",
+    "End-of-life[2]": "2023-12-05",
+    "Kernel[3][a]": "6.5",
+    "GNOME[5]": "43"
+  },
+  {
+    "Version[1]": "Unsupported: 38",
+    "Release[1]": "2023-04-18",
+    "End-of-life[2]": "2024-05-21",
+    "Kernel[3][a]": "6.8",
+    "GNOME[5]": "44"
+  },
+  {
+    "Version[1]": "Unsupported: 39",
+    "Release[1]": "2023-11-07",
+    "End-of-life[2]": "2024-11-26",
+    "Kernel[3][a]": "6.11",
+    "GNOME[5]": "45"
+  },
+  {
+    "Version[1]": "Unsupported: 40",
+    "Release[1]": "2024-04-23",
+    "End-of-life[2]": "2025-05-13",
+    "Kernel[3][a]": "6.14",
+    "GNOME[5]": "46"
+  },
+  {
+    "Version[1]": "Unsupported: 41",
+    "Release[1]": "2024-10-29",
+    "End-of-life[2]": "2025-12-15",
+    "Kernel[3][a]": "6.17",
+    "GNOME[5]": "47"
+  },
+  {
+    "Version[1]": "Unsupported: 42 (Adams)",
+    "Release[1]": "2025-04-15",
+    "End-of-life[2]": "2026-05-27",
+    "Kernel[3][a]": "6.19",
+    "GNOME[5]": "48"
+  },
+  {
+    "Version[1]": "Supported: 43",
+    "Release[1]": "2025-10-28",
+    "End-of-life[2]": "2026-12-09",
+    "Kernel[3][a]": "7.1",
+    "GNOME[5]": "49"
+  },
+  {
+    "Version[1]": "Latest version: 44",
+    "Release[1]": "2026-04-28",
+    "End-of-life[2]": "2027-06-02",
+    "Kernel[3][a]": "7.1",
+    "GNOME[5]": "50"
+  },
+  {
+    "Version[1]": "Preview version: 45",
+    "Release[1]": "2026-10-20",
+    "End-of-life[2]": "2027-11-24",
+    "Kernel[3][a]": "7.2",
+    "GNOME[5]": ""
+  },
+  {
+    "Version[1]": "Future version: 46",
+    "Release[1]": "2027-04-20",
+    "End-of-life[2]": "",
+    "Kernel[3][a]": "",
+    "GNOME[5]": ""
+  },
+  {
+    "Version[1]": "Legend:UnsupportedSupportedLatest versionPreview versionFuture version"
+  }
+]
