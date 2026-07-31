@@ -7,21 +7,58 @@
   <script src="../../assets/js/renderSports.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      
-      window.sportsConfig = {
-        opponentKey: 'Opponent',
-        dateKey: 'Date',
-        resultKey: 'Result'
-      };
-
       window.utils.renderPage({
         title: `Liberty Flames`,
         description: `A tracking page for Liberty Flames football schedule.`,
         accent: '#ffffff',
-        columns: ['Date', 'Opponent', 'Result', 'Score'],
+        columns: ['Date', 'Opponent', 'Score', 'Result'],
         url: '../../data/liberty.json',
-        processData: window.renderSports.processData,
-        renderRow: window.renderSports.renderRow
+        processData: (data) => {
+          data.reverse();
+          return data;
+        },
+        renderRow: (game) => {
+          const getVal = (searchStrs) => window.utils.getVal(searchStrs, game);
+          let date = getVal(['date']);
+          let opponent = getVal(['opponent']);
+          let result = getVal(['result']);
+          
+          if (game['Quarter']) return '';
+          if (date === '—') return '';
+
+          if (!date.includes('2025') && !date.includes('2024')) {
+            date += ', 2025';
+          }
+
+          let statusText = 'Upcoming';
+          let statusClass = 'status-preview';
+          let scoreText = '—';
+          
+          const rLower = result.toLowerCase();
+          if (rLower.includes('w ')) {
+            statusText = 'Win';
+            statusClass = 'status-supported';
+            scoreText = result.substring(rLower.indexOf('w ') + 2).trim().split('[')[0];
+          } else if (rLower.includes('l ')) {
+            statusText = 'Loss';
+            statusClass = 'status-unsupported';
+            scoreText = result.substring(rLower.indexOf('l ') + 2).trim().split('[')[0];
+          } else if (rLower.includes('t ')) {
+            statusText = 'Tie';
+            statusClass = 'status-partial';
+            scoreText = result.substring(rLower.indexOf('t ') + 2).trim().split('[')[0];
+          } else if (result !== '—' && result !== '') {
+            statusText = result.split('[')[0];
+            statusClass = 'status-partial';
+          }
+
+          return `
+            <td class="version">${window.utils.cleanStr(date)}</td>
+            <td>${window.utils.cleanStr(opponent)}</td>
+            <td>${window.utils.cleanStr(scoreText)}</td>
+            <td><span class="status-badge ${statusClass}">${statusText}</span></td>
+          `;
+        }
       });
     });
   </script>
