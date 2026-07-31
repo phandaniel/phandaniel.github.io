@@ -1,0 +1,177 @@
+[
+  {
+    "Release": "Version",
+    "Darwinversion": "Name",
+    "Release date": "Version",
+    "Latest release": "Release date",
+    "Compatibility": "Processor"
+  },
+  {
+    "Release": "Mac OS X Server 1.0",
+    "Darwinversion": "Hera",
+    "Release date": "0.1-0.3",
+    "Latest release": "March 16, 1999",
+    "Compatibility": "Unsupported: 1.2v3"
+  },
+  {
+    "Release": "Mac OS X 10.0",
+    "Darwinversion": "Cheetah",
+    "Release date": "1.3.1",
+    "Latest release": "March 24, 2001",
+    "Compatibility": "Unsupported: 10.0.4"
+  },
+  {
+    "Release": "Mac OS X 10.1",
+    "Darwinversion": "Puma",
+    "Release date": "1.4.1/5",
+    "Latest release": "September 25, 2001",
+    "Compatibility": "Unsupported: 10.1.5"
+  },
+  {
+    "Release": "Mac OS X 10.2",
+    "Darwinversion": "Jaguar",
+    "Release date": "6",
+    "Latest release": "August 24, 2002",
+    "Compatibility": "Unsupported: 10.2.8"
+  },
+  {
+    "Release": "Mac OS X 10.3",
+    "Darwinversion": "Panther",
+    "Release date": "7",
+    "Latest release": "October 24, 2003",
+    "Compatibility": "Unsupported: 10.3.9"
+  },
+  {
+    "Release": "Mac OS X 10.4",
+    "Darwinversion": "Tiger",
+    "Release date": "8",
+    "Latest release": "April 29, 2005",
+    "Compatibility": "Unsupported: 10.4.11"
+  },
+  {
+    "Release": "Mac OS X 10.5",
+    "Darwinversion": "Leopard",
+    "Release date": "9",
+    "Latest release": "October 26, 2007",
+    "Compatibility": "Unsupported: 10.5.8"
+  },
+  {
+    "Release": "Mac OS X 10.6",
+    "Darwinversion": "Snow Leopard",
+    "Release date": "10",
+    "Latest release": "August 28, 2009",
+    "Compatibility": "Unsupported: 10.6.8"
+  },
+  {
+    "Release": "Mac OS X 10.7",
+    "Darwinversion": "Lion",
+    "Release date": "11",
+    "Latest release": "July 20, 2011",
+    "Compatibility": "Unsupported: 10.7.5"
+  },
+  {
+    "Release": "OS X 10.8",
+    "Darwinversion": "Mountain Lion",
+    "Release date": "12",
+    "Latest release": "July 25, 2012",
+    "Compatibility": "Unsupported: 10.8.5"
+  },
+  {
+    "Release": "OS X 10.9",
+    "Darwinversion": "Mavericks",
+    "Release date": "13",
+    "Latest release": "October 22, 2013",
+    "Compatibility": "Unsupported: 10.9.5"
+  },
+  {
+    "Release": "OS X 10.10",
+    "Darwinversion": "Yosemite",
+    "Release date": "14",
+    "Latest release": "October 16, 2014",
+    "Compatibility": "Unsupported: 10.10.5"
+  },
+  {
+    "Release": "OS X 10.11",
+    "Darwinversion": "El Capitan",
+    "Release date": "15",
+    "Latest release": "September 30, 2015",
+    "Compatibility": "Unsupported: 10.11.6"
+  },
+  {
+    "Release": "macOS 10.12",
+    "Darwinversion": "Sierra",
+    "Release date": "16",
+    "Latest release": "September 20, 2016",
+    "Compatibility": "Unsupported: 10.12.6"
+  },
+  {
+    "Release": "macOS 10.13",
+    "Darwinversion": "High Sierra",
+    "Release date": "17",
+    "Latest release": "September 25, 2017",
+    "Compatibility": "Unsupported: 10.13.6"
+  },
+  {
+    "Release": "macOS 10.14",
+    "Darwinversion": "Mojave",
+    "Release date": "18",
+    "Latest release": "September 24, 2018",
+    "Compatibility": "Unsupported: 10.14.6"
+  },
+  {
+    "Release": "macOS 10.15",
+    "Darwinversion": "Catalina",
+    "Release date": "19",
+    "Latest release": "October 7, 2019",
+    "Compatibility": "Unsupported: 10.15.8"
+  },
+  {
+    "Release": "macOS 11",
+    "Darwinversion": "Big Sur",
+    "Release date": "20",
+    "Latest release": "November 12, 2020",
+    "Compatibility": "Unsupported: 11.7.11"
+  },
+  {
+    "Release": "macOS 12",
+    "Darwinversion": "Monterey",
+    "Release date": "21",
+    "Latest release": "October 25, 2021",
+    "Compatibility": "Unsupported: 12.7.6"
+  },
+  {
+    "Release": "macOS 13",
+    "Darwinversion": "Ventura",
+    "Release date": "22",
+    "Latest release": "October 24, 2022",
+    "Compatibility": "Unsupported: 13.7.8"
+  },
+  {
+    "Release": "macOS 14",
+    "Darwinversion": "Sonoma",
+    "Release date": "23",
+    "Latest release": "September 26, 2023",
+    "Compatibility": "Supported: 14.8.8"
+  },
+  {
+    "Release": "macOS 15",
+    "Darwinversion": "Sequoia",
+    "Release date": "24",
+    "Latest release": "September 16, 2024",
+    "Compatibility": "Supported: 15.7.8"
+  },
+  {
+    "Release": "macOS 26",
+    "Darwinversion": "Tahoe",
+    "Release date": "25",
+    "Latest release": "September 15, 2025",
+    "Compatibility": "Latest version: 26.6"
+  },
+  {
+    "Release": "macOS 27",
+    "Darwinversion": "Golden Gate",
+    "Release date": "26",
+    "Latest release": "2026",
+    "Compatibility": "Preview version: 27.0 beta 4"
+  }
+]

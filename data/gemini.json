@@ -78,16 +78,16 @@
     "Description": "Gemini 3 Pro is not a modification or a fine-tune or a prior model. It is the foundational model of the Gemini 3 series. A sparse mixture-of-experts, natively multimodal, reasoning model. It can process text, visual, and audio inputs. It supports up to 1,000,000 input tokens and 64,000 output tokens."
   },
   {
+    "Version": "3 Pro Image (Nano Banana Pro)",
+    "Release date": "20 November 2025",
+    "Status[76][55]": "Latest version: Latest version",
+    "Description": "An improved version of Nano Banana, which includes better text rendering and better real world knowledge. It was released as a preview model on 20 November 2025, and made generally available on 28 May 2026."
+  },
+  {
     "Version": "3 Deep Think",
     "Release date": "3 December 2025",
     "Status[76][55]": "Future version: Preview",
     "Description": "Based on the 2.5 Pro \"Deep Think\" mode that achieved high ratings in IOI"
-  },
-  {
-    "Version": "3 Pro Image (Nano Banana Pro)",
-    "Release date": "20 November 2025",
-    "Status[76][55]": "Future version: Preview",
-    "Description": "An improved version of Nano Banana which includes better text rendering and better real world knowledge."
   },
   {
     "Version": "3 Flash",
@@ -104,11 +104,11 @@
   {
     "Version": "3.1 Flash Image (Nano Banana 2)",
     "Release date": "26 February 2026",
-    "Status[76][55]": "Future version: Preview",
+    "Status[76][55]": "Latest version: Latest version",
     "Description": "Based on Gemini 3 Flash. Designed to generate both image and text outputs."
   },
   {
-    "Version": "3.1 Flash Lite",
+    "Version": "3.1 Flash-Lite",
     "Release date": "3 March 2026",
     "Status[76][55]": "Supported: Supported",
     "Description": "Based on Gemini 3 Pro. It is optimized for high-volume, latency-sensitive tasks such as translation, and text classification."
@@ -118,6 +118,12 @@
     "Release date": "19 May 2026",
     "Status[76][55]": "Supported: Supported",
     "Description": "Based on Gemini 3 Flash."
+  },
+  {
+    "Version": "3.1 Flash-Lite Image (Nano Banana 2 Lite)",
+    "Release date": "30 June 2026",
+    "Status[76][55]": "Latest version: Latest version",
+    "Description": "Based on Gemini 3.1 Flash-Lite. It is optimized for cost-effective image generation."
   },
   {
     "Version": "3.5 Flash-Lite",

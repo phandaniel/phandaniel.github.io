@@ -39,7 +39,11 @@
     "Release date": "20 June 2024",
     "Status[50][51]": "Discontinued"
   },
-
+  {
+    "Version": "Claude 3.5 Sonnet (new)",
+    "Release date": "22 October 2024",
+    "Status[50][51]": "Discontinued"
+  },
   {
     "Version": "Claude 3.5 Haiku",
     "Release date": "22 October 2024",
