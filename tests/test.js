@@ -110,6 +110,14 @@ let passed = true;
         console.log('  [PASS] All rows have valid version names.');
       }
 
+      const homeHref = await page.$eval('.home-btn', el => el.getAttribute('href'));
+      if (homeHref.includes('release/index.html') || !homeHref.endsWith('index.html')) {
+        console.error(`  [ERROR] Home button href is incorrect: ${homeHref}`);
+        errors++;
+      } else {
+        console.log(`  [PASS] Home button href is correct (${homeHref}).`);
+      }
+
     } catch (err) {
       console.error(`  [ERROR] Exception during navigation: ${err.message}`);
       errors++;
