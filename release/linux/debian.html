@@ -24,7 +24,6 @@
         <thead>
           <tr>
             <th>Version</th>
-            <th>Codename</th>
             <th>Release Date</th>
             <th>Paid ELTS</th>
             <th>Status</th>
@@ -51,7 +50,6 @@
           const getVal = (keys) => window.utils.getVal(keys, release);
 
           const rawVersion = getVal(['ver.', 'version']);
-          const rawCodename = getVal(['code']);
           const releaseDate = getVal(['release date']);
           const endSupport = getVal(['paid elts']);
           
@@ -78,13 +76,12 @@
           const versionNumber = parseFloat(version);
           if (versionNumber > 14) return;
 
-          let cleanCodename = window.utils.cleanStr(rawCodename)
-            .replace(/(unsupported|supported|future version):?\s*/gi, '');
+          // For dates like "14–15 August 2000", take the earlier date
+          let cleanDate = window.utils.cleanStr(releaseDate).replace(/\u2013\d+/, '');
 
           return `
             <td class="version">Debian ${window.utils.cleanStr(version)}</td>
-            <td>${cleanCodename}</td>
-            <td>${window.utils.cleanStr(releaseDate)}</td>
+            <td>${cleanDate}</td>
             <td>${window.utils.cleanStr(endSupport)}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
