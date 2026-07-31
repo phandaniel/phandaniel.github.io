@@ -1,0 +1,142 @@
+[
+  {
+    "Card": "Main card",
+    "Weight class": "Welterweight",
+    "Winner": "Max Holloway",
+    "Loser": "Conor McGregor",
+    "Method": "TKO (knee injury)",
+    "Round": "1",
+    "Time": "1:09",
+    "Notes": ""
+  },
+  {
+    "Card": "Main card",
+    "Weight class": "Lightweight",
+    "Winner": "Paddy Pimblett",
+    "Loser": "Beno\u00eet Saint Denis",
+    "Method": "Technical Submission (Peruvian necktie)",
+    "Round": "1",
+    "Time": "0:52",
+    "Notes": ""
+  },
+  {
+    "Card": "Main card",
+    "Weight class": "Bantamweight",
+    "Winner": "Mario Bautista",
+    "Loser": "Cory Sandhagen",
+    "Method": "Decision (unanimous) (29\u201328, 29\u201328, 29\u201328)",
+    "Round": "3",
+    "Time": "5:00",
+    "Notes": ""
+  },
+  {
+    "Card": "Main card",
+    "Weight class": "Flyweight",
+    "Winner": "Brandon Royval",
+    "Loser": "Lone'er Kavanagh",
+    "Method": "Submission (rear-naked choke)",
+    "Round": "3",
+    "Time": "3:40",
+    "Notes": ""
+  },
+  {
+    "Card": "Main card",
+    "Weight class": "Lightweight",
+    "Winner": "King Green",
+    "Loser": "Terrance McKinney",
+    "Method": "TKO (punches)",
+    "Round": "1",
+    "Time": "4:59",
+    "Notes": ""
+  },
+  {
+    "Card": "Preliminary card",
+    "Weight class": "Light Heavyweight",
+    "Winner": "Robert Whittaker",
+    "Loser": "Nikita Krylov",
+    "Method": "TKO (jaw injury)",
+    "Round": "3",
+    "Time": "1:01",
+    "Notes": ""
+  },
+  {
+    "Card": "Preliminary card",
+    "Weight class": "Heavyweight",
+    "Winner": "Gable Steveson",
+    "Loser": "Elisha Ellison",
+    "Method": "KO (knees and punches)",
+    "Round": "1",
+    "Time": "2:31",
+    "Notes": ""
+  },
+  {
+    "Card": "Preliminary card",
+    "Weight class": "Bantamweight",
+    "Winner": "Adrian Ya\u00f1ez",
+    "Loser": "Cody Garbrandt",
+    "Method": "TKO (punches)",
+    "Round": "1",
+    "Time": "2:47",
+    "Notes": ""
+  },
+  {
+    "Card": "Preliminary card",
+    "Weight class": "Featherweight",
+    "Winner": "Luke Riley",
+    "Loser": "Kai Kamaka III",
+    "Method": "TKO (knees and punches)",
+    "Round": "1",
+    "Time": "3:03",
+    "Notes": ""
+  },
+  {
+    "Card": "Early preliminary card",
+    "Weight class": "Women's Flyweight",
+    "Winner": "Wang Cong",
+    "Loser": "Tracy Cortez",
+    "Method": "Decision (unanimous) (29\u201327, 29\u201327, 29\u201327)",
+    "Round": "3",
+    "Time": "5:00",
+    "Notes": "[a]"
+  },
+  {
+    "Card": "Early preliminary card",
+    "Weight class": "Middleweight",
+    "Winner": "Damian Pinas",
+    "Loser": "C\u00e9sar Almeida",
+    "Method": "KO (punch)",
+    "Round": "1",
+    "Time": "4:44",
+    "Notes": ""
+  },
+  {
+    "Card": "Early preliminary card",
+    "Weight class": "Bantamweight",
+    "Winner": "Farid Basharat",
+    "Loser": "John Garza",
+    "Method": "Decision (unanimous) (30\u201327, 30\u201327, 29\u201328)",
+    "Round": "3",
+    "Time": "5:00",
+    "Notes": ""
+  },
+  {
+    "Card": "Early preliminary card",
+    "Weight class": "Middleweight",
+    "Winner": "Ryan Gandra",
+    "Loser": "Zachary Reese",
+    "Method": "TKO (punches)",
+    "Round": "1",
+    "Time": "1:15",
+    "Notes": ""
+  },
+  {
+    "Card": "Early preliminary card",
+    "Weight class": "Flyweight",
+    "Winner": "Alessandro Costa",
+    "Loser": "Cody Durden",
+    "Method": "Submission (rear-naked choke)",
+    "Round": "2",
+    "Time": "2:19",
+    "Notes": ""
+  }
+]

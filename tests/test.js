@@ -2,7 +2,7 @@ const puppeteer = require('puppeteer');
 const path = require('path');
 
 const rootDir = path.join(__dirname, '..');
-const files = ['release/os/windows11.html', 'release/linux/fedora.html', 'release/linux/ubuntu.html', 'release/os/macos.html', 'release/linux/rhel.html', 'release/os/ios.html', 'release/os/android.html', 'release/space/starship.html', 'release/space/vulcan.html', 'release/space/newglenn.html', 'release/ai/claude.html', 'release/ai/grok.html', 'release/ai/gemini.html', 'release/ai/chatgpt.html', 'release/dev/kubernetes.html', 'release/dev/python.html', 'release/sports/track26.html', 'release/sports/liberty.html', 'release/sports/commanders.html', 'release/sports/wizards.html'];
+const files = ['release/os/windows11.html', 'release/linux/fedora.html', 'release/linux/ubuntu.html', 'release/os/macos.html', 'release/linux/rhel.html', 'release/os/ios.html', 'release/os/android.html', 'release/space/starship.html', 'release/space/vulcan.html', 'release/space/newglenn.html', 'release/ai/claude.html', 'release/ai/grok.html', 'release/ai/gemini.html', 'release/ai/chatgpt.html', 'release/dev/kubernetes.html', 'release/dev/python.html', 'release/sports/ufc329.html', 'release/sports/track26.html', 'release/sports/liberty.html', 'release/sports/commanders.html', 'release/sports/wizards.html'];
 let passed = true;
 
 (async () => {

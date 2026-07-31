@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UFC 329 Results - Phantom Telemetry</title>
+  <meta name="description" content="Results for UFC 329: Holloway vs McGregor">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../assets/css/style.css?v=8">
+  <style>
+    .ufc-table th { position: sticky; top: 0; background: #18181b; z-index: 10; text-align: left; }
+    .ufc-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
+    .ufc-table td, .ufc-table th { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .ufc-table td { text-align: left; }
+    .center-col { text-align: center !important; }
+    .winner { color: #4ade80; font-weight: 600; }
+    .loser { color: #f87171; }
+  </style>
+</head>
+<body style="--accent: #ef4444;">
+  <div class="container">
+    <header>
+      <h1 style="color: var(--accent);">UFC 329</h1>
+    </header>
+
+    <div id="loading" class="loading">Loading timeline data...</div>
+    
+    <div id="tables-wrapper" style="display: none;"></div>
+  </div>
+
+  <script>
+    window.basePath = "../../";
+    window.addEventListener('DOMContentLoaded', async () => {
+      try {
+        const response = await fetch('../../data/ufc329.json');
+        if (!response.ok) throw new Error('Failed to fetch data');
+        const data = await response.json();
+        
+        document.getElementById('loading').style.display = 'none';
+        const wrapper = document.getElementById('tables-wrapper');
+        wrapper.style.display = 'block';
+        
+        // Group by card
+        const cards = {};
+        for (const item of data) {
+          if (!cards[item.Card]) cards[item.Card] = [];
+          cards[item.Card].push(item);
+        }
+        
+        for (const [cardName, items] of Object.entries(cards)) {
+          const section = document.createElement('div');
+          section.innerHTML = `
+            <h2 style="margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid var(--accent); padding-bottom: 0.5rem; display: inline-block;">${cardName}</h2>
+            <div class="table-container" style="overflow-x: auto; margin-bottom: 2rem;">
+              <table class="ufc-table" style="width: 100%; border-collapse: collapse;">
+                <thead>
+                  <tr>
+                    <th>Weight class</th>
+                    <th>Winner</th>
+                    <th>Loser</th>
+                    <th>Method</th>
+                    <th class="center-col">Round</th>
+                    <th class="center-col">Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${items.map(item => `
+                    <tr>
+                      <td>${window.utils.cleanStr(item['Weight class'])}</td>
+                      <td class="winner">${window.utils.cleanStr(item['Winner'])}</td>
+                      <td class="loser">${window.utils.cleanStr(item['Loser'])}</td>
+                      <td>${window.utils.cleanStr(item['Method'])}</td>
+                      <td class="center-col">${window.utils.cleanStr(item['Round'])}</td>
+                      <td class="center-col">${window.utils.cleanStr(item['Time'])}</td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+          `;
+          wrapper.appendChild(section);
+        }
+      } catch (err) {
+        document.getElementById('loading').textContent = 'Failed to load data: ' + err.message;
+      }
+    });
+  </script>
+  <script src="../../assets/js/categories.js"></script>
+  <script src="../../assets/js/app.js?v=8"></script>
+</body>
+</html>
