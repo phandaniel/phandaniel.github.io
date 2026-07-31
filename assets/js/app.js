@@ -1,3 +1,16 @@
+(() => {
+  const basePath = window.basePath || '../../';
+  // Prevent FOUC by setting background immediately and injecting styles synchronously
+  document.documentElement.style.backgroundColor = '#0d0d0d';
+  document.documentElement.style.color = '#f4f4f5';
+  
+  document.write(`
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="${basePath}assets/css/style.css?v=11">
+  `);
+})();
 
 document.addEventListener('DOMContentLoaded', () => {
   if (!document.getElementById('mainDropdown')) {
@@ -52,10 +65,6 @@ window.utils = {
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>${config.title || 'Phantom Telemetry'}</title>
       ${config.description ? `<meta name="description" content="${config.description}">` : ''}
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="${window.basePath || '../../'}assets/css/style.css?v=10">
     `;
 
     document.body.style.setProperty('--accent', config.accent || '#ffffff');
