@@ -80,13 +80,16 @@
           eventName = eventName.replace(/\(Wind:\s*(.*?)\)/gi, '').trim();
 
           const gold = item['Gold'] || item['gold'] || '';
-          const goldTime = item['Gold Time'] || item['gold time'] || item['G_Time'] || '';
+          let goldTime = item['Gold Time'] || item['gold time'] || item['G_Time'] || '';
+          goldTime = goldTime.replace(/\s*\[.*?\]/g, '').replace(/[a-zA-Z]+/g, '').trim();
           
           const silver = item['Silver'] || item['silver'] || '';
-          const silverTime = item['Silver Time'] || item['silver time'] || item['S_Time'] || '';
+          let silverTime = item['Silver Time'] || item['silver time'] || item['S_Time'] || '';
+          silverTime = silverTime.replace(/\s*\[.*?\]/g, '').replace(/[a-zA-Z]+/g, '').trim();
           
           const bronze = item['Bronze'] || item['bronze'] || '';
-          const bronzeTime = item['Bronze Time'] || item['bronze time'] || item['B_Time'] || '';
+          let bronzeTime = item['Bronze Time'] || item['bronze time'] || item['B_Time'] || '';
+          bronzeTime = bronzeTime.replace(/\s*\[.*?\]/g, '').replace(/[a-zA-Z]+/g, '').trim();
 
           return `
             <tr>
