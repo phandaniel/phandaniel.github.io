@@ -1,60 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Vulcan - Phantom Telemetry</title>
-  <meta name="description" content="A tracking page for ULA Vulcan launches.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/style.css?v=6">
-</head>
-<body style="--accent: #ffffff;">
-  <div class="container">
-        
-
-    <header>
-      <h1>Vulcan</h1>
-    </header>
-
-    <div id="loading" class="loading">Loading timeline data...</div>
-    
-    <div class="table-container" id="table-container" style="display: none;">
-      <table>
-        <thead>
-          <tr>
-            <th>Flight</th>
-            <th>Date</th>
-            <th>Outcome</th>
-          </tr>
-        </thead>
-        <tbody id="table-body">
-        </tbody>
-      </table>
-    </div>
-  </div>
-
+  <script>window.basePath = "../../";</script>
+  <script src="../../assets/js/categories.js"></script>
+  <script src="../../assets/js/app.js?v=10"></script>
   <script src="../../assets/js/renderSpace.js"></script>
   <script>
-    window.spaceConfig = {
-      dateKeys: ['date / time (utc)', 'date and time (utc)', 'date and time', 'date andtime'],
-      flightKeys: ['flight no.', 'flightno'],
-      outcomeKeys: ['launchoutcome', 'launch outcome'],
-      dateRegex: /\s?\d{2}:\d{2}.*/
-    };
-    window.addEventListener('DOMContentLoaded', () => {
-      window.utils.renderTable({
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      window.spaceConfig = {
+        dateKeys: ['date / time (utc)', 'date and time (utc)', 'date and time', 'date andtime'],
+        flightKeys: ['flight no.', 'flightno', 'flight'],
+        outcomeKeys: ['launchoutcome', 'launch outcome'],
+        dateRegex: /\s?\d{2}:\d{2}.*/
+      };
+
+      window.utils.renderPage({
+        title: `Vulcan`,
+        description: `A tracking page for ULA Vulcan launches.`,
+        accent: '#ffffff',
+        columns: ['Flight', 'Date', 'Outcome'],
         url: '../../data/vulcan.json',
         processData: window.renderSpace.processData,
         renderRow: window.renderSpace.renderRow
       });
     });
   </script>
-
-  
-<script>window.basePath = "../../";</script>
-  <script src="../../assets/js/categories.js"></script>
-  <script src="../../assets/js/app.js?v=6"></script>
-</body>
+</head>
+<body></body>
 </html>

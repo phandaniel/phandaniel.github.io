@@ -1,37 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>UFC 329 Results - Phantom Telemetry</title>
-  <meta name="description" content="Results for UFC 329: Holloway vs McGregor">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/style.css?v=8">
-  <style>
-    .ufc-table th { position: sticky; top: 0; background: #18181b; z-index: 10; text-align: left; }
-    .ufc-table tr:nth-child(even) { background: rgba(255, 255, 255, 0.02); }
-    .ufc-table td, .ufc-table th { padding: 0.75rem 1rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
-    .ufc-table td { text-align: left; }
-    .center-col { text-align: center !important; }
-  </style>
-</head>
-<body style="--accent: #ef4444;">
-  <div class="container">
-    <header>
-      <h1 style="color: var(--accent);">UFC 329</h1>
-    </header>
-
-    <div id="loading" class="loading">Loading timeline data...</div>
-    
-    <div id="tables-wrapper" style="display: none;"></div>
-  </div>
-
+  <script>window.basePath = "../../";</script>
+  <script src="../../assets/js/categories.js"></script>
+  <script src="../../assets/js/app.js?v=10"></script>
   <script>
-    window.basePath = "../../";
-    window.addEventListener('DOMContentLoaded', async () => {
-      try {
+    document.addEventListener('DOMContentLoaded', () => {
+      window.utils.renderPage({
+        title: `UFC 329 Results`,
+        description: `Results for UFC 329: Holloway vs McGregor`,
+        accent: '#ef4444',
+        columns: [],
+        customHTML: `<div id="tables-wrapper" style="display: none;"></div>`,
+        init: async () => {
+          
+try {
         const response = await fetch('../../data/ufc329.json');
         if (!response.ok) throw new Error('Failed to fetch data');
         const data = await response.json();
@@ -83,9 +66,10 @@
       } catch (err) {
         document.getElementById('loading').textContent = 'Failed to load data: ' + err.message;
       }
+        }
+      });
     });
   </script>
-  <script src="../../assets/js/categories.js"></script>
-  <script src="../../assets/js/app.js?v=8"></script>
-</body>
+</head>
+<body></body>
 </html>

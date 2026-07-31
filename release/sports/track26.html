@@ -1,70 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>2026 US Track & Field - Phantom Telemetry</title>
-  <meta name="description" content="2026 USA Outdoor Track and Field Championships">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/style.css?v=7">
-</head>
-<body style="--accent: #ffffff;">
-  <div class="container">
-    <header>
-      <h1>2026 US Track & Field</h1>
-    </header>
-
-    <div id="loading" class="loading">Loading timeline data...</div>
-    
-    <div id="tables-wrapper" style="display: none;">
-      <!-- Men's Results -->
-      <h2 style="margin-top: 1rem; margin-bottom: 1rem;">Men's Results</h2>
-      <div class="table-container" style="overflow-x: auto;">
-        <table class="track-table">
-          <thead>
-            <tr>
-              <th>Event</th>
-              <th style="color: #FFD700;">🥇 Gold</th>
-              <th class="time-col">Time</th>
-              <th style="color: #C0C0C0;">🥈 Silver</th>
-              <th class="time-col">Time</th>
-              <th style="color: #CD7F32;">🥉 Bronze</th>
-              <th class="time-col">Time</th>
-            </tr>
-          </thead>
-          <tbody id="mens-body">
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Women's Results -->
-      <h2 style="margin-top: 3rem; margin-bottom: 1rem;">Women's Results</h2>
-      <div class="table-container" style="overflow-x: auto;">
-        <table class="track-table">
-          <thead>
-            <tr>
-              <th>Event</th>
-              <th style="color: #FFD700;">🥇 Gold</th>
-              <th class="time-col">Time</th>
-              <th style="color: #C0C0C0;">🥈 Silver</th>
-              <th class="time-col">Time</th>
-              <th style="color: #CD7F32;">🥉 Bronze</th>
-              <th class="time-col">Time</th>
-            </tr>
-          </thead>
-          <tbody id="womens-body">
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
+  <script>window.basePath = "../../";</script>
+  <script src="../../assets/js/categories.js"></script>
+  <script src="../../assets/js/app.js?v=10"></script>
   <script>
-    window.basePath = "../../";
-    window.addEventListener('DOMContentLoaded', async () => {
-      try {
+    document.addEventListener('DOMContentLoaded', () => {
+      window.utils.renderPage({
+        title: `2026 US Track & Field`,
+        description: `2026 USA Outdoor Track and Field Championships`,
+        accent: '#ffffff',
+        columns: ['Event', '🥇 Gold', 'Time', '🥈 Silver', 'Time', '🥉 Bronze', 'Time'],
+        customHTML: `<div id="tables-wrapper" style="display: none;">
+<!-- Men's Results -->
+<h2 style="margin-top: 1rem; margin-bottom: 1rem;">Men's Results</h2>
+<div class="table-container" style="overflow-x: auto;">
+<table class="track-table">
+<thead>
+<tr>
+<th>Event</th>
+<th style="color: #FFD700;">🥇 Gold</th>
+<th class="time-col">Time</th>
+<th style="color: #C0C0C0;">🥈 Silver</th>
+<th class="time-col">Time</th>
+<th style="color: #CD7F32;">🥉 Bronze</th>
+<th class="time-col">Time</th>
+</tr>
+</thead>
+<tbody id="mens-body">
+</tbody>
+</table>
+</div>
+<!-- Women's Results -->
+<h2 style="margin-top: 3rem; margin-bottom: 1rem;">Women's Results</h2>
+<div class="table-container" style="overflow-x: auto;">
+<table class="track-table">
+<thead>
+<tr>
+<th>Event</th>
+<th style="color: #FFD700;">🥇 Gold</th>
+<th class="time-col">Time</th>
+<th style="color: #C0C0C0;">🥈 Silver</th>
+<th class="time-col">Time</th>
+<th style="color: #CD7F32;">🥉 Bronze</th>
+<th class="time-col">Time</th>
+</tr>
+</thead>
+<tbody id="womens-body">
+</tbody>
+</table>
+</div>
+</div>`,
+        init: async () => {
+          
+try {
         const response = await fetch('../../data/track26.json');
         if (!response.ok) throw new Error('Failed to fetch data');
         const data = await response.json();
@@ -109,9 +98,10 @@
       } catch (err) {
         document.getElementById('loading').textContent = 'Failed to load data: ' + err.message;
       }
+        }
+      });
     });
   </script>
-  <script src="../../assets/js/categories.js"></script>
-  <script src="../../assets/js/app.js?v=6"></script>
-</body>
+</head>
+<body></body>
 </html>

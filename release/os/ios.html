@@ -1,46 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>iOS - Phantom Telemetry</title>
-  <meta name="description" content="A beautiful overview of iOS version history.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/style.css?v=6">
-</head>
-<body style="--accent: #ffffff;">
-  <div class="container">
-        
-
-    <header>
-      <h1>iOS</h1>
-    </header>
-
-    <div id="loading" class="loading">Loading timeline data...</div>
-    
-    <div class="table-container" id="table-container" style="display: none;">
-      <table>
-        <thead>
-          <tr>
-            <th>Version</th>
-            <th>Initial Release</th>
-            <th>Latest Version</th>
-            <th>Latest Release Date</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody id="table-body">
-        </tbody>
-      </table>
-    </div>
-  </div>
-
+  <script>window.basePath = "../../";</script>
+  <script src="../../assets/js/categories.js"></script>
+  <script src="../../assets/js/app.js?v=10"></script>
   <script>
-    window.basePath = "../../";
-    window.addEventListener('DOMContentLoaded', () => {
-      window.utils.renderTable({
+    document.addEventListener('DOMContentLoaded', () => {
+      window.utils.renderPage({
+        title: `iOS`,
+        description: `A beautiful overview of iOS version history.`,
+        accent: '#ffffff',
+        columns: ['Version', 'Initial Release', 'Latest Version', 'Latest Release Date', 'Status'],
         url: '../../data/ios.json',
         processData: (data) => {
           data.reverse(); // Newest first
@@ -92,11 +62,7 @@
           }
       });
     });
-</script>
-
-  
-<script>window.basePath = "../../";</script>
-  <script src="../../assets/js/categories.js"></script>
-  <script src="../../assets/js/app.js?v=6"></script>
-</body>
+  </script>
+</head>
+<body></body>
 </html>

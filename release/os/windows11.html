@@ -1,45 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Windows 11 - Phantom Telemetry</title>
-  <meta name="description" content="A beautiful overview of Windows 11 release history.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../assets/css/style.css?v=6">
-</head>
-<body style="--accent: #ffffff;">
-  <div class="container">
-        
-    <header>
-      <h1>Windows 11</h1>
-    </header>
-
-    <div id="loading" class="loading">Loading timeline data...</div>
-    
-    <div class="table-container" id="table-container" style="display: none;">
-      <table>
-        <thead>
-          <tr>
-            <th>Version</th>
-            <th>Name</th>
-            <th>Build</th>
-            <th>Release Date</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody id="table-body">
-        </tbody>
-      </table>
-    </div>
-  </div>
-
+  <script>window.basePath = "../../";</script>
+  <script src="../../assets/js/categories.js"></script>
+  <script src="../../assets/js/app.js?v=10"></script>
   <script>
-    window.basePath = "../../";
-    window.addEventListener('DOMContentLoaded', () => {
-      window.utils.renderTable({
+    document.addEventListener('DOMContentLoaded', () => {
+      window.utils.renderPage({
+        title: `Windows 11`,
+        description: `A beautiful overview of Windows 11 release history.`,
+        accent: '#ffffff',
+        columns: ['Version', 'Name', 'Build', 'Release Date', 'Status'],
         url: '../../data/windows11.json',
         processData: (data) => {
           // Remove the header/garbage rows
@@ -82,8 +53,6 @@
       });
     });
   </script>
-  
-  <script src="../../assets/js/categories.js"></script>
-  <script src="../../assets/js/app.js?v=6"></script>
-</body>
+</head>
+<body></body>
 </html>
