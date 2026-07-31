@@ -26,7 +26,7 @@
             <th>Version</th>
             <th>Latest Micro Version</th>
             <th>Release Date</th>
-            <th>End of Full Support</th>
+            <th>End of Security Fixes</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -48,7 +48,7 @@
           let rawVersion = getVal(['version']);
           let microVersion = getVal(['latest micro version']);
           let date = getVal(['release date']);
-          let support = getVal(['end of full support']);
+          let support = getVal(['end of security fixes', 'end of full support']);
           
           if (rawVersion === '—' || rawVersion.length > 50) return;
 
