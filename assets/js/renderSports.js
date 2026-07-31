@@ -43,8 +43,8 @@ window.renderSports = {
     return `
       <td class="version">${window.utils.cleanStr(date)}</td>
       <td>${window.utils.cleanStr(opponent)}</td>
-      <td>${(window.sportsConfig.hasBye && date.toLowerCase() === 'bye') ? '—' : `<span class="status-badge ${statusClass}">${statusText}</span>`}</td>
       <td>${window.utils.cleanStr(scoreText)}</td>
+      <td>${(window.sportsConfig.hasBye && date.toLowerCase() === 'bye') ? '—' : `<span class="status-badge ${statusClass}">${statusText}</span>`}</td>
     `;
   }
 };
