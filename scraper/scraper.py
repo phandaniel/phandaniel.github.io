@@ -25,6 +25,8 @@ def scrape_wiki(url, output_file):
         header_row = t.find('tr')
         if not header_row: continue
         headers = [th.text.strip().replace('\n', ' ') for th in header_row.find_all(['th', 'td'])]
+        if 'Debian_version_history' in url:
+            headers = ['Ver.', 'Codename', 'Release date', 'Final/latest release', 'No. of Archs.', 'Package count (Binary)', 'Package count (Source)', 'Linux kernel', 'End of support (Security)', 'End of support (LTS)', 'Paid ELTS', 'References']
         
         rowspans = {}
         for row in t.find_all('tr')[1:]:

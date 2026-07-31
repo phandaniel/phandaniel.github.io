@@ -26,7 +26,7 @@
             <th>Version</th>
             <th>Codename</th>
             <th>Release Date</th>
-            <th>End of Support</th>
+            <th>Paid ELTS</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -53,7 +53,7 @@
           const rawVersion = getVal(['ver.', 'version']);
           const rawCodename = getVal(['code']);
           const releaseDate = getVal(['release date']);
-          const endSupport = getVal(['references']); // Due to wikipedia table misalignment
+          const endSupport = getVal(['paid elts']);
           
           let statusClass = 'status-supported';
           let statusText = 'Supported';
