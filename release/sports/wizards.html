@@ -9,9 +9,9 @@
     document.addEventListener('DOMContentLoaded', () => {
       
       window.sportsConfig = {
-        opponentKey: 'Opponent',
-        dateKey: 'Date',
-        resultKey: 'Result'
+        opponentKey: ['team', 'opponent'],
+        dateKey: ['date'],
+        resultKey: ['score', 'result']
       };
 
       window.utils.renderPage({
