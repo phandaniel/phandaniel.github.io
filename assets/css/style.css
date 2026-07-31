@@ -292,3 +292,34 @@ tr:hover td {
     padding: 8px;
   }
 }
+
+.status-gold {
+  background: rgba(255, 215, 0, 0.15);
+  color: #FFD700;
+  border: 1px solid rgba(255, 215, 0, 0.3);
+}
+.status-silver {
+  background: rgba(192, 192, 192, 0.15);
+  color: #C0C0C0;
+  border: 1px solid rgba(192, 192, 192, 0.3);
+}
+.status-bronze {
+  background: rgba(205, 127, 50, 0.15);
+  color: #CD7F32;
+  border: 1px solid rgba(205, 127, 50, 0.3);
+}
+.track-table th {
+  position: sticky;
+  top: 0;
+  background: #18181b;
+  z-index: 10;
+}
+.track-table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+.track-table td, .track-table th {
+  text-align: left;
+}
+.track-table td.time-col, .track-table th.time-col {
+  text-align: center;
+}

@@ -74,7 +74,7 @@ let passed = true;
     try {
       await page.goto(`file://${path.join(rootDir, file)}`, { waitUntil: 'networkidle0' });
       
-      const rowCount = await page.$$eval('#table-body tr', rows => rows.length);
+      const rowCount = await page.$$eval('tbody tr', rows => rows.length);
       if (rowCount === 0) {
         console.error('  [ERROR] Table body is empty! Data did not load.');
         errors++;
@@ -96,7 +96,7 @@ let passed = true;
         console.log('  [PASS] All status badges are properly styled.');
       }
 
-      const invalidVersions = await page.$$eval('#table-body tr', rows => {
+      const invalidVersions = await page.$$eval('tbody tr', rows => {
         return rows.filter(r => {
           const firstCol = r.querySelector('td:first-child').innerText.trim();
           return !firstCol || firstCol === '—' || firstCol === 'undefined' || firstCol === 'null';
