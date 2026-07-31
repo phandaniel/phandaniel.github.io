@@ -2,12 +2,11 @@ window.dashboardCategories = [
   {
     name: 'Operating Systems',
     items: [
+      { name: 'Fedora', url: 'release/linux/fedora.html', accent: '#ffffff' },
+      { name: 'RHEL', url: 'release/linux/rhel.html', accent: '#ffffff' },
+      { name: 'Ubuntu', url: 'release/linux/ubuntu.html', accent: '#ffffff' },
       { name: 'Windows 11', url: 'release/os/windows11.html', accent: '#ffffff' },
       { name: 'macOS', url: 'release/os/macos.html', accent: '#ffffff' },
-      { name: 'Debian', url: 'release/linux/debian.html', accent: '#ffffff' },
-      { name: 'Fedora', url: 'release/linux/fedora.html', accent: '#ffffff' },
-      { name: 'Ubuntu', url: 'release/linux/ubuntu.html', accent: '#ffffff' },
-      { name: 'RHEL', url: 'release/linux/rhel.html', accent: '#ffffff' },
       { name: 'iOS', url: 'release/os/ios.html', accent: '#ffffff' },
       { name: 'Android', url: 'release/os/android.html', accent: '#ffffff' }
     ]

@@ -25,7 +25,6 @@ def scrape_wiki(url, output_file):
         header_row = t.find('tr')
         if not header_row: continue
         headers = [th.text.strip().replace('\n', ' ') for th in header_row.find_all(['th', 'td'])]
-        if 'Debian_version_history' in url:
             headers = ['Ver.', 'Codename', 'Release date', 'Final/latest release', 'No. of Archs.', 'Package count (Binary)', 'Package count (Source)', 'Linux kernel', 'End of support (Security)', 'End of support (LTS)', 'Paid ELTS', 'References']
         if 'Windows_11_version_history' in url:
             headers = ['Name', 'Version', 'Codename', 'Build', 'CPUμarch', 'Release date', 'GAC (Home, Pro)', 'GAC (Edu, Ent)', 'LTSC Mainstream', 'LTSC Extended']
@@ -86,7 +85,6 @@ scrape_wiki('https://en.wikipedia.org/wiki/Fedora_Linux_release_history', 'data/
 scrape_wiki('https://en.wikipedia.org/wiki/Ubuntu_version_history', 'data/ubuntu.json')
 scrape_wiki('https://en.wikipedia.org/wiki/MacOS_version_history', 'data/macos.json')
 scrape_wiki('https://en.wikipedia.org/wiki/Windows_11_version_history', 'data/windows11.json')
-scrape_wiki('https://en.wikipedia.org/wiki/Debian_version_history', 'data/debian.json')
 scrape_wiki('https://en.wikipedia.org/wiki/IOS_version_history', 'data/ios.json')
 scrape_wiki('https://en.wikipedia.org/wiki/List_of_Starship_launches', 'data/starship.json')
 scrape_wiki('https://en.wikipedia.org/wiki/Claude_(AI)', 'data/claude.json')

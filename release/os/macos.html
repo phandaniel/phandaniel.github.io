@@ -24,7 +24,6 @@
         <thead>
           <tr>
             <th>Version</th>
-            <th>Codename</th>
             <th>Release Date</th>
             <th>Latest Version</th>
             <th>Status</th>
@@ -51,7 +50,6 @@
           const getVal = (keys) => window.utils.getVal(keys, release);
 
           const version = getVal(['release']);
-          const codename = getVal(['darwinversion']);
           const releaseDate = getVal(['latest release']);
           const comp = getVal(['compatibility']);
           
@@ -75,7 +73,6 @@
 
           return `
             <td class="version">${window.utils.cleanStr(version)}</td>
-            <td>${window.utils.cleanStr(codename)}</td>
             <td>${window.utils.cleanStr(releaseDate)}</td>
             <td>${window.utils.cleanStr(latestVersion)}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
