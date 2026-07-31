@@ -38,7 +38,7 @@
           const cleanEol = cleanVal(eol);
           const eolLower = eol.toLowerCase();
           
-          if (eolLower.includes('tba') || eolLower.includes('future') || new Date(cleanEol) > new Date() || eolLower.includes('supported:') || eolLower.includes('latest version')) {
+          if (eolLower.includes('tba') || eolLower.includes('future') || new Date(cleanEol) > new Date() || eolLower.trim().startsWith('supported:') || eolLower.includes('latest version')) {
              statusClass = 'status-supported';
              statusText = 'Supported';
           }
