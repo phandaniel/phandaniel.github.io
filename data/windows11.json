@@ -16,7 +16,9 @@
     "Build": "22000",
     "CPU\u03bcarch": "x86, ARM",
     "Release date": "October 5, 2021",
-    "End of support by edition": "October 10, 2023"
+    "GAC (Home, Pro)": "October 10, 2023",
+    "GAC (Edu, Ent)": "October 8, 2024",
+    "LTSC Mainstream": "\u2014N/a"
   },
   {
     "Name": "Windows 11 2022 Update",
@@ -25,7 +27,9 @@
     "Build": "22621",
     "CPU\u03bcarch": "x86, ARM",
     "Release date": "September 20, 2022",
-    "End of support by edition": "October 8, 2024"
+    "GAC (Home, Pro)": "October 8, 2024",
+    "GAC (Edu, Ent)": "October 14, 2025",
+    "LTSC Mainstream": "\u2014N/a"
   },
   {
     "Name": "Windows 11 2023 Update",
@@ -34,7 +38,9 @@
     "Build": "22631",
     "CPU\u03bcarch": "x86, ARM",
     "Release date": "October 31, 2023",
-    "End of support by edition": "November 11, 2025"
+    "GAC (Home, Pro)": "November 11, 2025",
+    "GAC (Edu, Ent)": "November 10, 2026",
+    "LTSC Mainstream": "\u2014N/a"
   },
   {
     "Name": "Windows 11 2024 Update",
@@ -43,7 +49,10 @@
     "Build": "26100",
     "CPU\u03bcarch": "x86, ARM",
     "Release date": "October 1, 2024",
-    "End of support by edition": "October 13, 2026"
+    "GAC (Home, Pro)": "October 13, 2026",
+    "GAC (Edu, Ent)": "October 12, 2027",
+    "LTSC Mainstream": "October 9, 2029",
+    "LTSC Extended": "October 10, 2034"
   },
   {
     "Name": "Windows 11 2025 Update",
@@ -52,7 +61,9 @@
     "Build": "26200",
     "CPU\u03bcarch": "x86, ARM",
     "Release date": "September 30, 2025",
-    "End of support by edition": "October 12, 2027"
+    "GAC (Home, Pro)": "October 12, 2027",
+    "GAC (Edu, Ent)": "October 10, 2028",
+    "LTSC Mainstream": "\u2014N/a"
   },
   {
     "Name": "Windows 11, version 26H1",
@@ -61,7 +72,9 @@
     "Build": "28000",
     "CPU\u03bcarch": "ARM only",
     "Release date": "February 10, 2026",
-    "End of support by edition": "March 14, 2028"
+    "GAC (Home, Pro)": "March 14, 2028",
+    "GAC (Edu, Ent)": "March 13, 2029",
+    "LTSC Mainstream": "\u2014N/a"
   },
   {
     "Name": "Windows 11, version 26H2",
@@ -70,6 +83,9 @@
     "Build": "26300",
     "CPU\u03bcarch": "x86 only",
     "Release date": "Late 2026",
-    "End of support by edition": "TBA"
+    "GAC (Home, Pro)": "TBA",
+    "GAC (Edu, Ent)": "TBA",
+    "LTSC Mainstream": "?",
+    "LTSC Extended": "?"
   }
 ]
