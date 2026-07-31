@@ -24,11 +24,11 @@
           const standardSupport = getVal(['standard support']);
           const legacyAddOn = getVal(['legacy add-on']);
           
-          let eol = standardSupport;
+          let eol = '—';
           if (legacyAddOn && legacyAddOn !== '—' && !legacyAddOn.includes('N/a')) {
             eol = legacyAddOn;
-          } else if (standardSupport === '—') {
-            eol = getVal(['end of life', 'end-of-life', 'eol', 'supported until']);
+          } else if (standardSupport && standardSupport !== '—' && !standardSupport.includes('N/a')) {
+            eol = standardSupport;
           }
           
           let statusClass = 'status-unsupported';
