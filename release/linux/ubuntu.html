@@ -10,11 +10,10 @@
         title: `Ubuntu`,
         description: `A beautiful overview of Ubuntu Linux release history.`,
         accent: '#ffffff',
-        columns: ['Version', 'Release Date', 'Standard Support', 'Extended Security', 'Legacy Add-On', 'Status'],
+        columns: ['Version', 'Release Date', 'Standard Support', 'Legacy Add-On', 'Status'],
         url: '../../data/ubuntu.json',
         processData: (data) => {
-          // Reverse the array to show the newest versions at the top
-        data.reverse();
+          data.reverse();
           return data;
         },
         renderRow: (release) => {
@@ -23,43 +22,43 @@
           const version = getVal(['version']);
           const releaseDate = getVal(['release date', 'released', 'release']);
           const standardSupport = getVal(['standard support']);
-          const extSecurity = getVal(['extended security']);
           const legacyAddOn = getVal(['legacy add-on']);
-          const eol = standardSupport !== '—' ? standardSupport : getVal(['end of life', 'end-of-life', 'eol', 'supported until']);
           
-          // Determine status loosely based on EOL text
+          let eol = standardSupport;
+          if (legacyAddOn && legacyAddOn !== '—' && !legacyAddOn.includes('N/a')) {
+            eol = legacyAddOn;
+          } else if (standardSupport === '—') {
+            eol = getVal(['end of life', 'end-of-life', 'eol', 'supported until']);
+          }
+          
           let statusClass = 'status-unsupported';
           let statusText = 'Unsupported';
           
+          const cleanVal = window.utils.cleanVal || ((val) => val ? val.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').trim() : '');
+          const cleanEol = cleanVal(eol);
           const eolLower = eol.toLowerCase();
-          if (eolLower.includes('tba') || eolLower.includes('future') || new Date(eol) > new Date()) {
+          
+          if (eolLower.includes('tba') || eolLower.includes('future') || new Date(cleanEol) > new Date() || eolLower.includes('supported:') || eolLower.includes('latest version')) {
              statusClass = 'status-supported';
              statusText = 'Supported';
           }
-          if (releaseDate.toLowerCase().includes('future') || new Date(releaseDate) > new Date()) {
+          if (releaseDate.toLowerCase().includes('future') || new Date(cleanVal(releaseDate)) > new Date() || eolLower.includes('preview version')) {
              statusClass = 'status-preview';
              statusText = 'Upcoming';
           }
 
-          // Don't render completely empty rows that might have been scraped
           if (version === '—' || version.length > 50) return;
-
-          // Clean up values
-          const cleanVal = window.utils.cleanVal; (val) => val ? val.replace(/^(Unsupported|Supported|Latest version|Preview version|Future version):\s*/i, '').trim() : '';
 
           let cleanVersion = cleanVal(version).replace(/\s*\(.*?\)\s*/g, '');
           let cleanStdSupport = cleanVal(standardSupport);
-          let cleanExtSec = cleanVal(extSecurity);
           let cleanLegacy = cleanVal(legacyAddOn);
           
-          if (cleanExtSec.toLowerCase().includes('n/a') || cleanExtSec === '—') cleanExtSec = window.utils.emDash();
           if (cleanLegacy.toLowerCase().includes('n/a') || cleanLegacy === '—') cleanLegacy = window.utils.emDash();
 
           return `
             <td class="version">Ubuntu ${cleanVersion}</td>
             <td>${releaseDate}</td>
             <td>${cleanStdSupport}</td>
-            <td>${cleanExtSec}</td>
             <td>${cleanLegacy}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
