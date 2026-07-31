@@ -1,0 +1,75 @@
+[
+  {
+    "Name": "GAC",
+    "Codename": "LTSC"
+  },
+  {
+    "Name": "Home, Pro, SE,Pro Education,Pro for Workstations",
+    "Version": "Education,Enterprise,IoT Enterprise",
+    "Codename": "Mainstream",
+    "Build": "Extended"
+  },
+  {
+    "Name": "Windows 11",
+    "Version": "Unsupported: 21H2",
+    "Codename": "Sun Valley",
+    "Build": "22000",
+    "CPU\u03bcarch": "x86, ARM",
+    "Release date": "October 5, 2021",
+    "End of support by edition": "October 10, 2023"
+  },
+  {
+    "Name": "Windows 11 2022 Update",
+    "Version": "Unsupported: 22H2",
+    "Codename": "Sun Valley 2",
+    "Build": "22621",
+    "CPU\u03bcarch": "x86, ARM",
+    "Release date": "September 20, 2022",
+    "End of support by edition": "October 8, 2024"
+  },
+  {
+    "Name": "Windows 11 2023 Update",
+    "Version": "Supported: 23H2",
+    "Codename": "Sun Valley 3",
+    "Build": "22631",
+    "CPU\u03bcarch": "x86, ARM",
+    "Release date": "October 31, 2023",
+    "End of support by edition": "November 11, 2025"
+  },
+  {
+    "Name": "Windows 11 2024 Update",
+    "Version": "Supported: 24H2",
+    "Codename": "Hudson Valley",
+    "Build": "26100",
+    "CPU\u03bcarch": "x86, ARM",
+    "Release date": "October 1, 2024",
+    "End of support by edition": "October 13, 2026"
+  },
+  {
+    "Name": "Windows 11 2025 Update",
+    "Version": "Latest version: 25H2",
+    "Codename": "\u2014N/a",
+    "Build": "26200",
+    "CPU\u03bcarch": "x86, ARM",
+    "Release date": "September 30, 2025",
+    "End of support by edition": "October 12, 2027"
+  },
+  {
+    "Name": "Windows 11, version 26H1",
+    "Version": "Latest version: 26H1",
+    "Codename": "\u2014N/a",
+    "Build": "28000",
+    "CPU\u03bcarch": "ARM only",
+    "Release date": "February 10, 2026",
+    "End of support by edition": "March 14, 2028"
+  },
+  {
+    "Name": "Windows 11, version 26H2",
+    "Version": "Preview version: 26H2",
+    "Codename": "\u2014N/a",
+    "Build": "26300",
+    "CPU\u03bcarch": "x86 only",
+    "Release date": "Late 2026",
+    "End of support by edition": "TBA"
+  }
+]

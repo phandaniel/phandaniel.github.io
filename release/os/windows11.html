@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>macOS - Phantom Telemetry</title>
-  <meta name="description" content="A beautiful overview of macOS release history.">
+  <title>Windows 11 - Phantom Telemetry</title>
+  <meta name="description" content="A beautiful overview of Windows 11 release history.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
   <div class="container">
         
     <header>
-      <h1>macOS</h1>
+      <h1>Windows 11</h1>
     </header>
 
     <div id="loading" class="loading">Loading timeline data...</div>
@@ -24,9 +24,10 @@
         <thead>
           <tr>
             <th>Version</th>
-            <th>Codename</th>
+            <th>Name</th>
+            <th>Build</th>
             <th>Release Date</th>
-            <th>Latest Version</th>
+            <th>End of Support</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -40,44 +41,44 @@
     window.basePath = "../../";
     window.addEventListener('DOMContentLoaded', () => {
       window.utils.renderTable({
-        url: '../../data/macos.json',
+        url: '../../data/windows11.json',
         processData: (data) => {
-          // Remove the first header row in data
-          if (data.length > 0 && data[0].Release === "Version") data.shift();
-          data.reverse();
-          return data;
+          // Remove the header/garbage rows
+          let filtered = data.filter(d => d.Name && d.Name.includes('Windows 11'));
+          filtered.reverse();
+          return filtered;
         },
         renderRow: (release) => {
           const getVal = (keys) => window.utils.getVal(keys, release);
 
-          const version = getVal(['release']);
-          const codename = getVal(['darwinversion']);
-          const releaseDate = getVal(['latest release']);
-          const comp = getVal(['compatibility']);
+          const rawVersion = getVal(['version']);
+          const name = getVal(['name']);
+          const build = getVal(['build']);
+          const releaseDate = getVal(['release date']);
+          const endSupport = getVal(['end of support by edition', 'end of support']);
           
           let statusClass = 'status-supported';
           let statusText = 'Supported';
-          let latestVersion = comp;
+          let version = rawVersion;
           
-          if (comp.toLowerCase().includes('unsupported')) {
+          if (rawVersion.toLowerCase().includes('unsupported')) {
              statusClass = 'status-unsupported';
              statusText = 'Unsupported';
-             latestVersion = comp.replace(/unsupported:?\s*/i, '');
-          } else if (comp.toLowerCase().includes('preview')) {
+             version = rawVersion.replace(/unsupported:?\s*/i, '');
+          } else if (rawVersion.toLowerCase().includes('preview')) {
              statusClass = 'status-preview';
-             statusText = 'Upcoming';
-             latestVersion = comp.replace(/preview version:?\s*/i, '');
+             statusText = 'Preview';
+             version = rawVersion.replace(/preview version:?\s*/i, '');
           } else {
-             latestVersion = comp.replace(/(supported|latest version):?\s*/i, '');
+             version = rawVersion.replace(/(supported|latest version):?\s*/i, '');
           }
-
-          if (version === '—' || version.length > 50) return;
 
           return `
             <td class="version">${window.utils.cleanStr(version)}</td>
-            <td>${window.utils.cleanStr(codename)}</td>
+            <td>${window.utils.cleanStr(name)}</td>
+            <td>${window.utils.cleanStr(build)}</td>
             <td>${window.utils.cleanStr(releaseDate)}</td>
-            <td>${window.utils.cleanStr(latestVersion)}</td>
+            <td>${window.utils.cleanStr(endSupport)}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           }

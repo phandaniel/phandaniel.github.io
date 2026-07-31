@@ -2,6 +2,7 @@ window.dashboardCategories = [
   {
     name: 'Operating Systems',
     items: [
+      { name: 'Windows 11', url: 'release/os/windows11.html', accent: '#ffffff' },
       { name: 'macOS', url: 'release/os/macos.html', accent: '#ffffff' },
       { name: 'Debian', url: 'release/linux/debian.html', accent: '#ffffff' },
       { name: 'Fedora', url: 'release/linux/fedora.html', accent: '#ffffff' },
