@@ -77,7 +77,7 @@
         
         const renderRow = (item) => {
           let eventName = item['Event'] || item['event'] || '';
-          eventName = eventName.replace(/\(Wind:\s*(.*?)\)/gi, '<br><small style="opacity: 0.7; font-size: 0.8em;">(Wind: $1)</small>');
+          eventName = eventName.replace(/\(Wind:\s*(.*?)\)/gi, '').trim();
 
           const gold = item['Gold'] || item['gold'] || '';
           const goldTime = item['Gold Time'] || item['gold time'] || item['G_Time'] || '';
