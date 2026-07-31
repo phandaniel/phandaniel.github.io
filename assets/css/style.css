@@ -201,15 +201,16 @@ tr:hover td {
   transform: translateY(0) scale(1);
 }
 .nav-link {
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 6px 12px;
+  border-radius: 6px;
   text-decoration: none;
   color: var(--text-muted);
   font-weight: 500;
+  font-size: 0.9rem;
   letter-spacing: 0.3px;
   transition: all 0.2s ease;
   display: block;
-  margin-bottom: 1px;
+  margin-bottom: 0;
 }
 .nav-link:hover {
   color: var(--text-main);
