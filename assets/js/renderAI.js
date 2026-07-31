@@ -15,12 +15,22 @@ window.renderAI = {
     let statusClass = 'status-unsupported';
     
     const sLower = status.toLowerCase();
-    if (sLower.includes('unsupported') || sLower.includes('discontinued')) {
+    
+    if (sLower.includes('unsupported') || sLower.includes('discontinued') || sLower.includes('retired') || sLower.includes('deprecated')) {
       statusText = 'Unsupported';
       statusClass = 'status-unsupported';
-    } else {
+    } else if (sLower.includes('active') || sLower.includes('supported') || sLower.includes('latest')) {
       statusText = 'Supported';
       statusClass = 'status-supported';
+    } else if (sLower.includes('preview') || sLower.includes('limited availability')) {
+      statusText = 'Preview';
+      statusClass = 'status-preview';
+    } else if (sLower.includes('legacy support')) {
+      statusText = 'Partial';
+      statusClass = 'status-partial';
+    } else {
+      statusText = 'Unsupported';
+      statusClass = 'status-unsupported';
     }
 
     return `

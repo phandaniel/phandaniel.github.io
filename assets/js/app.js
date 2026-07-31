@@ -68,13 +68,21 @@ document.addEventListener('DOMContentLoaded', () => {
       
       if (rect.bottom > window.innerHeight - padding) {
         const overflow = rect.bottom - (window.innerHeight - padding);
-        const itemRect = item.getBoundingClientRect();
-        const maxShiftUp = itemRect.top - padding;
+        
+        // Never shift up more than the item's distance from the top of the dropdown menu
+        const maxShiftUp = item.offsetTop;
         
         let newTop = -overflow;
         if (overflow > maxShiftUp) {
           newTop = -maxShiftUp;
-          submenu.style.maxHeight = `${window.innerHeight - padding * 2}px`;
+          
+          // If we are capped by maxShiftUp, it might still overflow the bottom.
+          // In that case, we must also apply a maxHeight.
+          // The absolute top of the submenu will be item.getBoundingClientRect().top - maxShiftUp
+          const itemTop = item.getBoundingClientRect().top;
+          const absoluteTop = itemTop - maxShiftUp;
+          const availableHeight = (window.innerHeight - padding) - absoluteTop;
+          submenu.style.maxHeight = `${availableHeight}px`;
         }
         
         submenu.style.top = `${newTop}px`;
