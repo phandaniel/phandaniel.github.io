@@ -69,7 +69,7 @@
                       <td>${window.utils.cleanStr(item['Weight class'])}</td>
                       <td><span class="status-badge status-supported">${window.utils.cleanStr(item['Winner'])}</span></td>
                       <td><span class="status-badge status-unsupported">${window.utils.cleanStr(item['Loser'])}</span></td>
-                      <td>${window.utils.cleanStr(item['Method'])}</td>
+                      <td>${window.utils.cleanStr(item['Method']).replace(/\s*\([\d\s,–-]+\)/g, '')}</td>
                       <td class="center-col">${window.utils.cleanStr(item['Round'])}</td>
                       <td class="center-col">${window.utils.cleanStr(item['Time'])}</td>
                     </tr>
