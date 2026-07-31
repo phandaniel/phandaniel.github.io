@@ -6,7 +6,7 @@ window.dashboardCategories = [
       { name: 'Ubuntu', url: 'release/linux/ubuntu.html', accent: '#ffffff' },
       { name: 'Linux Kernel', url: 'release/linux/kernel.html', accent: '#ffffff' },
       { name: 'RHEL', url: 'release/linux/rhel.html', accent: '#ffffff' },
-      { name: 'Apple iOS', url: 'release/os/ios.html', accent: '#ffffff' },
+      { name: 'iOS', url: 'release/os/ios.html', accent: '#ffffff' },
       { name: 'Android', url: 'release/os/android.html', accent: '#ffffff' }
     ]
   },
