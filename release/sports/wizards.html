@@ -7,21 +7,69 @@
   <script src="../../assets/js/renderSports.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      
-      window.sportsConfig = {
-        opponentKey: ['team', 'opponent'],
-        dateKey: ['date'],
-        resultKey: ['score', 'result']
-      };
-
       window.utils.renderPage({
         title: `Washington Wizards`,
         description: `A tracking page for Washington Wizards games.`,
         accent: '#ffffff',
         columns: ['Date', 'Opponent', 'Score', 'Result'],
         url: '../../data/wizards.json',
-        processData: window.renderSports.processData,
-        renderRow: window.renderSports.renderRow
+        processData: (data) => {
+          data.reverse();
+          return data;
+        },
+        renderRow: (game) => {
+          const getVal = (searchStrs) => window.utils.getVal(searchStrs, game);
+          let date = getVal(['date']);
+          let opponent = getVal(['team', 'opponent']);
+          let result = getVal(['score', 'result']);
+          
+          if (date === '—') return '';
+
+          let statusText = 'Upcoming';
+          let statusClass = 'status-preview';
+          let scoreText = '—';
+
+          if (date.toLowerCase() === 'bye') {
+            opponent = '—';
+            result = '—';
+            statusText = '—';
+            statusClass = 'status-partial';
+          } else {
+            if (!date.match(/\d{4}/)) {
+              const dLower = date.toLowerCase();
+              if (dLower.startsWith('jan') || dLower.startsWith('feb') || dLower.startsWith('mar') || dLower.startsWith('apr')) {
+                date += ', 2026';
+              } else {
+                date += ', 2025';
+              }
+            }
+          }
+          
+          const rLower = result.toLowerCase();
+          if (rLower.includes('w ')) {
+            statusText = 'Win';
+            statusClass = 'status-supported';
+            scoreText = result.substring(rLower.indexOf('w ') + 2).trim().split('[')[0];
+          } else if (rLower.includes('l ')) {
+            statusText = 'Loss';
+            statusClass = 'status-unsupported';
+            scoreText = result.substring(rLower.indexOf('l ') + 2).trim().split('[')[0];
+          } else if (rLower.includes('t ')) {
+            statusText = 'Tie';
+            statusClass = 'status-partial';
+            scoreText = result.substring(rLower.indexOf('t ') + 2).trim().split('[')[0];
+          } else if (result !== '—' && result !== '') {
+            statusText = result.split('[')[0];
+            statusClass = 'status-partial';
+          }
+
+          return `
+            <td class="version">${window.utils.cleanStr(date)}</td>
+            <td>${window.utils.cleanStr(opponent)}</td>
+            <td>${window.utils.cleanStr(scoreText)}</td>
+            <td>${date.toLowerCase() === 'bye' ? '—' : `<span class="status-badge ${statusClass}">${statusText}</span>`}</td>
+          `;
+        }
       });
     });
   </script>
