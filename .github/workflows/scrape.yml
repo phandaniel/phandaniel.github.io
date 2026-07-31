@@ -24,7 +24,10 @@ jobs:
         run: pip install -r scraper/requirements.txt
 
       - name: Run scraper
-        run: python scraper/scraper.py
+        run: |
+          python scraper/scraper.py
+          python scraper/parse_track.py
+          python scraper/parse_ufc.py
 
       - name: Commit and push if changed
         run: |
