@@ -27,7 +27,6 @@
             <th>Name</th>
             <th>Build</th>
             <th>Release Date</th>
-            <th>LTSC</th>
             <th>Status</th>
           </tr>
         </thead>
@@ -55,7 +54,6 @@
           const name = getVal(['name']);
           const build = getVal(['build']);
           const releaseDate = getVal(['release date']);
-          const endSupport = getVal(['ltsc mainstream']);
           
           let statusClass = 'status-supported';
           let statusText = 'Supported';
@@ -78,7 +76,6 @@
             <td>${window.utils.cleanStr(name)}</td>
             <td>${window.utils.cleanStr(build)}</td>
             <td>${window.utils.cleanStr(releaseDate)}</td>
-            <td>${window.utils.cleanStr(endSupport)}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
           }
