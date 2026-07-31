@@ -53,7 +53,7 @@
           const rawVersion = getVal(['ver.', 'version']);
           const rawCodename = getVal(['code']);
           const releaseDate = getVal(['release date']);
-          const endSupport = getVal(['end of support', 'security']);
+          const endSupport = getVal(['references']); // Due to wikipedia table misalignment
           
           let statusClass = 'status-supported';
           let statusText = 'Supported';
@@ -63,17 +63,23 @@
              statusClass = 'status-unsupported';
              statusText = 'Unsupported';
              version = rawVersion.replace(/unsupported:?\s*/i, '');
-          } else if (rawVersion.toLowerCase().includes('testing')) {
+          } else if (rawVersion.toLowerCase().includes('testing') || rawVersion.toLowerCase().includes('future version')) {
              statusClass = 'status-preview';
              statusText = 'Upcoming';
-             version = rawVersion.replace(/testing:?\s*/i, '');
+             version = rawVersion.replace(/(testing|future version):?\s*/i, '');
           } else {
-             version = rawVersion.replace(/(supported|latest version):?\s*/i, '');
+             version = rawVersion.replace(/(supported|latest version|future version):?\s*/i, '');
           }
 
           if (version === '—' || version.length > 50) return;
+          if (rawVersion.toLowerCase().includes('preview')) return;
+          
+          // Remove versions after 14
+          const versionNumber = parseFloat(version);
+          if (versionNumber > 14) return;
 
-          let cleanCodename = window.utils.cleanStr(rawCodename).replace(/unsupported:?\s*/i, '').replace(/supported:?\s*/i, '');
+          let cleanCodename = window.utils.cleanStr(rawCodename)
+            .replace(/(unsupported|supported|future version):?\s*/gi, '');
 
           return `
             <td class="version">Debian ${window.utils.cleanStr(version)}</td>
