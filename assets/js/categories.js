@@ -38,6 +38,7 @@ window.dashboardCategories = [
   {
     name: 'Sports',
     items: [
+      { name: 'US Track & Field', url: 'release/sports/track26.html', accent: '#ffffff' },
       { name: 'Liberty Flames', url: 'release/sports/liberty.html', accent: '#ffffff' },
       { name: 'Commanders', url: 'release/sports/commanders.html', accent: '#ffffff' },
       { name: 'Wizards', url: 'release/sports/wizards.html', accent: '#ffffff' }
