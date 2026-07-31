@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </svg>
       </button>
       <div class="dropdown-content" id="dropdownContent">
-        <a href="${basePath}index.html" class="nav-link ${currentFile === 'index.html' ? 'active' : ''}" style="--accent: #ffffff;">Home Dashboard</a>
+        <a href="${basePath}index.html" class="nav-link ${currentFile === 'index.html' || currentFile === '' ? 'active' : ''}" style="--accent: #ffffff;">Home</a>
         <div style="border-top: 1px solid rgba(255,255,255,0.1); margin: 4px 0;"></div>
         ${categories.map(cat => `
           <div class="has-submenu">
