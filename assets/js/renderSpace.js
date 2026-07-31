@@ -28,21 +28,25 @@ window.renderSpace = {
 
     // Second pass: assign sequential flight numbers to upcoming (no flight no.) rows
     let nextNum = lastNum + 1;
+    let foundUpcoming = false;
+    const finalData = [];
     filteredData.forEach(release => {
       const flight = window.utils.getVal(window.spaceConfig.flightKeys, release);
       if (!flight || flight === '—') {
+        if (foundUpcoming) return; // skip subsequent upcoming flights
+        foundUpcoming = true;
         // Find the key to write into
         const keys = Object.keys(release);
         const flightKey = keys.find(k =>
           window.spaceConfig.flightKeys.some(fk => k.toLowerCase().replace(/\s/g, '') === fk.toLowerCase().replace(/\s/g, ''))
         ) || window.spaceConfig.flightKeys[0];
         release[flightKey] = prefix + nextNum;
-        nextNum++;
       }
+      finalData.push(release);
     });
 
-    filteredData.reverse();
-    return filteredData;
+    finalData.reverse();
+    return finalData;
   },
 
   renderRow: (release) => {

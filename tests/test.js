@@ -1,6 +1,7 @@
 const puppeteer = require('puppeteer');
-const fs = require('fs');
+const path = require('path');
 
+const rootDir = path.join(__dirname, '..');
 const files = ['release/linux/fedora.html', 'release/linux/ubuntu.html', 'release/linux/kernel.html', 'release/linux/rhel.html', 'release/os/ios.html', 'release/os/android.html', 'release/space/starship.html', 'release/space/vulcan.html', 'release/space/newglenn.html', 'release/ai/claude.html', 'release/ai/grok.html', 'release/ai/gemini.html', 'release/ai/chatgpt.html', 'release/dev/kubernetes.html', 'release/dev/python.html', 'release/sports/liberty.html', 'release/sports/commanders.html', 'release/sports/wizards.html'];
 let passed = true;
 
@@ -8,6 +9,48 @@ let passed = true;
   const browser = await puppeteer.launch({
     args: ['--no-sandbox', '--disable-setuid-sandbox', '--allow-file-access-from-files', '--disable-web-security']
   });
+
+  // Test the menu dropdown on the homepage
+  console.log(`\nTesting Homepage Menu Dropdown...`);
+  const menuPage = await browser.newPage();
+  await menuPage.setViewport({ width: 1280, height: 450 }); // small height to test overflow logic
+  let menuErrors = 0;
+  
+  try {
+    await menuPage.goto(`file://${path.join(rootDir, 'index.html')}`, { waitUntil: 'networkidle0' });
+    await menuPage.click('#dropdownBtn');
+    await menuPage.waitForSelector('#dropdownContent.show', { visible: true });
+    console.log("  [PASS] Dropdown menu is visible on click.");
+    
+    const submenus = await menuPage.$$('.has-submenu');
+    if (submenus.length > 0) {
+      const sportsMenu = submenus[submenus.length - 1]; // last one
+      await sportsMenu.hover();
+      await new Promise(r => setTimeout(r, 500));
+      
+      const box = await sportsMenu.$eval('.submenu', el => {
+        const rect = el.getBoundingClientRect();
+        return { top: rect.top, bottom: rect.bottom, height: rect.height };
+      });
+      
+      if (box.top < 0 || box.bottom > 450) {
+         console.error(`  [ERROR] Submenu overflows viewport! Top: ${box.top}, Bottom: ${box.bottom}`);
+         menuErrors++;
+      } else {
+         console.log("  [PASS] Submenu stays within viewport on hover.");
+      }
+    }
+  } catch (err) {
+    console.error(`  [ERROR] Exception testing menu: ${err.message}`);
+    menuErrors++;
+  }
+  await menuPage.close();
+  if (menuErrors > 0) {
+    passed = false;
+    console.log(`❌ Homepage Menu failed.`);
+  } else {
+    console.log(`✅ Homepage Menu passed.`);
+  }
 
   for (const file of files) {
     console.log(`\nTesting ${file}...`);
@@ -21,7 +64,6 @@ let passed = true;
     
     page.on('console', msg => {
       if (msg.type() === 'error') {
-        // Ignore favicon 404s
         if (!msg.text().includes('favicon.ico')) {
           console.error(`  [ERROR] Console Error: ${msg.text()}`);
           errors++;
@@ -30,9 +72,8 @@ let passed = true;
     });
 
     try {
-      await page.goto(`file://${process.cwd()}/../${file}`, { waitUntil: 'networkidle0' });
+      await page.goto(`file://${path.join(rootDir, file)}`, { waitUntil: 'networkidle0' });
       
-      // Check if table populated
       const rowCount = await page.$$eval('#table-body tr', rows => rows.length);
       if (rowCount === 0) {
         console.error('  [ERROR] Table body is empty! Data did not load.');
@@ -41,7 +82,6 @@ let passed = true;
         console.log(`  [PASS] Table populated with ${rowCount} rows.`);
       }
 
-      // Check status badge colors
       const badgesWithoutColor = await page.$$eval('.status-badge', badges => {
         return badges.filter(b => {
           const bg = window.getComputedStyle(b).backgroundColor;

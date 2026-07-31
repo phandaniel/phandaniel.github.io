@@ -57,20 +57,27 @@ document.addEventListener('DOMContentLoaded', () => {
       const submenu = item.querySelector('.submenu');
       if (!submenu) return;
       
+      // Reset styles
       submenu.style.top = '0';
       submenu.style.bottom = 'auto';
+      submenu.style.maxHeight = 'none';
+      submenu.style.overflowY = 'auto';
       
       const rect = submenu.getBoundingClientRect();
-      // If it overflows bottom, align it to bottom instead
-      if (rect.bottom > window.innerHeight) {
-        submenu.style.top = 'auto';
-        submenu.style.bottom = '0';
-      }
-      // If it overflows top (unlikely but safe), force top align
-      const rectAfter = submenu.getBoundingClientRect();
-      if (rectAfter.top < 0) {
-        submenu.style.top = '0';
-        submenu.style.bottom = 'auto';
+      const padding = 16;
+      
+      if (rect.bottom > window.innerHeight - padding) {
+        const overflow = rect.bottom - (window.innerHeight - padding);
+        const itemRect = item.getBoundingClientRect();
+        const maxShiftUp = itemRect.top - padding;
+        
+        let newTop = -overflow;
+        if (overflow > maxShiftUp) {
+          newTop = -maxShiftUp;
+          submenu.style.maxHeight = `${window.innerHeight - padding * 2}px`;
+        }
+        
+        submenu.style.top = `${newTop}px`;
       }
     });
   });
