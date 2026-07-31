@@ -96,6 +96,20 @@ let passed = true;
         console.log('  [PASS] All status badges are properly styled.');
       }
 
+      const invalidVersions = await page.$$eval('#table-body tr', rows => {
+        return rows.filter(r => {
+          const firstCol = r.querySelector('td:first-child').innerText.trim();
+          return !firstCol || firstCol === '—' || firstCol === 'undefined' || firstCol === 'null';
+        }).length;
+      });
+
+      if (invalidVersions > 0) {
+        console.error(`  [ERROR] Found ${invalidVersions} rows with missing or invalid version names!`);
+        errors++;
+      } else {
+        console.log('  [PASS] All rows have valid version names.');
+      }
+
     } catch (err) {
       console.error(`  [ERROR] Exception during navigation: ${err.message}`);
       errors++;
