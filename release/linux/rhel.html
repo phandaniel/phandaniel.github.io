@@ -10,7 +10,7 @@
         title: `RHEL`,
         description: `A beautiful overview of Red Hat Enterprise Linux release history.`,
         accent: '#ffffff',
-        columns: ['Version', 'Release Date', 'Last Minor Release', 'End of Full Support', 'End of Extended Lifecycle Support', 'Status'],
+        columns: ['Version', 'Release Date', 'Last Minor Release', 'End of Extended Lifecycle Support', 'Status'],
         url: '../../data/rhel.json',
         processData: (data) => {
           // Reverse the array to show the newest versions at the top
@@ -66,7 +66,6 @@
             <td class="version">RHEL ${cleanVersion}</td>
             <td>${cleanDate}</td>
             <td>${cleanMinor}</td>
-            <td>${cleanFullSupport}</td>
             <td>${cleanELS}</td>
             <td><span class="status-badge ${statusClass}">${statusText}</span></td>
           `;
